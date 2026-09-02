@@ -1,0 +1,14 @@
+{
+  "seed": 604,
+  "water": {
+    "speed": 0.72,
+    "clarity": 0.8
+  },
+  "boat": {
+    "position": [0.5, 0.43],
+    "rocking": 0.8
+  },
+  "stars": {
+    "count": 3
+  }
+}

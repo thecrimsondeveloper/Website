@@ -1,0 +1,21 @@
+{
+  "name": "crimson-wheeler-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "next": "16.3.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.3.4"
+  }
+}
