@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title description">
+  <title id="title">A quiet coral harbor</title>
+  <desc id="description">Top-down teal water with coral, rocks, fish, stars, and a small wooden boat.</desc>
+  <defs>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#08383a"/>
+      <stop offset="1" stop-color="#176265"/>
+    </linearGradient>
+    <radialGradient id="shallows" cx="50%" cy="68%" r="64%">
+      <stop offset="0" stop-color="#5fa299" stop-opacity=".31"/>
+      <stop offset="1" stop-color="#053638" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="shadow"><feGaussianBlur stdDeviation="10"/></filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#water)"/>
+  <rect width="1600" height="1000" fill="url(#shallows)"/>
+  <g opacity=".13" fill="none" stroke="#d6fff0" stroke-width="5">
+    <path d="M-80 730C210 590 310 840 610 690s410 140 690-20 350-10 430 40"/>
+    <path d="M-90 810C210 670 370 920 660 770s430 110 700-50 310-60 400 0"/>
+    <path d="M-100 520C210 390 320 600 620 500s420 110 720-40 300-40 390 30"/>
+  </g>
+  <g opacity=".72">
+    <ellipse cx="330" cy="730" rx="175" ry="82" fill="#263f3b"/>
+    <ellipse cx="1290" cy="350" rx="140" ry="70" fill="#314842"/>
+    <ellipse cx="1160" cy="830" rx="105" ry="58" fill="#3e4b41"/>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#ef6256" stroke-width="29">
+      <path d="M315 738v-170M315 634l-86-82M315 610l96-102M244 565l-22-82M390 530l7-82"/>
+    </g>
+    <g stroke="#f19850" stroke-width="25">
+      <path d="M1290 360V218M1290 289l-68-67M1290 267l80-76M1233 230l-8-60M1355 205l10-63"/>
+    </g>
+    <g stroke="#ba5b74" stroke-width="21">
+      <path d="M1158 838V742M1158 798l-52-51M1158 779l59-57M1114 750l-4-43M1206 729l8-45"/>
+    </g>
+  </g>
+  <g fill="#ffe490">
+    <path d="M352 410l12 23 26 4-19 18 4 26-23-12-23 12 4-26-19-18 26-4z"/>
+    <path d="M1240 610l10 19 21 3-15 15 3 21-19-10-19 10 4-21-16-15 21-3z"/>
+    <path d="M1060 226l9 17 19 3-14 13 4 19-18-9-17 9 3-19-14-13 19-3z"/>
+  </g>
+  <g opacity=".9">
+    <g transform="translate(590 728) rotate(-7)">
+      <ellipse rx="70" ry="27" fill="#e5b64f"/>
+      <path d="M-62 0l-35-30v60z" fill="#d99d38"/>
+      <circle cx="38" cy="-5" r="5" fill="#163839"/>
+    </g>
+    <g transform="translate(1100 520) rotate(8) scale(.75)">
+      <ellipse rx="70" ry="27" fill="#6bc6b6"/>
+      <path d="M62 0l35-30v60z" fill="#4ca999"/>
+      <circle cx="-38" cy="-5" r="5" fill="#163839"/>
+    </g>
+  </g>
+  <ellipse cx="820" cy="566" rx="96" ry="188" fill="#001d20" opacity=".3" filter="url(#shadow)"/>
+  <g transform="translate(800 540) rotate(2)">
+    <path d="M0-190C65-147 86-38 58 98 42 160 17 194 0 208-18 194-45 158-61 98-88-42-65-150 0-190z" fill="#5d2d18"/>
+    <path d="M0-159C43-125 54-29 37 82 26 135 10 160 0 172-12 157-27 132-39 82-55-29-43-126 0-159z" fill="#d3a05b"/>
+    <ellipse cy="-116" rx="39" ry="49" fill="#f0d7a0"/>
+    <rect x="-43" y="-8" width="86" height="15" rx="6" fill="#3b1b10"/>
+    <rect x="-39" y="77" width="78" height="15" rx="6" fill="#3b1b10"/>
+    <circle cy="36" r="25" fill="#ec7253"/>
+  </g>
+  <g opacity=".16" fill="#eafff4" filter="url(#soft)">
+    <ellipse cx="530" cy="330" rx="210" ry="42"/>
+    <ellipse cx="1210" cy="780" rx="175" ry="34"/>
+  </g>
+</svg>

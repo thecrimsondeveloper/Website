@@ -1,0 +1,272 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "harbor-fnv1a-32cf4bf4",
+  "factoryId": "crimson-harbor-world-3d",
+  "factoryVersion": "1.0.0",
+  "sourceVersions": [
+    {
+      "repository": "https://github.com/LuminaryLabs-Dev/NexusFactory-Kits",
+      "commit": "627c4aeb864f438c3b1a24a00b152a17d24e8cf9",
+      "license": "MIT"
+    }
+  ],
+  "input": {
+    "seed": "crimson-harbor-604",
+    "params": {
+      "coralCount": 13,
+      "fishCount": 8,
+      "rockClusterCount": 3,
+      "worldRadius": 11,
+      "waterClarity": 0.8
+    }
+  },
+  "parameters": {
+    "coralCount": 13,
+    "fishCount": 8,
+    "rockClusterCount": 3,
+    "worldRadius": 11,
+    "waterClarity": 0.8
+  },
+  "seed": "crimson-harbor-604",
+  "streams": [
+    "coral-placement",
+    "rock-placement",
+    "fish-placement",
+    "star-placement"
+  ],
+  "stages": [
+    {
+      "id": "asset-geometry",
+      "status": "pass",
+      "outputSignature": "fnv1a:27426532"
+    },
+    {
+      "id": "world-layout",
+      "status": "pass",
+      "outputSignature": "fnv1a:32cf4bf4"
+    },
+    {
+      "id": "glb-export",
+      "status": "pass",
+      "outputSignature": "sha256:dd72783b46a74595086a20782bdfe594c1df0d512420ef0260aad4905054796d"
+    }
+  ],
+  "artifactSignature": "fnv1a:32cf4bf4",
+  "artifactSignatures": {
+    "semantic": "fnv1a:32cf4bf4",
+    "exports": "sha256:dd72783b46a74595086a20782bdfe594c1df0d512420ef0260aad4905054796d"
+  },
+  "technicalValidation": {
+    "valid": true,
+    "authority": "Independent structural checks over generated result and Three.js BufferGeometry",
+    "checks": [
+      {
+        "id": "artifact-shape",
+        "pass": true
+      },
+      {
+        "id": "semantic-signature",
+        "pass": true
+      },
+      {
+        "id": "coral-count",
+        "pass": true
+      },
+      {
+        "id": "fish-count",
+        "pass": true
+      },
+      {
+        "id": "star-count",
+        "pass": true
+      },
+      {
+        "id": "finite-geometry",
+        "pass": true
+      },
+      {
+        "id": "triangle-budget",
+        "pass": true
+      }
+    ],
+    "assetStats": {
+      "boat": {
+        "meshCount": 8,
+        "vertexCount": 1364,
+        "triangleCount": 504,
+        "invalidValueCount": 0
+      },
+      "fish": {
+        "meshCount": 5,
+        "vertexCount": 393,
+        "triangleCount": 540,
+        "invalidValueCount": 0
+      },
+      "rocks": {
+        "meshCount": 4,
+        "vertexCount": 432,
+        "triangleCount": 144,
+        "invalidValueCount": 0
+      },
+      "star": {
+        "meshCount": 1,
+        "vertexCount": 348,
+        "triangleCount": 116,
+        "invalidValueCount": 0
+      }
+    }
+  },
+  "validation": {
+    "valid": true,
+    "authority": "Independent structural checks over generated result and Three.js BufferGeometry",
+    "checks": [
+      {
+        "id": "artifact-shape",
+        "pass": true
+      },
+      {
+        "id": "semantic-signature",
+        "pass": true
+      },
+      {
+        "id": "coral-count",
+        "pass": true
+      },
+      {
+        "id": "fish-count",
+        "pass": true
+      },
+      {
+        "id": "star-count",
+        "pass": true
+      },
+      {
+        "id": "finite-geometry",
+        "pass": true
+      },
+      {
+        "id": "triangle-budget",
+        "pass": true
+      }
+    ],
+    "assetStats": {
+      "boat": {
+        "meshCount": 8,
+        "vertexCount": 1364,
+        "triangleCount": 504,
+        "invalidValueCount": 0
+      },
+      "fish": {
+        "meshCount": 5,
+        "vertexCount": 393,
+        "triangleCount": 540,
+        "invalidValueCount": 0
+      },
+      "rocks": {
+        "meshCount": 4,
+        "vertexCount": 432,
+        "triangleCount": 144,
+        "invalidValueCount": 0
+      },
+      "star": {
+        "meshCount": 1,
+        "vertexCount": 348,
+        "triangleCount": 116,
+        "invalidValueCount": 0
+      }
+    }
+  },
+  "exports": [
+    {
+      "file": "public/assets/harbor/models/boat.glb",
+      "bytes": 53540,
+      "sha256": "3b4269334709bcc9eae9484cea16effabfd0abebfdb89bc48dff344a946e736e",
+      "mediaType": "model/gltf-binary"
+    },
+    {
+      "file": "public/assets/harbor/models/coral-brain.glb",
+      "bytes": 239000,
+      "sha256": "e1a3483d975ec566ce733ba06a93367898f117ab22ff827aade628f36ca00ab6",
+      "mediaType": "model/gltf-binary",
+      "source": "NexusFactory-Kits"
+    },
+    {
+      "file": "public/assets/harbor/models/coral-lettuce.glb",
+      "bytes": 52652,
+      "sha256": "673971a0e7f7e76f451d4a7e06a1ceb76fd17919c26778f49089f8620bcc3abc",
+      "mediaType": "model/gltf-binary",
+      "source": "NexusFactory-Kits"
+    },
+    {
+      "file": "public/assets/harbor/models/coral-sea-fan.glb",
+      "bytes": 102452,
+      "sha256": "a2c849ae2567047e6fa7aed42233015081c4e3d867da389d036083c3aff86ef7",
+      "mediaType": "model/gltf-binary",
+      "source": "NexusFactory-Kits"
+    },
+    {
+      "file": "public/assets/harbor/models/coral-staghorn.glb",
+      "bytes": 121912,
+      "sha256": "dcdd988f5c84abde4bce4c17d7fdba94c901ab6b4f1978b332e3d9aabee6091a",
+      "mediaType": "model/gltf-binary",
+      "source": "NexusFactory-Kits"
+    },
+    {
+      "file": "public/assets/harbor/models/coral-table.glb",
+      "bytes": 59804,
+      "sha256": "c2b2b515843eb2110d70c37ba3e1ba945f8090ed08f80a024d81403f4e78fb1e",
+      "mediaType": "model/gltf-binary",
+      "source": "NexusFactory-Kits"
+    },
+    {
+      "file": "public/assets/harbor/models/fish.glb",
+      "bytes": 17156,
+      "sha256": "50022b63c697f3dc1167b268594320fe25eac57bc79ba3172fed72bc1aaaf25b",
+      "mediaType": "model/gltf-binary"
+    },
+    {
+      "file": "public/assets/harbor/models/rocks.glb",
+      "bytes": 18880,
+      "sha256": "2ddf62e97c76d1062542aa9f618ac5beef1bb76f559a9c67b9e86c665c6ba9ca",
+      "mediaType": "model/gltf-binary"
+    },
+    {
+      "file": "public/assets/harbor/models/star.glb",
+      "bytes": 12636,
+      "sha256": "af824c59cfc56571c66acce9e556c0e2937baf12bdbd497eae21767b863e9e03",
+      "mediaType": "model/gltf-binary"
+    },
+    {
+      "file": "public/assets/harbor/world.json",
+      "bytes": 8985,
+      "sha256": "0f37f774f3425171fc5c1ae35385f440cbf8bb2f17d1c87a278391c37bf8fa3f",
+      "mediaType": "application/json"
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "timing": {
+    "startedAt": "2026-09-04T05:39:00.776Z",
+    "completedAt": "2026-09-04T05:39:00.887Z"
+  },
+  "environment": {
+    "node": "v24.19.0",
+    "three": "0.180.0"
+  },
+  "status": "pass",
+  "visualCapture": {
+    "status": "pass",
+    "renderer": "@headless-three/renderer",
+    "adapter": "task-local Mesa Lavapipe",
+    "dimensions": [
+      960,
+      640
+    ],
+    "bytes": 63675,
+    "firstHash": "364bfb5d01a7575af6b23b13bec6ca4f9ff677de559f20c2e7f6dd6679630025",
+    "secondHash": "364bfb5d01a7575af6b23b13bec6ca4f9ff677de559f20c2e7f6dd6679630025",
+    "deterministic": true,
+    "coverage": "Three.js scene geometry, GLB loading, camera, lighting, depth, transparent water material, and deterministic framebuffer. Exact browser-only GLSL execution remains a separate validation surface.",
+    "image": "factory/harbor-world-3d/evidence/headless-harbor.png"
+  }
+}

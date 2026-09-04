@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "1.0",
+  "status": "pass",
+  "artifact": "headless-harbor.png",
+  "checks": [
+    { "id": "top-down-composition", "status": "pass", "note": "The camera clearly reads as an elevated top-down harbor view." },
+    { "id": "boat-focal-point", "status": "pass", "note": "The small fishing boat is centered and visually distinct." },
+    { "id": "world-readability", "status": "pass", "note": "Coral, rocks, fish, and catchable stars remain recognizable through the water layer." },
+    { "id": "frame-coverage", "status": "pass", "note": "The deterministic world fills the frame without clipping the central boat." }
+  ],
+  "reviewBoundary": "This review covers the native Three.js proof image; browser typography and browser-only GLSL motion require post-deploy review."
+}

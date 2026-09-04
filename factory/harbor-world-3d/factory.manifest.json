@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0",
+  "factoryId": "crimson-harbor-world-3d",
+  "factoryType": "composed",
+  "factoryContract": "contracts/factory-contract.json",
+  "sourceModels": ["contracts/source-models/nexusfactory-coral.json"],
+  "serviceSurface": ["describe", "generate", "randomize", "reroll", "validate", "export"],
+  "paths": {
+    "factoryModule": "src/factory.mjs",
+    "interactiveEntry": "index.html",
+    "previewModule": "src/preview.mjs",
+    "headlessEntry": "scripts/headless-run.mjs",
+    "inputAutomation": "tests/factory.test.mjs",
+    "technicalValidator": "scripts/validate.mjs",
+    "artifactExporter": "src/factory.mjs",
+    "runReport": "evidence/run-report.json"
+  },
+  "seedPolicy": {
+    "algorithm": "FNV-1a plus mulberry32",
+    "streams": ["coral-placement", "rock-placement", "fish-placement", "star-placement"]
+  },
+  "generationStages": ["asset-geometry", "world-layout", "glb-export"],
+  "parameters": ["coralCount", "fishCount", "rockClusterCount", "worldRadius", "waterClarity"],
+  "exports": ["glb", "json"],
+  "validationClaims": ["deterministic-layout", "finite-geometry", "loadable-glb", "bounded-payload"]
+}

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0",
+  "factoryId": "crimson-harbor-world-3d",
+  "goal": "Produce a deterministic, lightweight top-down harbor world and reusable GLB assets for the Crimson Wheeler portfolio.",
+  "factoryType": "composed",
+  "status": "pass",
+  "factoryContract": { "path": "contracts/factory-contract.json", "status": "ready" },
+  "grounding": {
+    "required": true,
+    "models": [
+      { "path": "contracts/source-models/nexusfactory-coral.json", "status": "ready" }
+    ]
+  },
+  "harness": {
+    "status": "pass",
+    "serviceSurface": ["describe", "generate", "randomize", "reroll", "validate", "export"]
+  },
+  "scenarios": { "rerun": "pass", "blocked": "pass", "typeSpecific": "pass" },
+  "review": { "verdict": "pass", "evidence": "evidence/headless-harbor.png" },
+  "specialistVerdicts": {
+    "meshIntegrity": "pass",
+    "determinism": "pass",
+    "sourceGrounding": "pass",
+    "payloadBudget": "pass"
+  },
+  "corrections": [
+    "Rejected the source Factory fish export because its texture payload exceeded this Website's target budget; generated a deterministic low-poly fish locally instead."
+  ],
+  "package": { "status": "validated", "cleanRoom": "pass", "manifest": "kit.manifest.json" },
+  "syntheticIsSoleValidationTruth": false,
+  "limitations": [
+    "Browser-only water shader execution remains a post-deploy validation surface because this task environment cannot launch Chromium."
+  ],
+  "evidence": [
+    "evidence/run-report.json",
+    "evidence/technical-validation.json",
+    "evidence/headless-validation.json",
+    "evidence/headless-harbor.png",
+    "reports/clean-room.json"
+  ]
+}

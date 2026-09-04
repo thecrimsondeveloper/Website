@@ -1,0 +1,138 @@
+{
+  "schemaVersion": "1.0",
+  "factoryId": "crimson-harbor-world-3d",
+  "goal": "Generate one deterministic, lightweight 3D harbor package containing a boat, reef fish, rocks, collectible stars, coral placement, and a browser-ready world manifest.",
+  "target": "Static GLB assets and world JSON consumed by the Crimson Wheeler Three.js portfolio renderer.",
+  "factoryType": "composed",
+  "selectionReason": "The outcome composes licensed coral artifacts from NexusFactory-Kits with deterministic mathematical generators for the remaining harbor assets and layout.",
+  "rejectedTypes": [
+    {
+      "type": "learned",
+      "reason": "No trained model is required for the stylized low-poly target."
+    },
+    {
+      "type": "dataset-reconstruction",
+      "reason": "The harbor is an authored portfolio environment rather than a reconstruction of a measured reef."
+    }
+  ],
+  "sources": [
+    {
+      "id": "nexusfactory-coral-3d-627c4ae",
+      "role": "generation",
+      "provenance": "LuminaryLabs-Dev/NexusFactory-Kits commit 627c4aeb864f438c3b1a24a00b152a17d24e8cf9",
+      "license": "MIT",
+      "synthetic": false
+    },
+    {
+      "id": "crimson-harbor-art-direction",
+      "role": "validation",
+      "provenance": "User-approved top-down quiet harbor concept in the Website implementation request",
+      "license": "Project-owned direction",
+      "synthetic": false
+    }
+  ],
+  "inputs": [
+    "Explicit root seed",
+    "Bounded harbor density parameters",
+    "Versioned coral GLB source inventory"
+  ],
+  "parameters": [
+    {
+      "name": "coralCount",
+      "type": "number",
+      "range": [8, 18],
+      "source": "Portfolio performance budget"
+    },
+    {
+      "name": "fishCount",
+      "type": "number",
+      "range": [4, 12],
+      "source": "Portfolio performance budget"
+    },
+    {
+      "name": "rockClusterCount",
+      "type": "number",
+      "range": [2, 5],
+      "source": "Composition requirement"
+    },
+    {
+      "name": "worldRadius",
+      "type": "number",
+      "range": [8, 14],
+      "source": "Camera and harbor framing contract"
+    },
+    {
+      "name": "waterClarity",
+      "type": "number",
+      "range": [0.55, 0.92],
+      "source": "Underwater readability requirement"
+    }
+  ],
+  "seedPolicy": {
+    "required": true,
+    "algorithm": "FNV-1a seed encoding with mulberry32 streams",
+    "streams": ["coral-placement", "rock-placement", "fish-placement", "star-placement"]
+  },
+  "stages": [
+    {
+      "id": "asset-geometry",
+      "input": "Normalized parameters",
+      "output": "Boat, fish, rock, and star Three.js object groups",
+      "validation": "Finite indexed geometry, triangle counts, and bounds"
+    },
+    {
+      "id": "world-layout",
+      "input": "Seeded named streams",
+      "output": "Deterministic placement manifest",
+      "validation": "Counts, finite transforms, depth bands, and center clearance"
+    },
+    {
+      "id": "glb-export",
+      "input": "Validated asset groups",
+      "output": "Binary GLB assets and world JSON",
+      "validation": "Non-empty files, GLB headers, checksums, and loader smoke test"
+    }
+  ],
+  "serviceSurface": ["describe", "generate", "randomize", "reroll", "validate", "export"],
+  "validation": {
+    "authorities": [
+      "Three.js GLTFLoader smoke test",
+      "Independent mesh and bounds validator",
+      "Headless Three.js framebuffer render",
+      "Browser WebGL interaction validation",
+      "Responsive visual review"
+    ],
+    "claims": [
+      "Fixed inputs reproduce the semantic signature",
+      "Every generated GLB is non-empty and loadable",
+      "Runtime assets stay within the declared transfer budget",
+      "The top-down harbor remains readable across supported viewports"
+    ],
+    "syntheticIsSoleTruth": false
+  },
+  "humanReview": {
+    "required": true,
+    "criteria": ["Boat remains visible below the name", "Coral reads beneath the water", "Motion remains quiet", "Mobile composition stays usable"],
+    "authority": "User-approved concept plus current-run web visual review"
+  },
+  "delivery": {
+    "format": "Versioned Factory Kit plus committed GLB, JSON, image, and video outputs",
+    "consumer": "thecrimsondeveloper/Website shader-renderer custom element"
+  },
+  "outputs": [
+    "boat.glb",
+    "fish.glb",
+    "rocks.glb",
+    "star.glb",
+    "world.json",
+    "harbor.manifest.json"
+  ],
+  "constraints": [
+    "Initial 3D asset payload remains below 5 MB",
+    "No runtime dependency on NexusFactory-Kits or NexusFactory-Studio",
+    "Generated site remains a static Next.js export",
+    "The existing shader-renderer public API remains compatible"
+  ],
+  "unknowns": [],
+  "status": "ready"
+}

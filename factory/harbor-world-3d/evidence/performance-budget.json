@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "status": "pass",
+  "budgets": {
+    "modelBytes": { "maximum": 5242880, "actual": 678032, "pass": true },
+    "threeDynamicChunkGzipBytes": { "target": 180000, "observedMaximum": 148799, "pass": true }
+  },
+  "runtimeControls": [
+    "Three.js is loaded in a route-level dynamic chunk.",
+    "Coral, fish, and rock duplicates use InstancedMesh.",
+    "The underwater pass renders at half resolution, or 30 percent in low quality.",
+    "Device pixel ratio is capped by the selected quality tier.",
+    "The renderer pauses outside the viewport or while the document is hidden.",
+    "Reduced-motion users receive the static image fallback.",
+    "Context loss switches to the video or image fallback."
+  ]
+}

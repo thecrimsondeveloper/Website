@@ -1,6 +1,6 @@
 import { loadScene } from "./scene-loader.js";
 import { MediaFallback } from "./media-fallback.js";
-import { WebGLBackend } from "./webgl-backend.js";
+import { ThreeBackend } from "./three-backend.js";
 
 const template = document.createElement("template");
 template.innerHTML = `
@@ -34,13 +34,14 @@ class ShaderRenderer extends HTMLElement {
     this.attachShadow({ mode: "open" }).append(template.content.cloneNode(true));
     this.canvas = this.shadowRoot.querySelector("canvas");
     this.video = this.shadowRoot.querySelector("video");
-    this.fallback = new MediaFallback(this, this.video);
+    this.fallback = new MediaFallback(this.video);
     this.backend = null;
     this.resizeObserver = null;
     this.visibilityObserver = null;
     this.disposed = false;
     this.handlePointer = this.handlePointer.bind(this);
     this.handleKey = this.handleKey.bind(this);
+    this.handleContextLost = this.handleContextLost.bind(this);
     this.handleVisibility = this.handleVisibility.bind(this);
   }
 
@@ -48,6 +49,7 @@ class ShaderRenderer extends HTMLElement {
     this.disposed = false;
     this.dataset.mode = "image";
     this.canvas.addEventListener("pointerdown", this.handlePointer);
+    this.canvas.addEventListener("webglcontextlost", this.handleContextLost);
     this.addEventListener("keydown", this.handleKey);
     this.resizeObserver = new ResizeObserver(() => this.resize());
     this.resizeObserver.observe(this);
@@ -71,16 +73,22 @@ class ShaderRenderer extends HTMLElement {
     try {
       const scene = await loadScene(this.getAttribute("scene"));
       if (this.disposed) return;
-      this.backend = new WebGLBackend(this.canvas, scene, {
+      this.backend = new ThreeBackend(this.canvas, scene, {
         quiet: this.hasAttribute("quiet"),
         onStarCaught: (detail) => this.dispatchEvent(new CustomEvent("star-caught", { detail })),
       });
+      await this.backend.initialize();
+      if (this.disposed) return;
       this.resize();
       this.backend.start();
       this.fallback.showWebGL();
+      this.dataset.engine = "three";
       this.setMode("webgl");
-      this.dispatchEvent(new CustomEvent("renderer-ready", { detail: { mode: "webgl" } }));
+      this.dispatchEvent(new CustomEvent("renderer-ready", { detail: { mode: "webgl", ...this.backend.diagnostics() } }));
     } catch (error) {
+      this.backend?.dispose();
+      this.backend = null;
+      delete this.dataset.engine;
       const videoReady = await this.fallback.showVideo(this.getAttribute("fallback-video"));
       this.setMode(videoReady ? "video" : "image");
       this.dispatchEvent(new CustomEvent("renderer-error", { detail: { message: error.message } }));
@@ -102,6 +110,10 @@ class ShaderRenderer extends HTMLElement {
     this.backend?.castAt(Math.min(1, Math.max(0, x)), Math.min(1, Math.max(0, y)));
   }
 
+  castAtStar() {
+    this.backend?.castAtStar();
+  }
+
   setQuality(quality) {
     this.setAttribute("quality", quality);
     this.resize();
@@ -121,7 +133,18 @@ class ShaderRenderer extends HTMLElement {
   handleKey(event) {
     if (!this.hasAttribute("interactive") || !["Enter", " "].includes(event.key)) return;
     event.preventDefault();
-    this.castAt(0.66, 0.80);
+    this.castAtStar();
+  }
+
+  async handleContextLost(event) {
+    event.preventDefault();
+    if (this.disposed) return;
+    this.backend?.dispose();
+    this.backend = null;
+    delete this.dataset.engine;
+    const videoReady = await this.fallback.showVideo(this.getAttribute("fallback-video"));
+    this.setMode(videoReady ? "video" : "image");
+    this.dispatchEvent(new CustomEvent("renderer-error", { detail: { message: "The WebGL context was lost." } }));
   }
 
   handleVisibility(entries) {
@@ -141,6 +164,7 @@ class ShaderRenderer extends HTMLElement {
     this.resizeObserver?.disconnect();
     this.visibilityObserver?.disconnect();
     this.canvas.removeEventListener("pointerdown", this.handlePointer);
+    this.canvas.removeEventListener("webglcontextlost", this.handleContextLost);
     this.removeEventListener("keydown", this.handleKey);
     this.backend?.dispose();
     this.backend = null;

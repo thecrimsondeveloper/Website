@@ -1,0 +1,11 @@
+{
+  "serviceSurface": [
+    "describe",
+    "generate",
+    "randomize",
+    "reroll",
+    "validate",
+    "export"
+  ],
+  "pass": true
+}

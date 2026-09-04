@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "renderer": "@headless-three/renderer",
+  "adapter": "task-local Mesa Lavapipe",
+  "dimensions": [
+    960,
+    640
+  ],
+  "bytes": 63675,
+  "firstHash": "364bfb5d01a7575af6b23b13bec6ca4f9ff677de559f20c2e7f6dd6679630025",
+  "secondHash": "364bfb5d01a7575af6b23b13bec6ca4f9ff677de559f20c2e7f6dd6679630025",
+  "deterministic": true,
+  "coverage": "Three.js scene geometry, GLB loading, camera, lighting, depth, transparent water material, and deterministic framebuffer. Exact browser-only GLSL execution remains a separate validation surface.",
+  "image": "factory/harbor-world-3d/evidence/headless-harbor.png"
+}

@@ -1,0 +1,99 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "id": "factory-validation",
+      "pass": true
+    },
+    {
+      "id": "semantic-signature",
+      "pass": true
+    },
+    {
+      "id": "coral-count",
+      "pass": true
+    },
+    {
+      "id": "fish-count",
+      "pass": true
+    },
+    {
+      "id": "glb-load",
+      "pass": true
+    },
+    {
+      "id": "payload-budget",
+      "pass": true
+    }
+  ],
+  "loadResults": [
+    {
+      "file": "public/assets/harbor/models/boat.glb",
+      "header": "glTF",
+      "hashMatches": true,
+      "meshes": 8,
+      "pass": true
+    },
+    {
+      "file": "public/assets/harbor/models/coral-brain.glb",
+      "header": "glTF",
+      "hashMatches": true,
+      "meshes": 85,
+      "pass": true
+    },
+    {
+      "file": "public/assets/harbor/models/coral-lettuce.glb",
+      "header": "glTF",
+      "hashMatches": true,
+      "meshes": 6,
+      "pass": true
+    },
+    {
+      "file": "public/assets/harbor/models/coral-sea-fan.glb",
+      "header": "glTF",
+      "hashMatches": true,
+      "meshes": 41,
+      "pass": true
+    },
+    {
+      "file": "public/assets/harbor/models/coral-staghorn.glb",
+      "header": "glTF",
+      "hashMatches": true,
+      "meshes": 42,
+      "pass": true
+    },
+    {
+      "file": "public/assets/harbor/models/coral-table.glb",
+      "header": "glTF",
+      "hashMatches": true,
+      "meshes": 20,
+      "pass": true
+    },
+    {
+      "file": "public/assets/harbor/models/fish.glb",
+      "header": "glTF",
+      "hashMatches": true,
+      "meshes": 5,
+      "pass": true
+    },
+    {
+      "file": "public/assets/harbor/models/rocks.glb",
+      "header": "glTF",
+      "hashMatches": true,
+      "meshes": 4,
+      "pass": true
+    },
+    {
+      "file": "public/assets/harbor/models/star.glb",
+      "header": "glTF",
+      "hashMatches": true,
+      "meshes": 1,
+      "pass": true
+    }
+  ],
+  "manifestBudget": {
+    "maximumModelBytes": 5242880,
+    "actualModelBytes": 678032,
+    "pass": true
+  }
+}

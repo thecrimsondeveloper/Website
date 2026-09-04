@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0",
+  "status": "pass",
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "architecture": "x64"
+  },
+  "isolation": "Fresh task-local directory with dependencies installed from package-lock.json",
+  "commands": [
+    {
+      "command": "npm ci --ignore-scripts --no-audit --no-fund",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "added 3 packages in 2s",
+      "stderrTail": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm."
+    },
+    {
+      "command": "npm test",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "> @crimson/harbor-world-3d-factory@1.0.0 test\n> node --test tests/factory.test.mjs\n\n✔ fixed inputs reproduce the same semantic signature (6.375584ms)\n✔ randomize stays inside contract ranges (1.796666ms)\n✔ reroll changes the seed and preserves normalized parameters (0.446326ms)\n✔ invalid parameters and blocked sources stop generation (0.984243ms)\n✔ validator rejects a changed artifact (45.840024ms)\n✔ GLB export is reproducible (74.984441ms)\nℹ tests 6\nℹ suites 0\nℹ pass 6\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 595.5171",
+      "stderrTail": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm."
+    },
+    {
+      "command": "npm run generate",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "ee6091a\",\n      \"mediaType\": \"model/gltf-binary\",\n      \"source\": \"NexusFactory-Kits\"\n    },\n    {\n      \"file\": \"exports/assets/harbor/models/coral-table.glb\",\n      \"bytes\": 59804,\n      \"sha256\": \"c2b2b515843eb2110d70c37ba3e1ba945f8090ed08f80a024d81403f4e78fb1e\",\n      \"mediaType\": \"model/gltf-binary\",\n      \"source\": \"NexusFactory-Kits\"\n    },\n    {\n      \"file\": \"exports/assets/harbor/models/fish.glb\",\n      \"bytes\": 17156,\n      \"sha256\": \"50022b63c697f3dc1167b268594320fe25eac57bc79ba3172fed72bc1aaaf25b\",\n      \"mediaType\": \"model/gltf-binary\"\n    },\n    {\n      \"file\": \"exports/assets/harbor/models/rocks.glb\",\n      \"bytes\": 18880,\n      \"sha256\": \"2ddf62e97c76d1062542aa9f618ac5beef1bb76f559a9c67b9e86c665c6ba9ca\",\n      \"mediaType\": \"model/gltf-binary\"\n    },\n    {\n      \"file\": \"exports/assets/harbor/models/star.glb\",\n      \"bytes\": 12636,\n      \"sha256\": \"af824c59cfc56571c66acce9e556c0e2937baf12bdbd497eae21767b863e9e03\",\n      \"mediaType\": \"model/gltf-binary\"\n    },\n    {\n      \"file\": \"exports/assets/harbor/world.json\",\n      \"bytes\": 8985,\n      \"sha256\": \"0f37f774f3425171fc5c1ae35385f440cbf8bb2f17d1c87a278391c37bf8fa3f\",\n      \"mediaType\": \"application/json\"\n    }\n  ]\n}",
+      "stderrTail": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm."
+    },
+    {
+      "command": "npm run validate",
+      "status": "pass",
+      "exitCode": 0,
+      "stdoutTail": "ral-lettuce.glb\",\n      \"header\": \"glTF\",\n      \"hashMatches\": true,\n      \"meshes\": 6,\n      \"pass\": true\n    },\n    {\n      \"file\": \"exports/assets/harbor/models/coral-sea-fan.glb\",\n      \"header\": \"glTF\",\n      \"hashMatches\": true,\n      \"meshes\": 41,\n      \"pass\": true\n    },\n    {\n      \"file\": \"exports/assets/harbor/models/coral-staghorn.glb\",\n      \"header\": \"glTF\",\n      \"hashMatches\": true,\n      \"meshes\": 42,\n      \"pass\": true\n    },\n    {\n      \"file\": \"exports/assets/harbor/models/coral-table.glb\",\n      \"header\": \"glTF\",\n      \"hashMatches\": true,\n      \"meshes\": 20,\n      \"pass\": true\n    },\n    {\n      \"file\": \"exports/assets/harbor/models/fish.glb\",\n      \"header\": \"glTF\",\n      \"hashMatches\": true,\n      \"meshes\": 5,\n      \"pass\": true\n    },\n    {\n      \"file\": \"exports/assets/harbor/models/rocks.glb\",\n      \"header\": \"glTF\",\n      \"hashMatches\": true,\n      \"meshes\": 4,\n      \"pass\": true\n    },\n    {\n      \"file\": \"exports/assets/harbor/models/star.glb\",\n      \"header\": \"glTF\",\n      \"hashMatches\": true,\n      \"meshes\": 1,\n      \"pass\": true\n    }\n  ],\n  \"manifestBudget\": {\n    \"maximumModelBytes\": 5242880,\n    \"actualModelBytes\": 678032,\n    \"pass\": true\n  }\n}",
+      "stderrTail": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm."
+    }
+  ],
+  "gpuValidation": "Not repeated in clean room; native framebuffer evidence is stored under evidence/."
+}

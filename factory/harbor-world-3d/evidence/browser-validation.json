@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "status": "blocked",
+  "target": "exact local static export",
+  "completedChecks": [
+    "Next.js static build",
+    "route generation",
+    "Three.js module compilation",
+    "GLB URL and checksum validation",
+    "native Three.js framebuffer capture"
+  ],
+  "blockedChecks": [
+    "browser WebGL shader execution",
+    "pointer raycast interaction",
+    "responsive browser screenshots"
+  ],
+  "blocker": "The task environment denies Unix-domain socket creation, which prevents Chromium from starting. This is a validation-environment limitation, not an observed Website error.",
+  "requiredFollowUp": "Run the browser validation checklist against the deployed GitHub Pages URL after the Pages runner is available."
+}

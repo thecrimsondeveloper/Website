@@ -30,7 +30,8 @@ export function HarborExperience({ className = "", interactive = false, quiet = 
       <shader-renderer
         ref={rendererRef}
         scene={`${basePath}/assets/harbor/world.json`}
-        fallback-image={`${basePath}/assets/harbor/harbor-poster.svg`}
+        fallback-video={`${basePath}/assets/harbor/harbor-loop.webm`}
+        fallback-image={`${basePath}/assets/harbor/harbor-poster.webp`}
         quality="auto"
         interactive={interactive ? "" : undefined}
         quiet={quiet ? "" : undefined}
@@ -42,7 +43,7 @@ export function HarborExperience({ className = "", interactive = false, quiet = 
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           slot="fallback"
-          src={`${basePath}/assets/harbor/harbor-poster.svg`}
+          src={`${basePath}/assets/harbor/harbor-poster.webp`}
           alt="A small boat floating above a coral harbor"
         />
       </shader-renderer>

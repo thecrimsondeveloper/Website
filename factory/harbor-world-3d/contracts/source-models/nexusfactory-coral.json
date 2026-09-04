@@ -1,0 +1,106 @@
+{
+  "schemaVersion": "1.0",
+  "modelId": "nexusfactory-coral-3d-627c4ae",
+  "factoryId": "crimson-harbor-world-3d",
+  "goal": "Provide licensed, deterministic coral geometry for the Crimson Wheeler harbor.",
+  "sourceType": "experiment",
+  "sources": [
+    {
+      "id": "nexusfactory-coral-repository",
+      "origin": "https://github.com/LuminaryLabs-Dev/NexusFactory-Kits",
+      "version": "commit 627c4aeb864f438c3b1a24a00b152a17d24e8cf9",
+      "checksum": "c75de65d5552346c940ff2b2d9034c0086e4373110eab076688aab24e978c8b2",
+      "license": "MIT; license checksum 3d95bc172fb1aa6fb70de75f238657dcdceb5d54c087d383d0e7bb43ec18c5d2",
+      "role": "generation",
+      "synthetic": false
+    }
+  ],
+  "schema": [
+    {
+      "field": "position",
+      "type": "number[3]",
+      "unit": "generator scene unit",
+      "meaning": "Vertex position in a Y-up coordinate system"
+    },
+    {
+      "field": "indices",
+      "type": "integer[]",
+      "unit": "index",
+      "meaning": "Triangle index buffer"
+    },
+    {
+      "field": "bounds",
+      "type": "number[3]",
+      "unit": "generator scene unit",
+      "meaning": "Exported model dimensions"
+    }
+  ],
+  "transformations": [
+    {
+      "id": "select-reviewed-coral",
+      "inputs": ["Ten reviewed coral GLBs"],
+      "operation": "Select five visually distinct, low-byte-size models and preserve their bytes unchanged",
+      "outputs": ["Five renamed coral GLBs"],
+      "loss": "Five unselected catalog variants are omitted from the Website payload"
+    },
+    {
+      "id": "runtime-placement",
+      "inputs": ["Selected GLBs", "world placement transforms"],
+      "operation": "Clone, scale, rotate, and place source geometry at runtime without modifying source mesh bytes",
+      "outputs": ["Harbor coral instances"],
+      "loss": "none"
+    }
+  ],
+  "observations": [
+    {
+      "claim": "The selected five GLBs total approximately 572 KiB and each has a recorded deterministic source seed and export checksum.",
+      "sourceIds": ["nexusfactory-coral-repository"]
+    },
+    {
+      "claim": "The repository records all selected models as reviewed procedural coral candidates.",
+      "sourceIds": ["nexusfactory-coral-repository"]
+    }
+  ],
+  "derivedRules": [
+    {
+      "rule": "Use clones of a small shared model set instead of loading a unique model per coral placement.",
+      "basis": ["The selected GLBs are reusable model-level artifacts."],
+      "confidence": "high"
+    },
+    {
+      "rule": "Scale source models to approximately 0.45–1.1 portfolio world units at placement time.",
+      "basis": ["Source bounds are approximately 3.0–3.25 generator units high while the harbor depth is 2.5 world units."],
+      "confidence": "high"
+    }
+  ],
+  "ranges": [
+    {
+      "field": "sourceHeight",
+      "minimum": 1.1266,
+      "maximum": 3.2,
+      "unit": "generator scene unit",
+      "basis": "Selected source export records"
+    }
+  ],
+  "assumptions": [
+    "The source generator unit is treated as a relative art unit rather than a physical meter."
+  ],
+  "uncertainties": [],
+  "exclusions": [
+    {
+      "recordOrClass": "Procedural Reef Fish preview artifact",
+      "reason": "The generated GLB was 3,754,080 bytes and would consume most of the complete harbor payload budget."
+    }
+  ],
+  "validationReferences": [
+    {
+      "id": "current-run-three-gltf-load-and-render",
+      "independentFromGeneration": true
+    }
+  ],
+  "reproduction": {
+    "command": "git clone https://github.com/LuminaryLabs-Dev/NexusFactory-Kits.git && git checkout 627c4aeb864f438c3b1a24a00b152a17d24e8cf9",
+    "transformationVersion": "selection-v1"
+  },
+  "status": "ready"
+}

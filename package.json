@@ -7,14 +7,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "harbor:generate": "node factory/harbor-world-3d/scripts/generate-assets.mjs",
+    "harbor:test": "node --test factory/harbor-world-3d/tests/factory.test.mjs",
+    "harbor:validate": "node factory/harbor-world-3d/scripts/validate.mjs",
+    "harbor:headless": "node factory/harbor-world-3d/scripts/headless-run.mjs",
+    "harbor:package": "node factory/harbor-world-3d/scripts/package-kit.mjs"
   },
   "dependencies": {
     "next": "16.3.4",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "three": "0.180.0"
   },
   "devDependencies": {
+    "@headless-three/renderer": "0.4.0",
     "eslint": "9.39.5",
     "eslint-config-next": "16.3.4"
   }

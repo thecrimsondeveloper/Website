@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0",
+  "sources": [
+    {
+      "sourceId": "nexusfactory-coral",
+      "repository": "https://github.com/LuminaryLabs-Dev/NexusFactory-Kits",
+      "commit": "627c4aeb864f438c3b1a24a00b152a17d24e8cf9",
+      "license": "MIT",
+      "licenseFile": "licenses/NexusFactory-Kits-MIT.txt",
+      "use": "Five unchanged coral GLBs selected from the Coral Factory Kit.",
+      "files": [
+        "coral-staghorn.glb",
+        "coral-brain.glb",
+        "coral-lettuce.glb",
+        "coral-sea-fan.glb",
+        "coral-table.glb"
+      ]
+    },
+    {
+      "sourceId": "crimson-harbor-art-direction",
+      "repository": "https://github.com/thecrimsondeveloper/Website",
+      "license": "project-local",
+      "use": "Boat, fish, rocks, stars, layout, animation, and water treatment."
+    }
+  ]
+}

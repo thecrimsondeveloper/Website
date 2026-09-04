@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0",
+  "status": "pass",
+  "seed": "crimson-harbor-604",
+  "semanticSignature": "fnv1a:32cf4bf4",
+  "framebuffer": {
+    "firstSha256": "364bfb5d01a7575af6b23b13bec6ca4f9ff677de559f20c2e7f6dd6679630025",
+    "secondSha256": "364bfb5d01a7575af6b23b13bec6ca4f9ff677de559f20c2e7f6dd6679630025",
+    "identical": true
+  }
+}

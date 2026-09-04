@@ -1,0 +1,234 @@
+{
+  "schemaVersion": "1.0",
+  "files": [
+    {
+      "path": "contracts/factory-contract.json",
+      "bytes": 4679,
+      "sha256": "5dba94330512457d1c0df996cbc4ab5343b4bacd16571e30603768980d404679"
+    },
+    {
+      "path": "contracts/source-models/nexusfactory-coral.json",
+      "bytes": 3671,
+      "sha256": "cbd61bfdba814854b87e2f6dbb1f716a41b5dde582687f0ae202e6328f83b746"
+    },
+    {
+      "path": "development-record.json",
+      "bytes": 1623,
+      "sha256": "7126762f5be847f27020df2c6473bfb6488b81c36511433780f4fcf7de4368cb"
+    },
+    {
+      "path": "evidence/api-probe.json",
+      "bytes": 138,
+      "sha256": "3d20dfb78e65d688b552f4ec1db288876decaecfa982d837f9ec893323349650"
+    },
+    {
+      "path": "evidence/browser-validation.json",
+      "bytes": 750,
+      "sha256": "90211607888da3fd83399bf614ca0e4c078951175b2ab4d955b6f6a32c46561a"
+    },
+    {
+      "path": "evidence/determinism.json",
+      "bytes": 343,
+      "sha256": "80bf1ea98c70717a6b13403e683d82dee45b6511cb29028e366bf78582cf0b31"
+    },
+    {
+      "path": "evidence/headless-harbor.png",
+      "bytes": 63675,
+      "sha256": "364bfb5d01a7575af6b23b13bec6ca4f9ff677de559f20c2e7f6dd6679630025"
+    },
+    {
+      "path": "evidence/headless-validation.json",
+      "bytes": 635,
+      "sha256": "04ada979d2609c87dad28a045d9b57fda157fcd3ee75fc5d16bac27a1332b19d"
+    },
+    {
+      "path": "evidence/performance-budget.json",
+      "bytes": 739,
+      "sha256": "e013c327ae2574434df01d75cdcb6e1a7723b3ce1a179a4e90ff5a2f4ee7690f"
+    },
+    {
+      "path": "evidence/run-report.json",
+      "bytes": 7151,
+      "sha256": "505b765656bab4208e59a23af15b8c8dece158018f4dca031aa8e048f57a5ded"
+    },
+    {
+      "path": "evidence/technical-validation.json",
+      "bytes": 1992,
+      "sha256": "65220d951497ed91c1095f91c50ff38b8561808c62293aca93ceb5f18a3e2542"
+    },
+    {
+      "path": "evidence/visual-review.json",
+      "bytes": 790,
+      "sha256": "a657d7329281d935beb500ee7fc838310d94c49ba1ad0a748dc868a8467d5ff4"
+    },
+    {
+      "path": "examples/expected-result.json",
+      "bytes": 265,
+      "sha256": "3b3602cb2d6ab11bd3c4bf39916343e788b807b731f20c55d626b933ad01aee2"
+    },
+    {
+      "path": "examples/minimal-input.json",
+      "bytes": 170,
+      "sha256": "ca8deb0b99e9aff63aa33b8b23b03450e58a767b44efad21e0321d07e6fd1107"
+    },
+    {
+      "path": "exports/assets/harbor/harbor-loop.webm",
+      "bytes": 38107,
+      "sha256": "89c1646d03f641996714bd93211abf31bc38c3eb3e6e56721a5cdb8cc13f2005"
+    },
+    {
+      "path": "exports/assets/harbor/harbor-poster.svg",
+      "bytes": 3472,
+      "sha256": "9b470b8eed4ad008d63552d8f5ea09883597ca6f3891b312271b17474050db59"
+    },
+    {
+      "path": "exports/assets/harbor/harbor-poster.webp",
+      "bytes": 17498,
+      "sha256": "dcc708bf650899e9a4718687f2ca91bb1d43f5bde093dcb7a4d100444007e360"
+    },
+    {
+      "path": "exports/assets/harbor/harbor.manifest.json",
+      "bytes": 4112,
+      "sha256": "3504786c328b7062e5b5daaf8a4217d5bb1d4c827153930c294074285562cbab"
+    },
+    {
+      "path": "exports/assets/harbor/models/boat.glb",
+      "bytes": 53540,
+      "sha256": "3b4269334709bcc9eae9484cea16effabfd0abebfdb89bc48dff344a946e736e"
+    },
+    {
+      "path": "exports/assets/harbor/models/coral-brain.glb",
+      "bytes": 239000,
+      "sha256": "e1a3483d975ec566ce733ba06a93367898f117ab22ff827aade628f36ca00ab6"
+    },
+    {
+      "path": "exports/assets/harbor/models/coral-lettuce.glb",
+      "bytes": 52652,
+      "sha256": "673971a0e7f7e76f451d4a7e06a1ceb76fd17919c26778f49089f8620bcc3abc"
+    },
+    {
+      "path": "exports/assets/harbor/models/coral-sea-fan.glb",
+      "bytes": 102452,
+      "sha256": "a2c849ae2567047e6fa7aed42233015081c4e3d867da389d036083c3aff86ef7"
+    },
+    {
+      "path": "exports/assets/harbor/models/coral-staghorn.glb",
+      "bytes": 121912,
+      "sha256": "dcdd988f5c84abde4bce4c17d7fdba94c901ab6b4f1978b332e3d9aabee6091a"
+    },
+    {
+      "path": "exports/assets/harbor/models/coral-table.glb",
+      "bytes": 59804,
+      "sha256": "c2b2b515843eb2110d70c37ba3e1ba945f8090ed08f80a024d81403f4e78fb1e"
+    },
+    {
+      "path": "exports/assets/harbor/models/fish.glb",
+      "bytes": 17156,
+      "sha256": "50022b63c697f3dc1167b268594320fe25eac57bc79ba3172fed72bc1aaaf25b"
+    },
+    {
+      "path": "exports/assets/harbor/models/rocks.glb",
+      "bytes": 18880,
+      "sha256": "2ddf62e97c76d1062542aa9f618ac5beef1bb76f559a9c67b9e86c665c6ba9ca"
+    },
+    {
+      "path": "exports/assets/harbor/models/star.glb",
+      "bytes": 12636,
+      "sha256": "af824c59cfc56571c66acce9e556c0e2937baf12bdbd497eae21767b863e9e03"
+    },
+    {
+      "path": "exports/assets/harbor/world.json",
+      "bytes": 8985,
+      "sha256": "0f37f774f3425171fc5c1ae35385f440cbf8bb2f17d1c87a278391c37bf8fa3f"
+    },
+    {
+      "path": "factory.manifest.json",
+      "bytes": 1144,
+      "sha256": "ad01ab0d96e7e94070c5d238a66858f48d28477a60c4578c80054f682a831ee0"
+    },
+    {
+      "path": "index.html",
+      "bytes": 1057,
+      "sha256": "e60c8577dc5ed77a514265497f6a7856303411475b58abf4f6bbe7ce303c2817"
+    },
+    {
+      "path": "kit.manifest.json",
+      "bytes": 1928,
+      "sha256": "afe841bcf91bdbaddfcd57d3d7aac6c1cda5560208fcc5f4d2cd779e9eaac0c0"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 3924,
+      "sha256": "ad4c8fcf926f0523be516b071c89475e33a8cb3f26515ff34faa4c264d440bcc"
+    },
+    {
+      "path": "package.json",
+      "bytes": 414,
+      "sha256": "51250ea0c6f77e0a2c032fc70ecd21b7cd26caac6711963b1d42395d80793adb"
+    },
+    {
+      "path": "provenance/licenses/NexusFactory-Kits-MIT.txt",
+      "bytes": 1073,
+      "sha256": "3d95bc172fb1aa6fb70de75f238657dcdceb5d54c087d383d0e7bb43ec18c5d2"
+    },
+    {
+      "path": "provenance/sources.json",
+      "bytes": 814,
+      "sha256": "f257d05f34e48213f4574a1d3938313c99103d3e9e380222e649688efb37a691"
+    },
+    {
+      "path": "README.md",
+      "bytes": 845,
+      "sha256": "a7ecfcd9cfe22961cf5197642f06b3f2edad2e37ee620923ab31006d8fb28421"
+    },
+    {
+      "path": "reports/clean-room.json",
+      "bytes": 4640,
+      "sha256": "a169df5111420ba5541379b362f1aa6d2a8849c1b0c599d225d490fff6ff1f8d"
+    },
+    {
+      "path": "reports/package-validation.txt",
+      "bytes": 120,
+      "sha256": "0dc1a00f91e1b27f439b7a1b3d1fcdf7490d9f9b7c648cc1397191edc6cd6830"
+    },
+    {
+      "path": "scripts/generate-assets.mjs",
+      "bytes": 5793,
+      "sha256": "ddd38b39367b4177af2bee602cf68be4a757e03cccecb51cb66e2ae1cd640e4b"
+    },
+    {
+      "path": "scripts/headless-run.mjs",
+      "bytes": 5140,
+      "sha256": "eb24183ff2cf23f9018c887e29cf0d36c9f563f33312705a5fd8a60a2923dfd9"
+    },
+    {
+      "path": "scripts/package-kit.mjs",
+      "bytes": 3313,
+      "sha256": "62504463947213c322896ad1a944c71601a0d821e8d335fcc3814de35705845c"
+    },
+    {
+      "path": "scripts/validate.mjs",
+      "bytes": 2913,
+      "sha256": "c47b0554c7009f86e3297a09964e177bc677178860f9547aac36e657e3814b3e"
+    },
+    {
+      "path": "src/factory.mjs",
+      "bytes": 16787,
+      "sha256": "fcfbfb682f069aca27360d778678cbcbefff4862c99ebfd0356c47f2eb40741e"
+    },
+    {
+      "path": "src/preview.mjs",
+      "bytes": 2509,
+      "sha256": "7cd302c6f3625ec6b7b572879ec0db902d0f3321ee7922a5114ced5277ee0a3c"
+    },
+    {
+      "path": "tests/factory.test.mjs",
+      "bytes": 2116,
+      "sha256": "eb7362731d6326109193b709bf5a3289281c75fcaf029b66e82dc404490dc0d5"
+    }
+  ],
+  "excluded": [
+    "reports/inventory.json",
+    "reports/package-validation.json"
+  ]
+}

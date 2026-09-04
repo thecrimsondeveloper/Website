@@ -1,0 +1,16 @@
+{
+  "name": "@crimson/harbor-world-3d-factory",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/factory.test.mjs",
+    "generate": "node scripts/generate-assets.mjs",
+    "validate": "node scripts/validate.mjs",
+    "headless": "node scripts/headless-run.mjs"
+  },
+  "dependencies": {
+    "@headless-three/renderer": "0.4.0",
+    "three": "0.180.0"
+  }
+}

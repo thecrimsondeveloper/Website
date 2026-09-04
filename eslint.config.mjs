@@ -3,5 +3,5 @@ import nextVitals from "eslint-config-next/core-web-vitals";
 
 export default defineConfig([
   ...nextVitals,
-  globalIgnores([".next/**", "out/**"]),
+  globalIgnores([".next/**", "out/**", "factory/harbor-world-3d/evidence/**", "factory/harbor-world-3d/reports/**"]),
 ]);

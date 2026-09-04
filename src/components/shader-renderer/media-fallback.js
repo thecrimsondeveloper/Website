@@ -1,13 +1,11 @@
 export class MediaFallback {
-  constructor(host, video) {
-    this.host = host;
+  constructor(video) {
     this.video = video;
   }
 
   showImage() {
     this.video.pause();
     this.video.removeAttribute("src");
-    this.host.dataset.mode = "image";
   }
 
   async showVideo(source) {
@@ -23,7 +21,6 @@ export class MediaFallback {
 
     try {
       await this.video.play();
-      this.host.dataset.mode = "video";
       return true;
     } catch {
       this.showImage();
@@ -33,7 +30,6 @@ export class MediaFallback {
 
   showWebGL() {
     this.video.pause();
-    this.host.dataset.mode = "webgl";
   }
 
   dispose() {

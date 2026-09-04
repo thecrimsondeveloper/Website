@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0",
+  "kitId": "crimson-harbor-world-3d",
+  "version": "1.0.0",
+  "status": "validated",
+  "factoryType": "composed",
+  "serviceSurface": ["describe", "generate", "randomize", "reroll", "validate", "export"],
+  "paths": {
+    "factoryManifest": "factory.manifest.json",
+    "factoryModule": "src/factory.mjs",
+    "factoryContract": "contracts/factory-contract.json",
+    "runReport": "evidence/run-report.json",
+    "inventory": "reports/inventory.json",
+    "cleanRoomReport": "reports/clean-room.json"
+  },
+  "runtime": {
+    "node": ">=20",
+    "commands": {
+      "generate": "npm run generate",
+      "validate": "npm run validate",
+      "test": "npm test",
+      "headless": "npm run headless"
+    }
+  },
+  "validationAuthorities": [
+    "independent BufferGeometry structural checks",
+    "GLTFLoader round-trip checks",
+    "native @headless-three/renderer framebuffer capture"
+  ],
+  "expectedSignatures": {
+    "semantic": "fnv1a:32cf4bf4"
+  },
+  "provenance": [
+    {
+      "sourceId": "LuminaryLabs-Dev/NexusFactory-Kits coral GLBs",
+      "repository": "https://github.com/LuminaryLabs-Dev/NexusFactory-Kits",
+      "commit": "627c4aeb864f438c3b1a24a00b152a17d24e8cf9",
+      "redistributed": true,
+      "license": "MIT",
+      "checksum": "627c4aeb864f438c3b1a24a00b152a17d24e8cf9"
+    }
+  ],
+  "syntheticArtifacts": [
+    { "path": "exports/assets/harbor/models/boat.glb", "synthetic": true },
+    { "path": "exports/assets/harbor/models/fish.glb", "synthetic": true },
+    { "path": "exports/assets/harbor/models/rocks.glb", "synthetic": true },
+    { "path": "exports/assets/harbor/models/star.glb", "synthetic": true },
+    { "path": "exports/assets/harbor/world.json", "synthetic": true }
+  ],
+  "limitations": [
+    "The native headless proof validates the Three.js scene and transparent material; the Website's browser-only GLSL pass must also be checked after deployment."
+  ]
+}
