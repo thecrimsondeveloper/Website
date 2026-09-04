@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:pages": "node scripts/build-pages.mjs",
     "start": "next start",
     "lint": "eslint .",
     "harbor:generate": "node factory/harbor-world-3d/scripts/generate-assets.mjs",

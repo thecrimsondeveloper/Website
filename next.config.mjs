@@ -1,6 +1,4 @@
-const repositoryName = "Website";
-const isGitHubPages = process.env.GITHUB_ACTIONS === "true";
-const basePath = isGitHubPages ? `/${repositoryName}` : "";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

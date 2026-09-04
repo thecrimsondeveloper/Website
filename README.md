@@ -17,7 +17,17 @@ Open `http://localhost:3000`.
 npm run build
 ```
 
-The deployable static site is written to `out/`. Pushes to `main` are deployed to GitHub Pages by `.github/workflows/deploy.yml`.
+The deployable static site is written to `out/`.
+
+## GitHub Pages deployment
+
+This repository uses GitHub Pages' branch deployment and does not require a custom GitHub Actions workflow. Build the `/Website` version and prepare the committed `docs/` directory with:
+
+```bash
+npm run build:pages
+```
+
+Then commit both the source changes and generated `docs/` files to `main`. In GitHub, set **Settings → Pages** to deploy from the `main` branch and the `/docs` folder.
 
 ## Harbor Factory Kit
 

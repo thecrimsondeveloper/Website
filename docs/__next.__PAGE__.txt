@@ -1,0 +1,20 @@
+1:"$Sreact.fragment"
+2:I[27503,["/Website/_next/static/chunks/3fntmmi971322.js","/Website/_next/static/chunks/04y36_egxyt_3.js"],"HarborExperience"]
+3:I[22016,["/Website/_next/static/chunks/3fntmmi971322.js","/Website/_next/static/chunks/04y36_egxyt_3.js"],""]
+4:I[97367,["/Website/_next/static/chunks/3fntmmi971322.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+9:I[97367,["/Website/_next/static/chunks/3fntmmi971322.js"],"ViewportBoundary"]
+a:I[97367,["/Website/_next/static/chunks/3fntmmi971322.js"],"MetadataBoundary"]
+c:I[39756,["/Website/_next/static/chunks/3fntmmi971322.js"],"default"]
+d:I[37457,["/Website/_next/static/chunks/3fntmmi971322.js"],"default"]
+:HL["/Website/_next/static/chunks/3pfvdv-xjjngp.css","style"]
+8:X
+0:{"buildId":"ZceE0njuHG_AobsLvlfAX","data":[{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"landing","children":[["$","$L2",null,{"className":"landing-harbor","interactive":true}],["$","section",null,{"className":"landing-copy","aria-labelledby":"landing-title","children":[["$","p",null,{"className":"eyebrow","children":"A quiet harbor of systems and play"}],["$","h1",null,{"id":"landing-title","children":[["$","span",null,{"children":"Crimson"}],["$","span",null,{"children":"Wheeler"}]]}]]}],["$","div",null,{"className":"landing-footer","children":[["$","p",null,{"children":"Cast toward a star, or continue ashore."}],["$","$L3",null,{"className":"enter-link","href":"/home/","children":["Enter portfolio ",["$","span",null,{"aria-hidden":"true","children":"→"}]]}]]}]]}],[["$","script","script-0",{"src":"/Website/_next/static/chunks/04y36_egxyt_3.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":"$@7","staleTime":"$8","varyParams":null},{"rsc":["$","$1","h",{"children":[null,["$","$L9",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$La",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Crimson Wheeler"}],["$","meta","1",{"name":"description","content":"Systems, playable experiments, and human-centered tools by Crimson Wheeler."}]]}]}]}],null]}],"isPartial":"$@b","staleTime":"$8","varyParams":null},{"rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/Website/_next/static/chunks/3pfvdv-xjjngp.css","precedence":"next"}],["$","script","script-0",{"src":"/Website/_next/static/chunks/3fntmmi971322.js","async":true}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$Lc",null,{"parallelRouterKey":"children","template":["$","$Ld",null,{}],"notFound":[["$","main",null,{"className":"not-found","children":[["$","p",null,{"className":"eyebrow","children":"404 — Out beyond the harbor"}],["$","h1",null,{"children":"This page drifted away."}],["$","$L3",null,{"className":"primary-link","href":"/","children":"Return to shore"}]]}],[]]}]}]}]]}],"isPartial":"$@e","staleTime":"$8","varyParams":null}],"isUpgradeableISRFallback":false,"a":"$@f","rootVaryParams":null,"needsRuntimeRequest":"$@10"}
+6:null
+8:300
+10:true
+8:C
+f:0
+b:"$undefined"
+e:"$undefined"
+7:"$undefined"
