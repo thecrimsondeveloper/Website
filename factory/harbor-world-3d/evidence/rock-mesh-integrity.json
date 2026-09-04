@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "mesh-integrity/1",
+  "asset": "rocks.glb source geometry",
+  "algorithm": "seeded-displaced-uv-sphere",
+  "tolerance": 0.00001,
+  "requiredTriangleRange": [
+    500,
+    1000
+  ],
+  "rocks": [
+    {
+      "name": "Rock 1",
+      "vertices": 528,
+      "weldedVertices": 450,
+      "triangles": 896,
+      "degenerateTriangles": 0,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "windingErrors": 0,
+      "components": 1,
+      "invalidValues": 0,
+      "normalsValid": true,
+      "uvsValid": true,
+      "signature": "sha256:16cb3f65b5e947830eb8d2b155e3d376b866718195aa9070560675beb13b83ec"
+    },
+    {
+      "name": "Rock 2",
+      "vertices": 528,
+      "weldedVertices": 450,
+      "triangles": 896,
+      "degenerateTriangles": 0,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "windingErrors": 0,
+      "components": 1,
+      "invalidValues": 0,
+      "normalsValid": true,
+      "uvsValid": true,
+      "signature": "sha256:f268b30f7c6fa7854c32b1932f863c64431d5b813d56aa6ca4e22f8e1fb0df36"
+    },
+    {
+      "name": "Rock 3",
+      "vertices": 528,
+      "weldedVertices": 450,
+      "triangles": 896,
+      "degenerateTriangles": 0,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "windingErrors": 0,
+      "components": 1,
+      "invalidValues": 0,
+      "normalsValid": true,
+      "uvsValid": true,
+      "signature": "sha256:65088f39c0e480cc09f245e2826d6afdb4feff2989c614e848081c885df7f742"
+    },
+    {
+      "name": "Rock 4",
+      "vertices": 528,
+      "weldedVertices": 450,
+      "triangles": 896,
+      "degenerateTriangles": 0,
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "windingErrors": 0,
+      "components": 1,
+      "invalidValues": 0,
+      "normalsValid": true,
+      "uvsValid": true,
+      "signature": "sha256:2beddab5ccf8a1bb80f0cc7e33c3cc962238fec96a0d256ddec34f27cf15f1c9"
+    }
+  ],
+  "verdict": "pass"
+}

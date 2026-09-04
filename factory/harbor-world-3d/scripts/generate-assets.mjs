@@ -46,11 +46,19 @@ const exported = await exportFactory(result);
 const exportRecords = [];
 
 for (const file of exported.files) {
-  const target = file.fileName === "world.json" ? path.join(publicRoot, file.fileName) : path.join(modelRoot, file.fileName);
+  const target = file.mediaType === "model/gltf-binary"
+    ? path.join(modelRoot, file.fileName)
+    : path.join(publicRoot, file.fileName);
   const data = file.bytes ? Buffer.from(file.bytes) : Buffer.from(file.text, "utf8");
   fs.mkdirSync(path.dirname(target), { recursive: true });
   fs.writeFileSync(target, data);
-  exportRecords.push({ file: path.relative(artifactRoot, target), bytes: data.length, sha256: sha256(data), mediaType: file.mediaType });
+  exportRecords.push({
+    file: path.relative(artifactRoot, target),
+    bytes: data.length,
+    sha256: sha256(data),
+    mediaType: file.mediaType,
+    ...(file.width ? { width: file.width, height: file.height, colorSpace: file.colorSpace } : {}),
+  });
 }
 
 for (const fileName of coralFiles) {
@@ -60,6 +68,7 @@ for (const fileName of coralFiles) {
 }
 
 const totalModelBytes = exportRecords.filter((record) => record.mediaType === "model/gltf-binary").reduce((total, record) => total + record.bytes, 0);
+const totalTextureBytes = exportRecords.filter((record) => record.mediaType === "image/png").reduce((total, record) => total + record.bytes, 0);
 const harborManifest = {
   schema: "crimson-harbor/manifest/1",
   factory: { id: result.artifact.factoryId, version: result.artifact.version, semanticSignature: result.semanticSignature },
@@ -69,7 +78,13 @@ const harborManifest = {
     commit: "627c4aeb864f438c3b1a24a00b152a17d24e8cf9",
     license: "MIT",
   },
-  budget: { maximumModelBytes: 5242880, actualModelBytes: totalModelBytes, pass: totalModelBytes < 5242880 },
+  budget: {
+    maximumModelBytes: 5242880,
+    actualModelBytes: totalModelBytes,
+    maximumTextureBytes: 1048576,
+    actualTextureBytes: totalTextureBytes,
+    pass: totalModelBytes < 5242880 && totalTextureBytes < 1048576,
+  },
   exports: exportRecords.sort((a, b) => a.file.localeCompare(b.file)),
   validation: technicalValidation,
 };
@@ -113,4 +128,4 @@ writeJson(path.join(kitRoot, "examples/expected-result.json"), {
   },
 });
 
-process.stdout.write(`${JSON.stringify({ status: runReport.status, semanticSignature: result.semanticSignature, totalModelBytes, exports: harborManifest.exports }, null, 2)}\n`);
+process.stdout.write(`${JSON.stringify({ status: runReport.status, semanticSignature: result.semanticSignature, totalModelBytes, totalTextureBytes, exports: harborManifest.exports }, null, 2)}\n`);

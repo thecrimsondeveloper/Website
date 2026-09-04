@@ -12,6 +12,7 @@
     "harbor:generate": "node factory/harbor-world-3d/scripts/generate-assets.mjs",
     "harbor:test": "node --test factory/harbor-world-3d/tests/factory.test.mjs",
     "harbor:validate": "node factory/harbor-world-3d/scripts/validate.mjs",
+    "harbor:mesh": "node factory/harbor-world-3d/scripts/validate-rock-mesh.mjs",
     "harbor:headless": "node factory/harbor-world-3d/scripts/headless-run.mjs",
     "harbor:package": "node factory/harbor-world-3d/scripts/package-kit.mjs"
   },

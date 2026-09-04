@@ -22,6 +22,10 @@
       "pass": true
     },
     {
+      "id": "surface-textures",
+      "pass": true
+    },
+    {
       "id": "payload-budget",
       "pass": true
     }
@@ -84,6 +88,13 @@
       "pass": true
     },
     {
+      "file": "public/assets/harbor/models/sand.glb",
+      "header": "glTF",
+      "hashMatches": true,
+      "meshes": 1,
+      "pass": true
+    },
+    {
       "file": "public/assets/harbor/models/star.glb",
       "header": "glTF",
       "hashMatches": true,
@@ -91,9 +102,41 @@
       "pass": true
     }
   ],
+  "textureResults": [
+    {
+      "file": "public/assets/harbor/textures/rock-albedo.png",
+      "width": 256,
+      "height": 256,
+      "hashMatches": true,
+      "pass": true
+    },
+    {
+      "file": "public/assets/harbor/textures/rock-normal.png",
+      "width": 256,
+      "height": 256,
+      "hashMatches": true,
+      "pass": true
+    },
+    {
+      "file": "public/assets/harbor/textures/sand-albedo.png",
+      "width": 256,
+      "height": 256,
+      "hashMatches": true,
+      "pass": true
+    },
+    {
+      "file": "public/assets/harbor/textures/sand-normal.png",
+      "width": 256,
+      "height": 256,
+      "hashMatches": true,
+      "pass": true
+    }
+  ],
   "manifestBudget": {
     "maximumModelBytes": 5242880,
-    "actualModelBytes": 678032,
+    "actualModelBytes": 806080,
+    "maximumTextureBytes": 1048576,
+    "actualTextureBytes": 452149,
     "pass": true
   }
 }

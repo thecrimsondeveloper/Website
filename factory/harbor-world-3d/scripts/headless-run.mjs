@@ -4,7 +4,7 @@ import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 import * as THREE from "three";
 import { loadGltfFromFile, render } from "@headless-three/renderer";
-import { buildAssetGroups, generate } from "../src/factory.mjs";
+import { buildAssetGroups, buildSurfaceTextures, generate } from "../src/factory.mjs";
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const kitRoot = path.resolve(scriptDirectory, "..");
@@ -23,15 +23,42 @@ const sun = new THREE.DirectionalLight(0xffeed1, 3.2);
 sun.position.set(-6, 12, 8);
 scene.add(sun);
 
-const seabed = new THREE.Mesh(
-  new THREE.CircleGeometry(world.seabed.radius, 48),
-  new THREE.MeshStandardMaterial({ color: world.seabed.color, roughness: 0.96 }),
-);
-seabed.rotation.x = -Math.PI / 2;
-seabed.position.y = world.seabed.y;
-scene.add(seabed);
-
 const assets = buildAssetGroups();
+const textureData = new Map(buildSurfaceTextures().map((texture) => [texture.fileName, texture]));
+function dataTexture(fileName, repeat) {
+  const source = textureData.get(`textures/${fileName}`);
+  const texture = new THREE.DataTexture(source.rgba, source.width, source.height, THREE.RGBAFormat);
+  texture.wrapS = THREE.RepeatWrapping;
+  texture.wrapT = THREE.RepeatWrapping;
+  texture.repeat.set(...repeat);
+  if (source.colorSpace === "srgb") texture.colorSpace = THREE.SRGBColorSpace;
+  texture.needsUpdate = true;
+  return texture;
+}
+
+const rockAlbedo = dataTexture("rock-albedo.png", [2, 1.5]);
+const rockNormal = dataTexture("rock-normal.png", [2, 1.5]);
+const sandAlbedo = dataTexture("sand-albedo.png", [5, 5]);
+const sandNormal = dataTexture("sand-normal.png", [5, 5]);
+assets.rocks.traverse((object) => {
+  if (!object.isMesh) return;
+  object.material.map = rockAlbedo;
+  object.material.normalMap = rockNormal;
+  object.material.normalScale = new THREE.Vector2(0.62, 0.62);
+  object.material.needsUpdate = true;
+});
+assets.sand.traverse((object) => {
+  if (!object.isMesh) return;
+  object.material.map = sandAlbedo;
+  object.material.normalMap = sandNormal;
+  object.material.normalScale = new THREE.Vector2(0.34, 0.34);
+  object.material.needsUpdate = true;
+});
+
+assets.sand.position.y = world.seabed.y;
+assets.sand.scale.set(world.seabed.radius, 1, world.seabed.radius);
+scene.add(assets.sand);
+
 assets.boat.position.set(...world.boat.position);
 assets.boat.rotation.set(...world.boat.rotation);
 assets.boat.scale.setScalar(world.boat.scale);
@@ -106,7 +133,7 @@ const validation = {
   firstHash,
   secondHash,
   deterministic: firstHash === secondHash,
-  coverage: "Three.js scene geometry, GLB loading, camera, lighting, depth, transparent water material, and deterministic framebuffer. Exact browser-only GLSL execution remains a separate validation surface.",
+  coverage: "Three.js scene geometry, 256px rock and sand textures, normal mapping, GLB loading, camera, lighting, depth, transparent water material, and deterministic framebuffer. Exact browser-only GLSL execution remains a separate validation surface.",
   image: path.relative(repositoryRoot, imagePath),
 };
 fs.writeFileSync(path.join(kitRoot, "evidence/headless-validation.json"), `${JSON.stringify(validation, null, 2)}\n`);

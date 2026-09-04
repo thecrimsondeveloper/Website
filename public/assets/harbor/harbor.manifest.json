@@ -2,8 +2,8 @@
   "schema": "crimson-harbor/manifest/1",
   "factory": {
     "id": "crimson-harbor-world-3d",
-    "version": "1.0.0",
-    "semanticSignature": "fnv1a:32cf4bf4"
+    "version": "1.1.0",
+    "semanticSignature": "fnv1a:7a357e2e"
   },
   "generatedAt": "deterministic-build; timestamp retained only in run report",
   "source": {
@@ -13,7 +13,9 @@
   },
   "budget": {
     "maximumModelBytes": 5242880,
-    "actualModelBytes": 678032,
+    "actualModelBytes": 806080,
+    "maximumTextureBytes": 1048576,
+    "actualTextureBytes": 452149,
     "pass": true
   },
   "exports": [
@@ -66,8 +68,14 @@
     },
     {
       "file": "public/assets/harbor/models/rocks.glb",
-      "bytes": 18880,
-      "sha256": "2ddf62e97c76d1062542aa9f618ac5beef1bb76f559a9c67b9e86c665c6ba9ca",
+      "bytes": 95104,
+      "sha256": "4b05817e77e16f0b13d35d8a55bb0bd0999cb4d10ac7f2023f4a65f26b8ae800",
+      "mediaType": "model/gltf-binary"
+    },
+    {
+      "file": "public/assets/harbor/models/sand.glb",
+      "bytes": 51824,
+      "sha256": "3b2813a7e1991b9b0fe42dbcedbd062a1ad4c0eafa5729ebc9b3733528bb150c",
       "mediaType": "model/gltf-binary"
     },
     {
@@ -77,9 +85,45 @@
       "mediaType": "model/gltf-binary"
     },
     {
+      "file": "public/assets/harbor/textures/rock-albedo.png",
+      "bytes": 50981,
+      "sha256": "6c6126c8198b7224e6613955f5212c852fe79d3f6cee969b30aeecb010ec2914",
+      "mediaType": "image/png",
+      "width": 256,
+      "height": 256,
+      "colorSpace": "srgb"
+    },
+    {
+      "file": "public/assets/harbor/textures/rock-normal.png",
+      "bytes": 201383,
+      "sha256": "3f00f762b5df07eacda94bdda81349ee503ccee8c6754cacf569c823fdc21d5d",
+      "mediaType": "image/png",
+      "width": 256,
+      "height": 256,
+      "colorSpace": "linear"
+    },
+    {
+      "file": "public/assets/harbor/textures/sand-albedo.png",
+      "bytes": 56460,
+      "sha256": "e6af440750bd3a3fe1c012ba8bd197346fdf8b0bcf684e7de15fda778119c974",
+      "mediaType": "image/png",
+      "width": 256,
+      "height": 256,
+      "colorSpace": "srgb"
+    },
+    {
+      "file": "public/assets/harbor/textures/sand-normal.png",
+      "bytes": 143325,
+      "sha256": "9d0b08f59f260ad18110a4a3903a5fd30aa6384c56afee1b318bdf2ed9fc91e2",
+      "mediaType": "image/png",
+      "width": 256,
+      "height": 256,
+      "colorSpace": "linear"
+    },
+    {
       "file": "public/assets/harbor/world.json",
-      "bytes": 8985,
-      "sha256": "0f37f774f3425171fc5c1ae35385f440cbf8bb2f17d1c87a278391c37bf8fa3f",
+      "bytes": 9563,
+      "sha256": "d417099c610be06317e0af990d6676583021d2aa94e18729feb40571f047ffa0",
       "mediaType": "application/json"
     }
   ],
@@ -112,6 +156,22 @@
         "pass": true
       },
       {
+        "id": "rock-mesh-triangle-range",
+        "pass": true
+      },
+      {
+        "id": "rock-normal-and-uv-attributes",
+        "pass": true
+      },
+      {
+        "id": "sand-terrain",
+        "pass": true
+      },
+      {
+        "id": "surface-texture-dimensions",
+        "pass": true
+      },
+      {
         "id": "triangle-budget",
         "pass": true
       }
@@ -121,26 +181,97 @@
         "meshCount": 8,
         "vertexCount": 1364,
         "triangleCount": 504,
+        "meshTriangleCounts": [
+          380,
+          12,
+          12,
+          12,
+          12,
+          12,
+          32,
+          32
+        ],
+        "meshesWithNormals": 8,
+        "meshesWithUvs": 8,
         "invalidValueCount": 0
       },
       "fish": {
         "meshCount": 5,
         "vertexCount": 393,
         "triangleCount": 540,
+        "meshTriangleCounts": [
+          288,
+          6,
+          6,
+          120,
+          120
+        ],
+        "meshesWithNormals": 5,
+        "meshesWithUvs": 5,
         "invalidValueCount": 0
       },
       "rocks": {
         "meshCount": 4,
-        "vertexCount": 432,
-        "triangleCount": 144,
+        "vertexCount": 2112,
+        "triangleCount": 3584,
+        "meshTriangleCounts": [
+          896,
+          896,
+          896,
+          896
+        ],
+        "meshesWithNormals": 4,
+        "meshesWithUvs": 4,
+        "invalidValueCount": 0
+      },
+      "sand": {
+        "meshCount": 1,
+        "vertexCount": 1153,
+        "triangleCount": 2240,
+        "meshTriangleCounts": [
+          2240
+        ],
+        "meshesWithNormals": 1,
+        "meshesWithUvs": 1,
         "invalidValueCount": 0
       },
       "star": {
         "meshCount": 1,
         "vertexCount": 348,
         "triangleCount": 116,
+        "meshTriangleCounts": [
+          116
+        ],
+        "meshesWithNormals": 1,
+        "meshesWithUvs": 1,
         "invalidValueCount": 0
       }
-    }
+    },
+    "textureStats": [
+      {
+        "fileName": "textures/rock-albedo.png",
+        "width": 256,
+        "height": 256,
+        "pixels": 65536
+      },
+      {
+        "fileName": "textures/rock-normal.png",
+        "width": 256,
+        "height": 256,
+        "pixels": 65536
+      },
+      {
+        "fileName": "textures/sand-albedo.png",
+        "width": 256,
+        "height": 256,
+        "pixels": 65536
+      },
+      {
+        "fileName": "textures/sand-normal.png",
+        "width": 256,
+        "height": 256,
+        "pixels": 65536
+      }
+    ]
   }
 }

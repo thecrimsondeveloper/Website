@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { exportFactory, generate, randomize, reroll, validate } from "../src/factory.mjs";
+import { buildAssetGroups, buildSurfaceTextures, exportFactory, generate, randomize, reroll, validate } from "../src/factory.mjs";
 
 const request = {
   seed: "crimson-harbor-604",
@@ -35,6 +35,20 @@ test("validator rejects a changed artifact", () => {
   const result = generate(request);
   result.artifact.world.placements.fish.pop();
   assert.equal(validate(result).valid, false);
+});
+
+test("rocks and surface textures meet the fidelity contract", () => {
+  const rocks = buildAssetGroups().rocks.children.filter((object) => object.isMesh);
+  assert.equal(rocks.length, 4);
+  for (const rock of rocks) {
+    const triangles = rock.geometry.index.count / 3;
+    assert.ok(triangles >= 500 && triangles <= 1000);
+    assert.equal(rock.geometry.getAttribute("normal").count, rock.geometry.getAttribute("position").count);
+    assert.equal(rock.geometry.getAttribute("uv").count, rock.geometry.getAttribute("position").count);
+  }
+  const textures = buildSurfaceTextures();
+  assert.equal(textures.length, 4);
+  assert.ok(textures.every((texture) => texture.width === 256 && texture.height === 256));
 });
 
 test("GLB export is reproducible", async () => {

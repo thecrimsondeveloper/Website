@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "factoryId": "crimson-harbor-world-3d",
-  "goal": "Produce a deterministic, lightweight top-down harbor world and reusable GLB assets for the Crimson Wheeler portfolio.",
+  "goal": "Produce a deterministic, lightweight top-down harbor world with high-fidelity textured rocks and a small rippled sand terrain for the Crimson Wheeler portfolio.",
   "factoryType": "composed",
   "status": "pass",
   "factoryContract": { "path": "contracts/factory-contract.json", "status": "ready" },
@@ -24,7 +24,8 @@
     "payloadBudget": "pass"
   },
   "corrections": [
-    "Rejected the source Factory fish export because its texture payload exceeded this Website's target budget; generated a deterministic low-poly fish locally instead."
+    "Rejected the source Factory fish export because its texture payload exceeded this Website's target budget; generated a deterministic low-poly fish locally instead.",
+    "Replaced 12-triangle flat rocks with deterministic 896-triangle UV meshes, 256px albedo/normal textures, and a procedural sand terrain."
   ],
   "package": { "status": "validated", "cleanRoom": "pass", "manifest": "kit.manifest.json" },
   "syntheticIsSoleValidationTruth": false,
@@ -36,6 +37,7 @@
     "evidence/technical-validation.json",
     "evidence/headless-validation.json",
     "evidence/headless-harbor.png",
+    "evidence/rock-mesh-integrity.json",
     "reports/clean-room.json"
   ]
 }

@@ -3,8 +3,8 @@
   "files": [
     {
       "path": "contracts/factory-contract.json",
-      "bytes": 4679,
-      "sha256": "5dba94330512457d1c0df996cbc4ab5343b4bacd16571e30603768980d404679"
+      "bytes": 5069,
+      "sha256": "a775a0db00ec9b1099f916b650febe94c3cec37cfb40b7ae11fd479cf11d5f54"
     },
     {
       "path": "contracts/source-models/nexusfactory-coral.json",
@@ -13,8 +13,8 @@
     },
     {
       "path": "development-record.json",
-      "bytes": 1623,
-      "sha256": "7126762f5be847f27020df2c6473bfb6488b81c36511433780f4fcf7de4368cb"
+      "bytes": 1850,
+      "sha256": "bf63bf10bee13afc6b3c63af5a93bac2b4fd09909d9d5f1b81e354cebba585d8"
     },
     {
       "path": "evidence/api-probe.json",
@@ -33,38 +33,43 @@
     },
     {
       "path": "evidence/headless-harbor.png",
-      "bytes": 63675,
-      "sha256": "364bfb5d01a7575af6b23b13bec6ca4f9ff677de559f20c2e7f6dd6679630025"
+      "bytes": 127861,
+      "sha256": "0a1b4c869cba25a5685b8ec3317486d76db912d7d190ee535fc3f54850d9be00"
     },
     {
       "path": "evidence/headless-validation.json",
-      "bytes": 635,
-      "sha256": "04ada979d2609c87dad28a045d9b57fda157fcd3ee75fc5d16bac27a1332b19d"
+      "bytes": 682,
+      "sha256": "523c72ca28acad8eefa9d2d2cfb0c519ec6b5d926673cf575af23e2c5e423327"
     },
     {
       "path": "evidence/performance-budget.json",
-      "bytes": 739,
-      "sha256": "e013c327ae2574434df01d75cdcb6e1a7723b3ce1a179a4e90ff5a2f4ee7690f"
+      "bytes": 983,
+      "sha256": "3efbd43cc509143ba3da46be0b56cad636e8ddb467bd63229c278215128690b4"
+    },
+    {
+      "path": "evidence/rock-mesh-integrity.json",
+      "bytes": 1921,
+      "sha256": "d9b66e0796f5c1c09bec2c505ade7dbd305948b084c6c08260bc83276c837ccb"
     },
     {
       "path": "evidence/run-report.json",
-      "bytes": 7151,
-      "sha256": "505b765656bab4208e59a23af15b8c8dece158018f4dca031aa8e048f57a5ded"
+      "bytes": 12312,
+      "sha256": "69b314b56506bb8d86ff1277eb5ad8dd0507a57c51568787d38552e1ced45c81"
     },
     {
       "path": "evidence/technical-validation.json",
-      "bytes": 1992,
-      "sha256": "65220d951497ed91c1095f91c50ff38b8561808c62293aca93ceb5f18a3e2542"
+      "bytes": 2960,
+      "sha256": "b1466ede0610f6b237648858ea64fa3f2f692519e67fb012085623306a421ccb"
     },
     {
       "path": "evidence/visual-review.json",
-      "bytes": 790,
-      "sha256": "a657d7329281d935beb500ee7fc838310d94c49ba1ad0a748dc868a8467d5ff4"
+      "bytes": 1168,
+      "sha256": "f0a9c15e0eba6a44eea57e163b94e4cf0e59850c2e4f39fd5699531c3c6f554c"
     },
     {
       "path": "examples/expected-result.json",
       "bytes": 265,
-      "sha256": "3b3602cb2d6ab11bd3c4bf39916343e788b807b731f20c55d626b933ad01aee2"
+      "sha256": "e13bf22b621cd76738b39c66578fe0a1174bbe6e1f56c3a6530ce1f6be811a24"
     },
     {
       "path": "examples/minimal-input.json",
@@ -88,8 +93,8 @@
     },
     {
       "path": "exports/assets/harbor/harbor.manifest.json",
-      "bytes": 4112,
-      "sha256": "3504786c328b7062e5b5daaf8a4217d5bb1d4c827153930c294074285562cbab"
+      "bytes": 7334,
+      "sha256": "240270cabd1e7df4bb1199708f3535ce5c3f6a3bfc3b0ee95fa785da5477e5e1"
     },
     {
       "path": "exports/assets/harbor/models/boat.glb",
@@ -128,8 +133,13 @@
     },
     {
       "path": "exports/assets/harbor/models/rocks.glb",
-      "bytes": 18880,
-      "sha256": "2ddf62e97c76d1062542aa9f618ac5beef1bb76f559a9c67b9e86c665c6ba9ca"
+      "bytes": 95104,
+      "sha256": "4b05817e77e16f0b13d35d8a55bb0bd0999cb4d10ac7f2023f4a65f26b8ae800"
+    },
+    {
+      "path": "exports/assets/harbor/models/sand.glb",
+      "bytes": 51824,
+      "sha256": "3b2813a7e1991b9b0fe42dbcedbd062a1ad4c0eafa5729ebc9b3733528bb150c"
     },
     {
       "path": "exports/assets/harbor/models/star.glb",
@@ -137,14 +147,34 @@
       "sha256": "af824c59cfc56571c66acce9e556c0e2937baf12bdbd497eae21767b863e9e03"
     },
     {
+      "path": "exports/assets/harbor/textures/rock-albedo.png",
+      "bytes": 50981,
+      "sha256": "6c6126c8198b7224e6613955f5212c852fe79d3f6cee969b30aeecb010ec2914"
+    },
+    {
+      "path": "exports/assets/harbor/textures/rock-normal.png",
+      "bytes": 201383,
+      "sha256": "3f00f762b5df07eacda94bdda81349ee503ccee8c6754cacf569c823fdc21d5d"
+    },
+    {
+      "path": "exports/assets/harbor/textures/sand-albedo.png",
+      "bytes": 56460,
+      "sha256": "e6af440750bd3a3fe1c012ba8bd197346fdf8b0bcf684e7de15fda778119c974"
+    },
+    {
+      "path": "exports/assets/harbor/textures/sand-normal.png",
+      "bytes": 143325,
+      "sha256": "9d0b08f59f260ad18110a4a3903a5fd30aa6384c56afee1b318bdf2ed9fc91e2"
+    },
+    {
       "path": "exports/assets/harbor/world.json",
-      "bytes": 8985,
-      "sha256": "0f37f774f3425171fc5c1ae35385f440cbf8bb2f17d1c87a278391c37bf8fa3f"
+      "bytes": 9563,
+      "sha256": "d417099c610be06317e0af990d6676583021d2aa94e18729feb40571f047ffa0"
     },
     {
       "path": "factory.manifest.json",
-      "bytes": 1144,
-      "sha256": "ad01ab0d96e7e94070c5d238a66858f48d28477a60c4578c80054f682a831ee0"
+      "bytes": 1331,
+      "sha256": "2889f0b4e622620b85716dbc6c4adfeadfa077a0d6300ad496e1f7595c2c4afe"
     },
     {
       "path": "index.html",
@@ -153,18 +183,18 @@
     },
     {
       "path": "kit.manifest.json",
-      "bytes": 1928,
-      "sha256": "afe841bcf91bdbaddfcd57d3d7aac6c1cda5560208fcc5f4d2cd779e9eaac0c0"
+      "bytes": 2424,
+      "sha256": "0e0c1c10eba6e152f2f1a4b58018e1211ab20bd810039ffc6c54776549de4d74"
     },
     {
       "path": "package-lock.json",
       "bytes": 3924,
-      "sha256": "ad4c8fcf926f0523be516b071c89475e33a8cb3f26515ff34faa4c264d440bcc"
+      "sha256": "3209b95f7ad3ee5bcad3b1c3a75f3f2aaae44eab0ffd26eeb0de5789180e96d5"
     },
     {
       "path": "package.json",
-      "bytes": 414,
-      "sha256": "51250ea0c6f77e0a2c032fc70ecd21b7cd26caac6711963b1d42395d80793adb"
+      "bytes": 465,
+      "sha256": "c913778da8a67a9d9d487141a8455156205971a8d18424016d71494322225b87"
     },
     {
       "path": "provenance/licenses/NexusFactory-Kits-MIT.txt",
@@ -178,13 +208,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 845,
-      "sha256": "a7ecfcd9cfe22961cf5197642f06b3f2edad2e37ee620923ab31006d8fb28421"
+      "bytes": 976,
+      "sha256": "0cfd551fa26432ab2a892216583dbf5366af62c22be893bfeff65eaf2a88980c"
     },
     {
       "path": "reports/clean-room.json",
-      "bytes": 4640,
-      "sha256": "a169df5111420ba5541379b362f1aa6d2a8849c1b0c599d225d490fff6ff1f8d"
+      "bytes": 5658,
+      "sha256": "7ce943156e5a06024ae095fc8e3525d247eda8f2b5a9ec56c193e65fc4477da3"
     },
     {
       "path": "reports/package-validation.txt",
@@ -193,13 +223,13 @@
     },
     {
       "path": "scripts/generate-assets.mjs",
-      "bytes": 5793,
-      "sha256": "ddd38b39367b4177af2bee602cf68be4a757e03cccecb51cb66e2ae1cd640e4b"
+      "bytes": 6215,
+      "sha256": "a2f6537651130c82ef24871d57d07eebf9ea4b375082a1570a08e5953692b624"
     },
     {
       "path": "scripts/headless-run.mjs",
-      "bytes": 5140,
-      "sha256": "eb24183ff2cf23f9018c887e29cf0d36c9f563f33312705a5fd8a60a2923dfd9"
+      "bytes": 6363,
+      "sha256": "4bd613abc514ef3b2229da3269315b10eb7c6e73abfd0066972f4e8868a9a7e2"
     },
     {
       "path": "scripts/package-kit.mjs",
@@ -207,24 +237,29 @@
       "sha256": "62504463947213c322896ad1a944c71601a0d821e8d335fcc3814de35705845c"
     },
     {
+      "path": "scripts/validate-rock-mesh.mjs",
+      "bytes": 4334,
+      "sha256": "c8a0cc658323138498a2f3cf6bd941d349b4f693b47763c9bb229d3e610e3d38"
+    },
+    {
       "path": "scripts/validate.mjs",
-      "bytes": 2913,
-      "sha256": "c47b0554c7009f86e3297a09964e177bc677178860f9547aac36e657e3814b3e"
+      "bytes": 3795,
+      "sha256": "61a648852a14547e919677734b5595dda7b9efb1b1b4b20487753e0466e5ea87"
     },
     {
       "path": "src/factory.mjs",
-      "bytes": 16787,
-      "sha256": "fcfbfb682f069aca27360d778678cbcbefff4862c99ebfd0356c47f2eb40741e"
+      "bytes": 27145,
+      "sha256": "76096331bdbe2ad63355824d3be420f3c845c99f5c883273fe59e1d0c3dcc8c7"
     },
     {
       "path": "src/preview.mjs",
-      "bytes": 2509,
-      "sha256": "7cd302c6f3625ec6b7b572879ec0db902d0f3321ee7922a5114ced5277ee0a3c"
+      "bytes": 3642,
+      "sha256": "67829f57afd810b95b27225b9688c1386c10a2f8cf780ae02e88b1d475afa5d7"
     },
     {
       "path": "tests/factory.test.mjs",
-      "bytes": 2116,
-      "sha256": "eb7362731d6326109193b709bf5a3289281c75fcaf029b66e82dc404490dc0d5"
+      "bytes": 2872,
+      "sha256": "5db44a7baf26b482050ff265e52a028e9e4991b6268e940fce57d7386d1db934"
     }
   ],
   "excluded": [

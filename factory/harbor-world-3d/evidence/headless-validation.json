@@ -6,10 +6,10 @@
     960,
     640
   ],
-  "bytes": 63675,
-  "firstHash": "364bfb5d01a7575af6b23b13bec6ca4f9ff677de559f20c2e7f6dd6679630025",
-  "secondHash": "364bfb5d01a7575af6b23b13bec6ca4f9ff677de559f20c2e7f6dd6679630025",
+  "bytes": 127861,
+  "firstHash": "0a1b4c869cba25a5685b8ec3317486d76db912d7d190ee535fc3f54850d9be00",
+  "secondHash": "0a1b4c869cba25a5685b8ec3317486d76db912d7d190ee535fc3f54850d9be00",
   "deterministic": true,
-  "coverage": "Three.js scene geometry, GLB loading, camera, lighting, depth, transparent water material, and deterministic framebuffer. Exact browser-only GLSL execution remains a separate validation surface.",
+  "coverage": "Three.js scene geometry, 256px rock and sand textures, normal mapping, GLB loading, camera, lighting, depth, transparent water material, and deterministic framebuffer. Exact browser-only GLSL execution remains a separate validation surface.",
   "image": "factory/harbor-world-3d/evidence/headless-harbor.png"
 }

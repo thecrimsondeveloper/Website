@@ -2,10 +2,30 @@
   "schema": "crimson-harbor/world/2",
   "factory": {
     "id": "crimson-harbor-world-3d",
-    "version": "1.0.0",
-    "semanticSignature": "fnv1a:32cf4bf4"
+    "version": "1.1.0",
+    "semanticSignature": "fnv1a:7a357e2e"
   },
   "seed": "crimson-harbor-604",
+  "assets": {
+    "boat": "boat.glb",
+    "fish": "fish.glb",
+    "rocks": "rocks.glb",
+    "sand": "sand.glb",
+    "star": "star.glb",
+    "coral": [
+      "coral-staghorn.glb",
+      "coral-brain.glb",
+      "coral-lettuce.glb",
+      "coral-sea-fan.glb",
+      "coral-table.glb"
+    ],
+    "textures": {
+      "rockAlbedo": "rock-albedo.png",
+      "rockNormal": "rock-normal.png",
+      "sandAlbedo": "sand-albedo.png",
+      "sandNormal": "sand-normal.png"
+    }
+  },
   "camera": {
     "fov": 34,
     "position": [
@@ -22,9 +42,12 @@
     "far": 80
   },
   "seabed": {
+    "asset": "sand.glb",
     "y": -2.5,
     "radius": 16,
-    "color": "#c0a989"
+    "color": "#c9b58f",
+    "albedoTexture": "sand-albedo.png",
+    "normalTexture": "sand-normal.png"
   },
   "water": {
     "y": 0,

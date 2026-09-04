@@ -2,12 +2,15 @@
   "schemaVersion": "1.0",
   "status": "pass",
   "budgets": {
-    "modelBytes": { "maximum": 5242880, "actual": 678032, "pass": true },
+    "modelBytes": { "maximum": 5242880, "actual": 806080, "pass": true },
+    "textureBytes": { "maximum": 1048576, "actual": 452149, "pass": true },
+    "rockTrianglesPerMesh": { "minimum": 500, "maximum": 1000, "actual": 896, "pass": true },
     "threeDynamicChunkGzipBytes": { "target": 180000, "observedMaximum": 148799, "pass": true }
   },
   "runtimeControls": [
     "Three.js is loaded in a route-level dynamic chunk.",
     "Coral, fish, and rock duplicates use InstancedMesh.",
+    "Rock and sand surfaces use four deterministic 256-by-256 textures.",
     "The underwater pass renders at half resolution, or 30 percent in low quality.",
     "Device pixel ratio is capped by the selected quality tier.",
     "The renderer pauses outside the viewport or while the document is hidden.",

@@ -11,10 +11,14 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const nextDirectory = join(projectRoot, ".next");
 const outputDirectory = join(projectRoot, "out");
 const pagesDirectory = join(projectRoot, "docs");
 const nextCli = join(projectRoot, "node_modules", "next", "dist", "bin", "next");
 const basePath = "/Website";
+
+rmSync(nextDirectory, { recursive: true, force: true });
+rmSync(outputDirectory, { recursive: true, force: true });
 
 const build = spawnSync(process.execPath, [nextCli, "build"], {
   cwd: projectRoot,

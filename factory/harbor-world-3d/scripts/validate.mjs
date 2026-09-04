@@ -17,6 +17,7 @@ const artifactRoot = publicRoot === repositoryPublicRoot ? repositoryRoot : kitR
 const world = JSON.parse(fs.readFileSync(path.join(publicRoot, "world.json"), "utf8"));
 const manifest = JSON.parse(fs.readFileSync(path.join(publicRoot, "harbor.manifest.json"), "utf8"));
 const loadResults = [];
+const textureResults = [];
 
 for (const record of manifest.exports.filter((entry) => entry.mediaType === "model/gltf-binary")) {
   const filePath = path.join(artifactRoot, record.file);
@@ -28,15 +29,37 @@ for (const record of manifest.exports.filter((entry) => entry.mediaType === "mod
   loadResults.push({ file: record.file, header: bytes.subarray(0, 4).toString("ascii"), hashMatches: hash === record.sha256, meshes, pass: bytes.subarray(0, 4).toString("ascii") === "glTF" && hash === record.sha256 && meshes > 0 });
 }
 
+for (const record of manifest.exports.filter((entry) => entry.mediaType === "image/png")) {
+  const filePath = path.join(artifactRoot, record.file);
+  const bytes = fs.readFileSync(filePath);
+  const hash = crypto.createHash("sha256").update(bytes).digest("hex");
+  const signature = bytes.subarray(0, 8).toString("hex");
+  const width = bytes.readUInt32BE(16);
+  const height = bytes.readUInt32BE(20);
+  textureResults.push({
+    file: record.file,
+    width,
+    height,
+    hashMatches: hash === record.sha256,
+    pass: signature === "89504e470d0a1a0a" && width === 256 && height === 256 && hash === record.sha256,
+  });
+}
+
 const checks = [
   { id: "factory-validation", pass: factoryValidation.valid },
   { id: "semantic-signature", pass: world.factory.semanticSignature === result.semanticSignature },
   { id: "coral-count", pass: world.placements.coral.length === input.params.coralCount },
   { id: "fish-count", pass: world.placements.fish.length === input.params.fishCount },
   { id: "glb-load", pass: loadResults.every((entry) => entry.pass) },
-  { id: "payload-budget", pass: manifest.budget.pass && manifest.budget.actualModelBytes < manifest.budget.maximumModelBytes },
+  { id: "surface-textures", pass: textureResults.length === 4 && textureResults.every((entry) => entry.pass) },
+  {
+    id: "payload-budget",
+    pass: manifest.budget.pass
+      && manifest.budget.actualModelBytes < manifest.budget.maximumModelBytes
+      && manifest.budget.actualTextureBytes < manifest.budget.maximumTextureBytes,
+  },
 ];
-const report = { status: checks.every((check) => check.pass) ? "pass" : "fail", checks, loadResults, manifestBudget: manifest.budget };
+const report = { status: checks.every((check) => check.pass) ? "pass" : "fail", checks, loadResults, textureResults, manifestBudget: manifest.budget };
 fs.writeFileSync(path.join(kitRoot, "evidence/api-probe.json"), `${JSON.stringify({ serviceSurface: ["describe", "generate", "randomize", "reroll", "validate", "export"], pass: true }, null, 2)}\n`);
 fs.writeFileSync(path.join(kitRoot, "evidence/technical-validation.json"), `${JSON.stringify(report, null, 2)}\n`);
 process.stdout.write(`${JSON.stringify(report, null, 2)}\n`);

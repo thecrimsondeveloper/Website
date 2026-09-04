@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { buildAssetGroups, generate, validate } from "./factory.mjs";
+import { buildAssetGroups, buildSurfaceTextures, generate, validate } from "./factory.mjs";
 
 const canvas = document.querySelector("canvas");
 const status = document.querySelector("#status");
@@ -16,10 +16,34 @@ scene.add(new THREE.HemisphereLight(0xd7f3e8, 0x264748, 2.6));
 const sun = new THREE.DirectionalLight(0xffeed2, 3.1);
 sun.position.set(-5, 10, 7);
 scene.add(sun);
-const floor = new THREE.Mesh(new THREE.CircleGeometry(10, 40), new THREE.MeshStandardMaterial({ color: 0xbca482, roughness: 0.94 }));
-floor.rotation.x = -Math.PI / 2;
-floor.position.y = -2.5;
-scene.add(floor);
+const textureData = new Map(buildSurfaceTextures().map((texture) => [texture.fileName, texture]));
+function dataTexture(fileName, repeat) {
+  const source = textureData.get(`textures/${fileName}`);
+  const texture = new THREE.DataTexture(source.rgba, source.width, source.height, THREE.RGBAFormat);
+  texture.wrapS = THREE.RepeatWrapping;
+  texture.wrapT = THREE.RepeatWrapping;
+  texture.repeat.set(...repeat);
+  if (source.colorSpace === "srgb") texture.colorSpace = THREE.SRGBColorSpace;
+  texture.needsUpdate = true;
+  return texture;
+}
+const rockAlbedo = dataTexture("rock-albedo.png", [2, 1.5]);
+const rockNormal = dataTexture("rock-normal.png", [2, 1.5]);
+assets.rocks.traverse((object) => {
+  if (!object.isMesh) return;
+  object.material.map = rockAlbedo;
+  object.material.normalMap = rockNormal;
+  object.material.normalScale = new THREE.Vector2(0.62, 0.62);
+});
+assets.sand.traverse((object) => {
+  if (!object.isMesh) return;
+  object.material.map = dataTexture("sand-albedo.png", [5, 5]);
+  object.material.normalMap = dataTexture("sand-normal.png", [5, 5]);
+  object.material.normalScale = new THREE.Vector2(0.34, 0.34);
+});
+assets.sand.position.y = result.artifact.world.seabed.y;
+assets.sand.scale.set(result.artifact.world.seabed.radius, 1, result.artifact.world.seabed.radius);
+scene.add(assets.sand);
 
 assets.boat.position.set(0, 0.16, 0);
 scene.add(assets.boat);

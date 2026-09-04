@@ -16,6 +16,10 @@ function resolveAsset(scene, fileName) {
   return new URL(`models/${fileName}`, scene.sourceUrl).href;
 }
 
+function resolveTexture(scene, fileName) {
+  return new URL(`textures/${fileName}`, scene.sourceUrl).href;
+}
+
 function mergedGeometry(root, useVertexColors = false) {
   root.updateMatrixWorld(true);
   const geometries = [];
@@ -24,9 +28,12 @@ function mergedGeometry(root, useVertexColors = false) {
     let geometry = object.geometry.clone();
     geometry.applyMatrix4(object.matrixWorld);
     for (const name of Object.keys(geometry.attributes)) {
-      if (!new Set(["position", "normal"]).has(name)) geometry.deleteAttribute(name);
+      if (!new Set(["position", "normal", "uv"]).has(name)) geometry.deleteAttribute(name);
     }
     if (!geometry.getAttribute("normal")) geometry.computeVertexNormals();
+    if (!geometry.getAttribute("uv")) {
+      geometry.setAttribute("uv", new THREE.Float32BufferAttribute(new Float32Array(geometry.getAttribute("position").count * 2), 2));
+    }
     if (useVertexColors) {
       const sourceColor = object.material?.color ?? new THREE.Color(0xffffff);
       const colors = new Float32Array(geometry.getAttribute("position").count * 3);
@@ -102,6 +109,7 @@ export class ThreeBackend {
     this.surfaceGroup = new THREE.Group();
     this.scene.add(this.underwaterGroup, this.surfaceGroup);
     this.loader = new GLTFLoader();
+    this.textureLoader = new THREE.TextureLoader();
     this.renderTarget = new THREE.WebGLRenderTarget(1, 1, { minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter, depthBuffer: true });
     this.clockStartedAt = performance.now();
     this.frame = 0;
@@ -127,10 +135,34 @@ export class ThreeBackend {
   }
 
   async initialize() {
+    const textures = await this.loadSurfaceTextures();
     this.addEnvironment();
-    await this.addAssets();
+    await this.addAssets(textures);
     this.addWater();
     this.renderFrame(0);
+  }
+
+  async loadSurfaceTextures() {
+    const names = {
+      rockAlbedo: this.sceneData.assets?.textures?.rockAlbedo || "rock-albedo.png",
+      rockNormal: this.sceneData.assets?.textures?.rockNormal || "rock-normal.png",
+      sandAlbedo: this.sceneData.assets?.textures?.sandAlbedo || "sand-albedo.png",
+      sandNormal: this.sceneData.assets?.textures?.sandNormal || "sand-normal.png",
+    };
+    const entries = await Promise.all(Object.entries(names).map(async ([key, fileName]) => {
+      const texture = await this.textureLoader.loadAsync(resolveTexture(this.sceneData, fileName));
+      texture.wrapS = THREE.RepeatWrapping;
+      texture.wrapT = THREE.RepeatWrapping;
+      texture.anisotropy = Math.min(4, this.renderer.capabilities.getMaxAnisotropy());
+      if (key.endsWith("Albedo")) texture.colorSpace = THREE.SRGBColorSpace;
+      return [key, texture];
+    }));
+    const textures = Object.fromEntries(entries);
+    textures.rockAlbedo.repeat.set(2, 1.5);
+    textures.rockNormal.repeat.set(2, 1.5);
+    textures.sandAlbedo.repeat.set(5, 5);
+    textures.sandNormal.repeat.set(5, 5);
+    return textures;
   }
 
   addEnvironment() {
@@ -138,14 +170,6 @@ export class ThreeBackend {
     const sun = new THREE.DirectionalLight(0xffefd1, 3.1);
     sun.position.set(-6, 12, 8);
     this.scene.add(ambient, sun);
-
-    const seabed = new THREE.Mesh(
-      new THREE.CircleGeometry(this.sceneData.seabed.radius, 48),
-      new THREE.MeshStandardMaterial({ color: this.sceneData.seabed.color, roughness: 0.96, metalness: 0 }),
-    );
-    seabed.rotation.x = -Math.PI / 2;
-    seabed.position.y = this.sceneData.seabed.y;
-    this.underwaterGroup.add(seabed);
 
     const rim = new THREE.Mesh(
       new THREE.RingGeometry(this.sceneData.seabed.radius * 0.72, this.sceneData.seabed.radius, 48),
@@ -160,13 +184,14 @@ export class ThreeBackend {
     return this.loader.loadAsync(resolveAsset(this.sceneData, fileName));
   }
 
-  async addAssets() {
+  async addAssets(textures) {
     const placements = this.sceneData.placements;
     const coralFiles = [...new Set(placements.coral.map((entry) => entry.asset))];
-    const [boatGltf, fishGltf, rocksGltf, starGltf, ...corals] = await Promise.all([
+    const [boatGltf, fishGltf, rocksGltf, sandGltf, starGltf, ...corals] = await Promise.all([
       this.load(this.sceneData.boat.asset),
       this.load("fish.glb"),
       this.load("rocks.glb"),
+      this.load(this.sceneData.seabed.asset || "sand.glb"),
       this.load("star.glb"),
       ...coralFiles.map((fileName) => this.load(fileName)),
     ]);
@@ -200,11 +225,34 @@ export class ThreeBackend {
     this.underwaterGroup.add(this.fishInstances);
 
     const rockGeometry = mergedGeometry(rocksGltf.scene, true);
-    const rockMaterial = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.96, metalness: 0 });
+    const rockMaterial = new THREE.MeshStandardMaterial({
+      vertexColors: true,
+      map: textures.rockAlbedo,
+      normalMap: textures.rockNormal,
+      normalScale: new THREE.Vector2(0.62, 0.62),
+      roughness: 0.94,
+      metalness: 0,
+    });
     const rockInstances = new THREE.InstancedMesh(rockGeometry, rockMaterial, placements.rocks.length);
     rockInstances.name = "harbor-rocks";
     placements.rocks.forEach((record, index) => rockInstances.setMatrixAt(index, matrixFor(record)));
     this.underwaterGroup.add(rockInstances);
+
+    const sandGeometry = mergedGeometry(sandGltf.scene);
+    const sandMaterial = new THREE.MeshStandardMaterial({
+      color: this.sceneData.seabed.color,
+      map: textures.sandAlbedo,
+      normalMap: textures.sandNormal,
+      normalScale: new THREE.Vector2(0.34, 0.34),
+      roughness: 0.98,
+      metalness: 0,
+    });
+    const sand = new THREE.Mesh(sandGeometry, sandMaterial);
+    sand.name = "rippled-sand-terrain";
+    sand.position.y = this.sceneData.seabed.y;
+    sand.scale.set(this.sceneData.seabed.radius, 1, this.sceneData.seabed.radius);
+    sand.renderOrder = -1;
+    this.underwaterGroup.add(sand);
 
     const starGeometry = mergedGeometry(starGltf.scene);
     placements.stars.forEach((record, index) => {

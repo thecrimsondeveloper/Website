@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "kitId": "crimson-harbor-world-3d",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "validated",
   "factoryType": "composed",
   "serviceSurface": ["describe", "generate", "randomize", "reroll", "validate", "export"],
@@ -18,17 +18,19 @@
     "commands": {
       "generate": "npm run generate",
       "validate": "npm run validate",
+      "mesh": "npm run mesh",
       "test": "npm test",
       "headless": "npm run headless"
     }
   },
   "validationAuthorities": [
     "independent BufferGeometry structural checks",
+    "position-welded watertight topology checks",
     "GLTFLoader round-trip checks",
     "native @headless-three/renderer framebuffer capture"
   ],
   "expectedSignatures": {
-    "semantic": "fnv1a:32cf4bf4"
+    "semantic": "fnv1a:7a357e2e"
   },
   "provenance": [
     {
@@ -44,7 +46,12 @@
     { "path": "exports/assets/harbor/models/boat.glb", "synthetic": true },
     { "path": "exports/assets/harbor/models/fish.glb", "synthetic": true },
     { "path": "exports/assets/harbor/models/rocks.glb", "synthetic": true },
+    { "path": "exports/assets/harbor/models/sand.glb", "synthetic": true },
     { "path": "exports/assets/harbor/models/star.glb", "synthetic": true },
+    { "path": "exports/assets/harbor/textures/rock-albedo.png", "synthetic": true },
+    { "path": "exports/assets/harbor/textures/rock-normal.png", "synthetic": true },
+    { "path": "exports/assets/harbor/textures/sand-albedo.png", "synthetic": true },
+    { "path": "exports/assets/harbor/textures/sand-normal.png", "synthetic": true },
     { "path": "exports/assets/harbor/world.json", "synthetic": true }
   ],
   "limitations": [
