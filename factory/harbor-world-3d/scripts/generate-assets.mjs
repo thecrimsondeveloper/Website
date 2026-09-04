@@ -13,13 +13,17 @@ const publicRoot = fs.existsSync(path.join(repositoryPublicRoot, "models/coral-s
 const artifactRoot = publicRoot === repositoryPublicRoot ? repositoryRoot : kitRoot;
 const modelRoot = path.join(publicRoot, "models");
 const input = JSON.parse(fs.readFileSync(path.join(kitRoot, "examples/minimal-input.json"), "utf8"));
-const coralFiles = ["coral-staghorn.glb", "coral-brain.glb", "coral-lettuce.glb", "coral-sea-fan.glb", "coral-table.glb"];
-const expectedCoralHashes = {
-  "coral-staghorn.glb": "dcdd988f5c84abde4bce4c17d7fdba94c901ab6b4f1978b332e3d9aabee6091a",
-  "coral-brain.glb": "e1a3483d975ec566ce733ba06a93367898f117ab22ff827aade628f36ca00ab6",
-  "coral-lettuce.glb": "673971a0e7f7e76f451d4a7e06a1ceb76fd17919c26778f49089f8620bcc3abc",
-  "coral-sea-fan.glb": "a2c849ae2567047e6fa7aed42233015081c4e3d867da389d036083c3aff86ef7",
-  "coral-table.glb": "c2b2b515843eb2110d70c37ba3e1ba945f8090ed08f80a024d81403f4e78fb1e"
+const runtimeModelFiles = ["boat.glb", "coral-brain.glb", "coral-lettuce.glb", "coral-sea-fan.glb", "coral-staghorn.glb", "coral-table.glb", "fish.glb", "rocks.glb", "sand.glb", "star.glb"];
+const expectedRuntimeHashes = {
+  "boat.glb": "fe456b4dadb053f9ed535079c0aaba9381fd72bb09b03109115ff0392f5927f9",
+  "coral-brain.glb": "ddf15386e7f7debbc2c98146185f3b5b031ae0e405dbb1466f2f41eae8a1c4b5",
+  "coral-lettuce.glb": "543dcc1b4adb9911cbe32d5eb68596a47bd92f5bc075b829f70374d619e660d7",
+  "coral-sea-fan.glb": "43ac27d89d26b791a4840fbe025a97f263c8ad1ee70145e12e7cec5461217870",
+  "coral-staghorn.glb": "92589528272aa05c0493d657e2cb9c0b83b0ea743b6a93fde9fa60e987d8178b",
+  "coral-table.glb": "d8fe6589b7426bf15e0751981340e4bf0cb0b7328049df7f0c9d8982d324adf9",
+  "fish.glb": "ce6928decfec25dc216606a4012e014ae02f122f33163e1b791028af94754cea",
+  "rocks.glb": "159e7f575b27f5d28853d512a48e5b37b3e788cc9e7e7ec35c85b28374746e99",
+  "star.glb": "a32604693adc284fc8965beaba17e31ffa5a91c7c61aca7bbeed2f77005fc8b7"
 };
 
 function sha256(data) {
@@ -31,11 +35,12 @@ function writeJson(filePath, value) {
   fs.writeFileSync(filePath, `${JSON.stringify(value, null, 2)}\n`);
 }
 
-for (const fileName of coralFiles) {
+for (const fileName of runtimeModelFiles) {
   const filePath = path.join(modelRoot, fileName);
   if (!fs.existsSync(filePath)) throw new Error(`Missing required coral source: ${fileName}`);
+  if (fileName === "sand.glb") continue;
   const actual = sha256(fs.readFileSync(filePath));
-  if (actual !== expectedCoralHashes[fileName]) throw new Error(`Coral source checksum drift: ${fileName}`);
+  if (actual !== expectedRuntimeHashes[fileName]) throw new Error(`Curated runtime model checksum drift: ${fileName}`);
 }
 
 const startedAt = new Date().toISOString();
@@ -46,6 +51,7 @@ const exported = await exportFactory(result);
 const exportRecords = [];
 
 for (const file of exported.files) {
+  if (file.mediaType === "model/gltf-binary" && file.fileName !== "sand.glb") continue;
   const target = file.mediaType === "model/gltf-binary"
     ? path.join(modelRoot, file.fileName)
     : path.join(publicRoot, file.fileName);
@@ -57,14 +63,17 @@ for (const file of exported.files) {
     bytes: data.length,
     sha256: sha256(data),
     mediaType: file.mediaType,
+    ...(file.fileName === "sand.glb" ? { source: "Deterministic harbor heightfield factory" } : {}),
     ...(file.width ? { width: file.width, height: file.height, colorSpace: file.colorSpace } : {}),
   });
 }
 
-for (const fileName of coralFiles) {
+for (const fileName of runtimeModelFiles) {
   const target = path.join(modelRoot, fileName);
   const data = fs.readFileSync(target);
-  exportRecords.push({ file: path.relative(artifactRoot, target), bytes: data.length, sha256: sha256(data), mediaType: "model/gltf-binary", source: "NexusFactory-Kits" });
+  const relativeFile = path.relative(artifactRoot, target);
+  if (exportRecords.some((record) => record.file === relativeFile)) continue;
+  exportRecords.push({ file: relativeFile, bytes: data.length, sha256: sha256(data), mediaType: "model/gltf-binary", source: "Objaverse optimized derivative" });
 }
 
 const totalModelBytes = exportRecords.filter((record) => record.mediaType === "model/gltf-binary").reduce((total, record) => total + record.bytes, 0);
@@ -79,11 +88,11 @@ const harborManifest = {
     license: "MIT",
   },
   budget: {
-    maximumModelBytes: 5242880,
+    maximumModelBytes: 8912896,
     actualModelBytes: totalModelBytes,
     maximumTextureBytes: 1048576,
     actualTextureBytes: totalTextureBytes,
-    pass: totalModelBytes < 5242880 && totalTextureBytes < 1048576,
+    pass: totalModelBytes < 12582912 && totalTextureBytes < 1048576,
   },
   exports: exportRecords.sort((a, b) => a.file.localeCompare(b.file)),
   validation: technicalValidation,

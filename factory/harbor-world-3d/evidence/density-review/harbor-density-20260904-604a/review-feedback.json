@@ -1,0 +1,32 @@
+{
+  "intendedOutcome": "A denser, more realistic top-down harbor with heightfield terrain, curved composition, readable lighting, and a clear centered boat.",
+  "observedResult": "The final ten-angle captures show the boat preserved in open central water, a broken ring of varied rock masses and coral, denser fish and stars, rippled terrain, and stronger directional shadow separation.",
+  "improved": [
+    {
+      "observation": "The web view increases rock-cluster placements from 3 to 48 and coral from 13 to 42 while retaining central negative space.",
+      "evidence": "baseline and winner web-top-down captures plus world.json counts"
+    },
+    {
+      "observation": "Rock and coral masses form irregular arcs with deliberate breaks instead of isolated radial points.",
+      "evidence": "all ten matched baseline/winner angles"
+    },
+    {
+      "observation": "Heightfield ripples and sloped shelves produce changing contact shadows and elevation silhouettes in oblique views.",
+      "evidence": "north-east, south-east, north-west, and grazing captures"
+    },
+    {
+      "observation": "The boat remains the strongest central focal object in the production camera.",
+      "evidence": "winner web-top-down capture"
+    }
+  ],
+  "regressed": [],
+  "mostImportantFailure": "The CPU headless water is a material surrogate and cannot prove the production GLSL refraction path.",
+  "likelyCause": {
+    "hypothesis": "The trusted framebuffer renderer does not execute the browser WebGL custom shader pipeline.",
+    "confidence": 1
+  },
+  "nextBoundedChange": "Validate the built site on a local browser/WebGL surface without changing scene content.",
+  "fallbackDirection": "If browser rendering is unavailable, retain this visual winner and report the WebGL boundary as blocked rather than infer it from stills.",
+  "evidenceNeededAfterward": "Fresh local-host browser screenshots, renderer diagnostics, interaction evidence, console output, and network failures.",
+  "decision": "continue"
+}

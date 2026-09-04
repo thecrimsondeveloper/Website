@@ -1,9 +1,10 @@
 {
   "seed": "crimson-harbor-604",
   "params": {
-    "coralCount": 13,
-    "fishCount": 8,
-    "rockClusterCount": 3,
+    "coralCount": 42,
+    "fishCount": 18,
+    "rockClusterCount": 48,
+    "starCount": 6,
     "worldRadius": 11,
     "waterClarity": 0.8
   }

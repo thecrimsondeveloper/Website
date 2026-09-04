@@ -1,0 +1,321 @@
+{
+  "schema": "crimson-harbor/layout-validation/1",
+  "runId": "harbor-density-20260904-604a",
+  "revision": "working-tree-before-final-commit",
+  "seed": "crimson-harbor-604",
+  "semanticSignature": "fnv1a:75c12470",
+  "attempts": [
+    {
+      "attemptId": "harbor-density-20260904-604a-a0001",
+      "candidateId": "harbor-density-20260904-604a-a0001-c01",
+      "concern": "heightfield-and-curves",
+      "mutationCount": 27,
+      "mutationIds": [
+        "coral-01",
+        "coral-02",
+        "coral-03",
+        "coral-04",
+        "coral-05",
+        "coral-06",
+        "coral-07",
+        "coral-08",
+        "coral-09",
+        "coral-10",
+        "coral-11",
+        "coral-12",
+        "coral-13",
+        "fish-01",
+        "fish-02",
+        "fish-03",
+        "fish-04",
+        "fish-05",
+        "fish-06",
+        "fish-07",
+        "fish-08",
+        "rocks-01",
+        "rocks-02",
+        "rocks-03",
+        "star-1",
+        "star-2",
+        "star-3"
+      ],
+      "underItemCap": true,
+      "encodingSha256": "22fcc11ba49f37ebf2be877decf8d95aef264e14869f1c2b862563c825c5e265",
+      "semanticSignature": "fnv1a:1e89858a"
+    },
+    {
+      "attemptId": "harbor-density-20260904-604a-a0002",
+      "candidateId": "harbor-density-20260904-604a-a0002-c01",
+      "concern": "rock-density",
+      "mutationCount": 45,
+      "mutationIds": [
+        "rocks-04",
+        "rocks-05",
+        "rocks-06",
+        "rocks-07",
+        "rocks-08",
+        "rocks-09",
+        "rocks-10",
+        "rocks-11",
+        "rocks-12",
+        "rocks-13",
+        "rocks-14",
+        "rocks-15",
+        "rocks-16",
+        "rocks-17",
+        "rocks-18",
+        "rocks-19",
+        "rocks-20",
+        "rocks-21",
+        "rocks-22",
+        "rocks-23",
+        "rocks-24",
+        "rocks-25",
+        "rocks-26",
+        "rocks-27",
+        "rocks-28",
+        "rocks-29",
+        "rocks-30",
+        "rocks-31",
+        "rocks-32",
+        "rocks-33",
+        "rocks-34",
+        "rocks-35",
+        "rocks-36",
+        "rocks-37",
+        "rocks-38",
+        "rocks-39",
+        "rocks-40",
+        "rocks-41",
+        "rocks-42",
+        "rocks-43",
+        "rocks-44",
+        "rocks-45",
+        "rocks-46",
+        "rocks-47",
+        "rocks-48"
+      ],
+      "underItemCap": true,
+      "encodingSha256": "b7cd8e06667d3c3d25ca22c250b6a25bba9f618e7c51a30f8ada7b9d9a5e6dd3",
+      "semanticSignature": "fnv1a:dea8ca0e"
+    },
+    {
+      "attemptId": "harbor-density-20260904-604a-a0003",
+      "candidateId": "harbor-density-20260904-604a-a0003-c01",
+      "concern": "coral-density",
+      "mutationCount": 29,
+      "mutationIds": [
+        "coral-14",
+        "coral-15",
+        "coral-16",
+        "coral-17",
+        "coral-18",
+        "coral-19",
+        "coral-20",
+        "coral-21",
+        "coral-22",
+        "coral-23",
+        "coral-24",
+        "coral-25",
+        "coral-26",
+        "coral-27",
+        "coral-28",
+        "coral-29",
+        "coral-30",
+        "coral-31",
+        "coral-32",
+        "coral-33",
+        "coral-34",
+        "coral-35",
+        "coral-36",
+        "coral-37",
+        "coral-38",
+        "coral-39",
+        "coral-40",
+        "coral-41",
+        "coral-42"
+      ],
+      "underItemCap": true,
+      "encodingSha256": "79dbc819e060984796a0d3bb7e12903015c25b08c4704b05b999488bd7e06fb5",
+      "semanticSignature": "fnv1a:9648bdad"
+    },
+    {
+      "attemptId": "harbor-density-20260904-604a-a0004",
+      "candidateId": "harbor-density-20260904-604a-a0004-c01",
+      "concern": "fish-routes",
+      "mutationCount": 10,
+      "mutationIds": [
+        "fish-09",
+        "fish-10",
+        "fish-11",
+        "fish-12",
+        "fish-13",
+        "fish-14",
+        "fish-15",
+        "fish-16",
+        "fish-17",
+        "fish-18"
+      ],
+      "underItemCap": true,
+      "encodingSha256": "54014a80ebb15b9a084b8bcaa8e8edb973bcd95e55f1605e8c68ccd94092e022",
+      "semanticSignature": "fnv1a:23d9fee7"
+    },
+    {
+      "attemptId": "harbor-density-20260904-604a-a0005",
+      "candidateId": "harbor-density-20260904-604a-a0005-c01",
+      "concern": "star-fishing-density",
+      "mutationCount": 3,
+      "mutationIds": [
+        "star-4",
+        "star-5",
+        "star-6"
+      ],
+      "underItemCap": true,
+      "encodingSha256": "dfbfcd0083b8716608302ef92040ed91fbacbb770571e1ae9ecb859228b62b7f",
+      "semanticSignature": "fnv1a:75c12470"
+    }
+  ],
+  "checks": [
+    {
+      "id": "target-counts",
+      "pass": true
+    },
+    {
+      "id": "individual-rock-count",
+      "pass": true,
+      "observed": 192
+    },
+    {
+      "id": "curve-counts",
+      "pass": true
+    },
+    {
+      "id": "terrain-bounds",
+      "pass": true,
+      "observed": [
+        -2.8211475873719225,
+        -1.8304105564467428
+      ]
+    },
+    {
+      "id": "terrain-triangles",
+      "pass": true,
+      "observed": 32768
+    },
+    {
+      "id": "terrain-textures",
+      "pass": true,
+      "observed": [
+        "textures/rock-albedo.png",
+        "textures/rock-normal.png",
+        "textures/terrain-height.png",
+        "textures/sand-normal.png",
+        "textures/sand-albedo.png",
+        "textures/terrain-ao.png"
+      ]
+    },
+    {
+      "id": "rock-spacing",
+      "pass": true
+    },
+    {
+      "id": "coral-spacing",
+      "pass": true
+    },
+    {
+      "id": "boat-clearance",
+      "pass": true
+    },
+    {
+      "id": "fish-clearance",
+      "pass": true
+    },
+    {
+      "id": "quality-prefix-counts",
+      "pass": true
+    },
+    {
+      "id": "performance-budgets",
+      "pass": true,
+      "observed": {
+        "high": {
+          "logicalRockClusters": 48,
+          "individualRocks": 192,
+          "coral": 42,
+          "fish": 18,
+          "stars": 6,
+          "visibleTriangles": 1246259,
+          "drawCalls": 37,
+          "budget": {
+            "triangles": 1300000,
+            "drawCalls": 45
+          },
+          "pass": true
+        },
+        "auto": {
+          "logicalRockClusters": 34,
+          "individualRocks": 136,
+          "coral": 30,
+          "fish": 12,
+          "stars": 6,
+          "visibleTriangles": 923892,
+          "drawCalls": 37,
+          "budget": {
+            "triangles": 950000,
+            "drawCalls": 38
+          },
+          "pass": true
+        },
+        "low": {
+          "logicalRockClusters": 20,
+          "individualRocks": 80,
+          "coral": 18,
+          "fish": 8,
+          "stars": 6,
+          "visibleTriangles": 564782,
+          "drawCalls": 21,
+          "budget": {
+            "triangles": 600000,
+            "drawCalls": 26
+          },
+          "pass": true
+        }
+      }
+    },
+    {
+      "id": "rock-mesh-integrity",
+      "pass": true
+    },
+    {
+      "id": "star-fishing-interaction",
+      "pass": true
+    },
+    {
+      "id": "review-mutation-cap",
+      "pass": true,
+      "observed": [
+        {
+          "attemptId": "harbor-density-20260904-604a-a0001",
+          "mutationCount": 27
+        },
+        {
+          "attemptId": "harbor-density-20260904-604a-a0002",
+          "mutationCount": 45
+        },
+        {
+          "attemptId": "harbor-density-20260904-604a-a0003",
+          "mutationCount": 29
+        },
+        {
+          "attemptId": "harbor-density-20260904-604a-a0004",
+          "mutationCount": 10
+        },
+        {
+          "attemptId": "harbor-density-20260904-604a-a0005",
+          "mutationCount": 3
+        }
+      ]
+    }
+  ],
+  "verdict": "pass"
+}

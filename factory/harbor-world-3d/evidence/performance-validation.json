@@ -1,0 +1,113 @@
+{
+  "schema": "crimson-harbor/performance-validation/1",
+  "status": "pass",
+  "method": "Static inspection of the exact production GLBs, serialized quality prefixes, and renderer pass topology. Browser timing is environment-dependent and is not inferred from software-render duration.",
+  "metrics": {
+    "boat.glb": {
+      "meshes": 2,
+      "triangles": 15202
+    },
+    "sand.glb": {
+      "meshes": 1,
+      "triangles": 32768
+    },
+    "rocks.glb": {
+      "meshes": 1,
+      "triangles": 856
+    },
+    "fish.glb": {
+      "meshes": 1,
+      "triangles": 3687
+    },
+    "star.glb": {
+      "meshes": 1,
+      "triangles": 5632
+    },
+    "coral-staghorn.glb": {
+      "meshes": 1,
+      "triangles": 12897
+    },
+    "coral-brain.glb": {
+      "meshes": 1,
+      "triangles": 12288
+    },
+    "coral-lettuce.glb": {
+      "meshes": 1,
+      "triangles": 19075
+    },
+    "coral-sea-fan.glb": {
+      "meshes": 2,
+      "triangles": 51126
+    },
+    "coral-table.glb": {
+      "meshes": 1,
+      "triangles": 18176
+    }
+  },
+  "tiers": {
+    "high": {
+      "logicalRockClusters": 48,
+      "individualRocks": 192,
+      "coral": 42,
+      "fish": 18,
+      "stars": 6,
+      "visibleTriangles": 1246259,
+      "drawCalls": 37,
+      "budget": {
+        "triangles": 1300000,
+        "drawCalls": 45
+      },
+      "pass": true
+    },
+    "auto": {
+      "logicalRockClusters": 34,
+      "individualRocks": 136,
+      "coral": 30,
+      "fish": 12,
+      "stars": 6,
+      "visibleTriangles": 923892,
+      "drawCalls": 37,
+      "budget": {
+        "triangles": 950000,
+        "drawCalls": 38
+      },
+      "pass": true
+    },
+    "low": {
+      "logicalRockClusters": 20,
+      "individualRocks": 80,
+      "coral": 18,
+      "fish": 8,
+      "stars": 6,
+      "visibleTriangles": 564782,
+      "drawCalls": 21,
+      "budget": {
+        "triangles": 600000,
+        "drawCalls": 26
+      },
+      "pass": true
+    }
+  },
+  "checks": [
+    {
+      "id": "all-quality-tiers",
+      "pass": true
+    },
+    {
+      "id": "static-model-payload",
+      "pass": true,
+      "observed": 7725336,
+      "maximum": 8912896
+    },
+    {
+      "id": "static-texture-payload",
+      "pass": true,
+      "observed": 446635,
+      "maximum": 1048576
+    },
+    {
+      "id": "single-instanced-rock-batch",
+      "pass": true
+    }
+  ]
+}

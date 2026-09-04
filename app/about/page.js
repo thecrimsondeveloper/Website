@@ -22,6 +22,7 @@ export default function AboutPage() {
             <a href={`mailto:${profile.email}`}>{profile.email}</a>
             <a href={profile.github} rel="noreferrer" target="_blank">GitHub <span aria-hidden="true">↗</span></a>
             <a href={profile.linkedin} rel="noreferrer" target="_blank">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/thecrimsondeveloper/Website/blob/main/ATTRIBUTION.md" rel="noreferrer" target="_blank">Harbor credits <span aria-hidden="true">↗</span></a>
           </aside>
         </section>
       </main>

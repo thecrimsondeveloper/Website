@@ -1,0 +1,42 @@
+[
+  {
+    "at": "2026-09-04T18:20:03Z",
+    "stage": "inspect",
+    "kind": "fact",
+    "statement": "The requested target is the fresh static Next.js export in docs with the /Website base path.",
+    "basis": "npm run build:pages completed successfully and validated docs/index.html asset prefixes.",
+    "effect": "none"
+  },
+  {
+    "at": "2026-09-04T18:20:03Z",
+    "stage": "inspect",
+    "kind": "decision",
+    "statement": "The working tree is intentionally dirty during pre-commit validation; target identity is locked to base commit 20af268 plus harbor semantic signature 75c12470.",
+    "basis": "User requested implementation, validation, one final commit, and push only after validation.",
+    "effect": "none"
+  },
+  {
+    "at": "2026-09-04T18:20:03Z",
+    "stage": "route",
+    "kind": "decision",
+    "statement": "Use browser DOM evidence and WebGL renderer diagnostics under the same local target lock.",
+    "basis": "The page combines normal HTML with a Three.js WebGL custom element.",
+    "effect": "route-change"
+  },
+  {
+    "at": "2026-09-04T18:23:00Z",
+    "stage": "launch",
+    "kind": "blocker",
+    "statement": "The shared cloud browser rejected the sandbox loopback URL with net::ERR_BLOCKED_BY_CLIENT.",
+    "basis": "Direct browser navigation to http://127.0.0.1:4173/Website/.",
+    "effect": "route-change"
+  },
+  {
+    "at": "2026-09-04T18:23:00Z",
+    "stage": "route",
+    "kind": "decision",
+    "statement": "Use the task-local WebGL validation runner against the unchanged locked local URL; do not substitute the deployed site.",
+    "basis": "The WebGL validation workflow designates the local Playwright runner for sandbox loopback targets.",
+    "effect": "route-change"
+  }
+]

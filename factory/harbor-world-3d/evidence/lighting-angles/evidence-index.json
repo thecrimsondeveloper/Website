@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "harbor-lighting-evidence/1",
+  "runId": "harbor-lighting-20260904-a51f",
+  "baseline": "baseline-before.png",
+  "winner": "web-top-down.png",
+  "captures": [
+    "web-top-down.png",
+    "port-quarter.png",
+    "starboard-quarter.png",
+    "low-water-angle.png"
+  ],
+  "contactSheet": "contact-sheet.png",
+  "validation": "../headless-validation.json",
+  "shaderSyntax": "../water-shader-syntax.json",
+  "review": "review.json"
+}

@@ -1,0 +1,10 @@
+{
+  "targetRequestsCaptured": false,
+  "failures": [
+    {
+      "resource": "Playwright Chromium runtime",
+      "failure": "Download timed out and returned a truncated zero-byte archive."
+    }
+  ],
+  "supplementalHttpCheck": "Four exported routes and all ten GLB URLs returned successfully from a task-local static server."
+}

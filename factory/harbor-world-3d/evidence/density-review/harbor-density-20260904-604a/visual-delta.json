@@ -1,0 +1,51 @@
+{
+  "candidate_id": "harbor-density-20260904-604a-a0005-c01",
+  "comparisonAuthority": "User-approved criteria and matched preserved baseline; no separate photographic reference image was supplied.",
+  "reference_deltas": [
+    {
+      "criterion": "heightfield-relief",
+      "observed": "rippled and raised seabed shelves are visible",
+      "target": "readable shaped seabed",
+      "severity": "pass",
+      "confidence": 0.94
+    },
+    {
+      "criterion": "curved-density",
+      "observed": "irregular rock and coral arcs surround a clear center",
+      "target": "dense but composed reef",
+      "severity": "pass",
+      "confidence": 0.96
+    },
+    {
+      "criterion": "lighting-readability",
+      "observed": "directional shadows separate boat, rocks, and coral",
+      "target": "accentuated forms",
+      "severity": "pass",
+      "confidence": 0.93
+    }
+  ],
+  "winner_deltas": [
+    {
+      "criterion": "mass-distribution",
+      "observed": "substantially denser perimeter with preserved center",
+      "target": "improve sparse baseline",
+      "severity": "improved",
+      "confidence": 0.98
+    },
+    {
+      "criterion": "negative-space",
+      "observed": "central boat clearance remains legible",
+      "target": "no clutter around focal point",
+      "severity": "improved",
+      "confidence": 0.95
+    }
+  ],
+  "active_objective": {
+    "criterion": "high-density-harbor",
+    "result": "improved",
+    "evidence": "matched ten-angle contact sheet",
+    "confidence": 0.96
+  },
+  "regressions": [],
+  "recommendation": "accept"
+}

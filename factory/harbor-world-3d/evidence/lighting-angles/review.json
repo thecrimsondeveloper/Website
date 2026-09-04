@@ -1,0 +1,90 @@
+{
+  "schema": "iterative-asset-review/v1",
+  "run_id": "harbor-lighting-20260904-a51f",
+  "asset": {
+    "asset_id": "crimson-harbor-scene",
+    "kind": "threejs-scene",
+    "intended_use": "portfolio-landing-background"
+  },
+  "authority": {
+    "mutation_roots": [
+      "/workspace/scratch/bf1be130628d/website-rock-upgrade"
+    ],
+    "external_writes": false
+  },
+  "reference_set": {
+    "reference_ids": [
+      "user-request-20260904"
+    ],
+    "locked_criteria": [
+      "readable-soft-shadows",
+      "realistic-material-depth",
+      "slightly-angled-top-down-web-camera",
+      "water-readable-from-oblique-views"
+    ]
+  },
+  "capture_profile": {
+    "renderer": "@headless-three/renderer 0.4.0",
+    "adapter": "task-local Mesa Lavapipe",
+    "resolution": [
+      960,
+      640
+    ],
+    "lighting": "locked hemisphere plus directional sun",
+    "animation_time": 0,
+    "views": [
+      "web-top-down",
+      "port-quarter",
+      "starboard-quarter",
+      "low-water-angle"
+    ],
+    "browser_shader_boundary": "The CPU renderer uses the documented normal-mapped transparent-water surrogate; exact GLSL3 and PCFSoftShadowMap browser pixels require Chromium."
+  },
+  "baseline": {
+    "winner_id": "harbor-lighting-20260904-a51f-w0000",
+    "revision": "032985eccda04a212913721fccaed515a4246a51",
+    "capture": "baseline-before.png",
+    "sha256": "c458040046d1da45c9597ccb8d6efe81632c29d7b8186c5be203f500975baa0c",
+    "observations": [
+      "Detailed PBR assets were present, but the top-down frame had weak separation from the seabed.",
+      "The production WebGL renderer did not enable shadow maps.",
+      "The camera was more oblique than the requested slightly angled top-down view."
+    ]
+  },
+  "attempts": [
+    {
+      "attempt_id": "harbor-lighting-20260904-a51f-a0001",
+      "incumbent_winner_id": "harbor-lighting-20260904-a51f-w0000",
+      "named_failure": {
+        "criterion": "realistic-scene-depth",
+        "observed": "Boat, coral, rocks, and fish had limited visual grounding.",
+        "target": "Directional soft shadows, stronger material response, and readable water at top-down and oblique views."
+      },
+      "candidate_id": "harbor-lighting-20260904-a51f-a0001-c01",
+      "result": "accept_candidate",
+      "reason_codes": [
+        "visible_improvement",
+        "locked_views_deterministic",
+        "source_validation_passed"
+      ]
+    }
+  ],
+  "winner": {
+    "winner_id": "harbor-lighting-20260904-a51f-w0001",
+    "parent_winner_id": "harbor-lighting-20260904-a51f-w0000",
+    "capture": "web-top-down.png",
+    "sha256": "6b3ab5ab17da040cfee6f2b7428d4e51425daf9b7c9e010bfdaead65a5d3c12c",
+    "accepted_evidence": [
+      "Visible directional grounding under the boat, rocks, coral, fish, and starfish.",
+      "The web camera is about 20 degrees off vertical and keeps the boat centered.",
+      "Four deterministic views preserve object depth and water/seabed separation."
+    ]
+  },
+  "technical_gates": {
+    "deterministic_multiview_render": "pass",
+    "glsl_es_3_syntax": "pass",
+    "factory_validation": "pass",
+    "browser_webgl_pixels": "blocked_missing_chromium"
+  },
+  "verdict": "accept_with_browser_capture_pending"
+}

@@ -35,56 +35,56 @@
       "file": "public/assets/harbor/models/boat.glb",
       "header": "glTF",
       "hashMatches": true,
-      "meshes": 8,
+      "meshes": 2,
       "pass": true
     },
     {
       "file": "public/assets/harbor/models/coral-brain.glb",
       "header": "glTF",
       "hashMatches": true,
-      "meshes": 85,
+      "meshes": 1,
       "pass": true
     },
     {
       "file": "public/assets/harbor/models/coral-lettuce.glb",
       "header": "glTF",
       "hashMatches": true,
-      "meshes": 6,
+      "meshes": 1,
       "pass": true
     },
     {
       "file": "public/assets/harbor/models/coral-sea-fan.glb",
       "header": "glTF",
       "hashMatches": true,
-      "meshes": 41,
+      "meshes": 2,
       "pass": true
     },
     {
       "file": "public/assets/harbor/models/coral-staghorn.glb",
       "header": "glTF",
       "hashMatches": true,
-      "meshes": 42,
+      "meshes": 1,
       "pass": true
     },
     {
       "file": "public/assets/harbor/models/coral-table.glb",
       "header": "glTF",
       "hashMatches": true,
-      "meshes": 20,
+      "meshes": 1,
       "pass": true
     },
     {
       "file": "public/assets/harbor/models/fish.glb",
       "header": "glTF",
       "hashMatches": true,
-      "meshes": 5,
+      "meshes": 1,
       "pass": true
     },
     {
       "file": "public/assets/harbor/models/rocks.glb",
       "header": "glTF",
       "hashMatches": true,
-      "meshes": 4,
+      "meshes": 1,
       "pass": true
     },
     {
@@ -130,13 +130,27 @@
       "height": 256,
       "hashMatches": true,
       "pass": true
+    },
+    {
+      "file": "public/assets/harbor/textures/terrain-ao.png",
+      "width": 256,
+      "height": 256,
+      "hashMatches": true,
+      "pass": true
+    },
+    {
+      "file": "public/assets/harbor/textures/terrain-height.png",
+      "width": 256,
+      "height": 256,
+      "hashMatches": true,
+      "pass": true
     }
   ],
   "manifestBudget": {
-    "maximumModelBytes": 5242880,
-    "actualModelBytes": 806080,
+    "maximumModelBytes": 8912896,
+    "actualModelBytes": 7725336,
     "maximumTextureBytes": 1048576,
-    "actualTextureBytes": 452149,
+    "actualTextureBytes": 446635,
     "pass": true
   }
 }

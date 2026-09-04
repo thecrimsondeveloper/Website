@@ -71,8 +71,8 @@ for (const record of result.artifact.world.placements.stars) {
 }
 
 const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 80);
-camera.position.set(0, 17.5, 12.5);
-camera.lookAt(0, -1.1, 0);
+camera.position.set(0, 21, 8);
+camera.lookAt(0, -1.15, 0);
 function resize() {
   const width = canvas.clientWidth;
   const height = canvas.clientHeight;

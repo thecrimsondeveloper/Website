@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "sandbox.web-render-validation/1",
+  "runId": "website-lighting-local-20260904T173629Z",
+  "startedAt": "2026-09-04T17:36:29Z",
+  "completedAt": "2026-09-04T17:38:01Z",
+  "runDirectory": "/workspace/scratch/bf1be130628d/website-rock-upgrade/factory/harbor-world-3d/evidence/webgl/website-lighting-local-20260904T173629Z",
+  "requested": {
+    "mode": "local",
+    "target": "/workspace/scratch/bf1be130628d/website-rock-upgrade",
+    "revision": "032985eccda04a212913721fccaed515a4246a51",
+    "expectedSurface": "mixed",
+    "expectedState": "Static portfolio landing page with a slightly angled top-down harbor, soft shadows, realistic PBR lighting, and depth-aware GLSL3 water.",
+    "interaction": "Load the landing page and verify the WebGL harbor canvas."
+  },
+  "observed": {
+    "target": "/workspace/scratch/bf1be130628d/website-rock-upgrade",
+    "revision": "032985eccda04a212913721fccaed515a4246a51",
+    "finalUrl": "http://127.0.0.1:4176/Website/",
+    "surface": "webgl"
+  },
+  "identity": {
+    "matchesRequestedMode": true,
+    "matchesRequestedTarget": true,
+    "matchesRequestedRevision": true
+  },
+  "freshness": {
+    "currentRunOnly": true,
+    "historicalEvidenceExcluded": true
+  },
+  "render": {
+    "visible": false,
+    "nonEmpty": false,
+    "surfaceProven": false,
+    "fatalErrors": [
+      "No Chromium executable is available."
+    ]
+  },
+  "interaction": {
+    "required": false,
+    "performed": false,
+    "changeProven": false
+  },
+  "children": [
+    {
+      "name": "webgl-render-sandbox-it",
+      "verdict": "blocked",
+      "evidence": "child-webgl/webgl-render-report.json"
+    }
+  ],
+  "artifacts": {
+    "before": null,
+    "after": null,
+    "decisionLog": "/workspace/scratch/bf1be130628d/website-rock-upgrade/factory/harbor-world-3d/evidence/webgl/website-lighting-local-20260904T173629Z/decision-log.json",
+    "console": "/workspace/scratch/bf1be130628d/website-rock-upgrade/factory/harbor-world-3d/evidence/webgl/website-lighting-local-20260904T173629Z/console.json",
+    "networkFailures": "/workspace/scratch/bf1be130628d/website-rock-upgrade/factory/harbor-world-3d/evidence/webgl/website-lighting-local-20260904T173629Z/network-failures.json",
+    "interaction": "/workspace/scratch/bf1be130628d/website-rock-upgrade/factory/harbor-world-3d/evidence/webgl/website-lighting-local-20260904T173629Z/interaction.json"
+  },
+  "supplementalRuns": [
+    {
+      "name": "headless-three-multi-angle-scene",
+      "verdict": "pass",
+      "evidence": "factory/harbor-world-3d/evidence/headless-validation.json"
+    },
+    {
+      "name": "headless-three-star-interaction",
+      "verdict": "pass",
+      "evidence": "factory/harbor-world-3d/evidence/interaction/validation.json"
+    },
+    {
+      "name": "GLSL-ES-3-syntax",
+      "verdict": "pass",
+      "evidence": "factory/harbor-world-3d/evidence/water-shader-syntax.json"
+    }
+  ],
+  "cleanup": {
+    "required": true,
+    "completed": true
+  },
+  "verdict": "blocked",
+  "coverageBoundary": "The exact dirty working tree was built and served, and the production assets, camera, lighting direction, depth, and interaction passed fresh CPU Three.js validation. Browser PCFSoftShadowMap pixels, exact GLSL3 compilation, console state, and runtime performance remain unproven because Chromium is unavailable."
+}

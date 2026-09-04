@@ -1,0 +1,42 @@
+[
+  {
+    "at": "2026-09-04T16:58:15Z",
+    "stage": "inspect",
+    "kind": "fact",
+    "statement": "Validation is locked to the dirty working tree based on commit 4ac24dca94a9821ad80499a62b93a37ea794df78 after a successful local static export.",
+    "basis": "git status, git revision, and npm run build:pages",
+    "effect": "none"
+  },
+  {
+    "at": "2026-09-04T16:58:15Z",
+    "stage": "route",
+    "kind": "decision",
+    "statement": "Use browser WebGL validation for the exact GLSL3 shader and retain the CPU Three.js render as separate scene evidence.",
+    "basis": "The headless Three.js renderer does not execute browser WebGL ShaderMaterial code.",
+    "effect": "route-change"
+  },
+  {
+    "at": "2026-09-04T17:04:00Z",
+    "stage": "launch",
+    "kind": "blocker",
+    "statement": "The WebGL child found no Chromium executable. A task-local Playwright browser download was attempted twice but timed out and returned a truncated zero-byte archive.",
+    "basis": "Current-run WebGL child report and Playwright installer output",
+    "effect": "verdict-cap"
+  },
+  {
+    "at": "2026-09-04T17:10:00Z",
+    "stage": "reconcile",
+    "kind": "fact",
+    "statement": "The exported site, all four routes, and all ten GLB URLs passed HTTP checks in a single task-local server process, but this does not prove WebGL execution.",
+    "basis": "Current-run local server and curl checks",
+    "effect": "none"
+  },
+  {
+    "at": "2026-09-04T17:10:00Z",
+    "stage": "cleanup",
+    "kind": "fact",
+    "statement": "The task-local static server was terminated after route and asset checks.",
+    "basis": "Server process trap",
+    "effect": "none"
+  }
+]

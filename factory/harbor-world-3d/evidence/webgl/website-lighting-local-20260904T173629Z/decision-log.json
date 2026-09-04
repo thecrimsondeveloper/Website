@@ -1,0 +1,50 @@
+[
+  {
+    "at": "2026-09-04T17:36:29Z",
+    "stage": "inspect",
+    "kind": "fact",
+    "statement": "The exact local Website checkout is on main at revision 032985eccda04a212913721fccaed515a4246a51 with user-authorized lighting changes in the working tree.",
+    "basis": "git rev-parse and git status",
+    "effect": "none"
+  },
+  {
+    "at": "2026-09-04T17:36:29Z",
+    "stage": "route",
+    "kind": "decision",
+    "statement": "Use the WebGL child for browser-surface proof and retain CPU Three.js multi-angle captures as supplemental evidence only.",
+    "basis": "The landing experience is a WebGL canvas and the user requested exact headless Three.js captures.",
+    "effect": "none"
+  },
+  {
+    "at": "2026-09-04T17:36:29Z",
+    "stage": "inspect",
+    "kind": "blocker",
+    "statement": "No Chromium, Chrome, or task-local executable browser was found before launch.",
+    "basis": "Executable discovery across PATH and the task-local render runtime.",
+    "effect": "verdict-cap"
+  },
+  {
+    "at": "2026-09-04T17:37:50Z",
+    "stage": "launch",
+    "kind": "fact",
+    "statement": "The final docs build responded successfully at http://127.0.0.1:4176/Website/ before the WebGL child ran.",
+    "basis": "Successful local HTTP readiness request in the same process boundary.",
+    "effect": "none"
+  },
+  {
+    "at": "2026-09-04T17:37:51Z",
+    "stage": "capture",
+    "kind": "blocker",
+    "statement": "The WebGL child could not launch because no Chromium executable or bundled SwiftShader runtime exists.",
+    "basis": "child-webgl/webgl-render-report.json",
+    "effect": "stop"
+  },
+  {
+    "at": "2026-09-04T17:38:01Z",
+    "stage": "cleanup",
+    "kind": "fact",
+    "statement": "The task-local static server was stopped after the blocked browser probe.",
+    "basis": "Process trap and explicit cleanup.",
+    "effect": "none"
+  }
+]

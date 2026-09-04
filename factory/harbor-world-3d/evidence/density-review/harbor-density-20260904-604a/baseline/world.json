@@ -1,0 +1,528 @@
+{
+  "schema": "crimson-harbor/world/2",
+  "factory": {
+    "id": "crimson-harbor-world-3d",
+    "version": "1.1.0",
+    "semanticSignature": "fnv1a:2986792f"
+  },
+  "seed": "crimson-harbor-604",
+  "assets": {
+    "boat": "boat.glb",
+    "fish": "fish.glb",
+    "rocks": "rocks.glb",
+    "sand": "sand.glb",
+    "star": "star.glb",
+    "coral": [
+      "coral-staghorn.glb",
+      "coral-brain.glb",
+      "coral-lettuce.glb",
+      "coral-sea-fan.glb",
+      "coral-table.glb"
+    ],
+    "textures": {
+      "rockAlbedo": "rock-albedo.png",
+      "rockNormal": "rock-normal.png",
+      "sandAlbedo": "sand-albedo.png",
+      "sandNormal": "sand-normal.png"
+    }
+  },
+  "camera": {
+    "fov": 34,
+    "position": [
+      0,
+      21,
+      8
+    ],
+    "target": [
+      0,
+      -1.15,
+      0
+    ],
+    "near": 0.1,
+    "far": 80
+  },
+  "seabed": {
+    "asset": "sand.glb",
+    "y": -2.5,
+    "radius": 16,
+    "color": "#c9b58f",
+    "albedoTexture": "sand-albedo.png",
+    "normalTexture": "sand-normal.png"
+  },
+  "water": {
+    "y": 0,
+    "size": 32,
+    "speed": 0.72,
+    "clarity": 0.8
+  },
+  "boat": {
+    "asset": "boat.glb",
+    "position": [
+      0,
+      0.16,
+      0
+    ],
+    "rotation": [
+      0,
+      0.22,
+      0
+    ],
+    "scale": 1,
+    "rocking": 0.8
+  },
+  "placements": {
+    "coral": [
+      {
+        "id": "coral-01",
+        "asset": "coral-staghorn.glb",
+        "position": [
+          0.8275,
+          -2.45,
+          6.8061
+        ],
+        "rotation": [
+          0,
+          5.8332,
+          0
+        ],
+        "scale": 0.3374,
+        "swayPhase": 6.036
+      },
+      {
+        "id": "coral-02",
+        "asset": "coral-brain.glb",
+        "position": [
+          -3.8807,
+          -2.45,
+          -1.8261
+        ],
+        "rotation": [
+          0,
+          1.5405,
+          0
+        ],
+        "scale": 0.3697,
+        "swayPhase": 1.5671
+      },
+      {
+        "id": "coral-03",
+        "asset": "coral-lettuce.glb",
+        "position": [
+          -6.0027,
+          -2.45,
+          4.8785
+        ],
+        "rotation": [
+          0,
+          3.7913,
+          0
+        ],
+        "scale": 0.3806,
+        "swayPhase": 2.422
+      },
+      {
+        "id": "coral-04",
+        "asset": "coral-sea-fan.glb",
+        "position": [
+          -4.2532,
+          -2.45,
+          -7.5282
+        ],
+        "rotation": [
+          0,
+          3.7339,
+          0
+        ],
+        "scale": 0.5661,
+        "swayPhase": 2.7568
+      },
+      {
+        "id": "coral-05",
+        "asset": "coral-table.glb",
+        "position": [
+          -9.4552,
+          -2.45,
+          2.4553
+        ],
+        "rotation": [
+          0,
+          3.32,
+          0
+        ],
+        "scale": 0.356,
+        "swayPhase": 3.4191
+      },
+      {
+        "id": "coral-06",
+        "asset": "coral-staghorn.glb",
+        "position": [
+          -8.1459,
+          -2.45,
+          6.4627
+        ],
+        "rotation": [
+          0,
+          1.2403,
+          0
+        ],
+        "scale": 0.3674,
+        "swayPhase": 5.7161
+      },
+      {
+        "id": "coral-07",
+        "asset": "coral-brain.glb",
+        "position": [
+          -5.2187,
+          -2.45,
+          3.625
+        ],
+        "rotation": [
+          0,
+          0.5812,
+          0
+        ],
+        "scale": 0.2821,
+        "swayPhase": 5.9641
+      },
+      {
+        "id": "coral-08",
+        "asset": "coral-lettuce.glb",
+        "position": [
+          -7.6424,
+          -2.45,
+          4.2322
+        ],
+        "rotation": [
+          0,
+          2.4495,
+          0
+        ],
+        "scale": 0.3296,
+        "swayPhase": 3.4304
+      },
+      {
+        "id": "coral-09",
+        "asset": "coral-sea-fan.glb",
+        "position": [
+          8.1753,
+          -2.45,
+          -2.412
+        ],
+        "rotation": [
+          0,
+          0.4675,
+          0
+        ],
+        "scale": 0.2921,
+        "swayPhase": 5.5419
+      },
+      {
+        "id": "coral-10",
+        "asset": "coral-table.glb",
+        "position": [
+          4.0449,
+          -2.45,
+          -5.3144
+        ],
+        "rotation": [
+          0,
+          4.913,
+          0
+        ],
+        "scale": 0.2822,
+        "swayPhase": 3.2343
+      },
+      {
+        "id": "coral-11",
+        "asset": "coral-staghorn.glb",
+        "position": [
+          1.6748,
+          -2.45,
+          3.32
+        ],
+        "rotation": [
+          0,
+          0.305,
+          0
+        ],
+        "scale": 0.4958,
+        "swayPhase": 4.1159
+      },
+      {
+        "id": "coral-12",
+        "asset": "coral-brain.glb",
+        "position": [
+          3.8666,
+          -2.45,
+          1.5971
+        ],
+        "rotation": [
+          0,
+          3.9322,
+          0
+        ],
+        "scale": 0.5313,
+        "swayPhase": 5.6751
+      },
+      {
+        "id": "coral-13",
+        "asset": "coral-lettuce.glb",
+        "position": [
+          -1.3152,
+          -2.45,
+          -4.8082
+        ],
+        "rotation": [
+          0,
+          1.0086,
+          0
+        ],
+        "scale": 0.3228,
+        "swayPhase": 5.7166
+      }
+    ],
+    "rocks": [
+      {
+        "id": "rocks-01",
+        "asset": "rocks.glb",
+        "position": [
+          2.3376,
+          -2.38,
+          3.7925
+        ],
+        "rotation": [
+          0,
+          5.7701,
+          0
+        ],
+        "scale": 1.1363
+      },
+      {
+        "id": "rocks-02",
+        "asset": "rocks.glb",
+        "position": [
+          -0.1723,
+          -2.38,
+          9.0387
+        ],
+        "rotation": [
+          0,
+          5.3184,
+          0
+        ],
+        "scale": 1.2577
+      },
+      {
+        "id": "rocks-03",
+        "asset": "rocks.glb",
+        "position": [
+          -0.8104,
+          -2.38,
+          5.3492
+        ],
+        "rotation": [
+          0,
+          5.3044,
+          0
+        ],
+        "scale": 1.2954
+      }
+    ],
+    "fish": [
+      {
+        "id": "fish-01",
+        "asset": "fish.glb",
+        "position": [
+          -2.7719,
+          -1.1233,
+          2.4535
+        ],
+        "rotation": [
+          0,
+          3.0885,
+          0
+        ],
+        "scale": 0.4779,
+        "speed": 0.2741,
+        "phase": 0.5903,
+        "orbit": 0.9969
+      },
+      {
+        "id": "fish-02",
+        "asset": "fish.glb",
+        "position": [
+          -4.5282,
+          -1.1514,
+          1.7107
+        ],
+        "rotation": [
+          0,
+          5.7086,
+          0
+        ],
+        "scale": 0.4794,
+        "speed": 0.2876,
+        "phase": 2.2815,
+        "orbit": 0.7918
+      },
+      {
+        "id": "fish-03",
+        "asset": "fish.glb",
+        "position": [
+          -2.9051,
+          -1.4354,
+          5.6484
+        ],
+        "rotation": [
+          0,
+          1.7247,
+          0
+        ],
+        "scale": 0.4296,
+        "speed": 0.2759,
+        "phase": 0.2753,
+        "orbit": 0.8086
+      },
+      {
+        "id": "fish-04",
+        "asset": "fish.glb",
+        "position": [
+          -4.1841,
+          -0.6932,
+          2.3954
+        ],
+        "rotation": [
+          0,
+          1.3082,
+          0
+        ],
+        "scale": 0.464,
+        "speed": 0.2953,
+        "phase": 2.8021,
+        "orbit": 0.9884
+      },
+      {
+        "id": "fish-05",
+        "asset": "fish.glb",
+        "position": [
+          -4.3341,
+          -1.4636,
+          -5.2745
+        ],
+        "rotation": [
+          0,
+          1.8792,
+          0
+        ],
+        "scale": 0.5161,
+        "speed": 0.2564,
+        "phase": 0.3156,
+        "orbit": 0.9205
+      },
+      {
+        "id": "fish-06",
+        "asset": "fish.glb",
+        "position": [
+          -0.5862,
+          -1.0023,
+          -9.6473
+        ],
+        "rotation": [
+          0,
+          4.7637,
+          0
+        ],
+        "scale": 0.4861,
+        "speed": 0.3561,
+        "phase": 0.6634,
+        "orbit": 0.607
+      },
+      {
+        "id": "fish-07",
+        "asset": "fish.glb",
+        "position": [
+          -3.3247,
+          -0.8657,
+          -4.4509
+        ],
+        "rotation": [
+          0,
+          3.9982,
+          0
+        ],
+        "scale": 0.4755,
+        "speed": 0.196,
+        "phase": 2.0281,
+        "orbit": 0.8102
+      },
+      {
+        "id": "fish-08",
+        "asset": "fish.glb",
+        "position": [
+          5.2277,
+          -1.0436,
+          -7.4368
+        ],
+        "rotation": [
+          0,
+          2.323,
+          0
+        ],
+        "scale": 0.4831,
+        "speed": 0.2532,
+        "phase": 2.2445,
+        "orbit": 0.6958
+      }
+    ],
+    "stars": [
+      {
+        "id": "star-1",
+        "asset": "star.glb",
+        "position": [
+          -4.8332,
+          0.72,
+          2.6439
+        ],
+        "rotation": [
+          1.5707963267948966,
+          0,
+          5.4985
+        ],
+        "scale": 0.5223,
+        "phase": 1.7323
+      },
+      {
+        "id": "star-2",
+        "asset": "star.glb",
+        "position": [
+          5.3336,
+          0.72,
+          1.3259
+        ],
+        "rotation": [
+          1.5707963267948966,
+          0,
+          0.7874
+        ],
+        "scale": 0.6129,
+        "phase": 2.8352
+      },
+      {
+        "id": "star-3",
+        "asset": "star.glb",
+        "position": [
+          3.6215,
+          0.72,
+          -4.2655
+        ],
+        "rotation": [
+          1.5707963267948966,
+          0,
+          1.838
+        ],
+        "scale": 0.5199,
+        "phase": 2.9903
+      }
+    ]
+  }
+}

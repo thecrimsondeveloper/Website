@@ -1,0 +1,222 @@
+{
+  "assumptions": [
+    "Top-down harbor readability is an artistic target and is not established by Objaverse metadata."
+  ],
+  "derivedRules": [
+    {
+      "basis": [
+        "The runtime transformation removes geometric and texture information."
+      ],
+      "confidence": "high",
+      "rule": "Runtime assets must be separately validated after lossy optimization."
+    }
+  ],
+  "exclusions": [],
+  "factoryId": "harbor-world-3d",
+  "goal": "Ground ten real-world source meshes used to produce optimized web harbor assets.",
+  "modelId": "crimson-harbor-objaverse-sources",
+  "observations": [
+    {
+      "claim": "Stylized fishing boat is annotated with license by and 15209 faces.",
+      "sourceIds": [
+        "eb459efb50d643a2b5112806e5530bef"
+      ]
+    },
+    {
+      "claim": "Tropical Fish is annotated with license by and 3688 faces.",
+      "sourceIds": [
+        "fcedf624c0544032adfe24b5b18ffe56"
+      ]
+    },
+    {
+      "claim": "Starfish is annotated with license by and 56320 faces.",
+      "sourceIds": [
+        "503de69b733146f6b9cc4da6a7c4e3d4"
+      ]
+    },
+    {
+      "claim": "Acropora cervicornis is annotated with license cc0 and 100000 faces.",
+      "sourceIds": [
+        "9753e14450564b558c95eaa1a6a461bc"
+      ]
+    },
+    {
+      "claim": "Brain Coral is annotated with license by and 12288 faces.",
+      "sourceIds": [
+        "c841a57b0b584a0d8fbf655c612dc836"
+      ]
+    },
+    {
+      "claim": "Coral: Agaricia agaricites (PRI 76794) is annotated with license cc0 and 1048454 faces.",
+      "sourceIds": [
+        "381691e5032940c8b40eae5c5485b6ef"
+      ]
+    },
+    {
+      "claim": "Sea fan corals is annotated with license by and 495401 faces.",
+      "sourceIds": [
+        "011954081a224acfb64cea3414d4adfe"
+      ]
+    },
+    {
+      "claim": "Madrepora cytherea is annotated with license cc0 and 100000 faces.",
+      "sourceIds": [
+        "9ff5270cafce4ceab61ce84c41c26faa"
+      ]
+    },
+    {
+      "claim": "Ocean Rock (Agisoft Photoscan) is annotated with license by and 2937 faces.",
+      "sourceIds": [
+        "f53697bd703842deb6c545cbece648d3"
+      ]
+    },
+    {
+      "claim": "Seabed is annotated with license by and 24832 faces.",
+      "sourceIds": [
+        "ad12fdd801fc49aebbccf57abd72995f"
+      ]
+    }
+  ],
+  "ranges": [],
+  "reproduction": {
+    "command": "PYTHONPATH=../objaverse-inspect python prepare_sources.py",
+    "transformationVersion": "harbor-hifi-v1"
+  },
+  "schema": [
+    {
+      "field": "faceCount",
+      "meaning": "Objaverse annotation face count",
+      "type": "integer",
+      "unit": "faces"
+    },
+    {
+      "field": "vertexCount",
+      "meaning": "Objaverse annotation vertex count",
+      "type": "integer",
+      "unit": "vertices"
+    }
+  ],
+  "schemaVersion": "1.0",
+  "sourceType": "dataset",
+  "sources": [
+    {
+      "checksum": "sha256:5391c0afca7af40b9d5b77ec218f00e9d675d8e9cc95e65f048d7822ad2d4b39",
+      "id": "eb459efb50d643a2b5112806e5530bef",
+      "license": "CC-BY",
+      "origin": "https://sketchfab.com/3d-models/eb459efb50d643a2b5112806e5530bef",
+      "role": "grounding",
+      "synthetic": false,
+      "version": "2026-09-04T16:27:30.508783+00:00"
+    },
+    {
+      "checksum": "sha256:58a2851d8a84c3f9c8d80ea2327e459da33b68ebe27791da2b781a64ec8eab72",
+      "id": "fcedf624c0544032adfe24b5b18ffe56",
+      "license": "CC-BY",
+      "origin": "https://sketchfab.com/3d-models/fcedf624c0544032adfe24b5b18ffe56",
+      "role": "grounding",
+      "synthetic": false,
+      "version": "2026-09-04T16:27:30.508783+00:00"
+    },
+    {
+      "checksum": "sha256:e93ceb0df73a3b3363ec6ffa776c74ba9bf4fb2ce0a7716f0e6f7b09283dbe1b",
+      "id": "503de69b733146f6b9cc4da6a7c4e3d4",
+      "license": "CC-BY",
+      "origin": "https://sketchfab.com/3d-models/503de69b733146f6b9cc4da6a7c4e3d4",
+      "role": "grounding",
+      "synthetic": false,
+      "version": "2026-09-04T16:27:30.508783+00:00"
+    },
+    {
+      "checksum": "sha256:c68b8f9eea0f5807769cd5f05d4f8a886e8d5142338ed94e6bdd9f60090f46f9",
+      "id": "9753e14450564b558c95eaa1a6a461bc",
+      "license": "CC0",
+      "origin": "https://sketchfab.com/3d-models/9753e14450564b558c95eaa1a6a461bc",
+      "role": "grounding",
+      "synthetic": false,
+      "version": "2026-09-04T16:27:30.508783+00:00"
+    },
+    {
+      "checksum": "sha256:1cbf6a1d136590828a4ec2b6161960c94e62e60000ea189c3b990a34f7bcdcf2",
+      "id": "c841a57b0b584a0d8fbf655c612dc836",
+      "license": "CC-BY",
+      "origin": "https://sketchfab.com/3d-models/c841a57b0b584a0d8fbf655c612dc836",
+      "role": "grounding",
+      "synthetic": false,
+      "version": "2026-09-04T16:27:30.508783+00:00"
+    },
+    {
+      "checksum": "sha256:1a7173dcd1fb9687e1341cc040d49f175f7ae135a4b74caebebd02b0160e6121",
+      "id": "381691e5032940c8b40eae5c5485b6ef",
+      "license": "CC0",
+      "origin": "https://sketchfab.com/3d-models/381691e5032940c8b40eae5c5485b6ef",
+      "role": "grounding",
+      "synthetic": false,
+      "version": "2026-09-04T16:27:30.508783+00:00"
+    },
+    {
+      "checksum": "sha256:8334d0d4aba562e3d1b69a34fb49c814223a13e520707c638dad99eb40b39f45",
+      "id": "011954081a224acfb64cea3414d4adfe",
+      "license": "CC-BY",
+      "origin": "https://sketchfab.com/3d-models/011954081a224acfb64cea3414d4adfe",
+      "role": "grounding",
+      "synthetic": false,
+      "version": "2026-09-04T16:27:30.508783+00:00"
+    },
+    {
+      "checksum": "sha256:a697bd235dba2300f8084cf846ef221c0d4f516e37c16e59ba9345d756db7445",
+      "id": "9ff5270cafce4ceab61ce84c41c26faa",
+      "license": "CC0",
+      "origin": "https://sketchfab.com/3d-models/9ff5270cafce4ceab61ce84c41c26faa",
+      "role": "grounding",
+      "synthetic": false,
+      "version": "2026-09-04T16:27:30.508783+00:00"
+    },
+    {
+      "checksum": "sha256:090c0fc0d5508a7ccdb03facc690c4c0bd428fd7ccb8c74f4ac62ce79049996a",
+      "id": "f53697bd703842deb6c545cbece648d3",
+      "license": "CC-BY",
+      "origin": "https://sketchfab.com/3d-models/f53697bd703842deb6c545cbece648d3",
+      "role": "grounding",
+      "synthetic": false,
+      "version": "2026-09-04T16:27:30.508783+00:00"
+    },
+    {
+      "checksum": "sha256:1ac40dbaa87e6ad7ab18c04ecb3c6649ba553f33c6268582d3a09f3d7a4ba601",
+      "id": "ad12fdd801fc49aebbccf57abd72995f",
+      "license": "CC-BY",
+      "origin": "https://sketchfab.com/3d-models/ad12fdd801fc49aebbccf57abd72995f",
+      "role": "grounding",
+      "synthetic": false,
+      "version": "2026-09-04T16:27:30.508783+00:00"
+    }
+  ],
+  "status": "ready",
+  "transformations": [
+    {
+      "id": "web-runtime-optimization",
+      "inputs": [
+        "source GLB geometry",
+        "source GLB materials"
+      ],
+      "loss": "declared geometry and texture reduction; immutable source retained",
+      "operation": "normalize, prune, deduplicate, simplify where required, resize textures, and compress",
+      "outputs": [
+        "runtime GLB geometry",
+        "runtime PBR materials"
+      ]
+    }
+  ],
+  "uncertainties": [
+    "Visual suitability remains subject to locked-camera render comparison."
+  ],
+  "validationReferences": [
+    {
+      "id": "locked-headless-three-captures",
+      "independentFromGeneration": true
+    },
+    {
+      "id": "mesh-integrity-runtime-report",
+      "independentFromGeneration": true
+    }
+  ]
+}

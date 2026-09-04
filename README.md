@@ -31,13 +31,19 @@ Then commit both the source changes and generated `docs/` files to `main`. In Gi
 
 ## Harbor Factory Kit
 
-The reusable Factory Kit is in `factory/harbor-world-3d/`. It deterministically generates the boat, fish, rocks, stars, and world layout, then combines them with the reviewed coral GLBs sourced from NexusFactory-Kits.
+The reusable Factory Kit is in `factory/harbor-world-3d/`. It deterministically generates a heightmapped seabed, curved rock/coral/fish layouts, six stars, and the production world description, then combines them with the reviewed high-detail GLBs sourced from Objaverse and NexusFactory-Kits.
 
 ```bash
 npm run harbor:test
 npm run harbor:generate
 npm run harbor:validate
+npm run harbor:layout
+npm run harbor:performance
+npm run harbor:mesh
+npm run harbor:interaction
+npm run harbor:headless
+npm run harbor:review
 npm run harbor:package
 ```
 
-The generated Website assets live in `public/assets/harbor/`. The Kit includes its source contract, provenance, six-operation service API, clean-room package, and validation evidence.
+The generated Website assets live in `public/assets/harbor/`. High quality renders 48 logical rock clusters as 192 instanced rocks, 42 coral placements, 18 curve-following fish, and 6 interactive stars. The Kit includes its source contract, provenance, six-operation service API, clean-room package, locked multi-angle visual review, and technical validation evidence.

@@ -1,0 +1,38 @@
+{
+  "schema": "iterative-asset-review/v1",
+  "run_id": "harbor-density-20260904-604a",
+  "asset": {
+    "asset_id": "crimson-harbor-scene",
+    "kind": "procedural-threejs-scene",
+    "intended_use": "portfolio-landing"
+  },
+  "authority": {
+    "mutation_roots": [
+      "/workspace/scratch/bf1be130628d/website-rock-upgrade"
+    ],
+    "external_writes": "one main push after every local gate passes"
+  },
+  "reference_set": {
+    "reference_ids": [
+      "user-approved-high-density-plan",
+      "preserved-sparse-baseline"
+    ],
+    "locked_criteria": [
+      "centered-boat",
+      "top-down-angled-camera",
+      "heightfield-relief",
+      "broken-curved-reef-bands",
+      "dense-rocks-and-coral",
+      "readable-shadows",
+      "performance-budgets"
+    ]
+  },
+  "budget": {
+    "batch_size": 1,
+    "max_attempts": 10,
+    "accepted_improvement_goal": 1,
+    "maximum_item_mutations_per_attempt": 50
+  },
+  "capture_profile_id": "harbor-ten-angle-v1",
+  "state": "accepted"
+}

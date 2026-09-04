@@ -1,8 +1,16 @@
 import * as THREE from "three";
 import { GLTFExporter } from "three/addons/exporters/GLTFExporter.js";
+import { buildPlacements, createCurveNetwork, layoutChecks } from "./layout.mjs";
+import {
+  buildTerrainTextures,
+  createTerrainDefinition,
+  createTerrainGroup,
+  TERRAIN_SEGMENTS,
+  TERRAIN_TEXTURE_SIZE,
+} from "./terrain.mjs";
 
 const FACTORY_ID = "crimson-harbor-world-3d";
-const FACTORY_VERSION = "1.1.0";
+const FACTORY_VERSION = "1.2.0";
 const DEFAULT_SEED = "crimson-harbor-604";
 const SURFACE_TEXTURE_SIZE = 256;
 const ROCK_TRIANGLE_MINIMUM = 500;
@@ -16,9 +24,10 @@ const CORAL_ASSETS = Object.freeze([
 ]);
 
 const PARAMETER_RULES = Object.freeze({
-  coralCount: { minimum: 8, maximum: 18, integer: true, defaultValue: 13 },
-  fishCount: { minimum: 4, maximum: 12, integer: true, defaultValue: 8 },
-  rockClusterCount: { minimum: 2, maximum: 5, integer: true, defaultValue: 3 },
+  coralCount: { minimum: 8, maximum: 42, integer: true, defaultValue: 42 },
+  fishCount: { minimum: 4, maximum: 18, integer: true, defaultValue: 18 },
+  rockClusterCount: { minimum: 2, maximum: 48, integer: true, defaultValue: 48 },
+  starCount: { minimum: 3, maximum: 6, integer: true, defaultValue: 6 },
   worldRadius: { minimum: 8, maximum: 14, integer: false, defaultValue: 11 },
   waterClarity: { minimum: 0.55, maximum: 0.92, integer: false, defaultValue: 0.8 },
 });
@@ -78,59 +87,6 @@ function normalizeParams(params = {}) {
   }));
 }
 
-function radialPlacement(random, minimumRadius, maximumRadius, y) {
-  const angle = between(random, 0, Math.PI * 2);
-  const radius = between(random, minimumRadius, maximumRadius);
-  return [round(Math.cos(angle) * radius), round(y), round(Math.sin(angle) * radius)];
-}
-
-function buildPlacements(seed, params) {
-  const coralRandom = stream(seed, "coral-placement");
-  const rockRandom = stream(seed, "rock-placement");
-  const fishRandom = stream(seed, "fish-placement");
-  const starRandom = stream(seed, "star-placement");
-
-  const coral = Array.from({ length: params.coralCount }, (_, index) => ({
-    id: `coral-${String(index + 1).padStart(2, "0")}`,
-    asset: CORAL_ASSETS[index % CORAL_ASSETS.length],
-    position: radialPlacement(coralRandom, 3.7, params.worldRadius, -2.45),
-    rotation: [0, round(between(coralRandom, 0, Math.PI * 2)), 0],
-    scale: round(between(coralRandom, 0.28, 0.58)),
-    swayPhase: round(between(coralRandom, 0, Math.PI * 2)),
-  }));
-
-  const rocks = Array.from({ length: params.rockClusterCount }, (_, index) => ({
-    id: `rocks-${String(index + 1).padStart(2, "0")}`,
-    asset: "rocks.glb",
-    position: radialPlacement(rockRandom, 4.2, params.worldRadius, -2.38),
-    rotation: [0, round(between(rockRandom, 0, Math.PI * 2)), 0],
-    scale: round(between(rockRandom, 0.75, 1.35)),
-  }));
-
-  const fish = Array.from({ length: params.fishCount }, (_, index) => ({
-    id: `fish-${String(index + 1).padStart(2, "0")}`,
-    asset: "fish.glb",
-    position: radialPlacement(fishRandom, 2.8, params.worldRadius - 1, between(fishRandom, -1.65, -0.55)),
-    rotation: [0, round(between(fishRandom, 0, Math.PI * 2)), 0],
-    scale: round(between(fishRandom, 0.3, 0.55)),
-    speed: round(between(fishRandom, 0.18, 0.36)),
-    phase: round(between(fishRandom, 0, Math.PI * 2)),
-    orbit: round(between(fishRandom, 0.45, 1.2)),
-  }));
-
-  const starAnchors = [[-4.8, 2.9], [5.2, 1.4], [3.8, -4.4]];
-  const stars = starAnchors.map(([x, z], index) => ({
-    id: `star-${index + 1}`,
-    asset: "star.glb",
-    position: [round(x + between(starRandom, -0.35, 0.35)), 0.72, round(z + between(starRandom, -0.35, 0.35))],
-    rotation: [Math.PI / 2, 0, round(between(starRandom, 0, Math.PI * 2))],
-    scale: round(between(starRandom, 0.48, 0.62)),
-    phase: round(between(starRandom, 0, Math.PI * 2)),
-  }));
-
-  return { coral, rocks, fish, stars };
-}
-
 export function describe() {
   return {
     factoryId: FACTORY_ID,
@@ -142,8 +98,8 @@ export function describe() {
       license: "MIT",
     },
     parameters: PARAMETER_RULES,
-    streams: ["coral-placement", "rock-placement", "rock-geometry", "surface-textures", "fish-placement", "star-placement"],
-    stages: ["asset-geometry", "surface-textures", "world-layout", "glb-export"],
+    streams: ["terrain-broad-a", "terrain-broad-b", "terrain-ripples", "curve:*", "coral-placement", "rock-placement", "rock-geometry", "surface-textures", "fish-placement", "star-placement"],
+    stages: ["curve-network", "heightfield", "asset-geometry", "surface-textures", "world-layout", "glb-export"],
     outputs: ["boat.glb", "fish.glb", "rocks.glb", "sand.glb", "star.glb", "textures/*.png", "world.json", "harbor.manifest.json"],
   };
 }
@@ -155,9 +111,11 @@ export function generate(request = {}) {
   const seed = String(request.seed ?? DEFAULT_SEED).trim();
   if (!seed) throw new RangeError("seed must not be empty.");
   const params = normalizeParams(request.params);
-  const placements = buildPlacements(seed, params);
+  const curves = createCurveNetwork(seed, params.worldRadius);
+  const terrain = createTerrainDefinition(seed, params.worldRadius, curves);
+  const placements = buildPlacements(seed, params, terrain, curves, CORAL_ASSETS);
   const artifact = {
-    schema: "crimson-harbor/factory-artifact/1",
+    schema: "crimson-harbor/factory-artifact/2",
     factoryId: FACTORY_ID,
     version: FACTORY_VERSION,
     synthetic: true,
@@ -176,19 +134,36 @@ export function generate(request = {}) {
         rockNormal: "rock-normal.png",
         sandAlbedo: "sand-albedo.png",
         sandNormal: "sand-normal.png",
+        terrainHeight: "terrain-height.png",
+        terrainAo: "terrain-ao.png",
       },
     },
     world: {
-      camera: { fov: 34, position: [0, 17.5, 12.5], target: [0, -1.1, 0], near: 0.1, far: 80 },
+      camera: { fov: 34, position: [0, 21, 8], target: [0, -1.15, 0], near: 0.1, far: 80 },
       seabed: {
         asset: "sand.glb",
-        y: -2.5,
-        radius: params.worldRadius + 5,
+        y: terrain.baseY,
+        radius: terrain.radius,
         color: "#c9b58f",
         albedoTexture: "sand-albedo.png",
         normalTexture: "sand-normal.png",
+        aoTexture: "terrain-ao.png",
+        heightTexture: "terrain-height.png",
       },
-      water: { y: 0, size: (params.worldRadius + 5) * 2, speed: 0.72, clarity: params.waterClarity },
+      terrain,
+      curves,
+      qualityCounts: {
+        high: { rocks: params.rockClusterCount, coral: params.coralCount, fish: params.fishCount, stars: params.starCount },
+        auto: { rocks: Math.min(params.rockClusterCount, 34), coral: Math.min(params.coralCount, 30), fish: Math.min(params.fishCount, 12), stars: params.starCount },
+        low: { rocks: Math.min(params.rockClusterCount, 20), coral: Math.min(params.coralCount, 18), fish: Math.min(params.fishCount, 8), stars: params.starCount },
+      },
+      lighting: {
+        hemisphere: { sky: "#d6f4e9", ground: "#17383b", intensity: 1.42 },
+        sun: { color: "#ffefd1", intensity: 4, position: [-8.5, 15, 8], target: [0, -1.55, 0] },
+        fill: { color: "#77bdc4", intensity: 0.38, position: [8, 3.5, -7] },
+        exposure: 1.06,
+      },
+      water: { y: 0, size: terrain.radius * 2, speed: 0.72, clarity: params.waterClarity },
       boat: { asset: "boat.glb", position: [0, 0.16, 0], rotation: [0, 0.22, 0], scale: 1, rocking: 0.8 },
       placements,
     },
@@ -198,8 +173,10 @@ export function generate(request = {}) {
     artifact,
     semanticSignature,
     stages: [
+      { id: "curve-network", status: "pass", outputSignature: `fnv1a:${hashText(stableStringify(curves))}` },
+      { id: "heightfield", status: "pass", outputSignature: `fnv1a:${hashText(stableStringify(terrain))}` },
       { id: "asset-geometry", status: "pass", outputSignature: `fnv1a:${hashText("harbor-primitives-v2")}` },
-      { id: "surface-textures", status: "pass", outputSignature: `fnv1a:${hashText("harbor-textures-256-v1")}` },
+      { id: "surface-textures", status: "pass", outputSignature: `fnv1a:${hashText("harbor-textures-256-v2")}` },
       { id: "world-layout", status: "pass", outputSignature: semanticSignature },
     ],
     warnings: [],
@@ -302,13 +279,6 @@ function rockHeight(u, v) {
     + Math.sin(turn * (u * 13 + v * 11)) * 0.045;
 }
 
-function sandHeight(u, v) {
-  const turn = Math.PI * 2;
-  return 0.5
-    + Math.sin(turn * (u * 5 + v * 1.35)) * 0.2
-    + Math.sin(turn * (u * 10 - v * 2.7)) * 0.055;
-}
-
 function createSurfaceTexture(fileName, heightFunction, colorFunction, normalStrength) {
   const width = SURFACE_TEXTURE_SIZE;
   const height = SURFACE_TEXTURE_SIZE;
@@ -346,7 +316,12 @@ function createSurfaceTexture(fileName, heightFunction, colorFunction, normalStr
   ];
 }
 
-export function buildSurfaceTextures() {
+function defaultTerrain() {
+  const curves = createCurveNetwork(DEFAULT_SEED, PARAMETER_RULES.worldRadius.defaultValue);
+  return createTerrainDefinition(DEFAULT_SEED, PARAMETER_RULES.worldRadius.defaultValue, curves);
+}
+
+export function buildSurfaceTextures(terrain = defaultTerrain()) {
   const rockTextures = createSurfaceTexture(
     "rock",
     rockHeight,
@@ -360,20 +335,7 @@ export function buildSurfaceTextures() {
     },
     18,
   );
-  const sandTextures = createSurfaceTexture(
-    "sand",
-    sandHeight,
-    (u, v, heightValue) => {
-      const grain = Math.sin((u * 53 + v * 41) * Math.PI * 2) * 3;
-      return [
-        Math.round(181 + heightValue * 32 + grain),
-        Math.round(158 + heightValue * 31 + grain),
-        Math.round(113 + heightValue * 27 + grain * 0.6),
-      ];
-    },
-    12,
-  );
-  return [...rockTextures, ...sandTextures];
+  return [...rockTextures, ...buildTerrainTextures(terrain)];
 }
 
 function createBoat() {
@@ -502,56 +464,6 @@ function createRocks() {
   return root;
 }
 
-function createSandTerrain() {
-  const radialSegments = 64;
-  const rings = 18;
-  const positions = [0, 0.035, 0];
-  const uvs = [0.5, 0.5];
-  const indices = [];
-
-  for (let ring = 1; ring <= rings; ring += 1) {
-    const radius = ring / rings;
-    for (let segment = 0; segment < radialSegments; segment += 1) {
-      const angle = (segment / radialSegments) * Math.PI * 2;
-      const x = Math.cos(angle) * radius;
-      const z = Math.sin(angle) * radius;
-      const edgeFade = Math.sin(radius * Math.PI);
-      const y = edgeFade * (Math.sin(x * 12 + z * 3.2) * 0.018 + Math.sin(x * 24 - z * 6.4) * 0.006);
-      positions.push(x, y, z);
-      uvs.push(x * 0.5 + 0.5, z * 0.5 + 0.5);
-    }
-  }
-
-  for (let segment = 0; segment < radialSegments; segment += 1) {
-    indices.push(0, 1 + segment, 1 + ((segment + 1) % radialSegments));
-  }
-  for (let ring = 1; ring < rings; ring += 1) {
-    const innerStart = 1 + (ring - 1) * radialSegments;
-    const outerStart = 1 + ring * radialSegments;
-    for (let segment = 0; segment < radialSegments; segment += 1) {
-      const next = (segment + 1) % radialSegments;
-      indices.push(innerStart + segment, outerStart + segment, outerStart + next);
-      indices.push(innerStart + segment, outerStart + next, innerStart + next);
-    }
-  }
-
-  const geometry = new THREE.BufferGeometry();
-  geometry.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
-  geometry.setAttribute("uv", new THREE.Float32BufferAttribute(uvs, 2));
-  geometry.setIndex(indices);
-  geometry.computeVertexNormals();
-  geometry.computeBoundingBox();
-  geometry.computeBoundingSphere();
-  geometry.userData = { algorithm: "radial-ripple-disc", rings, radialSegments };
-
-  const root = new THREE.Group();
-  root.name = "Small rippled sand terrain";
-  const sand = new THREE.Mesh(geometry, material(0xc9b58f, { roughness: 0.98 }));
-  sand.name = "Sand terrain";
-  root.add(sand);
-  return root;
-}
-
 function createStar() {
   const shape = new THREE.Shape();
   const points = 10;
@@ -573,12 +485,12 @@ function createStar() {
   return root;
 }
 
-export function buildAssetGroups() {
+export function buildAssetGroups(terrain = defaultTerrain()) {
   return {
     boat: createBoat(),
     fish: createFish(),
     rocks: createRocks(),
-    sand: createSandTerrain(),
+    sand: createTerrainGroup(terrain, material),
     star: createStar(),
   };
 }
@@ -623,15 +535,17 @@ function geometryStats(root) {
 export function validate(result) {
   const checks = [];
   const artifact = result?.artifact;
-  checks.push({ id: "artifact-shape", pass: artifact?.schema === "crimson-harbor/factory-artifact/1" });
+  checks.push({ id: "artifact-shape", pass: artifact?.schema === "crimson-harbor/factory-artifact/2" });
   checks.push({ id: "semantic-signature", pass: result?.semanticSignature === `fnv1a:${hashText(stableStringify(artifact))}` });
   checks.push({ id: "coral-count", pass: artifact?.world?.placements?.coral?.length === artifact?.params?.coralCount });
   checks.push({ id: "fish-count", pass: artifact?.world?.placements?.fish?.length === artifact?.params?.fishCount });
-  checks.push({ id: "star-count", pass: artifact?.world?.placements?.stars?.length === 3 });
+  checks.push({ id: "rock-count", pass: artifact?.world?.placements?.rocks?.length === artifact?.params?.rockClusterCount });
+  checks.push({ id: "star-count", pass: artifact?.world?.placements?.stars?.length === artifact?.params?.starCount });
+  checks.push(...layoutChecks(artifact.world));
 
-  const assets = buildAssetGroups();
+  const assets = buildAssetGroups(artifact.world.terrain);
   const assetStats = Object.fromEntries(Object.entries(assets).map(([name, root]) => [name, geometryStats(root)]));
-  const textureStats = buildSurfaceTextures().map(({ fileName, width, height, rgba }) => ({ fileName, width, height, pixels: rgba.length / 4 }));
+  const textureStats = buildSurfaceTextures(artifact.world.terrain).map(({ fileName, width, height, rgba }) => ({ fileName, width, height, pixels: rgba.length / 4 }));
   checks.push({ id: "finite-geometry", pass: Object.values(assetStats).every((stats) => stats.invalidValueCount === 0 && stats.triangleCount > 0) });
   checks.push({
     id: "rock-mesh-triangle-range",
@@ -639,9 +553,9 @@ export function validate(result) {
       && assetStats.rocks.meshTriangleCounts.every((count) => count >= ROCK_TRIANGLE_MINIMUM && count <= ROCK_TRIANGLE_MAXIMUM),
   });
   checks.push({ id: "rock-normal-and-uv-attributes", pass: assetStats.rocks.meshesWithNormals === 4 && assetStats.rocks.meshesWithUvs === 4 });
-  checks.push({ id: "sand-terrain", pass: assetStats.sand.meshCount === 1 && assetStats.sand.triangleCount >= 1500 && assetStats.sand.meshesWithUvs === 1 });
-  checks.push({ id: "surface-texture-dimensions", pass: textureStats.length === 4 && textureStats.every((texture) => texture.width === 256 && texture.height === 256) });
-  checks.push({ id: "triangle-budget", pass: Object.values(assetStats).reduce((total, stats) => total + stats.triangleCount, 0) < 14000 });
+  checks.push({ id: "sand-terrain", pass: assetStats.sand.meshCount === 1 && assetStats.sand.triangleCount === TERRAIN_SEGMENTS * TERRAIN_SEGMENTS * 2 && assetStats.sand.meshesWithUvs === 1 });
+  checks.push({ id: "surface-texture-dimensions", pass: textureStats.length === 6 && textureStats.every((texture) => texture.width === TERRAIN_TEXTURE_SIZE && texture.height === TERRAIN_TEXTURE_SIZE) });
+  checks.push({ id: "triangle-budget", pass: Object.values(assetStats).reduce((total, stats) => total + stats.triangleCount, 0) < 50000 });
   return {
     valid: checks.every((check) => check.pass),
     authority: "Independent structural checks over generated result and Three.js BufferGeometry",
@@ -689,14 +603,14 @@ async function exportGlb(root) {
 export async function exportFactory(result, request = {}) {
   const validation = validate(result);
   if (!validation.valid) throw new Error("Refusing to export an invalid harbor artifact.");
-  const groups = buildAssetGroups();
+  const groups = buildAssetGroups(result.artifact.world.terrain);
   const files = [];
   for (const [name, root] of Object.entries(groups)) {
     const output = await exportGlb(root);
     files.push({ fileName: `${name}.glb`, mediaType: "model/gltf-binary", bytes: new Uint8Array(output) });
   }
 
-  for (const texture of buildSurfaceTextures()) {
+  for (const texture of buildSurfaceTextures(result.artifact.world.terrain)) {
     files.push({
       fileName: texture.fileName,
       mediaType: "image/png",
@@ -708,7 +622,7 @@ export async function exportFactory(result, request = {}) {
   }
 
   const world = {
-    schema: "crimson-harbor/world/2",
+    schema: "crimson-harbor/world/3",
     factory: { id: FACTORY_ID, version: FACTORY_VERSION, semanticSignature: result.semanticSignature },
     seed: result.artifact.seed,
     assets: result.artifact.assets,

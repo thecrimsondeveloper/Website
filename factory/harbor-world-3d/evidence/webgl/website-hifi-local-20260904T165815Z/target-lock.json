@@ -1,0 +1,17 @@
+{
+  "runId": "website-hifi-local-20260904T165815Z",
+  "requested": {
+    "mode": "local",
+    "target": "/workspace/scratch/bf1be130628d/website-rock-upgrade",
+    "revision": "4ac24dca94a9821ad80499a62b93a37ea794df78",
+    "expectedSurface": "mixed",
+    "expectedState": "The static landing page renders a high-fidelity harbor with the name header, centered boat, PBR seabed assets, and depth-aware water.",
+    "interaction": "Use the production keyboard path to catch one starfish."
+  },
+  "observed": {
+    "target": null,
+    "revision": null,
+    "finalUrl": null,
+    "surface": null
+  }
+}

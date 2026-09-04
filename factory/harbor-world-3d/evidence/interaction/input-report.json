@@ -1,0 +1,26 @@
+{
+  "requestedId": "star-1",
+  "projectedNdc": [
+    -0.5040295248874868,
+    -0.3009781163914791
+  ],
+  "selectedId": "star-1",
+  "hitCount": 1,
+  "action": "ThreeBackend.castAt -> ThreeBackend.catchStar -> ThreeBackend.updateCast",
+  "beforeState": {
+    "total": 0,
+    "caught": []
+  },
+  "afterState": {
+    "total": 1,
+    "caught": [
+      "star-1"
+    ],
+    "events": [
+      {
+        "total": 1,
+        "index": 0
+      }
+    ]
+  }
+}

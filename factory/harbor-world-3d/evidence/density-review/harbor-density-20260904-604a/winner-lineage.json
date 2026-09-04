@@ -1,0 +1,35 @@
+{
+  "schema": "iterative-asset-review/winner-lineage/1",
+  "winners": [
+    {
+      "winner_id": "harbor-density-20260904-604a-w0000",
+      "parent_winner_id": null,
+      "generator_sha256": "baseline-commit-20af268",
+      "seed": "crimson-harbor-604",
+      "geometry_sha256": "8b9b4427c9bc8dd24f04ad36579e881a2a8452f81ac59ecd937ebb39863b3c23",
+      "capture_id": "harbor-density-20260904-604a-baseline-web-top-down",
+      "status": "baseline"
+    },
+    {
+      "winner_id": "harbor-density-20260904-604a-w0001",
+      "parent_winner_id": "harbor-density-20260904-604a-w0000",
+      "generator_sha256": "f6c487e9dc7f966bee297762f80fc2ccf712b2f3405c8618f6f1a30842ba970f",
+      "seed": "crimson-harbor-604",
+      "parameters": {
+        "rocks": 48,
+        "coral": 42,
+        "fish": 18,
+        "stars": 6
+      },
+      "geometry_sha256": "e747ea2db0a41c558f8e13a4426d9f514efaed942975e11bb5ff7c74908ef107",
+      "capture_id": "harbor-density-20260904-604a-final-winner-web-top-down",
+      "accepted_attempt_id": "harbor-density-20260904-604a-a0005",
+      "accepted_evidence": [
+        "heightfield-relief",
+        "curved-density",
+        "lighting-readability"
+      ],
+      "status": "winner"
+    }
+  ]
+}

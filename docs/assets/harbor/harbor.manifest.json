@@ -2,8 +2,8 @@
   "schema": "crimson-harbor/manifest/1",
   "factory": {
     "id": "crimson-harbor-world-3d",
-    "version": "1.1.0",
-    "semanticSignature": "fnv1a:7a357e2e"
+    "version": "1.2.0",
+    "semanticSignature": "fnv1a:75c12470"
   },
   "generatedAt": "deterministic-build; timestamp retained only in run report",
   "source": {
@@ -12,77 +12,82 @@
     "license": "MIT"
   },
   "budget": {
-    "maximumModelBytes": 5242880,
-    "actualModelBytes": 806080,
+    "maximumModelBytes": 8912896,
+    "actualModelBytes": 7725336,
     "maximumTextureBytes": 1048576,
-    "actualTextureBytes": 452149,
+    "actualTextureBytes": 446635,
     "pass": true
   },
   "exports": [
     {
       "file": "public/assets/harbor/models/boat.glb",
-      "bytes": 53540,
-      "sha256": "3b4269334709bcc9eae9484cea16effabfd0abebfdb89bc48dff344a946e736e",
-      "mediaType": "model/gltf-binary"
+      "bytes": 774860,
+      "sha256": "fe456b4dadb053f9ed535079c0aaba9381fd72bb09b03109115ff0392f5927f9",
+      "mediaType": "model/gltf-binary",
+      "source": "Objaverse optimized derivative"
     },
     {
       "file": "public/assets/harbor/models/coral-brain.glb",
-      "bytes": 239000,
-      "sha256": "e1a3483d975ec566ce733ba06a93367898f117ab22ff827aade628f36ca00ab6",
+      "bytes": 419344,
+      "sha256": "ddf15386e7f7debbc2c98146185f3b5b031ae0e405dbb1466f2f41eae8a1c4b5",
       "mediaType": "model/gltf-binary",
-      "source": "NexusFactory-Kits"
+      "source": "Objaverse optimized derivative"
     },
     {
       "file": "public/assets/harbor/models/coral-lettuce.glb",
-      "bytes": 52652,
-      "sha256": "673971a0e7f7e76f451d4a7e06a1ceb76fd17919c26778f49089f8620bcc3abc",
+      "bytes": 596344,
+      "sha256": "543dcc1b4adb9911cbe32d5eb68596a47bd92f5bc075b829f70374d619e660d7",
       "mediaType": "model/gltf-binary",
-      "source": "NexusFactory-Kits"
+      "source": "Objaverse optimized derivative"
     },
     {
       "file": "public/assets/harbor/models/coral-sea-fan.glb",
-      "bytes": 102452,
-      "sha256": "a2c849ae2567047e6fa7aed42233015081c4e3d867da389d036083c3aff86ef7",
+      "bytes": 1595428,
+      "sha256": "43ac27d89d26b791a4840fbe025a97f263c8ad1ee70145e12e7cec5461217870",
       "mediaType": "model/gltf-binary",
-      "source": "NexusFactory-Kits"
+      "source": "Objaverse optimized derivative"
     },
     {
       "file": "public/assets/harbor/models/coral-staghorn.glb",
-      "bytes": 121912,
-      "sha256": "dcdd988f5c84abde4bce4c17d7fdba94c901ab6b4f1978b332e3d9aabee6091a",
+      "bytes": 1083832,
+      "sha256": "92589528272aa05c0493d657e2cb9c0b83b0ea743b6a93fde9fa60e987d8178b",
       "mediaType": "model/gltf-binary",
-      "source": "NexusFactory-Kits"
+      "source": "Objaverse optimized derivative"
     },
     {
       "file": "public/assets/harbor/models/coral-table.glb",
-      "bytes": 59804,
-      "sha256": "c2b2b515843eb2110d70c37ba3e1ba945f8090ed08f80a024d81403f4e78fb1e",
+      "bytes": 1552684,
+      "sha256": "d8fe6589b7426bf15e0751981340e4bf0cb0b7328049df7f0c9d8982d324adf9",
       "mediaType": "model/gltf-binary",
-      "source": "NexusFactory-Kits"
+      "source": "Objaverse optimized derivative"
     },
     {
       "file": "public/assets/harbor/models/fish.glb",
-      "bytes": 17156,
-      "sha256": "50022b63c697f3dc1167b268594320fe25eac57bc79ba3172fed72bc1aaaf25b",
-      "mediaType": "model/gltf-binary"
+      "bytes": 202192,
+      "sha256": "ce6928decfec25dc216606a4012e014ae02f122f33163e1b791028af94754cea",
+      "mediaType": "model/gltf-binary",
+      "source": "Objaverse optimized derivative"
     },
     {
       "file": "public/assets/harbor/models/rocks.glb",
-      "bytes": 95104,
-      "sha256": "4b05817e77e16f0b13d35d8a55bb0bd0999cb4d10ac7f2023f4a65f26b8ae800",
-      "mediaType": "model/gltf-binary"
+      "bytes": 611176,
+      "sha256": "159e7f575b27f5d28853d512a48e5b37b3e788cc9e7e7ec35c85b28374746e99",
+      "mediaType": "model/gltf-binary",
+      "source": "Objaverse optimized derivative"
     },
     {
       "file": "public/assets/harbor/models/sand.glb",
-      "bytes": 51824,
-      "sha256": "3b2813a7e1991b9b0fe42dbcedbd062a1ad4c0eafa5729ebc9b3733528bb150c",
-      "mediaType": "model/gltf-binary"
+      "bytes": 730692,
+      "sha256": "e747ea2db0a41c558f8e13a4426d9f514efaed942975e11bb5ff7c74908ef107",
+      "mediaType": "model/gltf-binary",
+      "source": "Deterministic harbor heightfield factory"
     },
     {
       "file": "public/assets/harbor/models/star.glb",
-      "bytes": 12636,
-      "sha256": "af824c59cfc56571c66acce9e556c0e2937baf12bdbd497eae21767b863e9e03",
-      "mediaType": "model/gltf-binary"
+      "bytes": 158784,
+      "sha256": "a32604693adc284fc8965beaba17e31ffa5a91c7c61aca7bbeed2f77005fc8b7",
+      "mediaType": "model/gltf-binary",
+      "source": "Objaverse optimized derivative"
     },
     {
       "file": "public/assets/harbor/textures/rock-albedo.png",
@@ -104,8 +109,8 @@
     },
     {
       "file": "public/assets/harbor/textures/sand-albedo.png",
-      "bytes": 56460,
-      "sha256": "e6af440750bd3a3fe1c012ba8bd197346fdf8b0bcf684e7de15fda778119c974",
+      "bytes": 49856,
+      "sha256": "e84903225c01c2cd7a9746cdcc4b7a502bac3509b046b54cccafa042e1b0ebad",
       "mediaType": "image/png",
       "width": 256,
       "height": 256,
@@ -113,8 +118,26 @@
     },
     {
       "file": "public/assets/harbor/textures/sand-normal.png",
-      "bytes": 143325,
-      "sha256": "9d0b08f59f260ad18110a4a3903a5fd30aa6384c56afee1b318bdf2ed9fc91e2",
+      "bytes": 94659,
+      "sha256": "004ed8e409964e799fb684229ab4d5af22f78f98827b94dc698f102f04dd552b",
+      "mediaType": "image/png",
+      "width": 256,
+      "height": 256,
+      "colorSpace": "linear"
+    },
+    {
+      "file": "public/assets/harbor/textures/terrain-ao.png",
+      "bytes": 9682,
+      "sha256": "a952e9fb7947ff52eb560e7ba57ca7cf3c8f6c6575fc81dfb454d01482efe5b0",
+      "mediaType": "image/png",
+      "width": 256,
+      "height": 256,
+      "colorSpace": "linear"
+    },
+    {
+      "file": "public/assets/harbor/textures/terrain-height.png",
+      "bytes": 40074,
+      "sha256": "bd5807b6ff89bf550e0ad7651b551f4297cf1599337ff807f8b8d4d662311ace",
       "mediaType": "image/png",
       "width": 256,
       "height": 256,
@@ -122,8 +145,8 @@
     },
     {
       "file": "public/assets/harbor/world.json",
-      "bytes": 9563,
-      "sha256": "d417099c610be06317e0af990d6676583021d2aa94e18729feb40571f047ffa0",
+      "bytes": 59279,
+      "sha256": "e28e81efd60b68046fced2fb1a463843bb44f728eb19a73f9ee777236b123fc4",
       "mediaType": "application/json"
     }
   ],
@@ -148,7 +171,29 @@
         "pass": true
       },
       {
+        "id": "rock-count",
+        "pass": true
+      },
+      {
         "id": "star-count",
+        "pass": true
+      },
+      {
+        "id": "unique-placement-ids",
+        "pass": true,
+        "value": 114
+      },
+      {
+        "id": "boat-clearance",
+        "pass": true,
+        "minimumRadius": 3.4
+      },
+      {
+        "id": "terrain-placement-bounds",
+        "pass": true
+      },
+      {
+        "id": "fish-terrain-and-surface-clearance",
         "pass": true
       },
       {
@@ -226,10 +271,10 @@
       },
       "sand": {
         "meshCount": 1,
-        "vertexCount": 1153,
-        "triangleCount": 2240,
+        "vertexCount": 16641,
+        "triangleCount": 32768,
         "meshTriangleCounts": [
-          2240
+          32768
         ],
         "meshesWithNormals": 1,
         "meshesWithUvs": 1,
@@ -261,13 +306,25 @@
         "pixels": 65536
       },
       {
-        "fileName": "textures/sand-albedo.png",
+        "fileName": "textures/terrain-height.png",
         "width": 256,
         "height": 256,
         "pixels": 65536
       },
       {
         "fileName": "textures/sand-normal.png",
+        "width": 256,
+        "height": 256,
+        "pixels": 65536
+      },
+      {
+        "fileName": "textures/sand-albedo.png",
+        "width": 256,
+        "height": 256,
+        "pixels": 65536
+      },
+      {
+        "fileName": "textures/terrain-ao.png",
         "width": 256,
         "height": 256,
         "pixels": 65536

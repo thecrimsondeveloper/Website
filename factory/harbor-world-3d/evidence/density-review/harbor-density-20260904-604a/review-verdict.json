@@ -1,0 +1,16 @@
+{
+  "schema": "sandbox-review/verdict/1",
+  "runId": "harbor-density-20260904-604a",
+  "target": "Crimson portfolio harbor scene",
+  "question": "Does the deterministic high-density candidate visibly improve the sparse harbor while preserving camera, focal clearance, and hard layout constraints?",
+  "route": "@headless-three/renderer with task-local Mesa Lavapipe",
+  "captureMode": "ten fixed angles at 960x640, each rendered twice for deterministic hashes",
+  "captureVerdict": "pass",
+  "reviewFeedbackDecision": "continue to browser-boundary validation",
+  "selectionVerdict": "accept_candidate",
+  "finalVerdict": "pass for Three.js scene geometry, materials, transforms, composition, and deterministic pixels",
+  "warnings": [
+    "Production GLSL water and browser DOM/input are validated separately."
+  ],
+  "coverageBoundary": "Does not claim browser WebGL, DOM, network, or pointer-event coverage."
+}

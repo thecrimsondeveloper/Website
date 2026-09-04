@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "sandbox.web-render-validation/1",
+  "runId": "website-hifi-local-20260904T165815Z",
+  "startedAt": "2026-09-04T16:58:15Z",
+  "completedAt": "2026-09-04T17:10:00Z",
+  "runDirectory": "/workspace/scratch/bf1be130628d/website-rock-upgrade/factory/harbor-world-3d/evidence/webgl/website-hifi-local-20260904T165815Z",
+  "requested": {
+    "mode": "local",
+    "target": "/workspace/scratch/bf1be130628d/website-rock-upgrade",
+    "revision": "4ac24dca94a9821ad80499a62b93a37ea794df78",
+    "expectedSurface": "mixed",
+    "expectedState": "Static portfolio landing page with a high-fidelity PBR harbor and depth-aware GLSL3 water.",
+    "interaction": "Use the production keyboard path to catch one starfish."
+  },
+  "observed": {
+    "target": "/workspace/scratch/bf1be130628d/website-rock-upgrade",
+    "revision": "4ac24dca94a9821ad80499a62b93a37ea794df78",
+    "finalUrl": null,
+    "surface": null
+  },
+  "identity": {
+    "matchesRequestedMode": true,
+    "matchesRequestedTarget": true,
+    "matchesRequestedRevision": true
+  },
+  "freshness": {
+    "currentRunOnly": true,
+    "historicalEvidenceExcluded": true
+  },
+  "render": {
+    "visible": false,
+    "nonEmpty": false,
+    "surfaceProven": false,
+    "fatalErrors": ["No Chromium executable was available and the task-local browser download failed."]
+  },
+  "interaction": {
+    "required": true,
+    "performed": false,
+    "changeProven": false
+  },
+  "children": [
+    {
+      "name": "webgl-render-sandbox-it",
+      "verdict": "blocked",
+      "evidence": "child-webgl/webgl-render-report.json"
+    }
+  ],
+  "artifacts": {
+    "decisionLog": "/workspace/scratch/bf1be130628d/website-rock-upgrade/factory/harbor-world-3d/evidence/webgl/website-hifi-local-20260904T165815Z/decision-log.json",
+    "console": "/workspace/scratch/bf1be130628d/website-rock-upgrade/factory/harbor-world-3d/evidence/webgl/website-hifi-local-20260904T165815Z/console.json",
+    "networkFailures": "/workspace/scratch/bf1be130628d/website-rock-upgrade/factory/harbor-world-3d/evidence/webgl/website-hifi-local-20260904T165815Z/network-failures.json",
+    "interaction": "/workspace/scratch/bf1be130628d/website-rock-upgrade/factory/harbor-world-3d/evidence/webgl/website-hifi-local-20260904T165815Z/interaction.json"
+  },
+  "supplementalRuns": [
+    {
+      "name": "headless-three-scene",
+      "verdict": "pass",
+      "evidence": "factory/harbor-world-3d/evidence/headless-validation.json"
+    },
+    {
+      "name": "headless-three-star-interaction",
+      "verdict": "pass",
+      "evidence": "factory/harbor-world-3d/evidence/interaction/validation.json"
+    },
+    {
+      "name": "GLSL-ES-3-syntax",
+      "verdict": "pass",
+      "evidence": "factory/harbor-world-3d/evidence/water-shader-syntax.json"
+    }
+  ],
+  "cleanup": {
+    "required": true,
+    "completed": true
+  },
+  "verdict": "blocked",
+  "coverageBoundary": "The exact static build and assets were served and the production scene and interaction passed CPU Three.js validation. Browser WebGL2 shader compilation, console state, and DOM interaction remain unproven because no Chromium executable could be obtained."
+}

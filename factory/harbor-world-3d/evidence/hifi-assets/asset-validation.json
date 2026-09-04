@@ -1,0 +1,1467 @@
+{
+  "schemaVersion": "harbor-hifi-assets/1",
+  "captureProfile": {
+    "renderer": "@headless-three/renderer",
+    "adapter": "task-local Mesa Lavapipe",
+    "dimensions": [
+      384,
+      384
+    ],
+    "orbitAngles": 10,
+    "fov": 34,
+    "lighting": "locked two-light studio",
+    "background": "#123f42",
+    "limitation": "Texture coordinates above channel 1 are remapped to channel 0 only in headless captures; production GLBs are unchanged. Browser WebGL2 validation is recorded separately and remains pending when no Chromium executable is available."
+  },
+  "assets": [
+    {
+      "fileName": "boat.glb",
+      "bytes": 774860,
+      "sha256": "fe456b4dadb053f9ed535079c0aaba9381fd72bb09b03109115ff0392f5927f9",
+      "triangles": 15202,
+      "triangleBudget": [
+        12000,
+        18000
+      ],
+      "triangleBudgetPass": true,
+      "materialCount": 2,
+      "textureCount": 6,
+      "primitives": [
+        {
+          "name": "defaultMaterial",
+          "vertices": 746,
+          "triangles": 1174,
+          "invalidValues": 0,
+          "degenerateTriangles": 0,
+          "duplicateTriangles": 0,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "windingErrors": 0,
+          "normalsValid": true,
+          "uvsValid": true
+        },
+        {
+          "name": "defaultMaterial_1",
+          "vertices": 10853,
+          "triangles": 14028,
+          "invalidValues": 0,
+          "degenerateTriangles": 0,
+          "duplicateTriangles": 0,
+          "boundaryEdges": 778,
+          "nonManifoldEdges": 2,
+          "windingErrors": 0,
+          "normalsValid": true,
+          "uvsValid": true
+        }
+      ],
+      "structuralPass": true,
+      "externalTextureSet": false,
+      "captures": {
+        "baseline": {
+          "captures": [
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/boat/baseline-00.png",
+              "sha256": "0de45bb26866715b1083c849393e0ee80b822c3a3e7ce54f9edea0f21ded5cea",
+              "bytes": 11602
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/boat/baseline-01.png",
+              "sha256": "ef64be71f0c665d510bd88360250327d3cc5b197a1cc516f68a99ffc700cd58a",
+              "bytes": 6569
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/boat/baseline-02.png",
+              "sha256": "c71e43151a084bcebf3755e6623ffb09e0b05d4324aa22b33f66d529bad55571",
+              "bytes": 11718
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/boat/baseline-03.png",
+              "sha256": "b8585e95b7019afe63ce7966bfe828bb0fa36d8bc9e31a1a6d0f9927732d587f",
+              "bytes": 10526
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/boat/baseline-04.png",
+              "sha256": "3931357af10d74100e11ab78aca3ce15a939d4a3be5c25a061f57c8988b7835f",
+              "bytes": 8374
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/boat/baseline-05.png",
+              "sha256": "3c6a7578a089ba053891003d327b696c5dcf34e1c079e626601afb15fcb7b522",
+              "bytes": 10493
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/boat/baseline-06.png",
+              "sha256": "6a86b41af8dc44059da3de388b7e1df1051aacede19f062caa3fbb79a373e8d7",
+              "bytes": 6137
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/boat/baseline-07.png",
+              "sha256": "3343e92569961365555a7243154cc55b12b97d30ec35f9b6e5b18b287626fd5b",
+              "bytes": 11141
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/boat/baseline-08.png",
+              "sha256": "7def70f3a3e0b4508c4fac50a014db9a2288c8112902271d6646f8d0721d386c",
+              "bytes": 9514
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/boat/baseline-09.png",
+              "sha256": "755269338186094cad02d73ed30b4010998d9a6a29f872fd736226577dc591d7",
+              "bytes": 9487
+            }
+          ],
+          "remappedTextureChannels": 0
+        },
+        "candidate": {
+          "captures": [
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/boat/candidate-00.png",
+              "sha256": "c32557afce13cb0c4470d39fc776783618deb95ac8aae2aec1685374b23ab10c",
+              "bytes": 52863
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/boat/candidate-01.png",
+              "sha256": "29e5bf0f70fd1883805dbb076b9efd064b24d4420e2bd2414a1062fe70935716",
+              "bytes": 37285
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/boat/candidate-02.png",
+              "sha256": "61a770ea1fe7bced7ab16e481298684b6dd18a437ec1e158caff732814361e1a",
+              "bytes": 52362
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/boat/candidate-03.png",
+              "sha256": "8b3f02a9f143dce0951b87f1f7fe689780430af4fd15791ea029066a7570fe7c",
+              "bytes": 58756
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/boat/candidate-04.png",
+              "sha256": "4791eda135b053ece37b278a31e700734f5f4f634f330fe6b504c6170f084d0c",
+              "bytes": 61195
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/boat/candidate-05.png",
+              "sha256": "aa9443b64580c7199a5d36a70c6e27724d285e91aac91e3e58313971c6fb55cf",
+              "bytes": 60324
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/boat/candidate-06.png",
+              "sha256": "542ffbf2bd5f66efbb9ccea720fdf3fe89f7d734ec5443d305390a92adcd717f",
+              "bytes": 45030
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/boat/candidate-07.png",
+              "sha256": "1463dbfb976893b40e17610626b6c2e3be1c19b1a682dc4b5ad917cc21874992",
+              "bytes": 60312
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/boat/candidate-08.png",
+              "sha256": "65f513ed320f41ac2e595e9594b6944faff6720526c2fe15869835f1bee359c5",
+              "bytes": 61678
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/boat/candidate-09.png",
+              "sha256": "3b7d6ce2f764cbf2262e6d87e40967b5613bcf9c6b8efc44dc4f9508d0cf97cd",
+              "bytes": 58461
+            }
+          ],
+          "remappedTextureChannels": 0
+        }
+      }
+    },
+    {
+      "fileName": "fish.glb",
+      "bytes": 202192,
+      "sha256": "ce6928decfec25dc216606a4012e014ae02f122f33163e1b791028af94754cea",
+      "triangles": 3687,
+      "triangleBudget": [
+        2500,
+        4000
+      ],
+      "triangleBudgetPass": true,
+      "materialCount": 1,
+      "textureCount": 3,
+      "primitives": [
+        {
+          "name": "defaultMaterial",
+          "vertices": 2089,
+          "triangles": 3687,
+          "invalidValues": 0,
+          "degenerateTriangles": 0,
+          "duplicateTriangles": 0,
+          "boundaryEdges": 2,
+          "nonManifoldEdges": 1,
+          "windingErrors": 0,
+          "normalsValid": true,
+          "uvsValid": true
+        }
+      ],
+      "structuralPass": true,
+      "externalTextureSet": false,
+      "captures": {
+        "baseline": {
+          "captures": [
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/fish/baseline-00.png",
+              "sha256": "bc4d16b1fa2eb693ea0c3418fe324253942d32a80e8c5319c06b55f345a171f6",
+              "bytes": 19703
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/fish/baseline-01.png",
+              "sha256": "47bc837c7ae21bfc6c6f7f81cede2d306507541280f8b38fc880b65238825b13",
+              "bytes": 16833
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/fish/baseline-02.png",
+              "sha256": "9a962ade8b7e1b63c284ff50998c3ec371a5b59b6fc086fe00ef7b0d0e63824e",
+              "bytes": 20883
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/fish/baseline-03.png",
+              "sha256": "aba078a688999a105ffe609be8bcc64b9d6548144951f89dea9787716bc9dccc",
+              "bytes": 13670
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/fish/baseline-04.png",
+              "sha256": "e25ca66bc826cccf2ea6c9b11c3df7b02d66b1e266e9e00647e894c8a23b68d0",
+              "bytes": 12332
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/fish/baseline-05.png",
+              "sha256": "e6aefd863635236db52c8e87d384b1c82556e218c40b06eaa81ca802e94387c2",
+              "bytes": 18132
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/fish/baseline-06.png",
+              "sha256": "01cf7d6d8d70031abf7801ed220c12bf612d9a4fb4dd1cf632fe1d5b0c5c9473",
+              "bytes": 17265
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/fish/baseline-07.png",
+              "sha256": "62b2a944a2e0ab12f1b2782331dcb0a98033cc7adbf317c8c992ea7dd0383a28",
+              "bytes": 21040
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/fish/baseline-08.png",
+              "sha256": "e65030a80d5cb0699578c3782159dd31d625e9aa3aade86f278c87fcf6667437",
+              "bytes": 15791
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/fish/baseline-09.png",
+              "sha256": "7b8b2dc6a522611ad54c92435f74e527383486ff2de17c685323b05a8ce48588",
+              "bytes": 14532
+            }
+          ],
+          "remappedTextureChannels": 0
+        },
+        "candidate": {
+          "captures": [
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/fish/candidate-00.png",
+              "sha256": "f260ef5ded499b12ef25e29d74b8cc65ed1f77b3a4eb08739cdd2c9de4170e77",
+              "bytes": 63336
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/fish/candidate-01.png",
+              "sha256": "7309d5c8289ee8ef4174f03ac9546d0c56371a525d9b4a8cfd3c71de7c544387",
+              "bytes": 71610
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/fish/candidate-02.png",
+              "sha256": "aab23fc374219629e2fc8a16eca0fb1b74a740a091a0adf2b2723e3ba0bbd8ca",
+              "bytes": 61754
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/fish/candidate-03.png",
+              "sha256": "8ba01ec6e54d63e3ce3cbbdc42923c9c9e567d2fe75590eebe647c67fbd2ee17",
+              "bytes": 37527
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/fish/candidate-04.png",
+              "sha256": "b0434aa2d04aa7ac98a7f221012ca7b24825fa00e758067efbc83e3d07b44240",
+              "bytes": 34974
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/fish/candidate-05.png",
+              "sha256": "dda15c9ef2a8b4583f9b5397677a2e851bb5401b97b5d3ca761c5099c6e61181",
+              "bytes": 59297
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/fish/candidate-06.png",
+              "sha256": "27f647dc952165515d6870c64c8d5b6e942b9dd720e48c70a3c62eb77b30759b",
+              "bytes": 71114
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/fish/candidate-07.png",
+              "sha256": "8b79eb840738953cf09cec073a5f84ee431f2c79abd88f2200e28dc4d91fb0a7",
+              "bytes": 63438
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/fish/candidate-08.png",
+              "sha256": "a106278d2dd0546282edbf33c506340580ce1bbfa292644b17050da2c1247d20",
+              "bytes": 40801
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/fish/candidate-09.png",
+              "sha256": "1bf4f3bf9093127697eb42663bdf60e059a61730348d1db7193a77fd65f84af7",
+              "bytes": 39745
+            }
+          ],
+          "remappedTextureChannels": 0
+        }
+      }
+    },
+    {
+      "fileName": "star.glb",
+      "bytes": 158784,
+      "sha256": "a32604693adc284fc8965beaba17e31ffa5a91c7c61aca7bbeed2f77005fc8b7",
+      "triangles": 5632,
+      "triangleBudget": [
+        4000,
+        6500
+      ],
+      "triangleBudgetPass": true,
+      "materialCount": 1,
+      "textureCount": 1,
+      "primitives": [
+        {
+          "name": "Circle_Material002_0",
+          "vertices": 3564,
+          "triangles": 5632,
+          "invalidValues": 0,
+          "degenerateTriangles": 0,
+          "duplicateTriangles": 0,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "windingErrors": 0,
+          "normalsValid": true,
+          "uvsValid": true
+        }
+      ],
+      "structuralPass": true,
+      "externalTextureSet": false,
+      "captures": {
+        "baseline": {
+          "captures": [
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/star/baseline-00.png",
+              "sha256": "849316e86c5e8660ca8e1a1936bf34a2d1ecfeffbc17f04d3334b37f56aed719",
+              "bytes": 10914
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/star/baseline-01.png",
+              "sha256": "7e3e24fea071f61d39a6c0d944cd7335df9296322726c1e40a3177a20e3006dd",
+              "bytes": 10651
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/star/baseline-02.png",
+              "sha256": "c5442de093a746ebff0409da03d1d98dde8af06628ff9e7636e4339348559942",
+              "bytes": 10938
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/star/baseline-03.png",
+              "sha256": "20a89d84eb5896faed8ad4737785e95996f9f1773d2f0141dd0eb637e2b58050",
+              "bytes": 8120
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/star/baseline-04.png",
+              "sha256": "34a4671fdfa928cf1164655d6c25d6d08dffbea58237293aeafa9d8b1af91bfd",
+              "bytes": 7177
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/star/baseline-05.png",
+              "sha256": "849316e86c5e8660ca8e1a1936bf34a2d1ecfeffbc17f04d3334b37f56aed719",
+              "bytes": 10914
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/star/baseline-06.png",
+              "sha256": "7e3e24fea071f61d39a6c0d944cd7335df9296322726c1e40a3177a20e3006dd",
+              "bytes": 10651
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/star/baseline-07.png",
+              "sha256": "c5442de093a746ebff0409da03d1d98dde8af06628ff9e7636e4339348559942",
+              "bytes": 10938
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/star/baseline-08.png",
+              "sha256": "20a89d84eb5896faed8ad4737785e95996f9f1773d2f0141dd0eb637e2b58050",
+              "bytes": 8120
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/star/baseline-09.png",
+              "sha256": "34a4671fdfa928cf1164655d6c25d6d08dffbea58237293aeafa9d8b1af91bfd",
+              "bytes": 7177
+            }
+          ],
+          "remappedTextureChannels": 0
+        },
+        "candidate": {
+          "captures": [
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/star/candidate-00.png",
+              "sha256": "6cf8528f8de4cb31d8b58800e5f634997bed2e80c9f4970701677ec604728141",
+              "bytes": 37837
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/star/candidate-01.png",
+              "sha256": "07971c1a1c96f030035cc6791e61dc25d9989cb366ab7c1fd42332691b768764",
+              "bytes": 37893
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/star/candidate-02.png",
+              "sha256": "36556a8a93ced8ba27ea9b2d7f8567f1e7bb34fe43e2319c9213556cde7ff578",
+              "bytes": 32929
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/star/candidate-03.png",
+              "sha256": "440b21aba0d6c6d6574b423fd17787bbe580d58053171a00cf54179f240bbe3d",
+              "bytes": 25396
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/star/candidate-04.png",
+              "sha256": "f77941d485c6d6e4b6d5505c06887a6f64c95e43c3a45041c7dbdbe4bdf52eb8",
+              "bytes": 32245
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/star/candidate-05.png",
+              "sha256": "0fce03e1d00862cb70d4511cfe4ad8e1dba6a2d5dbee502f1d703d102fd6ff62",
+              "bytes": 36880
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/star/candidate-06.png",
+              "sha256": "b29bf62747d0f23cd67567ff7d21afae138fad85efbe286f2bf4b36ccdf9e43e",
+              "bytes": 36327
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/star/candidate-07.png",
+              "sha256": "db49387609b920f9725f61ed005fad10694ba082e858a434ff6e5a57cfb9cf78",
+              "bytes": 31031
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/star/candidate-08.png",
+              "sha256": "0ce3ba510c43677c331d259f94ddeccebf31aa9216c40822d1a2c01f4c1db9f4",
+              "bytes": 25084
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/star/candidate-09.png",
+              "sha256": "653e437d54f7f64a5af47f1087c882451a53d9dd90c4d437ba85996c8d8739d0",
+              "bytes": 32412
+            }
+          ],
+          "remappedTextureChannels": 0
+        }
+      }
+    },
+    {
+      "fileName": "coral-staghorn.glb",
+      "bytes": 1083832,
+      "sha256": "92589528272aa05c0493d657e2cb9c0b83b0ea743b6a93fde9fa60e987d8178b",
+      "triangles": 12897,
+      "triangleBudget": [
+        8000,
+        15000
+      ],
+      "triangleBudgetPass": true,
+      "materialCount": 1,
+      "textureCount": 3,
+      "primitives": [
+        {
+          "name": "Object_4",
+          "vertices": 12384,
+          "triangles": 12897,
+          "invalidValues": 0,
+          "degenerateTriangles": 0,
+          "duplicateTriangles": 0,
+          "boundaryEdges": 149,
+          "nonManifoldEdges": 93,
+          "windingErrors": 1,
+          "normalsValid": true,
+          "uvsValid": true
+        }
+      ],
+      "structuralPass": true,
+      "externalTextureSet": false,
+      "captures": {
+        "baseline": {
+          "captures": [
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-staghorn/baseline-00.png",
+              "sha256": "0ac6e193809e76abb6767b16b1a7f325664726ba50e7b67268c1059d6785a8bf",
+              "bytes": 24235
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-staghorn/baseline-01.png",
+              "sha256": "06fdf9261fa9c73ca89e0e8d3e51a1e9a8442bbf93282f2e2925d87aee820f77",
+              "bytes": 24105
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-staghorn/baseline-02.png",
+              "sha256": "b23544d188fec49b22c52d101666ae82588b2e8bcdeea932058b56b8a7d66cff",
+              "bytes": 22092
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-staghorn/baseline-03.png",
+              "sha256": "1e1b3fc4a9574fb5e3b1119e539f6bb556c79f093fbfec06dd0e6b4bd1ba9346",
+              "bytes": 22754
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-staghorn/baseline-04.png",
+              "sha256": "1afb01d064d7807fc3a5db19ea5955615b5ce78b101e61a0e26bcd03e06b8b26",
+              "bytes": 19920
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-staghorn/baseline-05.png",
+              "sha256": "f408a4b307f408610c3af0731b78091faaee5ac608ddde17d20e547418ddd315",
+              "bytes": 24934
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-staghorn/baseline-06.png",
+              "sha256": "f1d778dac2ece95c20e8818fea4bf457db810472f044de458a6b875a8a870d67",
+              "bytes": 22901
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-staghorn/baseline-07.png",
+              "sha256": "3d217d8ba4ce6a3a379ee4e9137cf60804478926c9190615b7efb063d2b30ee4",
+              "bytes": 22122
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-staghorn/baseline-08.png",
+              "sha256": "5a73a749a1656cbdaca81dd9899a7be3dd8e3a5e81c898bd64bf75e3e472ee0f",
+              "bytes": 22134
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-staghorn/baseline-09.png",
+              "sha256": "4553e5d627e8df67a2ed4b68b7bf12ff82ed7225d58e6bb7fa69ba7c46945f5d",
+              "bytes": 18838
+            }
+          ],
+          "remappedTextureChannels": 0
+        },
+        "candidate": {
+          "captures": [
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-staghorn/candidate-00.png",
+              "sha256": "369a597d61a2d4f31a4a27f95223d15f17fee8c455a5cadecb28d8feef488703",
+              "bytes": 90094
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-staghorn/candidate-01.png",
+              "sha256": "a787931f26b2b1d459bd09e569dbbc5d2bbbcdb7bcc1740eb9006009389f22a8",
+              "bytes": 87868
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-staghorn/candidate-02.png",
+              "sha256": "c0c9088b5861732193f0fb73763b1c71b1ed0be87ae23baebe5f6528e2496f79",
+              "bytes": 86539
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-staghorn/candidate-03.png",
+              "sha256": "9c96219ca233cd3df0e7b30807f50455664a39fc9d7fc55c0b76881ab0ffb5c5",
+              "bytes": 84541
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-staghorn/candidate-04.png",
+              "sha256": "adb33deaf3fc3036dbb340632dbcca2fa0e4b5fb44922caa0dc2610eb93001ca",
+              "bytes": 88743
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-staghorn/candidate-05.png",
+              "sha256": "0988f73d372c5bca39bcd5f0747a896cb0034e6161fd3d3f5dd5ec2669a4ada2",
+              "bytes": 90125
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-staghorn/candidate-06.png",
+              "sha256": "efec969e04482b3c42a471b9e55d44f93d4af228b965b530ffae340d0a1b03aa",
+              "bytes": 86593
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-staghorn/candidate-07.png",
+              "sha256": "d9bfd2b81a86151257f99a7b784679e549b8ce56d253178fc1ebe1b7407e65bb",
+              "bytes": 82560
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-staghorn/candidate-08.png",
+              "sha256": "f250d3d6b221e01717234952c5cf8be4be990cdaf8756a67192380220cded1be",
+              "bytes": 79665
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-staghorn/candidate-09.png",
+              "sha256": "b9b291f2f954c0e7ffc79d328dfc15c340766e52927024c31d60ffa9c2d4c863",
+              "bytes": 82908
+            }
+          ],
+          "remappedTextureChannels": 0
+        }
+      }
+    },
+    {
+      "fileName": "coral-brain.glb",
+      "bytes": 419344,
+      "sha256": "ddf15386e7f7debbc2c98146185f3b5b031ae0e405dbb1466f2f41eae8a1c4b5",
+      "triangles": 12288,
+      "triangleBudget": [
+        8000,
+        13000
+      ],
+      "triangleBudgetPass": true,
+      "materialCount": 1,
+      "textureCount": 2,
+      "primitives": [
+        {
+          "name": "pCube1_lambert1_0",
+          "vertices": 6369,
+          "triangles": 12288,
+          "invalidValues": 0,
+          "degenerateTriangles": 0,
+          "duplicateTriangles": 0,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "windingErrors": 0,
+          "normalsValid": true,
+          "uvsValid": true
+        }
+      ],
+      "structuralPass": true,
+      "externalTextureSet": false,
+      "captures": {
+        "baseline": {
+          "captures": [
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-brain/baseline-00.png",
+              "sha256": "8e20f8fa94aaeed709d12d583b11dacd3e7ebc612a10ee70813640f7cb3430d7",
+              "bytes": 34635
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-brain/baseline-01.png",
+              "sha256": "fecfe14f635dafaec195b6da03f24bbda0131be501707005b9e9a2f2af0add3b",
+              "bytes": 34590
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-brain/baseline-02.png",
+              "sha256": "3e26a66f1a8daddf998cffb34dec9f44882eed4af16e6ac2047772f5f576a63e",
+              "bytes": 35596
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-brain/baseline-03.png",
+              "sha256": "46ebc0fa0cff5378bf640e27a0236f24a13c77d63e37217e89d43703100366d4",
+              "bytes": 33607
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-brain/baseline-04.png",
+              "sha256": "2a9bd01ead9bf210ff3b786a40b319e5a6ed893aab8e13990583114460782e95",
+              "bytes": 32419
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-brain/baseline-05.png",
+              "sha256": "05750df729895f1f0f084ad7ba5560ce512242acefee92d25476e0ee8e0913dd",
+              "bytes": 34889
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-brain/baseline-06.png",
+              "sha256": "1007ca697116b12cf285d31c1518c45c2df4203611ead9e7956eb7a13dd9a2d2",
+              "bytes": 36538
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-brain/baseline-07.png",
+              "sha256": "9083f8d9a30158851abd7d7cd5b77ab5ecec8b0e9f1546c830b620b55a8eb5fb",
+              "bytes": 36395
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-brain/baseline-08.png",
+              "sha256": "3ded5e8b8342654bcf173136b8a0bafbbe18f89798d074fa4892dbf157f03470",
+              "bytes": 33420
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-brain/baseline-09.png",
+              "sha256": "96ec755cb251514cb21f4b7ec458141cb42b3d2f8cc543fb559687dcb1685379",
+              "bytes": 33329
+            }
+          ],
+          "remappedTextureChannels": 0
+        },
+        "candidate": {
+          "captures": [
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-brain/candidate-00.png",
+              "sha256": "29fc0880be4526e46ea44681986084b1f332daacf65330b8583ef5720764e1b2",
+              "bytes": 118367
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-brain/candidate-01.png",
+              "sha256": "86c363ba304c432668e57229f8477cbddbbde5b796482efb8269a96bb148ab78",
+              "bytes": 118052
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-brain/candidate-02.png",
+              "sha256": "0434789b3acfdd7111f92719f48280661577be4dc88e20e8430cf07551e2dbe5",
+              "bytes": 114607
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-brain/candidate-03.png",
+              "sha256": "2f5191397f5f5ccdef921f10768fdeb4558964c5ba3c9d2b7fe34d3cfc79405d",
+              "bytes": 112590
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-brain/candidate-04.png",
+              "sha256": "8703e1cd056928b58b0fae5b2095379b9fd4b19707e25d51b13b9aec75611f0b",
+              "bytes": 106015
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-brain/candidate-05.png",
+              "sha256": "014a80eb03e10b003e4a61d793200c205cc66b8a568db2cac16cd84dbb26a3fe",
+              "bytes": 114241
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-brain/candidate-06.png",
+              "sha256": "84eef03e1695cced0a4c5b82d62acd3cfa377688685a6cc0338f021318d24ff1",
+              "bytes": 117504
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-brain/candidate-07.png",
+              "sha256": "37a5316cf2446eca4edd897ddcfbdd01a66d893e1c2dc988a0a624900db6090e",
+              "bytes": 117040
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-brain/candidate-08.png",
+              "sha256": "43affccc878889c50cfa8595ba1764d8e3c3d78596a221c4f251412d40e62e6a",
+              "bytes": 113314
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-brain/candidate-09.png",
+              "sha256": "9f7d4b33fe3aaf937769b08c1e66f4f047447f52095ca2f0501ca6ce33b85309",
+              "bytes": 114532
+            }
+          ],
+          "remappedTextureChannels": 0
+        }
+      }
+    },
+    {
+      "fileName": "coral-lettuce.glb",
+      "bytes": 596344,
+      "sha256": "543dcc1b4adb9911cbe32d5eb68596a47bd92f5bc075b829f70374d619e660d7",
+      "triangles": 19075,
+      "triangleBudget": [
+        10000,
+        20000
+      ],
+      "triangleBudgetPass": true,
+      "materialCount": 1,
+      "textureCount": 1,
+      "primitives": [
+        {
+          "name": "Object_2",
+          "vertices": 16539,
+          "triangles": 19075,
+          "invalidValues": 0,
+          "degenerateTriangles": 0,
+          "duplicateTriangles": 0,
+          "boundaryEdges": 223,
+          "nonManifoldEdges": 140,
+          "windingErrors": 4,
+          "normalsValid": true,
+          "uvsValid": true
+        }
+      ],
+      "structuralPass": true,
+      "externalTextureSet": false,
+      "captures": {
+        "baseline": {
+          "captures": [
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-lettuce/baseline-00.png",
+              "sha256": "516027eaa0ed5b411714c6e3d19647fa883125b6f22785347bc01c702f973fcf",
+              "bytes": 11414
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-lettuce/baseline-01.png",
+              "sha256": "cacf1020d2dc56a66b9a4d4385ec16007877844a419e5e99b98338c5890aa2db",
+              "bytes": 11180
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-lettuce/baseline-02.png",
+              "sha256": "9b831d9cd1d03a1eb77f5b7dff142f74f7cb810c7b524054de8589c5850112af",
+              "bytes": 10766
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-lettuce/baseline-03.png",
+              "sha256": "79d547ceb8931c4fc7e338c05a7a7d4b1882d907f4dd5b644ba27691c86a5bcd",
+              "bytes": 10340
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-lettuce/baseline-04.png",
+              "sha256": "3dd89333dde40fd6515f0e19a8e361759594908a128c4c4d4e1b4c39fb59ef8c",
+              "bytes": 10344
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-lettuce/baseline-05.png",
+              "sha256": "dc3eee38465635a3f8b012200b08bb4d14fd1f065beb7a48f6bcc4c3b6c4704a",
+              "bytes": 10675
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-lettuce/baseline-06.png",
+              "sha256": "9406ebf598ce817656500a9b3704060d3a0fd32f2ada46f01644204163e704f8",
+              "bytes": 11290
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-lettuce/baseline-07.png",
+              "sha256": "da1cffeb4ddd717571f6caa68cd25b64f3c258fea064492f20946d880a645127",
+              "bytes": 11882
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-lettuce/baseline-08.png",
+              "sha256": "d33d6f38d2e665314e92b45c2803bb8ba6f96521dba78bd6e7377a370619f054",
+              "bytes": 12036
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-lettuce/baseline-09.png",
+              "sha256": "b2c316384b302fc19f2652a2f87ad27ac40a17abf1a73e31e63b9496e414e08c",
+              "bytes": 12098
+            }
+          ],
+          "remappedTextureChannels": 0
+        },
+        "candidate": {
+          "captures": [
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-lettuce/candidate-00.png",
+              "sha256": "1eff2a8d85532155ffa4fb83d71f63e13cf64e4ab149ee6a8d3ecfa4c83e623f",
+              "bytes": 56778
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-lettuce/candidate-01.png",
+              "sha256": "c2dfc4723c883b434939de8ac9f0f5a6610498a5e6c33f8021d109cb3db8cbe3",
+              "bytes": 58707
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-lettuce/candidate-02.png",
+              "sha256": "0dc9075ed1ca4d26078d524f2abd9e27c6b33fa4766ea6fd80f6dd59ee8aaf62",
+              "bytes": 55287
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-lettuce/candidate-03.png",
+              "sha256": "f8ba48059ab9cb612944e6bb1c25e31c636fc2683db7bfb63d1b82fc5367acfa",
+              "bytes": 54171
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-lettuce/candidate-04.png",
+              "sha256": "fab3289079ea9ddaf4c633600f2c0551f73781e288094a6dadb1a1dde8c70c51",
+              "bytes": 55555
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-lettuce/candidate-05.png",
+              "sha256": "afacb01baa7a2a7cdfbc5b69e841c80bbeb8fadfe5cfebbea5290b7a8b2181a7",
+              "bytes": 57597
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-lettuce/candidate-06.png",
+              "sha256": "dfd165560da69457992f58aad04221b4d2e31250473c1dc9f95cdf70f2b8fdeb",
+              "bytes": 58566
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-lettuce/candidate-07.png",
+              "sha256": "cc775b4480d27feffe9710c3660da0f76083934a859b7dca8f196cded08ca608",
+              "bytes": 52437
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-lettuce/candidate-08.png",
+              "sha256": "c0ff79fc75506f722ea5d5f17777fa08c411659beb6d59979035ef653b881e86",
+              "bytes": 50898
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-lettuce/candidate-09.png",
+              "sha256": "045376c80240d1a8effe64bfdbc6ed2da1753bd8fb1796638505b537607bcdec",
+              "bytes": 51784
+            }
+          ],
+          "remappedTextureChannels": 0
+        }
+      }
+    },
+    {
+      "fileName": "coral-sea-fan.glb",
+      "bytes": 1595428,
+      "sha256": "43ac27d89d26b791a4840fbe025a97f263c8ad1ee70145e12e7cec5461217870",
+      "triangles": 51126,
+      "triangleBudget": [
+        12000,
+        52000
+      ],
+      "triangleBudgetPass": true,
+      "materialCount": 2,
+      "textureCount": 2,
+      "primitives": [
+        {
+          "name": "Object_2",
+          "vertices": 22613,
+          "triangles": 25270,
+          "invalidValues": 0,
+          "degenerateTriangles": 0,
+          "duplicateTriangles": 0,
+          "boundaryEdges": 1663,
+          "nonManifoldEdges": 130,
+          "windingErrors": 5,
+          "normalsValid": true,
+          "uvsValid": true
+        },
+        {
+          "name": "Object_5",
+          "vertices": 22815,
+          "triangles": 25856,
+          "invalidValues": 0,
+          "degenerateTriangles": 0,
+          "duplicateTriangles": 0,
+          "boundaryEdges": 1599,
+          "nonManifoldEdges": 119,
+          "windingErrors": 4,
+          "normalsValid": true,
+          "uvsValid": true
+        }
+      ],
+      "structuralPass": true,
+      "externalTextureSet": false,
+      "captures": {
+        "baseline": {
+          "captures": [
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-sea-fan/baseline-00.png",
+              "sha256": "8a52d8e3d089e1f807f3f09f3522044b7640d87e7d3bc84ec8b88c5399aad5f9",
+              "bytes": 27989
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-sea-fan/baseline-01.png",
+              "sha256": "4ee5c64cd6092011ea4761b1f4ee277e532fdf99e9641408dbb26c3e25190017",
+              "bytes": 33372
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-sea-fan/baseline-02.png",
+              "sha256": "8b5e15fe1adbad3d3f6dc5107ae69c327d9b517131e68a7ad1f2e16584341ccb",
+              "bytes": 28915
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-sea-fan/baseline-03.png",
+              "sha256": "6197370a90e9886ed30434315d11e7b1de4969abd7b0337b2c486084a0bce4b9",
+              "bytes": 15474
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-sea-fan/baseline-04.png",
+              "sha256": "0bb1adbaeeb7dad53135b4154a0203557e31b1317109b55ca055b05a1c9ef448",
+              "bytes": 13719
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-sea-fan/baseline-05.png",
+              "sha256": "35d8bde3ce4472e7c1caa1a582b40524b1fa5a7a1be22d77ac270a10f3714628",
+              "bytes": 26974
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-sea-fan/baseline-06.png",
+              "sha256": "b842964881d8795e2e7c34eb3a4619a38e4b9e5c696b9259716c8480adf7ac02",
+              "bytes": 32902
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-sea-fan/baseline-07.png",
+              "sha256": "c32f2ccf94cd74a28dc957bb2cf63922fe0019b1ac563ba9620e4e754bf319fc",
+              "bytes": 28466
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-sea-fan/baseline-08.png",
+              "sha256": "667e72df6e0f8f2a13874f11c8a15a8dab979e5b191734a1c9f42b7eda50e5d9",
+              "bytes": 15452
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-sea-fan/baseline-09.png",
+              "sha256": "3fbf2f97c3273ca3961fdd202cc0c54fa64321bccd81be2e0e287ed22aad6617",
+              "bytes": 13727
+            }
+          ],
+          "remappedTextureChannels": 0
+        },
+        "candidate": {
+          "captures": [
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-sea-fan/candidate-00.png",
+              "sha256": "a20b0447058896436b62553467a58d2057089f07ea1466b83ab1b3ca5632ee7b",
+              "bytes": 43353
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-sea-fan/candidate-01.png",
+              "sha256": "f21b2281005f0123de9508ac7b54a6922ff7058b92b2017083d9c1ce318e6ed8",
+              "bytes": 45696
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-sea-fan/candidate-02.png",
+              "sha256": "558bbda873345987b7f0b3e83e682fe25471f45bedc69ac53aae1823cfe6b3d3",
+              "bytes": 32210
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-sea-fan/candidate-03.png",
+              "sha256": "1f15011d33b6f488b186428d5c65b7ac2632e093ae49c865b1cce9e468188a92",
+              "bytes": 21542
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-sea-fan/candidate-04.png",
+              "sha256": "93745d94b9278d683e80a15dcfb8cb3e8c69f8621a5820cee51ceab60bc733b5",
+              "bytes": 41392
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-sea-fan/candidate-05.png",
+              "sha256": "fad5c2b46421ec998bf2112e29bc0ffdbd176f4380da82293561365cbffe7329",
+              "bytes": 59586
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-sea-fan/candidate-06.png",
+              "sha256": "11b0868909e4937539ea07c83388c65dffe2d22c60d6385f6c06445cce244582",
+              "bytes": 61624
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-sea-fan/candidate-07.png",
+              "sha256": "2fb116b76b60d684b5e76e29f00cc7dd684fde74be83ed2d2ff5c165fbd7d83a",
+              "bytes": 48267
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-sea-fan/candidate-08.png",
+              "sha256": "7f076eb3fdac7183ff1941ee20af946f0e9879ab352aa16304df3fd31c1d50a9",
+              "bytes": 23499
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-sea-fan/candidate-09.png",
+              "sha256": "e8a75f1434ca29a191200208a59089988865472f7eeef93e8776a36bf7ec9d3e",
+              "bytes": 27881
+            }
+          ],
+          "remappedTextureChannels": 0
+        }
+      }
+    },
+    {
+      "fileName": "coral-table.glb",
+      "bytes": 1552684,
+      "sha256": "d8fe6589b7426bf15e0751981340e4bf0cb0b7328049df7f0c9d8982d324adf9",
+      "triangles": 18176,
+      "triangleBudget": [
+        10000,
+        19000
+      ],
+      "triangleBudgetPass": true,
+      "materialCount": 1,
+      "textureCount": 5,
+      "primitives": [
+        {
+          "name": "Object_4",
+          "vertices": 25012,
+          "triangles": 18176,
+          "invalidValues": 0,
+          "degenerateTriangles": 0,
+          "duplicateTriangles": 0,
+          "boundaryEdges": 156,
+          "nonManifoldEdges": 401,
+          "windingErrors": 3,
+          "normalsValid": true,
+          "uvsValid": true
+        }
+      ],
+      "structuralPass": true,
+      "externalTextureSet": false,
+      "captures": {
+        "baseline": {
+          "captures": [
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-table/baseline-00.png",
+              "sha256": "c3b1c3cec3636b63ca63f0ce08d600374ced63c73e679292599d2f673f028fe3",
+              "bytes": 22492
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-table/baseline-01.png",
+              "sha256": "b5f13f267088a3306c0c8cb76dd1ba6d24dcb134ef3a3fb2f8d5afc3a5352936",
+              "bytes": 20700
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-table/baseline-02.png",
+              "sha256": "5d34bbfb8b944938a0b5996d58d3affe50ecd5e7121a7d6cec02c99fc7918e1f",
+              "bytes": 20040
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-table/baseline-03.png",
+              "sha256": "ef9a74b705e383b60691c9a38b1d56c0201385ea43184fe0eb169935966d6fa6",
+              "bytes": 20838
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-table/baseline-04.png",
+              "sha256": "4d0c10e63589edec98b32e28f864dcbc69bc2243afbfd2df0a799993b08b9240",
+              "bytes": 21686
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-table/baseline-05.png",
+              "sha256": "1a9378bfc1b47351dfba4ec50b60077e0657fd36417edb28b912c8611814ab22",
+              "bytes": 21174
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-table/baseline-06.png",
+              "sha256": "80329e56c551b1a5907676e5cd5d7238494fd4b439dd3d6c90fdc9058c629e72",
+              "bytes": 21138
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-table/baseline-07.png",
+              "sha256": "ec5e5959ceb93e1a950e0f0c77ae984e5eb357315bc470c7ee25cefcb3f03b40",
+              "bytes": 23505
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-table/baseline-08.png",
+              "sha256": "40d53f1a3308c24912ce1d9d8a01926a08829e8b55b0a04b99f64021762769d5",
+              "bytes": 23224
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-table/baseline-09.png",
+              "sha256": "32dbba0b9dcd1554967e2ec146a101a2f07ba44dd56f65710f7cf6d7b8937443",
+              "bytes": 22300
+            }
+          ],
+          "remappedTextureChannels": 0
+        },
+        "candidate": {
+          "captures": [
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-table/candidate-00.png",
+              "sha256": "c8ad3e0f434b7356dae05941e46af4e56e2fd92169febacb413606bdda41df68",
+              "bytes": 77714
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-table/candidate-01.png",
+              "sha256": "094c70ae021a05da19e7e30ad15d693cb0312a4405472806970db09405b1c68a",
+              "bytes": 79157
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-table/candidate-02.png",
+              "sha256": "07ba8a97b11ef3d2441c33e0461820b586c3312f5c877c585b285fc0215539ca",
+              "bytes": 73274
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-table/candidate-03.png",
+              "sha256": "2a55ce0a6e802c1e852c3e16c9cde0f4a7611af2870e4e6ca3c22be0581b93e0",
+              "bytes": 52246
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-table/candidate-04.png",
+              "sha256": "0fc79ae186042039edf3c0850be4d6d05ec8fb20caeea44a08c998c849389332",
+              "bytes": 37122
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-table/candidate-05.png",
+              "sha256": "60a0325192b5a27cadb3ff9b3b3b77ec0b2c01cc76a334fd0c26ceb6da9c2566",
+              "bytes": 38393
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-table/candidate-06.png",
+              "sha256": "8b3e11572cf8133efb5484fdd0fcfe11618d9d6e541399a85e5d636401568860",
+              "bytes": 38133
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-table/candidate-07.png",
+              "sha256": "eca77ae211fdac6db74aa1ca9b9175ff5121c5e74f841c6dc71c8f894b91d933",
+              "bytes": 33899
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-table/candidate-08.png",
+              "sha256": "8b7629636c021c009cb3b7b76529efe12ddb74acc23ae334e807d7337469c4fc",
+              "bytes": 39484
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/coral-table/candidate-09.png",
+              "sha256": "9bde746079d7bd679b7cafb82769d94061854b40e002308bd36496ec875e6978",
+              "bytes": 59433
+            }
+          ],
+          "remappedTextureChannels": 1
+        }
+      }
+    },
+    {
+      "fileName": "rocks.glb",
+      "bytes": 611176,
+      "sha256": "159e7f575b27f5d28853d512a48e5b37b3e788cc9e7e7ec35c85b28374746e99",
+      "triangles": 856,
+      "triangleBudget": [
+        800,
+        1000
+      ],
+      "triangleBudgetPass": true,
+      "materialCount": 1,
+      "textureCount": 5,
+      "primitives": [
+        {
+          "name": "Object_2",
+          "vertices": 685,
+          "triangles": 856,
+          "invalidValues": 0,
+          "degenerateTriangles": 0,
+          "duplicateTriangles": 0,
+          "boundaryEdges": 0,
+          "nonManifoldEdges": 0,
+          "windingErrors": 0,
+          "normalsValid": true,
+          "uvsValid": true
+        }
+      ],
+      "structuralPass": true,
+      "externalTextureSet": false,
+      "captures": {
+        "baseline": {
+          "captures": [
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/rocks/baseline-00.png",
+              "sha256": "5ae15a53168e20c04b2c3919c01b4df83f959f0f7c717fa02b110020c46992d7",
+              "bytes": 34929
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/rocks/baseline-01.png",
+              "sha256": "f1a342a74d4502a3539d3d210b3748f89fb99f120fa4e6cc1946dd9e97bc6e18",
+              "bytes": 36565
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/rocks/baseline-02.png",
+              "sha256": "b29060c48bf44f45484a9ae0391ae10937750e53190c167f2cc390a62582bc60",
+              "bytes": 34898
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/rocks/baseline-03.png",
+              "sha256": "2240c223b9b14bb1b9666c062d56f92d510510e9a14e035f8bb12ea8341d3d2e",
+              "bytes": 32115
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/rocks/baseline-04.png",
+              "sha256": "90e38431d8b6b801cd4e2ad3f28db42a11d907118a9d893a16ed17aca4a2ef64",
+              "bytes": 28168
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/rocks/baseline-05.png",
+              "sha256": "9ebe778458b81a7661c70d92ef570818c4f74bd59a7aa8865a6e13c256e2954d",
+              "bytes": 30361
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/rocks/baseline-06.png",
+              "sha256": "fd97aa8fae6d6c6df7c7111aa76413e8371975be38c4812de71b466fcdea5e32",
+              "bytes": 33004
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/rocks/baseline-07.png",
+              "sha256": "1bff56ea09db560577e21ff73de5f5e6d0b5bf68e53d9507570f5dcdb6f5712b",
+              "bytes": 31231
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/rocks/baseline-08.png",
+              "sha256": "5ccc73de9180de6a79a99357f0574543e9519775235cd9ccbe5708283522b806",
+              "bytes": 30537
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/rocks/baseline-09.png",
+              "sha256": "759b3583a7bdf012b57c17948583ff9c144646d4175b3a13f0bf2c7185cc2a55",
+              "bytes": 32228
+            }
+          ],
+          "remappedTextureChannels": 0
+        },
+        "candidate": {
+          "captures": [
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/rocks/candidate-00.png",
+              "sha256": "c73c8cfa0fe764af5f62df90fcae38678f2998dbe16b1364142ebb86693137b6",
+              "bytes": 33950
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/rocks/candidate-01.png",
+              "sha256": "4159bec516e3ee3ce5de5754ff4eb0d1fee91f408b971cdf1f17fd33a3d434d6",
+              "bytes": 29409
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/rocks/candidate-02.png",
+              "sha256": "4feeaa96948c8923697cccc3600e6a629947937737f48766cfca1eecc60dfd05",
+              "bytes": 29851
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/rocks/candidate-03.png",
+              "sha256": "22b739943418410c5d8d8fe2e2e9c69b16badaccee6ad7628767fe21c52f0bfa",
+              "bytes": 30835
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/rocks/candidate-04.png",
+              "sha256": "5f8178a41f72d7dff5c460fb113f1d0ccd45dda89a1171b3886559cc19103b0c",
+              "bytes": 34844
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/rocks/candidate-05.png",
+              "sha256": "87dea56ceefcdb8cde2e5819c79d3ad101bb5ed8ffd853bd30b057d479539553",
+              "bytes": 39026
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/rocks/candidate-06.png",
+              "sha256": "41d0a44721ec0f5a79b19cccf13e59b89ac42018491ee4f05d7dfbc3c127a46c",
+              "bytes": 40814
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/rocks/candidate-07.png",
+              "sha256": "4cac5c52794124423e8f3a9464335d6359f990332020b49019584c3d8e067fdc",
+              "bytes": 42575
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/rocks/candidate-08.png",
+              "sha256": "ce7192979c68c0165c57a1f34f13d86a63ba5731957b05fa679fcdb1ddd119e3",
+              "bytes": 39877
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/rocks/candidate-09.png",
+              "sha256": "6920a48939475cbfab0893302c8182d01534caacee0411caa7b65cd6359f8540",
+              "bytes": 36440
+            }
+          ],
+          "remappedTextureChannels": 0
+        }
+      }
+    },
+    {
+      "fileName": "sand.glb",
+      "bytes": 730692,
+      "sha256": "e747ea2db0a41c558f8e13a4426d9f514efaed942975e11bb5ff7c74908ef107",
+      "triangles": 32768,
+      "triangleBudget": [
+        32768,
+        32768
+      ],
+      "triangleBudgetPass": true,
+      "materialCount": 1,
+      "textureCount": 0,
+      "primitives": [
+        {
+          "name": "Sand_heightfield_terrain",
+          "vertices": 16641,
+          "triangles": 32768,
+          "invalidValues": 0,
+          "degenerateTriangles": 0,
+          "duplicateTriangles": 0,
+          "boundaryEdges": 512,
+          "nonManifoldEdges": 0,
+          "windingErrors": 0,
+          "normalsValid": true,
+          "uvsValid": true
+        }
+      ],
+      "structuralPass": true,
+      "externalTextureSet": true,
+      "captures": {
+        "baseline": {
+          "captures": [
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/sand/baseline-00.png",
+              "sha256": "07b1af1a1d02ddb790316e3b36de246e9216428d8d7adeedcb079b8b063c8e49",
+              "bytes": 3810
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/sand/baseline-01.png",
+              "sha256": "ca135fa242f0662db81bff6c99b98e564e0dde093efca08521d5c6ce866d38ce",
+              "bytes": 3798
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/sand/baseline-02.png",
+              "sha256": "66a8df5826104cb8e43cd4cdb40013a87d6979cf35b248701884b092137b8178",
+              "bytes": 3786
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/sand/baseline-03.png",
+              "sha256": "8e121f7857ca0a577ac7c58454f4d56af2bfeeaf3721428ddc5baf5e04c1d71a",
+              "bytes": 3786
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/sand/baseline-04.png",
+              "sha256": "a5c805095aa693b8a7ce337101fae058b81dc2849f51c83168d63648fee087ba",
+              "bytes": 3787
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/sand/baseline-05.png",
+              "sha256": "243a1379e5c7bb1c0f8d1e4579ed213a70c81463895b85b0edc940c6ee287e1f",
+              "bytes": 3799
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/sand/baseline-06.png",
+              "sha256": "c0ad32b305166bbed5308a3e4956c9f58729d6e5a0cdedbbda97a4b0055daf6d",
+              "bytes": 3787
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/sand/baseline-07.png",
+              "sha256": "58dadebee4a1e64c65b0706c832e9cc27ce9e6d9925964a6828bfad78b9e363b",
+              "bytes": 3801
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/sand/baseline-08.png",
+              "sha256": "d54e0eaaf693681c8f1e3bf2b9cc0b9cf682721c5558be3cd3e0e0eb519e7de0",
+              "bytes": 3809
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/sand/baseline-09.png",
+              "sha256": "34a23948647b292c7da556a6da1605309105733a7d617cfe797b7f136736cc04",
+              "bytes": 3809
+            }
+          ],
+          "remappedTextureChannels": 0
+        },
+        "candidate": {
+          "captures": [
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/sand/candidate-00.png",
+              "sha256": "6ec9ad023bc6b8b08bd20e106288f4034d6748076b0d6bba3a63cbc428114787",
+              "bytes": 44153
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/sand/candidate-01.png",
+              "sha256": "619f756f18b37db2bada78ccbf50938bb1816d6fa61e7b1753832217e3ce3cde",
+              "bytes": 38374
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/sand/candidate-02.png",
+              "sha256": "f83781b546eba883d4924b40abd7c8767ff1d09bfe02fe450c41e09783130541",
+              "bytes": 40169
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/sand/candidate-03.png",
+              "sha256": "03bd444b2ca6e4881784cf208466abd2e2b9d88c4ea26ab73b6f2c018f08c850",
+              "bytes": 40152
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/sand/candidate-04.png",
+              "sha256": "91d84a419e4a921cddae2b8b96bfaf57d7d8ce7ceecac3bf2a1fe90db4974406",
+              "bytes": 43869
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/sand/candidate-05.png",
+              "sha256": "d88ba1bf82eaf037603806aa7391049bc4e001363fd53f9439a9ba6f7db734fa",
+              "bytes": 45138
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/sand/candidate-06.png",
+              "sha256": "183da69efa2473448d4e7c68f358974736b39b2878fe1d891ae5ae75c2d6e827",
+              "bytes": 41188
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/sand/candidate-07.png",
+              "sha256": "d8cb1253ff6ee354bd3ff29bf56ed5825a47f3f70f8ec367131dae43fc15edfd",
+              "bytes": 40820
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/sand/candidate-08.png",
+              "sha256": "14a0f64acf91f05046306ed4a38a6c844d3f929ce1b76ecc646da787b5964b0c",
+              "bytes": 40124
+            },
+            {
+              "file": "factory/harbor-world-3d/evidence/hifi-assets/renders/sand/candidate-09.png",
+              "sha256": "f631e8dea050ef0b60001b73586d73dfe48516ab7ff421a56f1ad0e5a9c8d331",
+              "bytes": 43609
+            }
+          ],
+          "remappedTextureChannels": 0
+        }
+      }
+    }
+  ],
+  "totalBytes": 7725336,
+  "totalTriangles": 171707,
+  "verdict": "pass"
+}

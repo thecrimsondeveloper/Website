@@ -1,0 +1,51 @@
+{
+  "schema": "webgl-render-sandbox/1",
+  "target": "http://127.0.0.1:4173/Website/",
+  "viewport": {
+    "width": 1365,
+    "height": 768
+  },
+  "requestedBackend": "compare",
+  "runtime": {
+    "node": "v24.19.0",
+    "playwrightLoaded": true,
+    "chromium": null,
+    "checkedChromiumPaths": [
+      "/root/.cache/ms-playwright/chromium-1234/chrome-linux64/chrome",
+      "/usr/bin/chromium",
+      "/usr/bin/chromium-browser",
+      "/usr/bin/google-chrome",
+      "/usr/bin/google-chrome-stable",
+      "/opt/google/chrome/chrome"
+    ],
+    "availableChromiumPaths": [],
+    "display": null,
+    "mesa": {
+      "files": [
+        "/lib/x86_64-linux-gnu/dri/swrast_dri.so",
+        "/lib/x86_64-linux-gnu/dri/kms_swrast_dri.so"
+      ],
+      "hasEgl": false,
+      "hasSoftwareDri": true,
+      "xvfbRun": null
+    },
+    "swiftshader": {
+      "libEgl": false,
+      "libGles": false,
+      "libVulkan": false,
+      "manifest": false
+    }
+  },
+  "results": [
+    {
+      "backend": "runtime",
+      "available": false,
+      "passed": false,
+      "blocker": "No Chromium executable is available. Provide --executable or configure Playwright Chromium.",
+      "failureClass": "chromium-unavailable",
+      "diagnosticExcerpt": "No Chromium executable is available. Provide --executable or PLAYWRIGHT_CHROMIUM_EXECUTABLE."
+    }
+  ],
+  "selected": null,
+  "status": "blocked"
+}

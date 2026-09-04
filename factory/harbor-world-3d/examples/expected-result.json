@@ -1,16 +1,17 @@
 {
-  "semanticSignature": "fnv1a:7a357e2e",
+  "semanticSignature": "fnv1a:75c12470",
   "parameters": {
-    "coralCount": 13,
-    "fishCount": 8,
-    "rockClusterCount": 3,
+    "coralCount": 42,
+    "fishCount": 18,
+    "rockClusterCount": 48,
+    "starCount": 6,
     "worldRadius": 11,
     "waterClarity": 0.8
   },
   "counts": {
-    "coral": 13,
-    "fish": 8,
-    "rocks": 3,
-    "stars": 3
+    "coral": 42,
+    "fish": 18,
+    "rocks": 48,
+    "stars": 6
   }
 }

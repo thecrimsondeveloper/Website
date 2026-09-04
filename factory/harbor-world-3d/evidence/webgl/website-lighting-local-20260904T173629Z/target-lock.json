@@ -1,0 +1,17 @@
+{
+  "runId": "website-lighting-local-20260904T173629Z",
+  "requested": {
+    "mode": "local",
+    "target": "/workspace/scratch/bf1be130628d/website-rock-upgrade",
+    "revision": "032985eccda04a212913721fccaed515a4246a51",
+    "expectedSurface": "mixed",
+    "expectedState": "Static portfolio landing page with a slightly angled top-down harbor, soft shadows, realistic PBR lighting, and depth-aware GLSL3 water.",
+    "interaction": "Load the landing page and verify the WebGL harbor canvas."
+  },
+  "observed": {
+    "target": "/workspace/scratch/bf1be130628d/website-rock-upgrade",
+    "revision": "032985eccda04a212913721fccaed515a4246a51",
+    "finalUrl": "http://127.0.0.1:4176/Website/",
+    "surface": "webgl"
+  }
+}

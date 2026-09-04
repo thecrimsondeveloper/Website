@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "water-shader-syntax/1",
+  "parser": "@shaderfrog/glsl-parser 7.0.0",
+  "targetLanguage": "GLSL ES 3.00",
+  "records": [
+    {
+      "stage": "vertex",
+      "status": "pass",
+      "lines": 24
+    },
+    {
+      "stage": "fragment",
+      "status": "pass",
+      "lines": 83
+    }
+  ],
+  "verdict": "pass",
+  "boundary": "Syntax and stage grammar only. Browser shader compilation remains blocked until Chromium is available."
+}

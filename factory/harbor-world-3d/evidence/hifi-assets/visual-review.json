@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "iterative-asset-review/1",
+  "runId": "harbor-assets-20260904-hifi",
+  "captureProfile": "locked-384-square-ten-angle-studio",
+  "baseline": "Original procedural website GLBs",
+  "candidate": "Optimized Objaverse-derived PBR GLBs",
+  "observations": [
+    "The candidate boat replaces a simple block model with a detailed fishing vessel while retaining a readable top-down silhouette.",
+    "All five candidate corals show materially finer natural surface structure and less geometric repetition than the baseline set.",
+    "The candidate fish adds a complete high-contrast PBR skin and remains readable at small scale.",
+    "The candidate rock preserves its baked photogrammetry detail at 856 triangles.",
+    "The candidate seabed retains modeled ripple geometry and embedded PBR textures after being normalized to a square harbor footprint.",
+    "The candidate starfish is rounded and textured while retaining the interaction silhouette."
+  ],
+  "warnings": [
+    "The sea-fan source is naturally dark; underwater absorption and lighting must be judged in browser WebGL before final color approval.",
+    "Headless captures remap texture channels above UV1 to UV0 because the CPU renderer supports two UV streams. Production GLBs are unchanged."
+  ],
+  "technicalGates": {
+    "assetValidation": "pass",
+    "meshIntegrity": "pass",
+    "payload": "pass",
+    "deterministicRendering": "pass"
+  },
+  "selection": "accept_candidate_set",
+  "verdict": "pass_with_browser_color_review_pending"
+}

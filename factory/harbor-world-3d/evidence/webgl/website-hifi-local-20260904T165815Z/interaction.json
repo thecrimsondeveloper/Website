@@ -1,0 +1,6 @@
+{
+  "required": true,
+  "browserPerformed": false,
+  "reason": "Chromium was unavailable.",
+  "supplementalHeadlessThreeEvidence": "factory/harbor-world-3d/evidence/interaction/validation.json"
+}

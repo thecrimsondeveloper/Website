@@ -6,10 +6,204 @@
     960,
     640
   ],
-  "bytes": 127861,
-  "firstHash": "0a1b4c869cba25a5685b8ec3317486d76db912d7d190ee535fc3f54850d9be00",
-  "secondHash": "0a1b4c869cba25a5685b8ec3317486d76db912d7d190ee535fc3f54850d9be00",
+  "bytes": 573415,
+  "firstHash": "8c70f43682ac9a54bad36f70df07104ab0a5f4689c370e5fc60cb7c86ebe54a8",
+  "secondHash": "8c70f43682ac9a54bad36f70df07104ab0a5f4689c370e5fc60cb7c86ebe54a8",
   "deterministic": true,
-  "coverage": "Three.js scene geometry, 256px rock and sand textures, normal mapping, GLB loading, camera, lighting, depth, transparent water material, and deterministic framebuffer. Exact browser-only GLSL execution remains a separate validation surface.",
+  "captureVariant": "final",
+  "captures": [
+    {
+      "id": "web-top-down",
+      "position": [
+        0,
+        21,
+        8
+      ],
+      "target": [
+        0,
+        -1.15,
+        0
+      ],
+      "fov": 34,
+      "bytes": 573415,
+      "sha256": "8c70f43682ac9a54bad36f70df07104ab0a5f4689c370e5fc60cb7c86ebe54a8",
+      "secondSha256": "8c70f43682ac9a54bad36f70df07104ab0a5f4689c370e5fc60cb7c86ebe54a8",
+      "deterministic": true,
+      "image": "factory/harbor-world-3d/evidence/lighting-angles/web-top-down.png"
+    },
+    {
+      "id": "north-oblique",
+      "position": [
+        0,
+        12,
+        17
+      ],
+      "target": [
+        0,
+        -1.1,
+        0
+      ],
+      "fov": 40,
+      "bytes": 587590,
+      "sha256": "63d88f0852b041f2ddac9f0229d81c2d73968bb7179b3f9065d31e64afa02724",
+      "secondSha256": "63d88f0852b041f2ddac9f0229d81c2d73968bb7179b3f9065d31e64afa02724",
+      "deterministic": true,
+      "image": "factory/harbor-world-3d/evidence/lighting-angles/north-oblique.png"
+    },
+    {
+      "id": "north-east-oblique",
+      "position": [
+        12,
+        12,
+        12
+      ],
+      "target": [
+        0,
+        -1.1,
+        0
+      ],
+      "fov": 40,
+      "bytes": 626379,
+      "sha256": "52324443eb46b9becbf2d1a6ab0deca35b1240dbcb5816031a6b2bb9ba1c562b",
+      "secondSha256": "52324443eb46b9becbf2d1a6ab0deca35b1240dbcb5816031a6b2bb9ba1c562b",
+      "deterministic": true,
+      "image": "factory/harbor-world-3d/evidence/lighting-angles/north-east-oblique.png"
+    },
+    {
+      "id": "east-oblique",
+      "position": [
+        17,
+        12,
+        0
+      ],
+      "target": [
+        0,
+        -1.1,
+        0
+      ],
+      "fov": 40,
+      "bytes": 580775,
+      "sha256": "35bd2bb3b915d8d331fb272c740a8a4f18f963033ac82e3c5742a5b189b6fc8f",
+      "secondSha256": "35bd2bb3b915d8d331fb272c740a8a4f18f963033ac82e3c5742a5b189b6fc8f",
+      "deterministic": true,
+      "image": "factory/harbor-world-3d/evidence/lighting-angles/east-oblique.png"
+    },
+    {
+      "id": "south-east-oblique",
+      "position": [
+        12,
+        12,
+        -12
+      ],
+      "target": [
+        0,
+        -1.1,
+        0
+      ],
+      "fov": 40,
+      "bytes": 684589,
+      "sha256": "df8d87cceddfcfac8ed9f8611e6b304c0e73041cba3f6f88a6ef1fe4f4c21122",
+      "secondSha256": "df8d87cceddfcfac8ed9f8611e6b304c0e73041cba3f6f88a6ef1fe4f4c21122",
+      "deterministic": true,
+      "image": "factory/harbor-world-3d/evidence/lighting-angles/south-east-oblique.png"
+    },
+    {
+      "id": "south-oblique",
+      "position": [
+        0,
+        12,
+        -17
+      ],
+      "target": [
+        0,
+        -1.1,
+        0
+      ],
+      "fov": 40,
+      "bytes": 599881,
+      "sha256": "c0cc61cd59fe403b9bcba24482648a2686a0cc152e4b025d24c97474a635c574",
+      "secondSha256": "c0cc61cd59fe403b9bcba24482648a2686a0cc152e4b025d24c97474a635c574",
+      "deterministic": true,
+      "image": "factory/harbor-world-3d/evidence/lighting-angles/south-oblique.png"
+    },
+    {
+      "id": "south-west-oblique",
+      "position": [
+        -12,
+        12,
+        -12
+      ],
+      "target": [
+        0,
+        -1.1,
+        0
+      ],
+      "fov": 40,
+      "bytes": 619203,
+      "sha256": "72e13f778ccf94247aeee40537172e9f463ba035cb00185d97a07092d02ef333",
+      "secondSha256": "72e13f778ccf94247aeee40537172e9f463ba035cb00185d97a07092d02ef333",
+      "deterministic": true,
+      "image": "factory/harbor-world-3d/evidence/lighting-angles/south-west-oblique.png"
+    },
+    {
+      "id": "west-oblique",
+      "position": [
+        -17,
+        12,
+        0
+      ],
+      "target": [
+        0,
+        -1.1,
+        0
+      ],
+      "fov": 40,
+      "bytes": 557033,
+      "sha256": "8ce3ddd8ec7dcf265a94c806b17e5b7fcc57a27b443c3fcf3738b639aab9aaae",
+      "secondSha256": "8ce3ddd8ec7dcf265a94c806b17e5b7fcc57a27b443c3fcf3738b639aab9aaae",
+      "deterministic": true,
+      "image": "factory/harbor-world-3d/evidence/lighting-angles/west-oblique.png"
+    },
+    {
+      "id": "north-west-oblique",
+      "position": [
+        -12,
+        12,
+        12
+      ],
+      "target": [
+        0,
+        -1.1,
+        0
+      ],
+      "fov": 40,
+      "bytes": 648067,
+      "sha256": "c49f0579ef7c1c501744f6da88e24ebc4634647353949bfec2a953c24cf25c75",
+      "secondSha256": "c49f0579ef7c1c501744f6da88e24ebc4634647353949bfec2a953c24cf25c75",
+      "deterministic": true,
+      "image": "factory/harbor-world-3d/evidence/lighting-angles/north-west-oblique.png"
+    },
+    {
+      "id": "grazing-water",
+      "position": [
+        13,
+        5.8,
+        17
+      ],
+      "target": [
+        0,
+        -0.7,
+        0
+      ],
+      "fov": 42,
+      "bytes": 451249,
+      "sha256": "1fcd33ee821f684ed05dc1fb4fa51681126a1b88e0d62e12f4941fd00b9dd038",
+      "secondSha256": "1fcd33ee821f684ed05dc1fb4fa51681126a1b88e0d62e12f4941fd00b9dd038",
+      "deterministic": true,
+      "image": "factory/harbor-world-3d/evidence/lighting-angles/grazing-water.png"
+    }
+  ],
+  "contactSheet": "factory/harbor-world-3d/evidence/lighting-angles/contact-sheet.png",
+  "coverage": "Production Objaverse-derived GLBs, embedded PBR textures, project camera, locked multi-angle lighting, depth, and a normal-mapped transparent-water surrogate. Browser PCF shadow-map and exact GLSL execution remain separate validation surfaces.",
   "image": "factory/harbor-world-3d/evidence/headless-harbor.png"
 }

@@ -1,0 +1,45 @@
+{
+  "schema": "crimson-harbor/web-validation/1",
+  "target": "http://127.0.0.1:4173/Website/",
+  "revision": "20af268ef048bae1117d952bc22731fdd30b5cb6+working-tree:75c12470",
+  "validatedAt": "2026-09-04T18:46:26Z",
+  "staticExport": {
+    "status": "pass",
+    "buildCommand": "npm run build:pages",
+    "entryPoint": "docs/index.html",
+    "basePath": "/Website",
+    "noJekyll": true,
+    "routes": {
+      "/Website/": 200,
+      "/Website/home/": 200,
+      "/Website/projects/": 200,
+      "/Website/about/": 200
+    },
+    "assets": {
+      "/Website/assets/harbor/world.json": 200,
+      "/Website/assets/harbor/models/sand.glb": 200,
+      "/Website/assets/harbor/models/rocks.glb": 200,
+      "/Website/assets/harbor/textures/terrain-height.png": 200,
+      "/Website/assets/harbor/textures/terrain-ao.png": 200,
+      "/Website/assets/harbor/harbor-poster.webp": 200,
+      "/Website/assets/harbor/harbor-loop.webm": 200
+    }
+  },
+  "threeScene": {
+    "status": "pass",
+    "renderer": "@headless-three/renderer",
+    "adapter": "task-local Mesa Lavapipe",
+    "lockedCaptures": 10,
+    "deterministicRepeatHashes": true,
+    "interactionRaycast": "pass"
+  },
+  "browserWebgl": {
+    "status": "blocked",
+    "failureClass": "validation-environment",
+    "reason": "The cloud browser blocks sandbox loopback URLs and the task-local runner has no Chromium executable.",
+    "substitutionUsed": false,
+    "appFailureObserved": false
+  },
+  "verdict": "pass-with-browser-environment-blocker",
+  "notes": "The exact static export, GLBs, textures, Three.js scene, deterministic visual output, and star interaction passed locally. Exact browser GLSL compilation could not be executed in this environment and is not represented as passing."
+}

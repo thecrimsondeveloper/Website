@@ -1,0 +1,209 @@
+{
+  "status": "pass",
+  "renderer": "@headless-three/renderer",
+  "adapter": "task-local Mesa Lavapipe",
+  "dimensions": [
+    960,
+    640
+  ],
+  "bytes": 237899,
+  "firstHash": "bd9ff2f5c39655a7cdbe3cde36c6ce3aa85fbe6ef6dd9ae5a6af84e08cba7237",
+  "secondHash": "bd9ff2f5c39655a7cdbe3cde36c6ce3aa85fbe6ef6dd9ae5a6af84e08cba7237",
+  "deterministic": true,
+  "captureVariant": "baseline",
+  "captures": [
+    {
+      "id": "web-top-down",
+      "position": [
+        0,
+        21,
+        8
+      ],
+      "target": [
+        0,
+        -1.15,
+        0
+      ],
+      "fov": 34,
+      "bytes": 237899,
+      "sha256": "bd9ff2f5c39655a7cdbe3cde36c6ce3aa85fbe6ef6dd9ae5a6af84e08cba7237",
+      "secondSha256": "bd9ff2f5c39655a7cdbe3cde36c6ce3aa85fbe6ef6dd9ae5a6af84e08cba7237",
+      "deterministic": true,
+      "image": "factory/harbor-world-3d/evidence/density-review/harbor-density-20260904-604a/baseline/captures/web-top-down.png"
+    },
+    {
+      "id": "north-oblique",
+      "position": [
+        0,
+        12,
+        17
+      ],
+      "target": [
+        0,
+        -1.1,
+        0
+      ],
+      "fov": 40,
+      "bytes": 245880,
+      "sha256": "e6b454ee87f04666912aedbce1718564bb73fe15269ca400b60174af42c91c9c",
+      "secondSha256": "e6b454ee87f04666912aedbce1718564bb73fe15269ca400b60174af42c91c9c",
+      "deterministic": true,
+      "image": "factory/harbor-world-3d/evidence/density-review/harbor-density-20260904-604a/baseline/captures/north-oblique.png"
+    },
+    {
+      "id": "north-east-oblique",
+      "position": [
+        12,
+        12,
+        12
+      ],
+      "target": [
+        0,
+        -1.1,
+        0
+      ],
+      "fov": 40,
+      "bytes": 377815,
+      "sha256": "c19bab16928d33e36d736480ac015c1ecdbfa1f5e3a5612a8f902b320eed2ebd",
+      "secondSha256": "c19bab16928d33e36d736480ac015c1ecdbfa1f5e3a5612a8f902b320eed2ebd",
+      "deterministic": true,
+      "image": "factory/harbor-world-3d/evidence/density-review/harbor-density-20260904-604a/baseline/captures/north-east-oblique.png"
+    },
+    {
+      "id": "east-oblique",
+      "position": [
+        17,
+        12,
+        0
+      ],
+      "target": [
+        0,
+        -1.1,
+        0
+      ],
+      "fov": 40,
+      "bytes": 302947,
+      "sha256": "6eb21403ad7f86a53e41db43913e808660741e772645e239fd3ab1b8a79fd221",
+      "secondSha256": "6eb21403ad7f86a53e41db43913e808660741e772645e239fd3ab1b8a79fd221",
+      "deterministic": true,
+      "image": "factory/harbor-world-3d/evidence/density-review/harbor-density-20260904-604a/baseline/captures/east-oblique.png"
+    },
+    {
+      "id": "south-east-oblique",
+      "position": [
+        12,
+        12,
+        -12
+      ],
+      "target": [
+        0,
+        -1.1,
+        0
+      ],
+      "fov": 40,
+      "bytes": 403925,
+      "sha256": "935a73577f89b4a2a28ecaa711c547556665ecfd8155f388da797eabc57dee54",
+      "secondSha256": "935a73577f89b4a2a28ecaa711c547556665ecfd8155f388da797eabc57dee54",
+      "deterministic": true,
+      "image": "factory/harbor-world-3d/evidence/density-review/harbor-density-20260904-604a/baseline/captures/south-east-oblique.png"
+    },
+    {
+      "id": "south-oblique",
+      "position": [
+        0,
+        12,
+        -17
+      ],
+      "target": [
+        0,
+        -1.1,
+        0
+      ],
+      "fov": 40,
+      "bytes": 246591,
+      "sha256": "948b257c1ab4b1a0e1b332a7c9ac3848608f561526b52fb74a4e734984d1fc98",
+      "secondSha256": "948b257c1ab4b1a0e1b332a7c9ac3848608f561526b52fb74a4e734984d1fc98",
+      "deterministic": true,
+      "image": "factory/harbor-world-3d/evidence/density-review/harbor-density-20260904-604a/baseline/captures/south-oblique.png"
+    },
+    {
+      "id": "south-west-oblique",
+      "position": [
+        -12,
+        12,
+        -12
+      ],
+      "target": [
+        0,
+        -1.1,
+        0
+      ],
+      "fov": 40,
+      "bytes": 352059,
+      "sha256": "b1b6952fca76d27a87c529397945dabe497612ee1d27972821653b797225f5f7",
+      "secondSha256": "b1b6952fca76d27a87c529397945dabe497612ee1d27972821653b797225f5f7",
+      "deterministic": true,
+      "image": "factory/harbor-world-3d/evidence/density-review/harbor-density-20260904-604a/baseline/captures/south-west-oblique.png"
+    },
+    {
+      "id": "west-oblique",
+      "position": [
+        -17,
+        12,
+        0
+      ],
+      "target": [
+        0,
+        -1.1,
+        0
+      ],
+      "fov": 40,
+      "bytes": 279089,
+      "sha256": "ad8e197bf89f0fa5cd7e1cc8a63d17e1b8fc785a76dca8a1a65cb4203931b371",
+      "secondSha256": "ad8e197bf89f0fa5cd7e1cc8a63d17e1b8fc785a76dca8a1a65cb4203931b371",
+      "deterministic": true,
+      "image": "factory/harbor-world-3d/evidence/density-review/harbor-density-20260904-604a/baseline/captures/west-oblique.png"
+    },
+    {
+      "id": "north-west-oblique",
+      "position": [
+        -12,
+        12,
+        12
+      ],
+      "target": [
+        0,
+        -1.1,
+        0
+      ],
+      "fov": 40,
+      "bytes": 359235,
+      "sha256": "4ae9137aa0c92efd72dbecf7b939d8af5477774d7b54812dcdd835d2229e66a5",
+      "secondSha256": "4ae9137aa0c92efd72dbecf7b939d8af5477774d7b54812dcdd835d2229e66a5",
+      "deterministic": true,
+      "image": "factory/harbor-world-3d/evidence/density-review/harbor-density-20260904-604a/baseline/captures/north-west-oblique.png"
+    },
+    {
+      "id": "grazing-water",
+      "position": [
+        13,
+        5.8,
+        17
+      ],
+      "target": [
+        0,
+        -0.7,
+        0
+      ],
+      "fov": 42,
+      "bytes": 258026,
+      "sha256": "547f91cbb15c43c0f81d0e44a8aff88f9ee737cd24b0fd2235aefca9888604d7",
+      "secondSha256": "547f91cbb15c43c0f81d0e44a8aff88f9ee737cd24b0fd2235aefca9888604d7",
+      "deterministic": true,
+      "image": "factory/harbor-world-3d/evidence/density-review/harbor-density-20260904-604a/baseline/captures/grazing-water.png"
+    }
+  ],
+  "contactSheet": "factory/harbor-world-3d/evidence/density-review/harbor-density-20260904-604a/baseline/captures/contact-sheet.png",
+  "coverage": "Production Objaverse-derived GLBs, embedded PBR textures, project camera, locked multi-angle lighting, depth, and a normal-mapped transparent-water surrogate. Browser PCF shadow-map and exact GLSL execution remain separate validation surfaces.",
+  "image": "factory/harbor-world-3d/evidence/density-review/harbor-density-20260904-604a/baseline/headless-harbor.png"
+}

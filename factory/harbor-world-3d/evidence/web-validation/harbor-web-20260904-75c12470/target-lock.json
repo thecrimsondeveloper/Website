@@ -1,0 +1,17 @@
+{
+  "runId": "harbor-web-20260904-75c12470",
+  "requested": {
+    "mode": "local",
+    "target": "/workspace/scratch/bf1be130628d/website-rock-upgrade/docs",
+    "revision": "20af268ef048bae1117d952bc22731fdd30b5cb6+working-tree:75c12470",
+    "expectedSurface": "mixed",
+    "expectedState": "The /Website/ landing page shows Crimson Wheeler above a non-empty Three.js harbor with the centered boat, dense curved reef, and six interactive stars.",
+    "interaction": "Wait for renderer-ready, inspect diagnostics, then activate one star through the component keyboard action."
+  },
+  "observed": {
+    "target": null,
+    "revision": null,
+    "finalUrl": null,
+    "surface": null
+  }
+}

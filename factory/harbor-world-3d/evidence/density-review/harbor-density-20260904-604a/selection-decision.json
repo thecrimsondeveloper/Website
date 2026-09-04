@@ -1,0 +1,15 @@
+{
+  "decision_id": "harbor-density-20260904-604a-a0005-decision",
+  "incumbent_winner_id": "harbor-density-20260904-604a-w0000",
+  "selected_candidate_id": "harbor-density-20260904-604a-a0005-c01",
+  "result": "accept_candidate",
+  "reason_codes": [
+    "visible_density_improvement",
+    "centered_boat_preserved",
+    "locked_capture_profiles_match",
+    "hard_layout_gates_passed",
+    "deterministic_renders"
+  ],
+  "rejected_candidate_ids": [],
+  "accepted_iteration_increment": 1
+}

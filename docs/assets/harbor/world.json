@@ -1,9 +1,9 @@
 {
-  "schema": "crimson-harbor/world/2",
+  "schema": "crimson-harbor/world/3",
   "factory": {
     "id": "crimson-harbor-world-3d",
-    "version": "1.1.0",
-    "semanticSignature": "fnv1a:7a357e2e"
+    "version": "1.2.0",
+    "semanticSignature": "fnv1a:75c12470"
   },
   "seed": "crimson-harbor-604",
   "assets": {
@@ -23,19 +23,21 @@
       "rockAlbedo": "rock-albedo.png",
       "rockNormal": "rock-normal.png",
       "sandAlbedo": "sand-albedo.png",
-      "sandNormal": "sand-normal.png"
+      "sandNormal": "sand-normal.png",
+      "terrainHeight": "terrain-height.png",
+      "terrainAo": "terrain-ao.png"
     }
   },
   "camera": {
     "fov": 34,
     "position": [
       0,
-      17.5,
-      12.5
+      21,
+      8
     ],
     "target": [
       0,
-      -1.1,
+      -1.15,
       0
     ],
     "near": 0.1,
@@ -47,7 +49,527 @@
     "radius": 16,
     "color": "#c9b58f",
     "albedoTexture": "sand-albedo.png",
-    "normalTexture": "sand-normal.png"
+    "normalTexture": "sand-normal.png",
+    "aoTexture": "terrain-ao.png",
+    "heightTexture": "terrain-height.png"
+  },
+  "terrain": {
+    "schema": "crimson-harbor/terrain/1",
+    "seed": "crimson-harbor-604",
+    "radius": 16,
+    "baseY": -2.5,
+    "minimumY": -3.05,
+    "maximumY": -1.45,
+    "textureSize": 256,
+    "segments": 128,
+    "ridges": [
+      {
+        "id": "ridge:coral-north",
+        "controlPoints": [
+          [
+            -7.034,
+            5.8438
+          ],
+          [
+            -2.4429,
+            6.9852
+          ],
+          [
+            2.5717,
+            7.0439
+          ],
+          [
+            6.3382,
+            4.6381
+          ]
+        ],
+        "closed": false,
+        "width": 1.62,
+        "lift": 0.2
+      },
+      {
+        "id": "ridge:coral-south",
+        "controlPoints": [
+          [
+            -6.7054,
+            -5.185
+          ],
+          [
+            -2.6271,
+            -7.1429
+          ],
+          [
+            2.5309,
+            -6.7454
+          ],
+          [
+            7.0585,
+            -4.1027
+          ]
+        ],
+        "closed": false,
+        "width": 1.56,
+        "lift": 0.27
+      },
+      {
+        "id": "ridge:coral-west",
+        "controlPoints": [
+          [
+            -7.6757,
+            -3.7496
+          ],
+          [
+            -6.4076,
+            -0.4766
+          ],
+          [
+            -6.6633,
+            3.7153
+          ]
+        ],
+        "closed": false,
+        "width": 1.32,
+        "lift": 0.2
+      },
+      {
+        "id": "ridge:coral-east",
+        "controlPoints": [
+          [
+            6.9468,
+            4.2475
+          ],
+          [
+            6.1233,
+            0.5201
+          ],
+          [
+            7.7739,
+            -3.2536
+          ]
+        ],
+        "closed": false,
+        "width": 1.32,
+        "lift": 0.27
+      }
+    ]
+  },
+  "curves": {
+    "schema": "crimson-harbor/curves/1",
+    "rock": [
+      {
+        "id": "rock-outer",
+        "index": 0,
+        "closed": true,
+        "width": 1.25,
+        "controlPoints": [
+          [
+            9.5377,
+            0,
+            0.772
+          ],
+          [
+            6.3481,
+            0,
+            6.543
+          ],
+          [
+            0.3573,
+            0,
+            9.102
+          ],
+          [
+            -5.6407,
+            0,
+            7.1197
+          ],
+          [
+            -9.6303,
+            0,
+            2.0536
+          ],
+          [
+            -8.3041,
+            0,
+            -3.5786
+          ],
+          [
+            -3.9649,
+            0,
+            -7.7891
+          ],
+          [
+            2.4278,
+            0,
+            -8.0906
+          ],
+          [
+            8.3366,
+            0,
+            -5.1708
+          ]
+        ]
+      },
+      {
+        "id": "rock-west",
+        "index": 1,
+        "closed": false,
+        "width": 1.1,
+        "controlPoints": [
+          [
+            -8.5669,
+            0,
+            -6.3054
+          ],
+          [
+            -9.1804,
+            0,
+            -1.8406
+          ],
+          [
+            -8.1245,
+            0,
+            2.6601
+          ],
+          [
+            -6.4266,
+            0,
+            6.912
+          ]
+        ]
+      },
+      {
+        "id": "rock-east",
+        "index": 2,
+        "closed": false,
+        "width": 1.05,
+        "controlPoints": [
+          [
+            7.545,
+            0,
+            6.536
+          ],
+          [
+            9.1809,
+            0,
+            3.0673
+          ],
+          [
+            8.4051,
+            0,
+            -1.3808
+          ],
+          [
+            6.0976,
+            0,
+            -7.5307
+          ]
+        ]
+      }
+    ],
+    "coral": [
+      {
+        "id": "coral-north",
+        "index": 0,
+        "closed": false,
+        "width": 1.35,
+        "controlPoints": [
+          [
+            -7.034,
+            0,
+            5.8438
+          ],
+          [
+            -2.4429,
+            0,
+            6.9852
+          ],
+          [
+            2.5717,
+            0,
+            7.0439
+          ],
+          [
+            6.3382,
+            0,
+            4.6381
+          ]
+        ]
+      },
+      {
+        "id": "coral-south",
+        "index": 1,
+        "closed": false,
+        "width": 1.3,
+        "controlPoints": [
+          [
+            -6.7054,
+            0,
+            -5.185
+          ],
+          [
+            -2.6271,
+            0,
+            -7.1429
+          ],
+          [
+            2.5309,
+            0,
+            -6.7454
+          ],
+          [
+            7.0585,
+            0,
+            -4.1027
+          ]
+        ]
+      },
+      {
+        "id": "coral-west",
+        "index": 2,
+        "closed": false,
+        "width": 1.1,
+        "controlPoints": [
+          [
+            -7.6757,
+            0,
+            -3.7496
+          ],
+          [
+            -6.4076,
+            0,
+            -0.4766
+          ],
+          [
+            -6.6633,
+            0,
+            3.7153
+          ]
+        ]
+      },
+      {
+        "id": "coral-east",
+        "index": 3,
+        "closed": false,
+        "width": 1.1,
+        "controlPoints": [
+          [
+            6.9468,
+            0,
+            4.2475
+          ],
+          [
+            6.1233,
+            0,
+            0.5201
+          ],
+          [
+            7.7739,
+            0,
+            -3.2536
+          ]
+        ]
+      }
+    ],
+    "fish": [
+      {
+        "id": "fish-inner",
+        "index": 0,
+        "closed": true,
+        "width": 0.5,
+        "controlPoints": [
+          [
+            5.1331,
+            0,
+            0.8065
+          ],
+          [
+            2.3799,
+            0,
+            3.0491
+          ],
+          [
+            -2.2428,
+            0,
+            2.9121
+          ],
+          [
+            -5.3546,
+            0,
+            0.4385
+          ],
+          [
+            -4.0901,
+            0,
+            -2.0356
+          ],
+          [
+            -0.0766,
+            0,
+            -3.1509
+          ],
+          [
+            4.0347,
+            0,
+            -2.1606
+          ]
+        ],
+        "depth": -0.78
+      },
+      {
+        "id": "fish-middle",
+        "index": 1,
+        "closed": true,
+        "width": 0.65,
+        "controlPoints": [
+          [
+            5.5327,
+            0,
+            -1.6115
+          ],
+          [
+            4.7757,
+            0,
+            3.8349
+          ],
+          [
+            1.1029,
+            0,
+            6.5507
+          ],
+          [
+            -3.3697,
+            0,
+            5.729
+          ],
+          [
+            -5.4974,
+            0,
+            1.1882
+          ],
+          [
+            -5.059,
+            0,
+            -3.8457
+          ],
+          [
+            -0.8922,
+            0,
+            -6.4772
+          ],
+          [
+            3.2864,
+            0,
+            -5.4154
+          ]
+        ],
+        "depth": -1.06
+      },
+      {
+        "id": "fish-outer",
+        "index": 2,
+        "closed": true,
+        "width": 0.75,
+        "controlPoints": [
+          [
+            7.9643,
+            0,
+            3.0255
+          ],
+          [
+            3.7197,
+            0,
+            6.1828
+          ],
+          [
+            -2.3956,
+            0,
+            6.5557
+          ],
+          [
+            -7.0259,
+            0,
+            3.9552
+          ],
+          [
+            -8.632,
+            0,
+            -0.4739
+          ],
+          [
+            -5.6241,
+            0,
+            -4.8115
+          ],
+          [
+            -0.7517,
+            0,
+            -6.4718
+          ],
+          [
+            5.0189,
+            0,
+            -5.5605
+          ],
+          [
+            8.495,
+            0,
+            -1.4329
+          ]
+        ],
+        "depth": -1.34
+      }
+    ]
+  },
+  "qualityCounts": {
+    "high": {
+      "rocks": 48,
+      "coral": 42,
+      "fish": 18,
+      "stars": 6
+    },
+    "auto": {
+      "rocks": 34,
+      "coral": 30,
+      "fish": 12,
+      "stars": 6
+    },
+    "low": {
+      "rocks": 20,
+      "coral": 18,
+      "fish": 8,
+      "stars": 6
+    }
+  },
+  "lighting": {
+    "hemisphere": {
+      "sky": "#d6f4e9",
+      "ground": "#17383b",
+      "intensity": 1.42
+    },
+    "sun": {
+      "color": "#ffefd1",
+      "intensity": 4,
+      "position": [
+        -8.5,
+        15,
+        8
+      ],
+      "target": [
+        0,
+        -1.55,
+        0
+      ]
+    },
+    "fill": {
+      "color": "#77bdc4",
+      "intensity": 0.38,
+      "position": [
+        8,
+        3.5,
+        -7
+      ]
+    },
+    "exposure": 1.06
   },
   "water": {
     "y": 0,
@@ -75,453 +597,2348 @@
       {
         "id": "coral-01",
         "asset": "coral-staghorn.glb",
+        "curveId": "coral-north",
+        "curveT": 0.019,
+        "laneOffset": -0.1826,
+        "priority": 1,
         "position": [
-          0.8275,
-          -2.45,
-          6.8061
+          -6.725,
+          -2.1623,
+          5.7342
         ],
         "rotation": [
-          0,
-          5.8332,
-          0
+          -0.1046,
+          -0.4488,
+          -0.0233
         ],
-        "scale": 0.3374,
-        "swayPhase": 6.036
+        "scale": 0.4097,
+        "swayPhase": 6.036,
+        "slope": 5.544
       },
       {
         "id": "coral-02",
         "asset": "coral-brain.glb",
+        "curveId": "coral-south",
+        "curveT": 0.1371,
+        "laneOffset": -1.0903,
+        "priority": 0.9828,
         "position": [
-          -3.8807,
-          -2.45,
-          -1.8261
+          -5.4527,
+          -2.1716,
+          -7.1372
         ],
         "rotation": [
-          0,
-          1.5405,
-          0
+          0.2386,
+          1.5393,
+          -0.3173
         ],
-        "scale": 0.3697,
-        "swayPhase": 1.5671
+        "scale": 0.4377,
+        "swayPhase": 1.5671,
+        "slope": 4.5343
       },
       {
         "id": "coral-03",
         "asset": "coral-lettuce.glb",
+        "curveId": "coral-west",
+        "curveT": 0.2428,
+        "laneOffset": 0.1161,
+        "priority": 0.9655,
         "position": [
-          -6.0027,
-          -2.45,
-          4.8785
+          -7.0098,
+          -2.2018,
+          -1.9913
         ],
         "rotation": [
-          0,
-          3.7913,
-          0
+          3.1364,
+          -0.6496,
+          3.0537
         ],
-        "scale": 0.3806,
-        "swayPhase": 2.422
+        "scale": 0.4472,
+        "swayPhase": 2.422,
+        "slope": 4.8616
       },
       {
         "id": "coral-04",
         "asset": "coral-sea-fan.glb",
+        "curveId": "coral-east",
+        "curveT": 0.3595,
+        "laneOffset": 0.3908,
+        "priority": 0.9483,
         "position": [
-          -4.2532,
-          -2.45,
-          -7.5282
+          6.5549,
+          -2.1526,
+          1.4212
         ],
         "rotation": [
-          0,
-          3.7339,
-          0
+          -3.0273,
+          -0.579,
+          -2.8657
         ],
-        "scale": 0.5661,
-        "swayPhase": 2.7568
+        "scale": 0.6079,
+        "swayPhase": 2.7568,
+        "slope": 13.3667
       },
       {
         "id": "coral-05",
         "asset": "coral-table.glb",
+        "curveId": "coral-north",
+        "curveT": 0.1154,
+        "laneOffset": 0.8946,
+        "priority": 0.931,
         "position": [
-          -9.4552,
-          -2.45,
-          2.4553
+          -5.6957,
+          -2.1585,
+          7.1426
         ],
         "rotation": [
-          0,
-          3.32,
-          0
+          -3.0857,
+          -0.1793,
+          3.108
         ],
-        "scale": 0.356,
-        "swayPhase": 3.4191
+        "scale": 0.4259,
+        "swayPhase": 3.4191,
+        "slope": 4.0173
       },
       {
         "id": "coral-06",
         "asset": "coral-staghorn.glb",
+        "curveId": "coral-south",
+        "curveT": 0.2238,
+        "laneOffset": 1.0857,
+        "priority": 0.9138,
         "position": [
-          -8.1459,
-          -2.45,
-          6.4627
+          -3.322,
+          -2.3909,
+          -5.7915
         ],
         "rotation": [
-          0,
-          1.2403,
-          0
+          0.3575,
+          1.2333,
+          -0.1186
         ],
-        "scale": 0.3674,
-        "swayPhase": 5.7161
+        "scale": 0.4357,
+        "swayPhase": 5.7161,
+        "slope": 14.2387
       },
       {
         "id": "coral-07",
         "asset": "coral-brain.glb",
+        "curveId": "coral-west",
+        "curveT": 0.5619,
+        "laneOffset": 0.4177,
+        "priority": 0.8966,
         "position": [
-          -5.2187,
-          -2.45,
-          3.625
+          -6.7665,
+          -2.2779,
+          0.345
         ],
         "rotation": [
-          0,
-          0.5812,
-          0
+          -3.0866,
+          0.6904,
+          3.0628
         ],
-        "scale": 0.2821,
-        "swayPhase": 5.9641
+        "scale": 0.403,
+        "swayPhase": 3.4304,
+        "slope": 3.4908
       },
       {
         "id": "coral-08",
         "asset": "coral-lettuce.glb",
+        "curveId": "coral-east",
+        "curveT": 0.5473,
+        "laneOffset": 0.3537,
+        "priority": 0.8793,
         "position": [
-          -7.6424,
-          -2.45,
-          4.2322
+          6.5605,
+          -2.148,
+          0.0908
         ],
         "rotation": [
-          0,
-          2.4495,
-          0
+          0.1335,
+          0.4585,
+          -0.1507
         ],
-        "scale": 0.3296,
-        "swayPhase": 3.4304
+        "scale": 0.3705,
+        "swayPhase": 5.5419,
+        "slope": 8.6147
       },
       {
         "id": "coral-09",
         "asset": "coral-sea-fan.glb",
+        "curveId": "coral-north",
+        "curveT": 0.2158,
+        "laneOffset": -0.2483,
+        "priority": 0.8621,
         "position": [
-          8.1753,
-          -2.45,
-          -2.412
+          -4.0047,
+          -2.1845,
+          6.4251
         ],
         "rotation": [
-          0,
-          0.4675,
-          0
+          -0.0741,
+          -1.3706,
+          0.0515
         ],
-        "scale": 0.2921,
-        "swayPhase": 5.5419
+        "scale": 0.3619,
+        "swayPhase": 3.2343,
+        "slope": 7.1611
       },
       {
         "id": "coral-10",
         "asset": "coral-table.glb",
+        "curveId": "coral-south",
+        "curveT": 0.3095,
+        "laneOffset": -1.2934,
+        "priority": 0.8448,
         "position": [
-          4.0449,
-          -2.45,
-          -5.3144
+          -2.7431,
+          -2.2314,
+          -8.4362
         ],
         "rotation": [
-          0,
-          4.913,
-          0
+          -0.0451,
+          0.3036,
+          0.0634
         ],
-        "scale": 0.2822,
-        "swayPhase": 3.2343
+        "scale": 0.5471,
+        "swayPhase": 4.1159,
+        "slope": 3.7744
       },
       {
         "id": "coral-11",
         "asset": "coral-staghorn.glb",
+        "curveId": "coral-west",
+        "curveT": 0.4168,
+        "laneOffset": -0.9543,
+        "priority": 0.8276,
         "position": [
-          1.6748,
-          -2.45,
-          3.32
+          -5.5323,
+          -2.5382,
+          -0.9789
         ],
         "rotation": [
-          0,
-          0.305,
-          0
+          -2.9003,
+          -0.7595,
+          -2.7871
         ],
-        "scale": 0.4958,
-        "swayPhase": 4.1159
+        "scale": 0.5778,
+        "swayPhase": 5.6751,
+        "slope": 14.5868
       },
       {
         "id": "coral-12",
         "asset": "coral-brain.glb",
+        "curveId": "coral-east",
+        "curveT": 0.5423,
+        "laneOffset": -0.7128,
+        "priority": 0.8103,
         "position": [
-          3.8666,
-          -2.45,
-          1.5971
+          5.5172,
+          -2.3821,
+          -0.1343
         ],
         "rotation": [
-          0,
-          3.9322,
-          0
+          -0.4893,
+          0.9303,
+          0.5408
         ],
-        "scale": 0.5313,
-        "swayPhase": 5.6751
+        "scale": 0.3971,
+        "swayPhase": 5.7166,
+        "slope": 23.7654
       },
       {
         "id": "coral-13",
         "asset": "coral-lettuce.glb",
+        "curveId": "coral-north",
+        "curveT": 0.3008,
+        "laneOffset": -0.5202,
+        "priority": 0.7931,
         "position": [
-          -1.3152,
-          -2.45,
-          -4.8082
+          -2.7923,
+          -2.1736,
+          6.4072
         ],
         "rotation": [
-          0,
-          1.0086,
-          0
+          2.9436,
+          0.2459,
+          3.0986
         ],
-        "scale": 0.3228,
-        "swayPhase": 5.7166
+        "scale": 0.4775,
+        "swayPhase": 0.213,
+        "slope": 12.177
+      },
+      {
+        "id": "coral-14",
+        "asset": "coral-sea-fan.glb",
+        "curveId": "coral-south",
+        "curveT": 0.3992,
+        "laneOffset": -0.5508,
+        "priority": 0.7759,
+        "position": [
+          -1.1912,
+          -2.2401,
+          -7.8326
+        ],
+        "rotation": [
+          -0.11,
+          0.0036,
+          0.0587
+        ],
+        "scale": 0.3571,
+        "swayPhase": 4.8124,
+        "slope": 7.1289
+      },
+      {
+        "id": "coral-15",
+        "asset": "coral-table.glb",
+        "curveId": "coral-west",
+        "curveT": 0.6615,
+        "laneOffset": -0.3707,
+        "priority": 0.7586,
+        "position": [
+          -6.0135,
+          -2.3586,
+          1.1438
+        ],
+        "rotation": [
+          -0.2936,
+          -0.8519,
+          -0.4081
+        ],
+        "scale": 0.364,
+        "swayPhase": 2.4819,
+        "slope": 15.1987
+      },
+      {
+        "id": "coral-16",
+        "asset": "coral-staghorn.glb",
+        "curveId": "coral-east",
+        "curveT": 0.6356,
+        "laneOffset": 0.9611,
+        "priority": 0.7414,
+        "position": [
+          7.3351,
+          -2.2405,
+          -0.2908
+        ],
+        "rotation": [
+          -2.8057,
+          -0.8395,
+          -2.8255
+        ],
+        "scale": 0.3375,
+        "swayPhase": 0.844,
+        "slope": 13.1942
+      },
+      {
+        "id": "coral-17",
+        "asset": "coral-brain.glb",
+        "curveId": "coral-north",
+        "curveT": 0.3909,
+        "laneOffset": -1.2187,
+        "priority": 0.7241,
+        "position": [
+          -1.4547,
+          -2.3798,
+          5.8831
+        ],
+        "rotation": [
+          -0.0794,
+          1.4316,
+          -0.1056
+        ],
+        "scale": 0.2424,
+        "swayPhase": 0.5144,
+        "slope": 10.5753
+      },
+      {
+        "id": "coral-18",
+        "asset": "coral-lettuce.glb",
+        "curveId": "coral-south",
+        "curveT": 0.5817,
+        "laneOffset": 0.7462,
+        "priority": 0.7069,
+        "position": [
+          1.3814,
+          -2.4132,
+          -6.2765
+        ],
+        "rotation": [
+          -2.8671,
+          -0.0493,
+          3.028
+        ],
+        "scale": 0.4398,
+        "swayPhase": 3.3884,
+        "slope": 17.2816
+      },
+      {
+        "id": "coral-19",
+        "asset": "coral-sea-fan.glb",
+        "curveId": "coral-west",
+        "curveT": 0.8793,
+        "laneOffset": 0.6239,
+        "priority": 0.6897,
+        "position": [
+          -7.1948,
+          -2.2557,
+          2.7128
+        ],
+        "rotation": [
+          2.9871,
+          -0.6108,
+          2.927
+        ],
+        "scale": 0.4198,
+        "swayPhase": 6.0894,
+        "slope": 10.1919
+      },
+      {
+        "id": "coral-20",
+        "asset": "coral-table.glb",
+        "curveId": "coral-east",
+        "curveT": 0.7113,
+        "laneOffset": -0.5845,
+        "priority": 0.6724,
+        "position": [
+          6.1846,
+          -2.2493,
+          -1.4762
+        ],
+        "rotation": [
+          -0.485,
+          0.8836,
+          0.4831
+        ],
+        "scale": 0.4682,
+        "swayPhase": 3.4525,
+        "slope": 20.9207
+      },
+      {
+        "id": "coral-21",
+        "asset": "coral-staghorn.glb",
+        "curveId": "coral-north",
+        "curveT": 0.5735,
+        "laneOffset": 0.9841,
+        "priority": 0.6552,
+        "position": [
+          1.0233,
+          -2.1701,
+          8.2479
+        ],
+        "rotation": [
+          -0.2305,
+          -1.3093,
+          -0.3013
+        ],
+        "scale": 0.3621,
+        "swayPhase": 0.7582,
+        "slope": 5.6218
+      },
+      {
+        "id": "coral-22",
+        "asset": "coral-brain.glb",
+        "curveId": "coral-south",
+        "curveT": 0.7376,
+        "laneOffset": 1.1248,
+        "priority": 0.6379,
+        "position": [
+          3.2095,
+          -2.4782,
+          -5.2349
+        ],
+        "rotation": [
+          -2.9986,
+          -0.5433,
+          2.9745
+        ],
+        "scale": 0.2785,
+        "swayPhase": 2.8844,
+        "slope": 15.4734
+      },
+      {
+        "id": "coral-23",
+        "asset": "coral-lettuce.glb",
+        "curveId": "coral-west",
+        "curveT": 0.7079,
+        "laneOffset": 0.4762,
+        "priority": 0.6207,
+        "position": [
+          -6.8901,
+          -2.2641,
+          1.4211
+        ],
+        "rotation": [
+          -0.1,
+          1.1632,
+          0.0746
+        ],
+        "scale": 0.4634,
+        "swayPhase": 2.5941,
+        "slope": 2.4744
+      },
+      {
+        "id": "coral-24",
+        "asset": "coral-sea-fan.glb",
+        "curveId": "coral-east",
+        "curveT": 0.9542,
+        "laneOffset": -0.3204,
+        "priority": 0.6034,
+        "position": [
+          7.3322,
+          -2.0265,
+          -3.0634
+        ],
+        "rotation": [
+          2.6254,
+          -1.0971,
+          2.6475
+        ],
+        "scale": 0.4807,
+        "swayPhase": 0.9256,
+        "slope": 13.0995
+      },
+      {
+        "id": "coral-25",
+        "asset": "coral-table.glb",
+        "curveId": "coral-north",
+        "curveT": 0.5644,
+        "laneOffset": -1.3045,
+        "priority": 0.5862,
+        "position": [
+          0.8456,
+          -2.3705,
+          5.9627
+        ],
+        "rotation": [
+          -0.1994,
+          -0.1756,
+          -0.1026
+        ],
+        "scale": 0.3524,
+        "swayPhase": 4.0783,
+        "slope": 11.8847
+      },
+      {
+        "id": "coral-26",
+        "asset": "coral-staghorn.glb",
+        "curveId": "coral-south",
+        "curveT": 0.6733,
+        "laneOffset": 0.0823,
+        "priority": 0.569,
+        "position": [
+          2.8335,
+          -2.1898,
+          -6.5535
+        ],
+        "rotation": [
+          -3.0113,
+          -0.6012,
+          3.1299
+        ],
+        "scale": 0.3587,
+        "swayPhase": 4.845,
+        "slope": 7.8605
+      },
+      {
+        "id": "coral-27",
+        "asset": "coral-brain.glb",
+        "curveId": "coral-west",
+        "curveT": 0.9384,
+        "laneOffset": -0.8649,
+        "priority": 0.5517,
+        "position": [
+          -5.7641,
+          -2.4172,
+          3.3246
+        ],
+        "rotation": [
+          0.0377,
+          0.4668,
+          -0.1339
+        ],
+        "scale": 0.3993,
+        "swayPhase": 5.0379,
+        "slope": 6.9674
+      },
+      {
+        "id": "coral-28",
+        "asset": "coral-lettuce.glb",
+        "curveId": "coral-east",
+        "curveT": 0.0476,
+        "laneOffset": -0.0231,
+        "priority": 0.5345,
+        "position": [
+          6.8327,
+          -2.0915,
+          3.8847
+        ],
+        "rotation": [
+          3.1331,
+          -0.0179,
+          -3.1144
+        ],
+        "scale": 0.4098,
+        "swayPhase": 4.8991,
+        "slope": 1.6409
+      },
+      {
+        "id": "coral-29",
+        "asset": "coral-sea-fan.glb",
+        "curveId": "coral-north",
+        "curveT": 0.6567,
+        "laneOffset": 0.0455,
+        "priority": 0.5172,
+        "position": [
+          2.1839,
+          -2.0887,
+          7.1841
+        ],
+        "rotation": [
+          -0.1063,
+          1.4349,
+          0.0333
+        ],
+        "scale": 0.4698,
+        "swayPhase": 0.828,
+        "slope": 4.206
+      },
+      {
+        "id": "coral-30",
+        "asset": "coral-table.glb",
+        "curveId": "coral-south",
+        "curveT": 0.7833,
+        "laneOffset": -0.6771,
+        "priority": 0.5,
+        "position": [
+          4.6886,
+          -2.1636,
+          -6.4616
+        ],
+        "rotation": [
+          -0.137,
+          -0.5562,
+          0.0339
+        ],
+        "scale": 0.4127,
+        "swayPhase": 5.2074,
+        "slope": 9.025
+      },
+      {
+        "id": "coral-31",
+        "asset": "coral-staghorn.glb",
+        "curveId": "coral-west",
+        "curveT": 0.0076,
+        "laneOffset": 0.5564,
+        "priority": 0.4828,
+        "position": [
+          -8.1715,
+          -2.0845,
+          -3.4901
+        ],
+        "rotation": [
+          -3.0941,
+          -1.2186,
+          3.0554
+        ],
+        "scale": 0.4625,
+        "swayPhase": 3.3336,
+        "slope": 7.5552
+      },
+      {
+        "id": "coral-32",
+        "asset": "coral-brain.glb",
+        "curveId": "coral-east",
+        "curveT": 0.1377,
+        "laneOffset": 0.5052,
+        "priority": 0.4655,
+        "position": [
+          7.1267,
+          -2.1943,
+          3.0353
+        ],
+        "rotation": [
+          2.6115,
+          1.0831,
+          -2.6488
+        ],
+        "scale": 0.3096,
+        "swayPhase": 5.5927,
+        "slope": 13.7318
+      },
+      {
+        "id": "coral-33",
+        "asset": "coral-lettuce.glb",
+        "curveId": "coral-north",
+        "curveT": 0.7417,
+        "laneOffset": -0.4691,
+        "priority": 0.4483,
+        "position": [
+          3.1103,
+          -2.1577,
+          6.3291
+        ],
+        "rotation": [
+          2.9493,
+          -1.3008,
+          3.1244
+        ],
+        "scale": 0.4156,
+        "swayPhase": 0.5294,
+        "slope": 10.0716
+      },
+      {
+        "id": "coral-34",
+        "asset": "coral-sea-fan.glb",
+        "curveId": "coral-south",
+        "curveT": 0.8713,
+        "laneOffset": -0.4938,
+        "priority": 0.431,
+        "position": [
+          5.7178,
+          -2.1431,
+          -5.5668
+        ],
+        "rotation": [
+          -0.0816,
+          0.6021,
+          -0.0712
+        ],
+        "scale": 0.247,
+        "swayPhase": 1.2072,
+        "slope": 7.7515
+      },
+      {
+        "id": "coral-35",
+        "asset": "coral-table.glb",
+        "curveId": "coral-west",
+        "curveT": 0.9793,
+        "laneOffset": 1.0784,
+        "priority": 0.4138,
+        "position": [
+          -7.7277,
+          -2.3082,
+          3.4746
+        ],
+        "rotation": [
+          2.7968,
+          -1.3611,
+          2.8374
+        ],
+        "scale": 0.2768,
+        "swayPhase": 3.2429,
+        "slope": 4.4723
+      },
+      {
+        "id": "coral-36",
+        "asset": "coral-staghorn.glb",
+        "curveId": "coral-east",
+        "curveT": 0.0762,
+        "laneOffset": -0.9549,
+        "priority": 0.3966,
+        "position": [
+          5.8768,
+          -2.2706,
+          3.9309
+        ],
+        "rotation": [
+          -3.0751,
+          1.1095,
+          2.883
+        ],
+        "scale": 0.2923,
+        "swayPhase": 0.8532,
+        "slope": 11.5304
+      },
+      {
+        "id": "coral-37",
+        "asset": "coral-brain.glb",
+        "curveId": "coral-north",
+        "curveT": 0.8437,
+        "laneOffset": 0.8962,
+        "priority": 0.3793,
+        "position": [
+          5.0816,
+          -2.1965,
+          6.685
+        ],
+        "rotation": [
+          3.1219,
+          1.2003,
+          -3.0619
+        ],
+        "scale": 0.325,
+        "swayPhase": 2.6698,
+        "slope": 3.5346
+      },
+      {
+        "id": "coral-38",
+        "asset": "coral-lettuce.glb",
+        "curveId": "coral-south",
+        "curveT": 0.9581,
+        "laneOffset": -1.0794,
+        "priority": 0.3621,
+        "position": [
+          7.1048,
+          -2.1411,
+          -5.341
+        ],
+        "rotation": [
+          -0.1367,
+          0.1225,
+          0.0781
+        ],
+        "scale": 0.3718,
+        "swayPhase": 4.2559,
+        "slope": 8.5251
+      },
+      {
+        "id": "coral-39",
+        "asset": "coral-sea-fan.glb",
+        "curveId": "coral-west",
+        "curveT": 0.0747,
+        "laneOffset": -0.4047,
+        "priority": 0.3448,
+        "position": [
+          -7.0822,
+          -2.2,
+          -3.3842
+        ],
+        "rotation": [
+          -0.0483,
+          -0.121,
+          -0.1321
+        ],
+        "scale": 0.3858,
+        "swayPhase": 4.7115,
+        "slope": 7.7364
+      },
+      {
+        "id": "coral-40",
+        "asset": "coral-table.glb",
+        "curveId": "coral-east",
+        "curveT": 0.8602,
+        "laneOffset": 0.8656,
+        "priority": 0.3276,
+        "position": [
+          8.0307,
+          -2.1691,
+          -1.8419
+        ],
+        "rotation": [
+          -2.9735,
+          -0.2096,
+          -3.0375
+        ],
+        "scale": 0.3641,
+        "swayPhase": 3.846,
+        "slope": 10.2027
+      },
+      {
+        "id": "coral-41",
+        "asset": "coral-staghorn.glb",
+        "curveId": "coral-north",
+        "curveT": 0.9443,
+        "laneOffset": 1.2227,
+        "priority": 0.3103,
+        "position": [
+          6.4166,
+          -2.2707,
+          6.0734
+        ],
+        "rotation": [
+          0.0426,
+          -0.1958,
+          -0.0721
+        ],
+        "scale": 0.2533,
+        "swayPhase": 6.2646,
+        "slope": 5.1926
+      },
+      {
+        "id": "coral-42",
+        "asset": "coral-brain.glb",
+        "curveId": "coral-south",
+        "curveT": 0.0374,
+        "laneOffset": -1.1132,
+        "priority": 0.2931,
+        "position": [
+          -6.7388,
+          -2.1773,
+          -6.4195
+        ],
+        "rotation": [
+          3.0376,
+          -0.5681,
+          3.1378
+        ],
+        "scale": 0.3666,
+        "swayPhase": 3.7494,
+        "slope": 5.8437
       }
     ],
     "rocks": [
       {
         "id": "rocks-01",
         "asset": "rocks.glb",
+        "curveId": "rock-outer",
+        "curveT": 0.0094,
+        "laneOffset": -1.1562,
+        "sizeClass": "large",
+        "priority": 1,
         "position": [
-          2.3376,
-          -2.38,
-          3.7925
+          10.5593,
+          -2.1207,
+          1.5685
         ],
         "rotation": [
-          0,
-          5.7701,
-          0
+          3.0568,
+          -0.9014,
+          3.0493
         ],
-        "scale": 1.1363
+        "scale": 1.0539
       },
       {
         "id": "rocks-02",
         "asset": "rocks.glb",
+        "curveId": "rock-west",
+        "curveT": 0.1216,
+        "laneOffset": 0.466,
+        "sizeClass": "large",
+        "priority": 0.9844,
         "position": [
-          -0.1723,
-          -2.38,
-          9.0387
+          -9.32,
+          -2.0701,
+          -4.753
         ],
         "rotation": [
-          0,
-          5.3184,
-          0
+          -0.0893,
+          -0.9635,
+          -0.1205
         ],
-        "scale": 1.2577
+        "scale": 1.0309
       },
       {
         "id": "rocks-03",
         "asset": "rocks.glb",
+        "curveId": "rock-east",
+        "curveT": 0.2321,
+        "laneOffset": -0.6762,
+        "sizeClass": "large",
+        "priority": 0.9688,
         "position": [
-          -0.8104,
-          -2.38,
-          5.3492
+          8.4522,
+          -2.2349,
+          3.2761
         ],
         "rotation": [
-          0,
-          5.3044,
-          0
+          0.0186,
+          -0.5715,
+          0.082
         ],
-        "scale": 1.2954
+        "scale": 1.0302
+      },
+      {
+        "id": "rocks-04",
+        "asset": "rocks.glb",
+        "curveId": "rock-outer",
+        "curveT": 0.0845,
+        "laneOffset": 0.7524,
+        "sizeClass": "large",
+        "priority": 0.9531,
+        "position": [
+          6.9595,
+          -2.1518,
+          4.74
+        ],
+        "rotation": [
+          0.2304,
+          0.7107,
+          -0.0221
+        ],
+        "scale": 1.0792
+      },
+      {
+        "id": "rocks-05",
+        "asset": "rocks.glb",
+        "curveId": "rock-west",
+        "curveT": 0.3317,
+        "laneOffset": -0.702,
+        "sizeClass": "large",
+        "priority": 0.9375,
+        "position": [
+          -8.4775,
+          -2.2636,
+          -1.8388
+        ],
+        "rotation": [
+          3.01,
+          0.9049,
+          -2.9003
+        ],
+        "scale": 0.8206
+      },
+      {
+        "id": "rocks-06",
+        "asset": "rocks.glb",
+        "curveId": "rock-east",
+        "curveT": 0.5159,
+        "laneOffset": 0.2892,
+        "sizeClass": "large",
+        "priority": 0.9219,
+        "position": [
+          8.8661,
+          -2.1938,
+          -0.8061
+        ],
+        "rotation": [
+          -2.9926,
+          1.0144,
+          2.9616
+        ],
+        "scale": 0.8783
+      },
+      {
+        "id": "rocks-07",
+        "asset": "rocks.glb",
+        "curveId": "rock-outer",
+        "curveT": 0.1382,
+        "laneOffset": -0.8424,
+        "sizeClass": "large",
+        "priority": 0.9063,
+        "position": [
+          5.8085,
+          -2.1983,
+          8.0256
+        ],
+        "rotation": [
+          -0.0378,
+          -0.072,
+          -0.0043
+        ],
+        "scale": 0.9212
+      },
+      {
+        "id": "rocks-08",
+        "asset": "rocks.glb",
+        "curveId": "rock-west",
+        "curveT": 0.2533,
+        "laneOffset": 0.4475,
+        "sizeClass": "large",
+        "priority": 0.8906,
+        "position": [
+          -9.5959,
+          -2.1082,
+          -2.9198
+        ],
+        "rotation": [
+          3.0435,
+          -1.2935,
+          3.0034
+        ],
+        "scale": 1.004
+      },
+      {
+        "id": "rocks-09",
+        "asset": "rocks.glb",
+        "curveId": "rock-east",
+        "curveT": 0.6446,
+        "laneOffset": -0.5781,
+        "sizeClass": "medium",
+        "priority": 0.875,
+        "position": [
+          7.4873,
+          -2.021,
+          -2.384
+        ],
+        "rotation": [
+          -2.6786,
+          -1.3978,
+          -2.747
+        ],
+        "scale": 0.4985
+      },
+      {
+        "id": "rocks-10",
+        "asset": "rocks.glb",
+        "curveId": "rock-outer",
+        "curveT": 0.2084,
+        "laneOffset": 1.0957,
+        "sizeClass": "medium",
+        "priority": 0.8594,
+        "position": [
+          1.4006,
+          -2.1549,
+          7.8593
+        ],
+        "rotation": [
+          0.0502,
+          0.4789,
+          0.0617
+        ],
+        "scale": 0.6681
+      },
+      {
+        "id": "rocks-11",
+        "asset": "rocks.glb",
+        "curveId": "rock-west",
+        "curveT": 0.5478,
+        "laneOffset": 0.4072,
+        "sizeClass": "medium",
+        "priority": 0.8438,
+        "position": [
+          -8.9999,
+          -2.291,
+          1.2185
+        ],
+        "rotation": [
+          -0.3893,
+          -1.3158,
+          -0.4387
+        ],
+        "scale": 0.6016
+      },
+      {
+        "id": "rocks-12",
+        "asset": "rocks.glb",
+        "curveId": "rock-east",
+        "curveT": 0.8481,
+        "laneOffset": 0.4891,
+        "sizeClass": "medium",
+        "priority": 0.8281,
+        "position": [
+          7.3891,
+          -2.1387,
+          -5.5993
+        ],
+        "rotation": [
+          -0.0464,
+          -0.0176,
+          0.1037
+        ],
+        "scale": 0.5045
+      },
+      {
+        "id": "rocks-13",
+        "asset": "rocks.glb",
+        "curveId": "rock-outer",
+        "curveT": 0.2689,
+        "laneOffset": -0.3153,
+        "sizeClass": "medium",
+        "priority": 0.8125,
+        "position": [
+          -1.8966,
+          -2.1639,
+          9.1635
+        ],
+        "rotation": [
+          -0.0482,
+          0.5784,
+          -0.0016
+        ],
+        "scale": 0.6991
+      },
+      {
+        "id": "rocks-14",
+        "asset": "rocks.glb",
+        "curveId": "rock-west",
+        "curveT": 0.5232,
+        "laneOffset": -1.0448,
+        "sizeClass": "medium",
+        "priority": 0.7969,
+        "position": [
+          -7.6967,
+          -2.3797,
+          0.4964
+        ],
+        "rotation": [
+          -0.7269,
+          1.4088,
+          0.741
+        ],
+        "scale": 0.6024
+      },
+      {
+        "id": "rocks-15",
+        "asset": "rocks.glb",
+        "curveId": "rock-east",
+        "curveT": 0.6177,
+        "laneOffset": 0.4102,
+        "sizeClass": "medium",
+        "priority": 0.7813,
+        "position": [
+          8.5517,
+          -2.1747,
+          -2.3184
+        ],
+        "rotation": [
+          -0.0478,
+          -1.0009,
+          -0.1444
+        ],
+        "scale": 0.522
+      },
+      {
+        "id": "rocks-16",
+        "asset": "rocks.glb",
+        "curveId": "rock-outer",
+        "curveT": 0.3383,
+        "laneOffset": 1.0539,
+        "sizeClass": "medium",
+        "priority": 0.7656,
+        "position": [
+          -4.8811,
+          -2.1094,
+          6.3629
+        ],
+        "rotation": [
+          -3.1322,
+          -0.7195,
+          -3.0068
+        ],
+        "scale": 0.6804
+      },
+      {
+        "id": "rocks-17",
+        "asset": "rocks.glb",
+        "curveId": "rock-west",
+        "curveT": 0.7042,
+        "laneOffset": -0.6288,
+        "sizeClass": "medium",
+        "priority": 0.75,
+        "position": [
+          -7.3676,
+          -2.2878,
+          2.9437
+        ],
+        "rotation": [
+          0.2032,
+          -0.892,
+          0.2917
+        ],
+        "scale": 0.5171
+      },
+      {
+        "id": "rocks-18",
+        "asset": "rocks.glb",
+        "curveId": "rock-east",
+        "curveT": 0.8219,
+        "laneOffset": -0.8315,
+        "sizeClass": "medium",
+        "priority": 0.7344,
+        "position": [
+          6.3127,
+          -2.0733,
+          -4.74
+        ],
+        "rotation": [
+          -3.0296,
+          0.9158,
+          2.9497
+        ],
+        "scale": 0.629
+      },
+      {
+        "id": "rocks-19",
+        "asset": "rocks.glb",
+        "curveId": "rock-outer",
+        "curveT": 0.3871,
+        "laneOffset": -0.847,
+        "sizeClass": "medium",
+        "priority": 0.7188,
+        "position": [
+          -8.226,
+          -2.2076,
+          5.9847
+        ],
+        "rotation": [
+          -0.2219,
+          0.8343,
+          0.2579
+        ],
+        "scale": 0.6583
+      },
+      {
+        "id": "rocks-20",
+        "asset": "rocks.glb",
+        "curveId": "rock-west",
+        "curveT": 0.6421,
+        "laneOffset": -0.9395,
+        "sizeClass": "medium",
+        "priority": 0.7031,
+        "position": [
+          -7.3299,
+          -2.3038,
+          2.057
+        ],
+        "rotation": [
+          2.621,
+          -1.1854,
+          2.6149
+        ],
+        "scale": 0.4619
+      },
+      {
+        "id": "rocks-21",
+        "asset": "rocks.glb",
+        "curveId": "rock-east",
+        "curveT": 0.7505,
+        "laneOffset": 0.4077,
+        "sizeClass": "medium",
+        "priority": 0.6875,
+        "position": [
+          7.8601,
+          -2.043,
+          -4.2088
+        ],
+        "rotation": [
+          -2.3471,
+          -1.2789,
+          -2.3339
+        ],
+        "scale": 0.6784
+      },
+      {
+        "id": "rocks-22",
+        "asset": "rocks.glb",
+        "curveId": "rock-outer",
+        "curveT": 0.6021,
+        "laneOffset": -0.234,
+        "sizeClass": "medium",
+        "priority": 0.6719,
+        "position": [
+          -6.9751,
+          -2.0882,
+          -5.7985
+        ],
+        "rotation": [
+          -0.1962,
+          -1.007,
+          -0.043
+        ],
+        "scale": 0.5381
+      },
+      {
+        "id": "rocks-23",
+        "asset": "rocks.glb",
+        "curveId": "rock-west",
+        "curveT": 0.8316,
+        "laneOffset": -0.2973,
+        "sizeClass": "medium",
+        "priority": 0.6563,
+        "position": [
+          -7.05,
+          -2.313,
+          4.6656
+        ],
+        "rotation": [
+          3.088,
+          0.035,
+          -3.0813
+        ],
+        "scale": 0.4432
+      },
+      {
+        "id": "rocks-24",
+        "asset": "rocks.glb",
+        "curveId": "rock-east",
+        "curveT": 0.9502,
+        "laneOffset": -0.8686,
+        "sizeClass": "medium",
+        "priority": 0.6406,
+        "position": [
+          5.5569,
+          -2.241,
+          -6.517
+        ],
+        "rotation": [
+          3.028,
+          0.7119,
+          -3.0799
+        ],
+        "scale": 0.4978
+      },
+      {
+        "id": "rocks-25",
+        "asset": "rocks.glb",
+        "curveId": "rock-outer",
+        "curveT": 0.5117,
+        "laneOffset": -0.8035,
+        "sizeClass": "small",
+        "priority": 0.625,
+        "position": [
+          -10.131,
+          -2.1269,
+          -1.3735
+        ],
+        "rotation": [
+          0.0557,
+          0.4858,
+          -0.0925
+        ],
+        "scale": 0.2869
+      },
+      {
+        "id": "rocks-26",
+        "asset": "rocks.glb",
+        "curveId": "rock-west",
+        "curveT": 0.6187,
+        "laneOffset": 0.9349,
+        "sizeClass": "small",
+        "priority": 0.6094,
+        "position": [
+          -9.2141,
+          -2.2857,
+          2.3161
+        ],
+        "rotation": [
+          -3.0513,
+          -0.3862,
+          -2.9336
+        ],
+        "scale": 0.2422
+      },
+      {
+        "id": "rocks-27",
+        "asset": "rocks.glb",
+        "curveId": "rock-east",
+        "curveT": 0.0236,
+        "laneOffset": 0.6917,
+        "sizeClass": "small",
+        "priority": 0.5938,
+        "position": [
+          8.3146,
+          -2.1473,
+          6.5446
+        ],
+        "rotation": [
+          -0.008,
+          -0.3487,
+          0.0483
+        ],
+        "scale": 0.3766
+      },
+      {
+        "id": "rocks-28",
+        "asset": "rocks.glb",
+        "curveId": "rock-outer",
+        "curveT": 0.5882,
+        "laneOffset": -1.016,
+        "sizeClass": "small",
+        "priority": 0.5781,
+        "position": [
+          -8.1183,
+          -2.0886,
+          -5.6594
+        ],
+        "rotation": [
+          3.0348,
+          0.8166,
+          -2.9735
+        ],
+        "scale": 0.2173
+      },
+      {
+        "id": "rocks-29",
+        "asset": "rocks.glb",
+        "curveId": "rock-west",
+        "curveT": 0.6834,
+        "laneOffset": 0.6288,
+        "sizeClass": "small",
+        "priority": 0.5625,
+        "position": [
+          -8.65,
+          -2.3552,
+          3.0786
+        ],
+        "rotation": [
+          -0.0518,
+          -1.4392,
+          -0.0546
+        ],
+        "scale": 0.2718
+      },
+      {
+        "id": "rocks-30",
+        "asset": "rocks.glb",
+        "curveId": "rock-east",
+        "curveT": 0.9434,
+        "laneOffset": 0.8791,
+        "sizeClass": "small",
+        "priority": 0.5469,
+        "position": [
+          7.2206,
+          -2.1619,
+          -7.0621
+        ],
+        "rotation": [
+          0.037,
+          -0.0857,
+          0.1684
+        ],
+        "scale": 0.2774
+      },
+      {
+        "id": "rocks-31",
+        "asset": "rocks.glb",
+        "curveId": "rock-outer",
+        "curveT": 0.6536,
+        "laneOffset": -0.1607,
+        "sizeClass": "small",
+        "priority": 0.5313,
+        "position": [
+          -4.5852,
+          -2.2258,
+          -7.6609
+        ],
+        "rotation": [
+          -0.1611,
+          -0.7814,
+          -0.1443
+        ],
+        "scale": 0.2464
+      },
+      {
+        "id": "rocks-32",
+        "asset": "rocks.glb",
+        "curveId": "rock-west",
+        "curveT": 0.0245,
+        "laneOffset": 0.2472,
+        "sizeClass": "small",
+        "priority": 0.5156,
+        "position": [
+          -8.8609,
+          -2.0468,
+          -6.0115
+        ],
+        "rotation": [
+          0.0198,
+          0.3311,
+          0.0492
+        ],
+        "scale": 0.3906
+      },
+      {
+        "id": "rocks-33",
+        "asset": "rocks.glb",
+        "curveId": "rock-east",
+        "curveT": 0.142,
+        "laneOffset": -0.1575,
+        "sizeClass": "small",
+        "priority": 0.5,
+        "position": [
+          8.4516,
+          -2.1948,
+          4.6094
+        ],
+        "rotation": [
+          -0.0404,
+          -0.4831,
+          -0.0415
+        ],
+        "scale": 0.3593
+      },
+      {
+        "id": "rocks-34",
+        "asset": "rocks.glb",
+        "curveId": "rock-outer",
+        "curveT": 0.7168,
+        "laneOffset": 1.1216,
+        "sizeClass": "small",
+        "priority": 0.4844,
+        "position": [
+          -0.9541,
+          -2.2057,
+          -7.267
+        ],
+        "rotation": [
+          -0.1998,
+          1.1626,
+          0.3178
+        ],
+        "scale": 0.2645
+      },
+      {
+        "id": "rocks-35",
+        "asset": "rocks.glb",
+        "curveId": "rock-west",
+        "curveT": 0.8098,
+        "laneOffset": 1.0513,
+        "sizeClass": "small",
+        "priority": 0.4688,
+        "position": [
+          -8.4109,
+          -2.3005,
+          4.9064
+        ],
+        "rotation": [
+          -0.2145,
+          0.9746,
+          0.1846
+        ],
+        "scale": 0.2905
+      },
+      {
+        "id": "rocks-36",
+        "asset": "rocks.glb",
+        "curveId": "rock-east",
+        "curveT": 0.9326,
+        "laneOffset": -0.1128,
+        "sizeClass": "small",
+        "priority": 0.4531,
+        "position": [
+          6.3577,
+          -2.2639,
+          -6.5472
+        ],
+        "rotation": [
+          -0.057,
+          -0.939,
+          -0.0448
+        ],
+        "scale": 0.2793
+      },
+      {
+        "id": "rocks-37",
+        "asset": "rocks.glb",
+        "curveId": "rock-outer",
+        "curveT": 0.7621,
+        "laneOffset": -0.2412,
+        "sizeClass": "small",
+        "priority": 0.4375,
+        "position": [
+          1.6481,
+          -2.3347,
+          -8.4749
+        ],
+        "rotation": [
+          -3.1373,
+          0.1479,
+          3.0839
+        ],
+        "scale": 0.3415
+      },
+      {
+        "id": "rocks-38",
+        "asset": "rocks.glb",
+        "curveId": "rock-west",
+        "curveT": 0.008,
+        "laneOffset": -0.8334,
+        "sizeClass": "small",
+        "priority": 0.4219,
+        "position": [
+          -7.7576,
+          -2.1201,
+          -6.0768
+        ],
+        "rotation": [
+          0.087,
+          1.0828,
+          -0.1044
+        ],
+        "scale": 0.2372
+      },
+      {
+        "id": "rocks-39",
+        "asset": "rocks.glb",
+        "curveId": "rock-east",
+        "curveT": 0.4093,
+        "laneOffset": -0.5822,
+        "sizeClass": "small",
+        "priority": 0.4063,
+        "position": [
+          8.4312,
+          -2.2566,
+          0.9444
+        ],
+        "rotation": [
+          -2.9939,
+          0.592,
+          2.8903
+        ],
+        "scale": 0.2971
+      },
+      {
+        "id": "rocks-40",
+        "asset": "rocks.glb",
+        "curveId": "rock-outer",
+        "curveT": 0.9279,
+        "laneOffset": -0.6618,
+        "sizeClass": "small",
+        "priority": 0.3906,
+        "position": [
+          9.8648,
+          -2.0497,
+          -3.543
+        ],
+        "rotation": [
+          3.1405,
+          -0.3014,
+          3.0974
+        ],
+        "scale": 0.2017
+      },
+      {
+        "id": "rocks-41",
+        "asset": "rocks.glb",
+        "curveId": "rock-west",
+        "curveT": 0.9476,
+        "laneOffset": -0.9133,
+        "sizeClass": "small",
+        "priority": 0.375,
+        "position": [
+          -5.8582,
+          -2.1749,
+          5.8922
+        ],
+        "rotation": [
+          -0.1638,
+          0.1912,
+          0.0037
+        ],
+        "scale": 0.3796
+      },
+      {
+        "id": "rocks-42",
+        "asset": "rocks.glb",
+        "curveId": "rock-east",
+        "curveT": 0.3252,
+        "laneOffset": -0.0593,
+        "sizeClass": "small",
+        "priority": 0.3594,
+        "position": [
+          9.1418,
+          -2.1711,
+          2.0618
+        ],
+        "rotation": [
+          -3.1401,
+          0.0259,
+          -3.1371
+        ],
+        "scale": 0.2679
+      },
+      {
+        "id": "rocks-43",
+        "asset": "rocks.glb",
+        "curveId": "rock-outer",
+        "curveT": 0.8881,
+        "laneOffset": -0.9722,
+        "sizeClass": "small",
+        "priority": 0.3438,
+        "position": [
+          8.8994,
+          -2.1073,
+          -6.0154
+        ],
+        "rotation": [
+          0.0679,
+          -0.9015,
+          0.0612
+        ],
+        "scale": 0.2664
+      },
+      {
+        "id": "rocks-44",
+        "asset": "rocks.glb",
+        "curveId": "rock-west",
+        "curveT": 0.9982,
+        "laneOffset": 0.9296,
+        "sizeClass": "small",
+        "priority": 0.3281,
+        "position": [
+          -7.2989,
+          -2.2077,
+          7.2341
+        ],
+        "rotation": [
+          3.0769,
+          0.6787,
+          -2.9893
+        ],
+        "scale": 0.3029
+      },
+      {
+        "id": "rocks-45",
+        "asset": "rocks.glb",
+        "curveId": "rock-east",
+        "curveT": 0.2537,
+        "laneOffset": 0.9717,
+        "sizeClass": "small",
+        "priority": 0.3125,
+        "position": [
+          10.1329,
+          -2.1617,
+          3.2732
+        ],
+        "rotation": [
+          -2.856,
+          1.0691,
+          2.8216
+        ],
+        "scale": 0.3768
+      },
+      {
+        "id": "rocks-46",
+        "asset": "rocks.glb",
+        "curveId": "rock-outer",
+        "curveT": 0.225,
+        "laneOffset": 1.0754,
+        "sizeClass": "small",
+        "priority": 0.2969,
+        "position": [
+          0.5889,
+          -2.1189,
+          8.0086
+        ],
+        "rotation": [
+          -3.0043,
+          -0.5503,
+          -3.0746
+        ],
+        "scale": 0.2207
+      },
+      {
+        "id": "rocks-47",
+        "asset": "rocks.glb",
+        "curveId": "rock-west",
+        "curveT": 0.7579,
+        "laneOffset": 0.5157,
+        "sizeClass": "small",
+        "priority": 0.2813,
+        "position": [
+          -8.1863,
+          -2.3176,
+          4.0291
+        ],
+        "rotation": [
+          -3.0246,
+          1.0367,
+          2.9808
+        ],
+        "scale": 0.329
+      },
+      {
+        "id": "rocks-48",
+        "asset": "rocks.glb",
+        "curveId": "rock-east",
+        "curveT": 0.5428,
+        "laneOffset": -0.7061,
+        "sizeClass": "small",
+        "priority": 0.2656,
+        "position": [
+          7.7985,
+          -2.271,
+          -0.9247
+        ],
+        "rotation": [
+          -2.9257,
+          -0.906,
+          -2.9918
+        ],
+        "scale": 0.2623
       }
     ],
     "fish": [
       {
         "id": "fish-01",
         "asset": "fish.glb",
+        "routeId": "fish-inner",
+        "curveT": 0.0462,
+        "laneOffset": -0.0346,
+        "priority": 1,
         "position": [
-          -2.7719,
-          -1.1233,
-          2.4535
+          4.5115,
+          -0.78,
+          1.9119
         ],
         "rotation": [
           0,
-          3.0885,
+          -2.3887,
           0
         ],
-        "scale": 0.4779,
-        "speed": 0.2741,
-        "phase": 0.5903,
-        "orbit": 0.9969
+        "scale": 0.305,
+        "speed": 0.0383,
+        "phase": 0.7118,
+        "bobPhase": 3.284
       },
       {
         "id": "fish-02",
         "asset": "fish.glb",
+        "routeId": "fish-middle",
+        "curveT": 0.1469,
+        "laneOffset": 0.0894,
+        "priority": 0.9643,
         "position": [
-          -4.5282,
-          -1.1514,
-          1.7107
+          4.4423,
+          -1.06,
+          3.8076
         ],
         "rotation": [
           0,
-          5.7086,
+          -2.1428,
           0
         ],
-        "scale": 0.4794,
-        "speed": 0.2876,
-        "phase": 2.2815,
-        "orbit": 0.7918
+        "scale": 0.3706,
+        "speed": 0.0369,
+        "phase": 0.2834,
+        "bobPhase": 5.7086
       },
       {
         "id": "fish-03",
         "asset": "fish.glb",
+        "routeId": "fish-outer",
+        "curveT": 0.2719,
+        "laneOffset": 0.0441,
+        "priority": 0.9286,
         "position": [
-          -2.9051,
-          -1.4354,
-          5.6484
+          -3.8489,
+          -1.34,
+          5.9375
         ],
         "rotation": [
           0,
-          1.7247,
+          2.7533,
           0
         ],
-        "scale": 0.4296,
-        "speed": 0.2759,
-        "phase": 0.2753,
-        "orbit": 0.8086
+        "scale": 0.3526,
+        "speed": 0.0373,
+        "phase": 0.1951,
+        "bobPhase": 2.0458
       },
       {
         "id": "fish-04",
         "asset": "fish.glb",
+        "routeId": "fish-inner",
+        "curveT": 0.2132,
+        "laneOffset": -0.0677,
+        "priority": 0.8929,
         "position": [
-          -4.1841,
-          -0.6932,
-          2.3954
+          0.2751,
+          -0.78,
+          3.5543
         ],
         "rotation": [
           0,
-          1.3082,
+          3.1294,
           0
         ],
-        "scale": 0.464,
-        "speed": 0.2953,
-        "phase": 2.8021,
-        "orbit": 0.9884
+        "scale": 0.3837,
+        "speed": 0.0394,
+        "phase": 0.0438,
+        "bobPhase": 3.0038
       },
       {
         "id": "fish-05",
         "asset": "fish.glb",
+        "routeId": "fish-middle",
+        "curveT": 0.3322,
+        "laneOffset": -0.0323,
+        "priority": 0.8571,
         "position": [
-          -4.3341,
-          -1.4636,
-          -5.2745
+          -1.6391,
+          -1.06,
+          6.6016
         ],
         "rotation": [
           0,
-          1.8792,
+          2.9135,
           0
         ],
-        "scale": 0.5161,
-        "speed": 0.2564,
-        "phase": 0.3156,
-        "orbit": 0.9205
+        "scale": 0.3361,
+        "speed": 0.0306,
+        "phase": 0.6562,
+        "bobPhase": 4.0235
       },
       {
         "id": "fish-06",
         "asset": "fish.glb",
+        "routeId": "fish-outer",
+        "curveT": 0.522,
+        "laneOffset": 0.0981,
+        "priority": 0.8214,
         "position": [
-          -0.5862,
-          -1.0023,
-          -9.6473
+          -6.7679,
+          -1.34,
+          -3.289
         ],
         "rotation": [
           0,
-          4.7637,
+          0.8521,
           0
         ],
-        "scale": 0.4861,
-        "speed": 0.3561,
-        "phase": 0.6634,
-        "orbit": 0.607
+        "scale": 0.3139,
+        "speed": 0.0423,
+        "phase": 0.5593,
+        "bobPhase": 1.8792
       },
       {
         "id": "fish-07",
         "asset": "fish.glb",
+        "routeId": "fish-inner",
+        "curveT": 0.3887,
+        "laneOffset": -0.0227,
+        "priority": 0.7857,
         "position": [
-          -3.3247,
-          -0.8657,
-          -4.4509
+          -4.2142,
+          -0.78,
+          1.9213
         ],
         "rotation": [
           0,
-          3.9982,
+          2.5027,
           0
         ],
-        "scale": 0.4755,
-        "speed": 0.196,
-        "phase": 2.0281,
-        "orbit": 0.8102
+        "scale": 0.29,
+        "speed": 0.0419,
+        "phase": 0.5888,
+        "bobPhase": 4.6517
       },
       {
         "id": "fish-08",
         "asset": "fish.glb",
+        "routeId": "fish-middle",
+        "curveT": 0.5009,
+        "laneOffset": 0.1007,
+        "priority": 0.75,
         "position": [
-          5.2277,
-          -1.0436,
-          -7.4368
+          -5.086,
+          -1.06,
+          1.5434
         ],
         "rotation": [
           0,
-          2.323,
+          1.7813,
           0
         ],
-        "scale": 0.4831,
-        "speed": 0.2532,
-        "phase": 2.2445,
-        "orbit": 0.6958
+        "scale": 0.4289,
+        "speed": 0.0514,
+        "phase": 0.1056,
+        "bobPhase": 1.3154
+      },
+      {
+        "id": "fish-09",
+        "asset": "fish.glb",
+        "routeId": "fish-outer",
+        "curveT": 0.6051,
+        "laneOffset": 0.0666,
+        "priority": 0.7143,
+        "position": [
+          -3.6906,
+          -1.34,
+          -5.5985
+        ],
+        "rotation": [
+          0,
+          0.3609,
+          0
+        ],
+        "scale": 0.3565,
+        "speed": 0.0422,
+        "phase": 0.7021,
+        "bobPhase": 0.5571
+      },
+      {
+        "id": "fish-10",
+        "asset": "fish.glb",
+        "routeId": "fish-inner",
+        "curveT": 0.5424,
+        "laneOffset": -0.0059,
+        "priority": 0.6786,
+        "position": [
+          -4.5375,
+          -0.78,
+          -1.6293
+        ],
+        "rotation": [
+          0,
+          0.8464,
+          0
+        ],
+        "scale": 0.3903,
+        "speed": 0.0479,
+        "phase": 0.8737,
+        "bobPhase": 2.323
+      },
+      {
+        "id": "fish-11",
+        "asset": "fish.glb",
+        "routeId": "fish-middle",
+        "curveT": 0.6622,
+        "laneOffset": -0.0365,
+        "priority": 0.6429,
+        "position": [
+          -4.7021,
+          -1.06,
+          -4.5139
+        ],
+        "rotation": [
+          0,
+          0.8301,
+          0
+        ],
+        "scale": 0.3514,
+        "speed": 0.0338,
+        "phase": 0.6079,
+        "bobPhase": 4.454
+      },
+      {
+        "id": "fish-12",
+        "asset": "fish.glb",
+        "routeId": "fish-outer",
+        "curveT": 0.7768,
+        "laneOffset": 0.1388,
+        "priority": 0.6071,
+        "position": [
+          4.2135,
+          -1.34,
+          -5.4342
+        ],
+        "rotation": [
+          0,
+          -0.3857,
+          0
+        ],
+        "scale": 0.4513,
+        "speed": 0.0453,
+        "phase": 0.4545,
+        "bobPhase": 6.1647
+      },
+      {
+        "id": "fish-13",
+        "asset": "fish.glb",
+        "routeId": "fish-inner",
+        "curveT": 0.7116,
+        "laneOffset": -0.0241,
+        "priority": 0.5714,
+        "position": [
+          -0.3181,
+          -0.78,
+          -3.2236
+        ],
+        "rotation": [
+          0,
+          0.0454,
+          0
+        ],
+        "scale": 0.2996,
+        "speed": 0.0348,
+        "phase": 0.0599,
+        "bobPhase": 1.1378
+      },
+      {
+        "id": "fish-14",
+        "asset": "fish.glb",
+        "routeId": "fish-middle",
+        "curveT": 0.8256,
+        "laneOffset": 0.0148,
+        "priority": 0.5357,
+        "position": [
+          1.1671,
+          -1.06,
+          -6.3093
+        ],
+        "rotation": [
+          0,
+          -0.2341,
+          0
+        ],
+        "scale": 0.3398,
+        "speed": 0.0399,
+        "phase": 0.8838,
+        "bobPhase": 0.0311
+      },
+      {
+        "id": "fish-15",
+        "asset": "fish.glb",
+        "routeId": "fish-outer",
+        "curveT": 0.938,
+        "laneOffset": -0.2047,
+        "priority": 0.5,
+        "position": [
+          9.3815,
+          -1.34,
+          0.1526
+        ],
+        "rotation": [
+          0,
+          -1.5823,
+          0
+        ],
+        "scale": 0.4745,
+        "speed": 0.0378,
+        "phase": 0.9094,
+        "bobPhase": 1.7444
+      },
+      {
+        "id": "fish-16",
+        "asset": "fish.glb",
+        "routeId": "fish-inner",
+        "curveT": 0.8703,
+        "laneOffset": 0.121,
+        "priority": 0.4643,
+        "position": [
+          3.6188,
+          -0.78,
+          -1.9757
+        ],
+        "rotation": [
+          0,
+          -0.6142,
+          0
+        ],
+        "scale": 0.4506,
+        "speed": 0.0495,
+        "phase": 0.9758,
+        "bobPhase": 4.3049
+      },
+      {
+        "id": "fish-17",
+        "asset": "fish.glb",
+        "routeId": "fish-middle",
+        "curveT": 0.993,
+        "laneOffset": -0.0969,
+        "priority": 0.4286,
+        "position": [
+          5.7865,
+          -1.06,
+          -1.9552
+        ],
+        "rotation": [
+          0,
+          -1.328,
+          0
+        ],
+        "scale": 0.3535,
+        "speed": 0.0446,
+        "phase": 0.7503,
+        "bobPhase": 3.4965
+      },
+      {
+        "id": "fish-18",
+        "asset": "fish.glb",
+        "routeId": "fish-outer",
+        "curveT": 0.0908,
+        "laneOffset": 0.0131,
+        "priority": 0.3929,
+        "position": [
+          4.606,
+          -1.34,
+          5.7592
+        ],
+        "rotation": [
+          0,
+          -2.6913,
+          0
+        ],
+        "scale": 0.4581,
+        "speed": 0.0376,
+        "phase": 0.4956,
+        "bobPhase": 4.8396
       }
     ],
     "stars": [
       {
         "id": "star-1",
         "asset": "star.glb",
+        "priority": 1,
         "position": [
-          -4.8332,
+          -4.8237,
           0.72,
-          2.6439
+          2.7171
         ],
         "rotation": [
           1.5707963267948966,
           0,
           5.4985
         ],
-        "scale": 0.5223,
+        "scale": 0.4793,
         "phase": 1.7323
       },
       {
         "id": "star-2",
         "asset": "star.glb",
+        "priority": 0.9,
         "position": [
-          5.3336,
+          5.2954,
           0.72,
-          1.3259
+          1.3471
         ],
         "rotation": [
           1.5707963267948966,
           0,
           0.7874
         ],
-        "scale": 0.6129,
+        "scale": 0.5634,
         "phase": 2.8352
       },
       {
         "id": "star-3",
         "asset": "star.glb",
+        "priority": 0.8,
         "position": [
-          3.6215,
+          3.6725,
           0.72,
-          -4.2655
+          -4.304
         ],
         "rotation": [
           1.5707963267948966,
           0,
           1.838
         ],
-        "scale": 0.5199,
+        "scale": 0.4771,
         "phase": 2.9903
+      },
+      {
+        "id": "star-4",
+        "asset": "star.glb",
+        "priority": 0.7,
+        "position": [
+          -3.9882,
+          0.72,
+          -4.6736
+        ],
+        "rotation": [
+          1.5707963267948966,
+          0,
+          1.3102
+        ],
+        "scale": 0.563,
+        "phase": 5.9331
+      },
+      {
+        "id": "star-5",
+        "asset": "star.glb",
+        "priority": 0.6,
+        "position": [
+          5.9975,
+          0.72,
+          -3.2158
+        ],
+        "rotation": [
+          1.5707963267948966,
+          0,
+          4.9946
+        ],
+        "scale": 0.4808,
+        "phase": 5.5306
+      },
+      {
+        "id": "star-6",
+        "asset": "star.glb",
+        "priority": 0.5,
+        "position": [
+          -6.4092,
+          0.72,
+          0.275
+        ],
+        "rotation": [
+          1.5707963267948966,
+          0,
+          3.1643
+        ],
+        "scale": 0.5236,
+        "phase": 2.9229
       }
     ]
   }

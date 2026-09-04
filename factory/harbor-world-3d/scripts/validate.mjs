@@ -51,7 +51,7 @@ const checks = [
   { id: "coral-count", pass: world.placements.coral.length === input.params.coralCount },
   { id: "fish-count", pass: world.placements.fish.length === input.params.fishCount },
   { id: "glb-load", pass: loadResults.every((entry) => entry.pass) },
-  { id: "surface-textures", pass: textureResults.length === 4 && textureResults.every((entry) => entry.pass) },
+  { id: "surface-textures", pass: textureResults.length === 6 && textureResults.every((entry) => entry.pass) },
   {
     id: "payload-budget",
     pass: manifest.budget.pass

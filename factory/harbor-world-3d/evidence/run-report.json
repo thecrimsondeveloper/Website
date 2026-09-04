@@ -1,8 +1,8 @@
 {
   "schemaVersion": "1.0",
-  "runId": "harbor-fnv1a-7a357e2e",
+  "runId": "harbor-fnv1a-75c12470",
   "factoryId": "crimson-harbor-world-3d",
-  "factoryVersion": "1.1.0",
+  "factoryVersion": "1.2.0",
   "sourceVersions": [
     {
       "repository": "https://github.com/LuminaryLabs-Dev/NexusFactory-Kits",
@@ -13,22 +13,28 @@
   "input": {
     "seed": "crimson-harbor-604",
     "params": {
-      "coralCount": 13,
-      "fishCount": 8,
-      "rockClusterCount": 3,
+      "coralCount": 42,
+      "fishCount": 18,
+      "rockClusterCount": 48,
+      "starCount": 6,
       "worldRadius": 11,
       "waterClarity": 0.8
     }
   },
   "parameters": {
-    "coralCount": 13,
-    "fishCount": 8,
-    "rockClusterCount": 3,
+    "coralCount": 42,
+    "fishCount": 18,
+    "rockClusterCount": 48,
+    "starCount": 6,
     "worldRadius": 11,
     "waterClarity": 0.8
   },
   "seed": "crimson-harbor-604",
   "streams": [
+    "terrain-broad-a",
+    "terrain-broad-b",
+    "terrain-ripples",
+    "curve:*",
     "coral-placement",
     "rock-placement",
     "rock-geometry",
@@ -38,6 +44,16 @@
   ],
   "stages": [
     {
+      "id": "curve-network",
+      "status": "pass",
+      "outputSignature": "fnv1a:0c8b516d"
+    },
+    {
+      "id": "heightfield",
+      "status": "pass",
+      "outputSignature": "fnv1a:53ed1074"
+    },
+    {
       "id": "asset-geometry",
       "status": "pass",
       "outputSignature": "fnv1a:2642639f"
@@ -45,23 +61,23 @@
     {
       "id": "surface-textures",
       "status": "pass",
-      "outputSignature": "fnv1a:c3b34d28"
+      "outputSignature": "fnv1a:c6b351e1"
     },
     {
       "id": "world-layout",
       "status": "pass",
-      "outputSignature": "fnv1a:7a357e2e"
+      "outputSignature": "fnv1a:75c12470"
     },
     {
       "id": "glb-export",
       "status": "pass",
-      "outputSignature": "sha256:f1eaa47cabb1c29bf2269178bc27eaacd6c43400b9e679951f972ea6934b7843"
+      "outputSignature": "sha256:b56d7fdf5197fa544da65f8122da253495ba0136cd0404eadc4255312c17c417"
     }
   ],
-  "artifactSignature": "fnv1a:7a357e2e",
+  "artifactSignature": "fnv1a:75c12470",
   "artifactSignatures": {
-    "semantic": "fnv1a:7a357e2e",
-    "exports": "sha256:f1eaa47cabb1c29bf2269178bc27eaacd6c43400b9e679951f972ea6934b7843"
+    "semantic": "fnv1a:75c12470",
+    "exports": "sha256:b56d7fdf5197fa544da65f8122da253495ba0136cd0404eadc4255312c17c417"
   },
   "technicalValidation": {
     "valid": true,
@@ -84,7 +100,29 @@
         "pass": true
       },
       {
+        "id": "rock-count",
+        "pass": true
+      },
+      {
         "id": "star-count",
+        "pass": true
+      },
+      {
+        "id": "unique-placement-ids",
+        "pass": true,
+        "value": 114
+      },
+      {
+        "id": "boat-clearance",
+        "pass": true,
+        "minimumRadius": 3.4
+      },
+      {
+        "id": "terrain-placement-bounds",
+        "pass": true
+      },
+      {
+        "id": "fish-terrain-and-surface-clearance",
         "pass": true
       },
       {
@@ -162,10 +200,10 @@
       },
       "sand": {
         "meshCount": 1,
-        "vertexCount": 1153,
-        "triangleCount": 2240,
+        "vertexCount": 16641,
+        "triangleCount": 32768,
         "meshTriangleCounts": [
-          2240
+          32768
         ],
         "meshesWithNormals": 1,
         "meshesWithUvs": 1,
@@ -197,13 +235,25 @@
         "pixels": 65536
       },
       {
-        "fileName": "textures/sand-albedo.png",
+        "fileName": "textures/terrain-height.png",
         "width": 256,
         "height": 256,
         "pixels": 65536
       },
       {
         "fileName": "textures/sand-normal.png",
+        "width": 256,
+        "height": 256,
+        "pixels": 65536
+      },
+      {
+        "fileName": "textures/sand-albedo.png",
+        "width": 256,
+        "height": 256,
+        "pixels": 65536
+      },
+      {
+        "fileName": "textures/terrain-ao.png",
         "width": 256,
         "height": 256,
         "pixels": 65536
@@ -231,7 +281,29 @@
         "pass": true
       },
       {
+        "id": "rock-count",
+        "pass": true
+      },
+      {
         "id": "star-count",
+        "pass": true
+      },
+      {
+        "id": "unique-placement-ids",
+        "pass": true,
+        "value": 114
+      },
+      {
+        "id": "boat-clearance",
+        "pass": true,
+        "minimumRadius": 3.4
+      },
+      {
+        "id": "terrain-placement-bounds",
+        "pass": true
+      },
+      {
+        "id": "fish-terrain-and-surface-clearance",
         "pass": true
       },
       {
@@ -309,10 +381,10 @@
       },
       "sand": {
         "meshCount": 1,
-        "vertexCount": 1153,
-        "triangleCount": 2240,
+        "vertexCount": 16641,
+        "triangleCount": 32768,
         "meshTriangleCounts": [
-          2240
+          32768
         ],
         "meshesWithNormals": 1,
         "meshesWithUvs": 1,
@@ -344,7 +416,7 @@
         "pixels": 65536
       },
       {
-        "fileName": "textures/sand-albedo.png",
+        "fileName": "textures/terrain-height.png",
         "width": 256,
         "height": 256,
         "pixels": 65536
@@ -354,74 +426,91 @@
         "width": 256,
         "height": 256,
         "pixels": 65536
+      },
+      {
+        "fileName": "textures/sand-albedo.png",
+        "width": 256,
+        "height": 256,
+        "pixels": 65536
+      },
+      {
+        "fileName": "textures/terrain-ao.png",
+        "width": 256,
+        "height": 256,
+        "pixels": 65536
       }
     ]
   },
   "exports": [
     {
       "file": "public/assets/harbor/models/boat.glb",
-      "bytes": 53540,
-      "sha256": "3b4269334709bcc9eae9484cea16effabfd0abebfdb89bc48dff344a946e736e",
-      "mediaType": "model/gltf-binary"
+      "bytes": 774860,
+      "sha256": "fe456b4dadb053f9ed535079c0aaba9381fd72bb09b03109115ff0392f5927f9",
+      "mediaType": "model/gltf-binary",
+      "source": "Objaverse optimized derivative"
     },
     {
       "file": "public/assets/harbor/models/coral-brain.glb",
-      "bytes": 239000,
-      "sha256": "e1a3483d975ec566ce733ba06a93367898f117ab22ff827aade628f36ca00ab6",
+      "bytes": 419344,
+      "sha256": "ddf15386e7f7debbc2c98146185f3b5b031ae0e405dbb1466f2f41eae8a1c4b5",
       "mediaType": "model/gltf-binary",
-      "source": "NexusFactory-Kits"
+      "source": "Objaverse optimized derivative"
     },
     {
       "file": "public/assets/harbor/models/coral-lettuce.glb",
-      "bytes": 52652,
-      "sha256": "673971a0e7f7e76f451d4a7e06a1ceb76fd17919c26778f49089f8620bcc3abc",
+      "bytes": 596344,
+      "sha256": "543dcc1b4adb9911cbe32d5eb68596a47bd92f5bc075b829f70374d619e660d7",
       "mediaType": "model/gltf-binary",
-      "source": "NexusFactory-Kits"
+      "source": "Objaverse optimized derivative"
     },
     {
       "file": "public/assets/harbor/models/coral-sea-fan.glb",
-      "bytes": 102452,
-      "sha256": "a2c849ae2567047e6fa7aed42233015081c4e3d867da389d036083c3aff86ef7",
+      "bytes": 1595428,
+      "sha256": "43ac27d89d26b791a4840fbe025a97f263c8ad1ee70145e12e7cec5461217870",
       "mediaType": "model/gltf-binary",
-      "source": "NexusFactory-Kits"
+      "source": "Objaverse optimized derivative"
     },
     {
       "file": "public/assets/harbor/models/coral-staghorn.glb",
-      "bytes": 121912,
-      "sha256": "dcdd988f5c84abde4bce4c17d7fdba94c901ab6b4f1978b332e3d9aabee6091a",
+      "bytes": 1083832,
+      "sha256": "92589528272aa05c0493d657e2cb9c0b83b0ea743b6a93fde9fa60e987d8178b",
       "mediaType": "model/gltf-binary",
-      "source": "NexusFactory-Kits"
+      "source": "Objaverse optimized derivative"
     },
     {
       "file": "public/assets/harbor/models/coral-table.glb",
-      "bytes": 59804,
-      "sha256": "c2b2b515843eb2110d70c37ba3e1ba945f8090ed08f80a024d81403f4e78fb1e",
+      "bytes": 1552684,
+      "sha256": "d8fe6589b7426bf15e0751981340e4bf0cb0b7328049df7f0c9d8982d324adf9",
       "mediaType": "model/gltf-binary",
-      "source": "NexusFactory-Kits"
+      "source": "Objaverse optimized derivative"
     },
     {
       "file": "public/assets/harbor/models/fish.glb",
-      "bytes": 17156,
-      "sha256": "50022b63c697f3dc1167b268594320fe25eac57bc79ba3172fed72bc1aaaf25b",
-      "mediaType": "model/gltf-binary"
+      "bytes": 202192,
+      "sha256": "ce6928decfec25dc216606a4012e014ae02f122f33163e1b791028af94754cea",
+      "mediaType": "model/gltf-binary",
+      "source": "Objaverse optimized derivative"
     },
     {
       "file": "public/assets/harbor/models/rocks.glb",
-      "bytes": 95104,
-      "sha256": "4b05817e77e16f0b13d35d8a55bb0bd0999cb4d10ac7f2023f4a65f26b8ae800",
-      "mediaType": "model/gltf-binary"
+      "bytes": 611176,
+      "sha256": "159e7f575b27f5d28853d512a48e5b37b3e788cc9e7e7ec35c85b28374746e99",
+      "mediaType": "model/gltf-binary",
+      "source": "Objaverse optimized derivative"
     },
     {
       "file": "public/assets/harbor/models/sand.glb",
-      "bytes": 51824,
-      "sha256": "3b2813a7e1991b9b0fe42dbcedbd062a1ad4c0eafa5729ebc9b3733528bb150c",
-      "mediaType": "model/gltf-binary"
+      "bytes": 730692,
+      "sha256": "e747ea2db0a41c558f8e13a4426d9f514efaed942975e11bb5ff7c74908ef107",
+      "mediaType": "model/gltf-binary",
+      "source": "Deterministic harbor heightfield factory"
     },
     {
       "file": "public/assets/harbor/models/star.glb",
-      "bytes": 12636,
-      "sha256": "af824c59cfc56571c66acce9e556c0e2937baf12bdbd497eae21767b863e9e03",
-      "mediaType": "model/gltf-binary"
+      "bytes": 158784,
+      "sha256": "a32604693adc284fc8965beaba17e31ffa5a91c7c61aca7bbeed2f77005fc8b7",
+      "mediaType": "model/gltf-binary",
+      "source": "Objaverse optimized derivative"
     },
     {
       "file": "public/assets/harbor/textures/rock-albedo.png",
@@ -443,8 +532,8 @@
     },
     {
       "file": "public/assets/harbor/textures/sand-albedo.png",
-      "bytes": 56460,
-      "sha256": "e6af440750bd3a3fe1c012ba8bd197346fdf8b0bcf684e7de15fda778119c974",
+      "bytes": 49856,
+      "sha256": "e84903225c01c2cd7a9746cdcc4b7a502bac3509b046b54cccafa042e1b0ebad",
       "mediaType": "image/png",
       "width": 256,
       "height": 256,
@@ -452,8 +541,26 @@
     },
     {
       "file": "public/assets/harbor/textures/sand-normal.png",
-      "bytes": 143325,
-      "sha256": "9d0b08f59f260ad18110a4a3903a5fd30aa6384c56afee1b318bdf2ed9fc91e2",
+      "bytes": 94659,
+      "sha256": "004ed8e409964e799fb684229ab4d5af22f78f98827b94dc698f102f04dd552b",
+      "mediaType": "image/png",
+      "width": 256,
+      "height": 256,
+      "colorSpace": "linear"
+    },
+    {
+      "file": "public/assets/harbor/textures/terrain-ao.png",
+      "bytes": 9682,
+      "sha256": "a952e9fb7947ff52eb560e7ba57ca7cf3c8f6c6575fc81dfb454d01482efe5b0",
+      "mediaType": "image/png",
+      "width": 256,
+      "height": 256,
+      "colorSpace": "linear"
+    },
+    {
+      "file": "public/assets/harbor/textures/terrain-height.png",
+      "bytes": 40074,
+      "sha256": "bd5807b6ff89bf550e0ad7651b551f4297cf1599337ff807f8b8d4d662311ace",
       "mediaType": "image/png",
       "width": 256,
       "height": 256,
@@ -461,16 +568,16 @@
     },
     {
       "file": "public/assets/harbor/world.json",
-      "bytes": 9563,
-      "sha256": "d417099c610be06317e0af990d6676583021d2aa94e18729feb40571f047ffa0",
+      "bytes": 59279,
+      "sha256": "e28e81efd60b68046fced2fb1a463843bb44f728eb19a73f9ee777236b123fc4",
       "mediaType": "application/json"
     }
   ],
   "warnings": [],
   "errors": [],
   "timing": {
-    "startedAt": "2026-09-04T14:46:47.350Z",
-    "completedAt": "2026-09-04T14:46:47.938Z"
+    "startedAt": "2026-09-04T18:06:41.894Z",
+    "completedAt": "2026-09-04T18:06:48.322Z"
   },
   "environment": {
     "node": "v24.19.0",
@@ -485,11 +592,205 @@
       960,
       640
     ],
-    "bytes": 127861,
-    "firstHash": "0a1b4c869cba25a5685b8ec3317486d76db912d7d190ee535fc3f54850d9be00",
-    "secondHash": "0a1b4c869cba25a5685b8ec3317486d76db912d7d190ee535fc3f54850d9be00",
+    "bytes": 573415,
+    "firstHash": "8c70f43682ac9a54bad36f70df07104ab0a5f4689c370e5fc60cb7c86ebe54a8",
+    "secondHash": "8c70f43682ac9a54bad36f70df07104ab0a5f4689c370e5fc60cb7c86ebe54a8",
     "deterministic": true,
-    "coverage": "Three.js scene geometry, 256px rock and sand textures, normal mapping, GLB loading, camera, lighting, depth, transparent water material, and deterministic framebuffer. Exact browser-only GLSL execution remains a separate validation surface.",
+    "captureVariant": "final",
+    "captures": [
+      {
+        "id": "web-top-down",
+        "position": [
+          0,
+          21,
+          8
+        ],
+        "target": [
+          0,
+          -1.15,
+          0
+        ],
+        "fov": 34,
+        "bytes": 573415,
+        "sha256": "8c70f43682ac9a54bad36f70df07104ab0a5f4689c370e5fc60cb7c86ebe54a8",
+        "secondSha256": "8c70f43682ac9a54bad36f70df07104ab0a5f4689c370e5fc60cb7c86ebe54a8",
+        "deterministic": true,
+        "image": "factory/harbor-world-3d/evidence/lighting-angles/web-top-down.png"
+      },
+      {
+        "id": "north-oblique",
+        "position": [
+          0,
+          12,
+          17
+        ],
+        "target": [
+          0,
+          -1.1,
+          0
+        ],
+        "fov": 40,
+        "bytes": 587590,
+        "sha256": "63d88f0852b041f2ddac9f0229d81c2d73968bb7179b3f9065d31e64afa02724",
+        "secondSha256": "63d88f0852b041f2ddac9f0229d81c2d73968bb7179b3f9065d31e64afa02724",
+        "deterministic": true,
+        "image": "factory/harbor-world-3d/evidence/lighting-angles/north-oblique.png"
+      },
+      {
+        "id": "north-east-oblique",
+        "position": [
+          12,
+          12,
+          12
+        ],
+        "target": [
+          0,
+          -1.1,
+          0
+        ],
+        "fov": 40,
+        "bytes": 626379,
+        "sha256": "52324443eb46b9becbf2d1a6ab0deca35b1240dbcb5816031a6b2bb9ba1c562b",
+        "secondSha256": "52324443eb46b9becbf2d1a6ab0deca35b1240dbcb5816031a6b2bb9ba1c562b",
+        "deterministic": true,
+        "image": "factory/harbor-world-3d/evidence/lighting-angles/north-east-oblique.png"
+      },
+      {
+        "id": "east-oblique",
+        "position": [
+          17,
+          12,
+          0
+        ],
+        "target": [
+          0,
+          -1.1,
+          0
+        ],
+        "fov": 40,
+        "bytes": 580775,
+        "sha256": "35bd2bb3b915d8d331fb272c740a8a4f18f963033ac82e3c5742a5b189b6fc8f",
+        "secondSha256": "35bd2bb3b915d8d331fb272c740a8a4f18f963033ac82e3c5742a5b189b6fc8f",
+        "deterministic": true,
+        "image": "factory/harbor-world-3d/evidence/lighting-angles/east-oblique.png"
+      },
+      {
+        "id": "south-east-oblique",
+        "position": [
+          12,
+          12,
+          -12
+        ],
+        "target": [
+          0,
+          -1.1,
+          0
+        ],
+        "fov": 40,
+        "bytes": 684589,
+        "sha256": "df8d87cceddfcfac8ed9f8611e6b304c0e73041cba3f6f88a6ef1fe4f4c21122",
+        "secondSha256": "df8d87cceddfcfac8ed9f8611e6b304c0e73041cba3f6f88a6ef1fe4f4c21122",
+        "deterministic": true,
+        "image": "factory/harbor-world-3d/evidence/lighting-angles/south-east-oblique.png"
+      },
+      {
+        "id": "south-oblique",
+        "position": [
+          0,
+          12,
+          -17
+        ],
+        "target": [
+          0,
+          -1.1,
+          0
+        ],
+        "fov": 40,
+        "bytes": 599881,
+        "sha256": "c0cc61cd59fe403b9bcba24482648a2686a0cc152e4b025d24c97474a635c574",
+        "secondSha256": "c0cc61cd59fe403b9bcba24482648a2686a0cc152e4b025d24c97474a635c574",
+        "deterministic": true,
+        "image": "factory/harbor-world-3d/evidence/lighting-angles/south-oblique.png"
+      },
+      {
+        "id": "south-west-oblique",
+        "position": [
+          -12,
+          12,
+          -12
+        ],
+        "target": [
+          0,
+          -1.1,
+          0
+        ],
+        "fov": 40,
+        "bytes": 619203,
+        "sha256": "72e13f778ccf94247aeee40537172e9f463ba035cb00185d97a07092d02ef333",
+        "secondSha256": "72e13f778ccf94247aeee40537172e9f463ba035cb00185d97a07092d02ef333",
+        "deterministic": true,
+        "image": "factory/harbor-world-3d/evidence/lighting-angles/south-west-oblique.png"
+      },
+      {
+        "id": "west-oblique",
+        "position": [
+          -17,
+          12,
+          0
+        ],
+        "target": [
+          0,
+          -1.1,
+          0
+        ],
+        "fov": 40,
+        "bytes": 557033,
+        "sha256": "8ce3ddd8ec7dcf265a94c806b17e5b7fcc57a27b443c3fcf3738b639aab9aaae",
+        "secondSha256": "8ce3ddd8ec7dcf265a94c806b17e5b7fcc57a27b443c3fcf3738b639aab9aaae",
+        "deterministic": true,
+        "image": "factory/harbor-world-3d/evidence/lighting-angles/west-oblique.png"
+      },
+      {
+        "id": "north-west-oblique",
+        "position": [
+          -12,
+          12,
+          12
+        ],
+        "target": [
+          0,
+          -1.1,
+          0
+        ],
+        "fov": 40,
+        "bytes": 648067,
+        "sha256": "c49f0579ef7c1c501744f6da88e24ebc4634647353949bfec2a953c24cf25c75",
+        "secondSha256": "c49f0579ef7c1c501744f6da88e24ebc4634647353949bfec2a953c24cf25c75",
+        "deterministic": true,
+        "image": "factory/harbor-world-3d/evidence/lighting-angles/north-west-oblique.png"
+      },
+      {
+        "id": "grazing-water",
+        "position": [
+          13,
+          5.8,
+          17
+        ],
+        "target": [
+          0,
+          -0.7,
+          0
+        ],
+        "fov": 42,
+        "bytes": 451249,
+        "sha256": "1fcd33ee821f684ed05dc1fb4fa51681126a1b88e0d62e12f4941fd00b9dd038",
+        "secondSha256": "1fcd33ee821f684ed05dc1fb4fa51681126a1b88e0d62e12f4941fd00b9dd038",
+        "deterministic": true,
+        "image": "factory/harbor-world-3d/evidence/lighting-angles/grazing-water.png"
+      }
+    ],
+    "contactSheet": "factory/harbor-world-3d/evidence/lighting-angles/contact-sheet.png",
+    "coverage": "Production Objaverse-derived GLBs, embedded PBR textures, project camera, locked multi-angle lighting, depth, and a normal-mapped transparent-water surrogate. Browser PCF shadow-map and exact GLSL execution remain separate validation surfaces.",
     "image": "factory/harbor-world-3d/evidence/headless-harbor.png"
   }
 }

@@ -1,13 +1,17 @@
 # Crimson Harbor World 3D Factory Kit
 
-Deterministically generates the boat, fish, textured 500–1,000-triangle rocks, rippled sand terrain, star, and harbor layout used by the Crimson Wheeler portfolio. Rock and sand surfaces use generated 256×256 albedo and normal maps. Five reviewed coral GLBs are consumed unchanged from `LuminaryLabs-Dev/NexusFactory-Kits` commit `627c4aeb864f438c3b1a24a00b152a17d24e8cf9` under the included MIT license.
+Deterministically generates the 129×129 seabed heightfield, 256×256 height/normal/albedo/AO maps, Catmull–Rom composition curves, and constrained placements used by the Crimson Wheeler portfolio. The high profile contains 48 logical rock clusters expanded into 192 instanced rocks, 42 coral placements, 18 curve-following fish, and 6 interactive stars. Reviewed high-detail runtime GLBs retain their recorded Objaverse and NexusFactory-Kits provenance.
 
 ```bash
 npm run harbor:test
 npm run harbor:generate
 npm run harbor:validate
 npm run harbor:mesh
+npm run harbor:layout
+npm run harbor:performance
+npm run harbor:interaction
 npm run harbor:headless
+npm run harbor:review
 ```
 
 The browser Studio-style preview is `factory/harbor-world-3d/index.html`. The public Website consumes only the generated files under `public/assets/harbor/`; it does not require the Factory Kit at runtime.

@@ -1,0 +1,33 @@
+{
+  "verdict": "pass",
+  "renderer": "@headless-three/renderer",
+  "adapter": "task-local Mesa Lavapipe",
+  "dimensions": [
+    960,
+    640
+  ],
+  "beforeSha256": "e1118a4e23ea0787d909e3e0a679c907390e9ee06ebc0d299d194e47cd6204d5",
+  "afterSha256": "8dc63a68ff3e0ffeb2bef79036a8115ca82d6f08f66072ed0c7e18534fc3e226",
+  "pixelStateChanged": true,
+  "importedProjectComponents": [
+    "ThreeBackend.castAt",
+    "ThreeBackend.catchStar",
+    "ThreeBackend.updateCast",
+    "normalizeAsset",
+    "world.json",
+    "boat.glb",
+    "sand.glb",
+    "star.glb"
+  ],
+  "stubs": [
+    "MeshPhysicalMaterial water surrogate replaces browser-only GLSL during CPU rendering."
+  ],
+  "warnings": [
+    "Browser pointer-event and DOM focus behavior are outside this headless Three.js boundary."
+  ],
+  "artifacts": {
+    "before": "factory/harbor-world-3d/evidence/interaction/before.png",
+    "inputReport": "factory/harbor-world-3d/evidence/interaction/input-report.json",
+    "after": "factory/harbor-world-3d/evidence/interaction/after.png"
+  }
+}
