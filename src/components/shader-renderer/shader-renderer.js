@@ -16,7 +16,7 @@ template.innerHTML = `
     :host([data-mode="webgl"]) ::slotted(img), :host([data-mode="video"]) ::slotted(img) { opacity: 0; }
     :host([data-mode="video"]) video { opacity: 1; }
     .cast-hint { position: absolute; right: 18px; bottom: 18px; padding: 7px 10px; color: rgba(239,244,230,.74); border: 1px solid rgba(239,244,230,.22); font: 600 10px/1 system-ui,sans-serif; letter-spacing: .16em; text-transform: uppercase; pointer-events: none; }
-    :host(:not([interactive])) .cast-hint { display: none; }
+    :host(:not([interactive])) .cast-hint, :host([navigation]) .cast-hint { display: none; }
     @media (max-width: 540px) { .cast-hint { right: 12px; bottom: 12px; } }
     @media (prefers-reduced-motion: reduce) { canvas, video, ::slotted(img) { transition: none; } }
   </style>
@@ -40,6 +40,9 @@ class ShaderRenderer extends HTMLElement {
     this.visibilityObserver = null;
     this.disposed = false;
     this.handlePointer = this.handlePointer.bind(this);
+    this.handlePointerMove = this.handlePointerMove.bind(this);
+    this.handlePointerUp = this.handlePointerUp.bind(this);
+    this.handleWheel = this.handleWheel.bind(this);
     this.handleKey = this.handleKey.bind(this);
     this.handleContextLost = this.handleContextLost.bind(this);
     this.handleVisibility = this.handleVisibility.bind(this);
@@ -49,6 +52,10 @@ class ShaderRenderer extends HTMLElement {
     this.disposed = false;
     this.dataset.mode = "image";
     this.canvas.addEventListener("pointerdown", this.handlePointer);
+    this.canvas.addEventListener("pointermove", this.handlePointerMove);
+    this.canvas.addEventListener("pointerup", this.handlePointerUp);
+    this.canvas.addEventListener("pointercancel", this.handlePointerUp);
+    this.canvas.addEventListener("wheel", this.handleWheel, { passive: false });
     this.canvas.addEventListener("webglcontextlost", this.handleContextLost);
     this.addEventListener("keydown", this.handleKey);
     this.resizeObserver = new ResizeObserver(() => this.resize());
@@ -75,7 +82,9 @@ class ShaderRenderer extends HTMLElement {
       if (this.disposed) return;
       this.backend = new ThreeBackend(this.canvas, scene, {
         quiet: this.hasAttribute("quiet"),
+        navigation: this.hasAttribute("navigation"),
         onStarCaught: (detail) => this.dispatchEvent(new CustomEvent("star-caught", { detail })),
+        onArrival: (id) => this.dispatchEvent(new CustomEvent("destination-arrived", { detail: { id } })),
       });
       await this.backend.initialize();
       if (this.disposed) return;
@@ -114,6 +123,10 @@ class ShaderRenderer extends HTMLElement {
     this.backend?.castAtStar();
   }
 
+  travelTo(id, position) {
+    return this.backend?.travelTo(id, position) ?? false;
+  }
+
   setQuality(quality) {
     this.setAttribute("quality", quality);
     this.resize();
@@ -125,12 +138,57 @@ class ShaderRenderer extends HTMLElement {
   }
 
   handlePointer(event) {
+    if (this.hasAttribute("navigation")) {
+      if (event.button !== 0 || !this.backend) return;
+      this.pointerStart = { id: event.pointerId, x: event.clientX, y: event.clientY, moved: false };
+      this.canvas.setPointerCapture(event.pointerId);
+      return;
+    }
     if (!this.hasAttribute("interactive")) return;
     const bounds = this.canvas.getBoundingClientRect();
     this.castAt((event.clientX - bounds.left) / bounds.width, 1 - (event.clientY - bounds.top) / bounds.height);
   }
 
+  handlePointerMove(event) {
+    const pointer = this.pointerStart;
+    if (!pointer || pointer.id !== event.pointerId) return;
+    const dx = event.clientX - pointer.x;
+    const dy = event.clientY - pointer.y;
+    if (Math.hypot(dx, dy) > 3) pointer.moved = true;
+    if (pointer.moved) this.backend?.orbitBy(dx, dy);
+    pointer.x = event.clientX;
+    pointer.y = event.clientY;
+  }
+
+  handlePointerUp(event) {
+    const pointer = this.pointerStart;
+    if (!pointer || pointer.id !== event.pointerId) return;
+    this.pointerStart = null;
+    if (this.canvas.hasPointerCapture(event.pointerId)) this.canvas.releasePointerCapture(event.pointerId);
+    if (!pointer.moved && event.type === "pointerup" && this.hasAttribute("interactive")) {
+      const bounds = this.canvas.getBoundingClientRect();
+      this.castAt((event.clientX - bounds.left) / bounds.width, 1 - (event.clientY - bounds.top) / bounds.height);
+    }
+  }
+
+  handleWheel(event) {
+    if (!this.hasAttribute("navigation") || !this.backend) return;
+    event.preventDefault();
+    this.backend.zoomBy(event.deltaY);
+  }
+
   handleKey(event) {
+    if (this.hasAttribute("navigation") && this.backend && ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "+", "=", "-"].includes(event.key)) {
+      event.preventDefault();
+      const step = 85;
+      if (event.key === "ArrowLeft") this.backend?.orbitBy(-step, 0);
+      if (event.key === "ArrowRight") this.backend?.orbitBy(step, 0);
+      if (event.key === "ArrowUp") this.backend?.orbitBy(0, -step);
+      if (event.key === "ArrowDown") this.backend?.orbitBy(0, step);
+      if (["+", "="].includes(event.key)) this.backend?.zoomBy(-160);
+      if (event.key === "-") this.backend?.zoomBy(160);
+      return;
+    }
     if (!this.hasAttribute("interactive") || !["Enter", " "].includes(event.key)) return;
     event.preventDefault();
     this.castAtStar();
@@ -164,6 +222,11 @@ class ShaderRenderer extends HTMLElement {
     this.resizeObserver?.disconnect();
     this.visibilityObserver?.disconnect();
     this.canvas.removeEventListener("pointerdown", this.handlePointer);
+    this.canvas.removeEventListener("pointermove", this.handlePointerMove);
+    this.canvas.removeEventListener("pointerup", this.handlePointerUp);
+    this.canvas.removeEventListener("pointercancel", this.handlePointerUp);
+    this.canvas.removeEventListener("wheel", this.handleWheel);
+    this.pointerStart = null;
     this.canvas.removeEventListener("webglcontextlost", this.handleContextLost);
     this.removeEventListener("keydown", this.handleKey);
     this.backend?.dispose();

@@ -239,6 +239,19 @@ export class ThreeBackend {
     this.camera = new THREE.PerspectiveCamera(scene.camera.fov, 1, scene.camera.near, scene.camera.far);
     this.camera.position.set(...scene.camera.position);
     this.camera.lookAt(...scene.camera.target);
+    this.navigation = Boolean(options.navigation);
+    this.cameraFocus = new THREE.Vector3(...scene.camera.target);
+    this.cameraGoalFocus = this.cameraFocus.clone();
+    const cameraOffset = this.camera.position.clone().sub(this.cameraFocus);
+    this.cameraAzimuth = Math.atan2(cameraOffset.x, cameraOffset.z);
+    this.cameraElevation = Math.atan2(cameraOffset.y, Math.hypot(cameraOffset.x, cameraOffset.z));
+    this.cameraDistance = cameraOffset.length();
+    this.cameraGoalAzimuth = this.cameraAzimuth;
+    this.cameraGoalElevation = this.cameraElevation;
+    this.cameraGoalDistance = this.cameraDistance;
+    this.lastUpdateTime = null;
+    this.travel = null;
+    this.arrivalTimer = 0;
 
     this.underwaterGroup = new THREE.Group();
     this.surfaceGroup = new THREE.Group();
@@ -520,6 +533,38 @@ export class ThreeBackend {
   }
 
   update(time) {
+    const dt = this.lastUpdateTime === null ? 1 / 60 : Math.min(0.05, Math.max(0, time - this.lastUpdateTime));
+    this.lastUpdateTime = time;
+    if (this.travel && this.boat) {
+      const progress = Math.min(1, Math.max(0, (time - this.travel.startedAt) / this.travel.duration));
+      const eased = progress * progress * (3 - 2 * progress);
+      this.boat.position.lerpVectors(this.travel.start, this.travel.destination, eased);
+      const turn = Math.atan2(Math.sin(this.travel.heading - this.travel.startYaw), Math.cos(this.travel.heading - this.travel.startYaw));
+      this.boat.rotation.y = this.travel.startYaw + turn * Math.min(1, progress * 2);
+      this.cameraGoalFocus.set(this.boat.position.x * 0.72, this.sceneData.camera.target[1], this.boat.position.z * 0.72);
+      if (progress >= 1) {
+        const id = this.travel.id;
+        this.travel = null;
+        this.arrivalTimer = window.setTimeout(() => this.options.onArrival?.(id), 180);
+      }
+    }
+
+    if (this.navigation) {
+      const smoothing = 1 - Math.exp(-dt * 5);
+      const turn = Math.atan2(Math.sin(this.cameraGoalAzimuth - this.cameraAzimuth), Math.cos(this.cameraGoalAzimuth - this.cameraAzimuth));
+      this.cameraAzimuth += turn * smoothing;
+      this.cameraElevation += (this.cameraGoalElevation - this.cameraElevation) * smoothing;
+      this.cameraDistance += (this.cameraGoalDistance - this.cameraDistance) * smoothing;
+      this.cameraFocus.lerp(this.cameraGoalFocus, smoothing);
+      const horizontal = Math.cos(this.cameraElevation) * this.cameraDistance;
+      this.camera.position.set(
+        this.cameraFocus.x + Math.sin(this.cameraAzimuth) * horizontal,
+        this.cameraFocus.y + Math.sin(this.cameraElevation) * this.cameraDistance,
+        this.cameraFocus.z + Math.cos(this.cameraAzimuth) * horizontal,
+      );
+      this.camera.lookAt(this.cameraFocus);
+    }
+
     const motion = this.options.quiet ? 0.45 : 1;
     if (this.boat) {
       this.boat.position.y = this.boatBaseY + Math.sin(time * 0.78) * 0.045 * motion;
@@ -612,6 +657,39 @@ export class ThreeBackend {
     if (star) this.catchStar(star);
   }
 
+  orbitBy(dx, dy) {
+    if (!this.navigation || this.travel) return;
+    this.cameraGoalAzimuth -= dx * 0.005;
+    this.cameraGoalElevation = THREE.MathUtils.clamp(this.cameraGoalElevation + dy * 0.004, 0.4, 1.36);
+  }
+
+  zoomBy(delta) {
+    if (!this.navigation || this.travel) return;
+    this.cameraGoalDistance = THREE.MathUtils.clamp(this.cameraGoalDistance * Math.exp(delta * 0.001), 12, 34);
+  }
+
+  travelTo(id, position) {
+    if (!this.navigation || !this.boat || this.disposed || this.travel || !Array.isArray(position)
+      || position.length !== 2 || !position.every(Number.isFinite)) return false;
+    const [x, z] = position;
+    if (Math.hypot(x, z) > 9) return false;
+    const start = this.boat.position.clone();
+    const destination = new THREE.Vector3(x, this.boatBaseY, z);
+    const heading = Math.atan2(x - start.x, z - start.z);
+    this.cameraGoalElevation = 0.85;
+    this.cameraGoalDistance = 17;
+    this.travel = {
+      id,
+      start,
+      destination,
+      startYaw: this.boat.rotation.y,
+      heading: this.sceneData.boat.rotation[1] + heading,
+      startedAt: (performance.now() - this.clockStartedAt) / 1000,
+      duration: 2.15,
+    };
+    return true;
+  }
+
   renderFrame(time) {
     if (!this.water || this.disposed) return;
     this.renderer.info.reset();
@@ -673,6 +751,7 @@ export class ThreeBackend {
     this.disposed = true;
     this.pause();
     window.clearTimeout(this.resetTimer);
+    window.clearTimeout(this.arrivalTimer);
     this.scene.traverse((object) => {
       object.geometry?.dispose?.();
       if (Array.isArray(object.material)) object.material.forEach(disposeMaterial);
