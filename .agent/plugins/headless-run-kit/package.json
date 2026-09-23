@@ -1,0 +1,14 @@
+{
+  "name": "headless-run-kit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Reusable local website/WebGL headless validation kit.",
+  "scripts": {
+    "run": "node scripts/run.mjs"
+  },
+  "dependencies": {
+    "playwright-core": "^1.55.0",
+    "sharp": "^0.34.3"
+  }
+}
