@@ -249,6 +249,16 @@ export class ThreeBackend {
     this.cameraGoalAzimuth = this.cameraAzimuth;
     this.cameraGoalElevation = this.cameraElevation;
     this.cameraGoalDistance = this.cameraDistance;
+    if (this.navigation) {
+      this.camera.position.set(
+        this.cameraFocus.x + Math.sin(this.cameraAzimuth) * Math.cos(this.cameraElevation) * this.cameraDistance,
+        this.cameraFocus.y + Math.sin(this.cameraElevation) * this.cameraDistance,
+        this.cameraFocus.z + Math.cos(this.cameraAzimuth) * Math.cos(this.cameraElevation) * this.cameraDistance,
+      );
+      this.camera.lookAt(this.cameraFocus);
+    }
+    this.waypoints = options.waypoints || [];
+    this.lastWaypointUpdate = -1;
     this.lastUpdateTime = null;
     this.travel = null;
     this.arrivalTimer = 0;
@@ -305,6 +315,7 @@ export class ThreeBackend {
     this.addEnvironment();
     await this.addAssets();
     this.addWater();
+    await this.renderer.compileAsync(this.scene, this.camera);
     this.renderFrame(0);
   }
 
@@ -497,6 +508,18 @@ export class ThreeBackend {
     this.renderer.setPixelRatio(pixelRatio);
     this.renderer.setSize(width, height, false);
     this.camera.aspect = width / height;
+    if (this.navigation) {
+      this.camera.fov = width / height < 0.8 ? 48 : this.sceneData.camera.fov;
+      if (!this.hasNavigationSize) {
+        if (width / height < 0.8) {
+          this.cameraDistance = 28;
+          this.cameraElevation = 1.29;
+          this.cameraGoalElevation = this.cameraElevation;
+        }
+        this.cameraGoalDistance = this.cameraDistance;
+        this.hasNavigationSize = true;
+      }
+    }
     this.camera.updateProjectionMatrix();
     const targetScale = quality === "low" ? 0.35 : quality === "high" ? 0.75 : 0.55;
     this.renderTarget.setSize(Math.max(1, Math.floor(width * pixelRatio * targetScale)), Math.max(1, Math.floor(height * pixelRatio * targetScale)));
@@ -563,6 +586,20 @@ export class ThreeBackend {
         this.cameraFocus.z + Math.cos(this.cameraAzimuth) * horizontal,
       );
       this.camera.lookAt(this.cameraFocus);
+      if (time - this.lastWaypointUpdate >= 0.08 && this.waypoints.length) {
+        this.camera.updateMatrixWorld();
+        const narrow = this.camera.aspect < 0.8;
+        const positions = this.waypoints.map(({ id, position }) => {
+          const projected = new THREE.Vector3(position[0], 0.65, position[1]).project(this.camera);
+          return {
+            id,
+            x: THREE.MathUtils.clamp((projected.x + 1) / 2, narrow ? 0.18 : 0.08, narrow ? 0.82 : 0.92),
+            y: THREE.MathUtils.clamp((1 - projected.y) / 2, narrow ? 0.25 : 0.16, narrow ? 0.78 : 0.83),
+          };
+        });
+        this.options.onWaypoints?.(positions);
+        this.lastWaypointUpdate = time;
+      }
     }
 
     const motion = this.options.quiet ? 0.45 : 1;
@@ -676,8 +713,8 @@ export class ThreeBackend {
     const start = this.boat.position.clone();
     const destination = new THREE.Vector3(x, this.boatBaseY, z);
     const heading = Math.atan2(x - start.x, z - start.z);
-    this.cameraGoalElevation = 0.85;
-    this.cameraGoalDistance = 17;
+    this.cameraGoalElevation = Math.max(this.cameraGoalElevation, 1.12);
+    this.cameraGoalDistance = Math.max(this.cameraGoalDistance, this.camera.aspect < 0.8 ? 28 : 23);
     this.travel = {
       id,
       start,

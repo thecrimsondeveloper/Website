@@ -22,24 +22,28 @@ a:focus-visible, shader-renderer:focus-visible { outline: 2px solid #f3d387; out
 .harbor-experience shader-renderer { width: 100%; height: 100%; }
 .harbor-experience > shader-renderer > img { width: 100%; height: 100%; object-fit: cover; }
 .landing-harbor { position: absolute; inset: 0; }
-.landing::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(circle at 52% 48%, transparent 33%, rgba(3, 27, 29, 0.28) 100%); }
+.landing::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(circle at 50% 47%, transparent 18%, rgba(2, 30, 33, 0.21) 100%); }
 .harbor-identity { position: absolute; top: clamp(1.4rem, 3vw, 2.5rem); left: clamp(1.25rem, 4vw, 3.5rem); z-index: 3; pointer-events: none; text-shadow: 0 2px 20px rgba(2, 27, 28, 0.7); }
 .harbor-identity h1 { margin: 0; font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2.4rem); font-weight: 600; letter-spacing: -0.05em; line-height: 1; }
 .harbor-identity p { margin: 0.55rem 0 0; color: rgba(244, 241, 231, 0.8); font-size: 0.61rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.harbor-identity .harbor-value { max-width: 21rem; margin-top: 1.15rem; color: #fffaf0; font-size: clamp(0.82rem, 1.25vw, 1rem); font-weight: 500; letter-spacing: 0; line-height: 1.4; text-transform: none; }
 .harbor-instruction { position: absolute; bottom: clamp(1.2rem, 3vw, 2.25rem); left: clamp(1.25rem, 4vw, 3.5rem); z-index: 3; margin: 0; color: rgba(244, 241, 231, 0.78); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em; text-shadow: 0 2px 12px rgba(2, 27, 28, 0.85); pointer-events: none; }
 .harbor-instruction span { padding: 0 0.5rem; }
 .harbor-navigation { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
-.harbor-waypoint { position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.28rem; width: clamp(108px, 10vw, 148px); aspect-ratio: 1; border: 1px solid rgba(234, 247, 238, 0.72); border-radius: 50%; color: #fffaf0; background: radial-gradient(circle at 32% 25%, rgba(245, 255, 237, 0.36), rgba(26, 127, 131, 0.34) 40%, rgba(3, 44, 48, 0.73) 78%); box-shadow: inset 0 0 18px rgba(189, 245, 223, 0.3), 0 0 22px rgba(89, 223, 213, 0.38), 0 14px 34px rgba(0, 22, 25, 0.38); backdrop-filter: blur(9px); pointer-events: auto; text-shadow: 0 2px 7px rgba(2, 26, 29, 0.8); transition: transform 260ms ease, box-shadow 260ms ease, opacity 260ms ease; }
+.harbor-waypoint { position: absolute; top: var(--waypoint-y); left: var(--waypoint-x); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.12rem; width: clamp(96px, 8.5vw, 122px); aspect-ratio: 1; border: 1px solid rgba(234, 247, 238, 0.82); border-radius: 50%; color: #fffaf0; background: radial-gradient(circle at 32% 25%, rgba(245, 255, 237, 0.32), rgba(24, 112, 117, 0.42) 43%, rgba(3, 44, 48, 0.75) 85%); box-shadow: inset 0 0 18px rgba(189, 245, 223, 0.24), 0 0 21px rgba(89, 223, 213, 0.3), 0 12px 24px rgba(0, 22, 25, 0.28); backdrop-filter: blur(8px); pointer-events: auto; text-shadow: 0 2px 7px rgba(2, 26, 29, 0.8); transform: translate(-50%, -50%); transition: top 120ms linear, left 120ms linear, transform 260ms ease, box-shadow 260ms ease, opacity 260ms ease; }
 .harbor-waypoint::before { content: ""; position: absolute; inset: 7px; border: 1px solid rgba(240, 255, 246, 0.35); border-radius: 50%; pointer-events: none; }
 .harbor-waypoint::after { content: ""; position: absolute; inset: -9px; border: 1px solid rgba(125, 234, 220, 0.23); border-radius: 50%; pointer-events: none; animation: harbor-beacon 3.6s ease-in-out infinite; }
-.harbor-waypoint:hover, .harbor-waypoint:focus-visible, .harbor-waypoint.is-sailing { transform: scale(1.1); box-shadow: inset 0 0 26px rgba(218, 255, 239, 0.46), 0 0 36px rgba(100, 239, 218, 0.7), 0 18px 38px rgba(0, 22, 25, 0.42); }
+.harbor-waypoint:hover, .harbor-waypoint:focus-visible, .harbor-waypoint.is-sailing { transform: translate(-50%, -50%) scale(1.08); box-shadow: inset 0 0 26px rgba(218, 255, 239, 0.46), 0 0 36px rgba(100, 239, 218, 0.7), 0 18px 38px rgba(0, 22, 25, 0.42); }
 .harbor-waypoint__direction { font-size: 1.15rem; line-height: 1; }
-.harbor-waypoint__label { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
-.harbor-waypoint--portfolio { top: 48%; left: 12%; }
-.harbor-waypoint--work { top: 21%; right: 11%; }
-.harbor-waypoint--about { right: 19%; bottom: 11%; }
+.harbor-waypoint__label { font-size: 0.67rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.harbor-waypoint__detail { color: rgba(255, 250, 240, 0.78); font-size: 0.58rem; letter-spacing: 0.05em; }
+.harbor-waypoint--portfolio { --waypoint-x: 16%; --waypoint-y: 52%; }
+.harbor-waypoint--work { --waypoint-x: 83%; --waypoint-y: 30%; }
+.harbor-waypoint--about { --waypoint-x: 78%; --waypoint-y: 77%; }
+.harbor-waypoint--contact { --waypoint-x: 28%; --waypoint-y: 28%; }
 .harbor-navigation[data-sailing="true"] .harbor-waypoint:not(.is-sailing) { opacity: 0.32; pointer-events: none; }
 @keyframes harbor-beacon { 50% { transform: scale(1.1); opacity: 0.48; } }
+.harbor-game-status { position: absolute; right: clamp(1.2rem, 4vw, 3.5rem); bottom: clamp(1.2rem, 3vw, 2.25rem); z-index: 3; color: #fff4c6; font-size: 0.69rem; font-weight: 700; letter-spacing: 0.07em; text-shadow: 0 2px 12px #123536; pointer-events: none; }
 .harbor-status { position: absolute; bottom: 1rem; left: 1rem; z-index: 4; display: flex; gap: 0.5rem; color: rgba(244, 241, 231, 0.74); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; pointer-events: none; }
 .harbor-status span { padding: 0.48rem 0.6rem; border: 1px solid rgba(244, 241, 231, 0.2); background: rgba(4, 40, 42, 0.25); }
 
@@ -108,11 +112,17 @@ a:focus-visible, shader-renderer:focus-visible { outline: 2px solid #f3d387; out
 @media (max-width: 620px) {
   .harbor-identity { top: 1.2rem; left: 1.2rem; }
   .harbor-identity h1 { font-size: 1.55rem; }
-  .harbor-waypoint { width: clamp(82px, 23vw, 105px); }
-  .harbor-waypoint--portfolio { top: 49%; left: 6%; }
-  .harbor-waypoint--work { top: 23%; right: 6%; }
-  .harbor-waypoint--about { right: 12%; bottom: 14%; }
-  .harbor-instruction { bottom: 1rem; left: 1.2rem; max-width: 13rem; line-height: 1.4; }
+  .harbor-identity .harbor-value { max-width: 15rem; margin-top: 0.8rem; font-size: 0.77rem; }
+  .harbor-waypoint { width: clamp(76px, 22vw, 92px); }
+  .harbor-waypoint__direction { font-size: 0.9rem; }
+  .harbor-waypoint__label { font-size: 0.55rem; }
+  .harbor-waypoint__detail { font-size: 0.49rem; }
+  .harbor-waypoint--portfolio { --waypoint-x: 18%; --waypoint-y: 53%; }
+  .harbor-waypoint--work { --waypoint-x: 80%; --waypoint-y: 30%; }
+  .harbor-waypoint--about { --waypoint-x: 77%; --waypoint-y: 71%; }
+  .harbor-waypoint--contact { --waypoint-x: 23%; --waypoint-y: 29%; }
+  .harbor-instruction { bottom: 1rem; left: 1.2rem; max-width: 13rem; font-size: 0.6rem; line-height: 1.4; }
+  .harbor-game-status { right: 1rem; bottom: 1rem; max-width: 7rem; text-align: right; font-size: 0.58rem; }
   .harbor-status { top: 1rem; right: 1rem; bottom: auto; left: auto; }
   .harbor-status span:first-child { display: none; }
   .site-header { min-height: 68px; }

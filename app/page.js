@@ -7,8 +7,9 @@ export default function LandingPage() {
       <div className="harbor-identity">
         <h1 id="landing-title">Crimson Wheeler</h1>
         <p>Systems · gameplay · XR</p>
+        <p className="harbor-value">I turn ambitious ideas into working, playable experiences.</p>
       </div>
-      <p className="harbor-instruction">Drag to look around <span aria-hidden="true">·</span> Choose a destination</p>
+      <p className="harbor-instruction">Drag to explore <span aria-hidden="true">·</span> Catch a star <span aria-hidden="true">·</span> Sail somewhere</p>
     </main>
   );
 }

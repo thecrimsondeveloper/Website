@@ -73,7 +73,7 @@ class ShaderRenderer extends HTMLElement {
     if (this.backend || this.disposed) return;
     const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reducedMotion) {
-      this.setMode("image");
+      this.setMode("image", true);
       return;
     }
 
@@ -83,6 +83,8 @@ class ShaderRenderer extends HTMLElement {
       this.backend = new ThreeBackend(this.canvas, scene, {
         quiet: this.hasAttribute("quiet"),
         navigation: this.hasAttribute("navigation"),
+        waypoints: this.hasAttribute("navigation") ? JSON.parse(this.getAttribute("waypoints") || "[]") : [],
+        onWaypoints: (positions) => this.dispatchEvent(new CustomEvent("waypoint-projection", { detail: positions })),
         onStarCaught: (detail) => this.dispatchEvent(new CustomEvent("star-caught", { detail })),
         onArrival: (id) => this.dispatchEvent(new CustomEvent("destination-arrived", { detail: { id } })),
       });
@@ -210,8 +212,8 @@ class ShaderRenderer extends HTMLElement {
     else this.pause();
   }
 
-  setMode(mode) {
-    if (this.dataset.mode === mode) return;
+  setMode(mode, force = false) {
+    if (this.dataset.mode === mode && !force) return;
     this.dataset.mode = mode;
     this.dispatchEvent(new CustomEvent("renderer-mode-change", { detail: { mode } }));
   }
