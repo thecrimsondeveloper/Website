@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { HarborExperience } from "@/src/components/HarborExperience";
+import { LandingHeader } from "@/src/components/LandingHeader";
+import { ReloadIntroOverlay } from "@/src/components/ReloadIntroOverlay";
 import { SiteHeader } from "@/src/components/SiteHeader";
 import { profile, projects } from "@/src/models/portfolio-model";
 
@@ -8,20 +9,10 @@ export const metadata = { title: "Portfolio" };
 export default function HomePage() {
   return (
     <div className="site-page">
+      <ReloadIntroOverlay />
       <SiteHeader />
       <main>
-        <section className="home-hero">
-          <HarborExperience className="home-harbor" quiet />
-          <div className="home-intro">
-            <p className="eyebrow">{profile.eyebrow}</p>
-            <h1>I build systems that make ambitious ideas playable.</h1>
-            <p>{profile.title}</p>
-            <div className="hero-actions">
-              <Link className="primary-link" href="/projects/">Explore selected work</Link>
-              <a className="text-link" href={`mailto:${profile.email}`}>Start a conversation</a>
-            </div>
-          </div>
-        </section>
+        <LandingHeader email={profile.email} />
 
         <section className="content-section" aria-labelledby="selected-work">
           <div className="section-heading">

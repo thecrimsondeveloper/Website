@@ -9,8 +9,20 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const navigationTypeScript = `
+    try {
+      const entry = performance.getEntriesByType("navigation")[0];
+      if (entry && entry.type === "reload") {
+        document.documentElement.dataset.navigationType = "reload";
+      }
+    } catch (_) {}
+  `;
+
   return (
     <html lang="en">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: navigationTypeScript }} />
+      </head>
       <body>{children}</body>
     </html>
   );

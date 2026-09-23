@@ -1,0 +1,251 @@
+:global(body.intro-locked) {
+  overflow: hidden;
+}
+
+.landingHeader {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.28fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 7rem);
+  align-items: end;
+  min-height: min(680px, calc(100svh - 78px));
+  padding: clamp(4.5rem, 9vw, 8rem) clamp(1.25rem, 5vw, 5rem);
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 82% 18%, rgba(221, 103, 79, 0.13), transparent 30%),
+    linear-gradient(180deg, rgba(214, 223, 215, 0.34), transparent 52%),
+    var(--paper);
+}
+
+.landingMeta {
+  align-self: start;
+  padding-top: 0.35rem;
+}
+
+.kicker,
+.disciplines {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.kicker {
+  color: #9d4f3e;
+}
+
+.disciplines {
+  margin-top: 0.85rem;
+  color: rgba(13, 45, 46, 0.5);
+}
+
+.landingCopy {
+  max-width: 1100px;
+}
+
+.landingCopy h1 {
+  max-width: 1040px;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(3.5rem, 7.4vw, 7.6rem);
+  font-weight: 500;
+  letter-spacing: -0.068em;
+  line-height: 0.88;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+.primaryAction,
+.secondaryAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 138px;
+  padding: 0.95rem 1.2rem;
+  border: 1px solid var(--ink);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  transition: transform 160ms ease, color 160ms ease, background 160ms ease;
+}
+
+.primaryAction {
+  color: #f6f1e7;
+  background: var(--ink);
+}
+
+.secondaryAction {
+  color: var(--ink);
+  background: transparent;
+}
+
+.primaryAction:hover,
+.secondaryAction:hover {
+  transform: translateY(-2px);
+}
+
+.secondaryAction:hover {
+  color: #f6f1e7;
+  background: var(--ink);
+}
+
+.reloadIntro {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #f2efe6;
+  background:
+    radial-gradient(circle at 70% 28%, rgba(221, 103, 79, 0.22), transparent 28%),
+    linear-gradient(135deg, #062d2f, #0b4143 60%, #082f31);
+}
+
+:global(html[data-navigation-type="reload"]) .reloadIntro {
+  display: flex;
+  animation: overlayExit 2.05s cubic-bezier(0.7, 0, 0.2, 1) both;
+}
+
+.introGrid {
+  position: absolute;
+  inset: -10%;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(242, 239, 230, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 239, 230, 0.15) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+  animation: gridDrift 1.8s ease-out both;
+}
+
+.introSweep {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 34%, rgba(242, 239, 230, 0.14) 49%, transparent 64%);
+  transform: translateX(-120%);
+  animation: sweep 1.05s 0.85s cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+.introContent {
+  position: relative;
+  z-index: 2;
+  width: min(900px, calc(100% - 2.5rem));
+  text-align: center;
+}
+
+.introName,
+.introLine {
+  margin: 0;
+}
+
+.introName {
+  font-family: var(--serif);
+  font-size: clamp(3.4rem, 8vw, 8rem);
+  font-weight: 500;
+  letter-spacing: -0.07em;
+  line-height: 0.9;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: resolveName 0.6s 0.28s ease-out forwards;
+}
+
+.introLine {
+  margin-top: 1.15rem;
+  color: rgba(242, 239, 230, 0.72);
+  font-size: clamp(0.72rem, 1.2vw, 0.95rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: resolveLine 0.5s 0.72s ease-out forwards;
+}
+
+@keyframes resolveName {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes resolveLine {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gridDrift {
+  from { transform: scale(1.05) translateY(20px); opacity: 0; }
+  to { transform: scale(1) translateY(0); opacity: 0.22; }
+}
+
+@keyframes sweep {
+  to { transform: translateX(120%); }
+}
+
+@keyframes overlayExit {
+  0%, 78% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+@media (max-width: 800px) {
+  .landingHeader {
+    grid-template-columns: 1fr;
+    align-items: start;
+    min-height: auto;
+    padding-top: 4.5rem;
+    padding-bottom: 5rem;
+  }
+
+  .landingCopy h1 {
+    font-size: clamp(3.2rem, 12vw, 5.6rem);
+  }
+}
+
+@media (max-width: 620px) {
+  .landingHeader {
+    padding-top: 3.6rem;
+  }
+
+  .landingCopy h1 {
+    font-size: clamp(3rem, 13.5vw, 4.9rem);
+    line-height: 0.92;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .primaryAction,
+  .secondaryAction {
+    width: 100%;
+  }
+
+  .introGrid {
+    background-size: 40px 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :global(html[data-navigation-type="reload"]) .reloadIntro {
+    animation: reducedExit 0.42s ease-out both;
+  }
+
+  .introGrid,
+  .introSweep,
+  .introName,
+  .introLine {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  @keyframes reducedExit {
+    0%, 60% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+  }
+}
